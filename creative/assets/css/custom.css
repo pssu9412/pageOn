@@ -22,3 +22,7 @@
     display: block !important;
     text-align: center;
 }
+
+.card-signup {
+    width: 600px;
+}
