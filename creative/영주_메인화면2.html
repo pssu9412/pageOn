@@ -29,6 +29,58 @@
     
         <link rel="stylesheet" href="assets/css/custom.css"> 
     
+        <style>
+
+            /* ==== 상단바 ==== */
+            .navbar-custom {
+                padding: 0 !important;
+                /* margin: 0; */
+            }
+
+            /* .topbar{
+                
+            } */
+
+            .logo-box .logo-lg{
+                height: 70px;
+            } 
+
+            /* ==== 가로 메뉴 바 ==== */
+            .menubar{
+                background-color: #f0eee9;
+                margin:0;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                height: var(--ct-horizontal-menu-hight);
+                min-height: var(--ct-horizontal-menu-height); 
+                max-height: var(--ct-horizontal-menu-height); 
+                width: 100%; 
+                min-width: 100%; 
+                max-width: 100%; 
+                top: var(--ct-topbar-height);
+                padding: 0;
+                border-radius: 0;
+                border-top: 1px solid var(--ct-topbar-search-bg);
+
+            }
+
+            .menubar ul.menu{
+                /* font-weight: bold; */
+                display:flex auto !important;
+                flex-wrap: nowrap;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin: 0px;
+                
+            }
+            /* .menubar ul.menu .menu-item{
+                text-align: center;
+                
+            } */
+
+        </style>
     </head>
 
     <body>
@@ -38,25 +90,25 @@
 
             <!-- Layout -->
             <!-- ========== Left Sidebar Start ========== -->
-            <div class="app-menu">
+            <!-- <div class="app-menu"> -->
 
                 <!-- Brand Logo -->
-                <div class="logo-box">
+                <!-- <div class="logo-box"> -->
                     <!-- Brand Logo Light -->
-                    <a href="index.html" class="logo-light">
+                    <!-- <a href="index.html" class="logo-light">
                         <img src="assets/images/logo-light.png" alt="logo" class="logo-lg">
                         <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm">
-                    </a>
+                    </a> -->
 
                     <!-- Brand Logo Dark -->
-                    <a href="index.html" class="logo-dark">
+                    <!-- <a href="index.html" class="logo-dark">
                         <img src="assets/images/logo-dark.png" alt="dark logo" class="logo-lg">
                         <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm">
                     </a>
-                </div>
+                </div> -->
 
                 <!--- Menu -->
-                <div class="scrollbar">
+                <!-- <div class="scrollbar">
                     <ul class="menu">
 
                         <li class="menu-item">
@@ -1111,12 +1163,10 @@
                             </div>
                         </li>
                     </ul>
-                </div>
+                </div> -->
                 <!--- End Menu -->
-            </div>
+            <!-- </div> -->
             <!-- ========== Left Sidebar End ========== -->
-
-            
 
             
 
@@ -1126,7 +1176,7 @@
 
             <div class="content-page">
 
-                <!-- ========== Topbar Start ========== -->
+                <!-- ========== Topbar Start (상단바) ========== -->
                 <div class="navbar-custom">
                     <div class="topbar">
                         <div class="topbar-menu d-flex align-items-center gap-1">
@@ -1135,13 +1185,14 @@
                             <div class="logo-box">
                                 <!-- Brand Logo Light -->
                                 <a href="index.html" class="logo-light">
-                                    <img src="assets/images/logo-light.png" alt="logo" class="logo-lg">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-lg">
+                                    <!-- <img src="assets/images/logo-light.png" alt="logo" class="logo-lg"> -->
                                     <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm">
                                 </a>
 
                                 <!-- Brand Logo Dark -->
                                 <a href="index.html" class="logo-dark">
-                                    <img src="assets/images/logo-dark.png" alt="dark logo" class="logo-lg">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="dark logo" class="logo-lg">
                                     <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm">
                                 </a>
                             </div>
@@ -1150,15 +1201,10 @@
                             <button class="button-toggle-menu">
                                 <i class="mdi mdi-menu"></i>
                             </button>
-
-                            <!-- Dropdown Menu -->
-                            
-
-                            <!-- Mega Menu Dropdown -->
                             
                         </div>
 
-                        <div class="topbar-menu d-flex flex-column align-items-center">
+                        <!-- <div class="topbar-menu d-flex flex-column align-items-center">
 
                             <div class="topbar-right-top">
                                 <div class="app-search dropdown me-3">
@@ -1172,7 +1218,7 @@
                             <div class="topbar-right-bottom">
 
                             </div>
-                        </div>
+                        </div> -->
 
                         
 
@@ -1390,6 +1436,57 @@
                             </li> -->
                         </ul>
                     </div>
+
+
+                    <!-- ========== 가로 메뉴 시작 ========== -->
+                    <div class="menubar">
+                        <ul class="menu">
+
+                            <li class="menu-item">
+                                <a href="#menuDashboards" data-bs-toggle="collapse" class="menu-link">
+                                    <span class="menu-text"> Best </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#menuDashboards" data-bs-toggle="collapse" class="menu-link">
+                                    <span class="menu-text"> 로맨스 </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#menuDashboards" data-bs-toggle="collapse" class="menu-link">
+                                    <span class="menu-text"> 로판 </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#menuDashboards" data-bs-toggle="collapse" class="menu-link">
+                                    <span class="menu-text"> 판타지 </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#menuDashboards" data-bs-toggle="collapse" class="menu-link">
+                                    <span class="menu-text"> BL </span>
+                                </a>
+                            </li>
+                        
+                            <li class="menu-item">
+                                <a href="#menuDashboards" data-bs-toggle="collapse" class="menu-link">
+                                    <span class="menu-text"> GL </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#menuDashboards" data-bs-toggle="collapse" class="menu-link">
+                                    <span class="menu-text"> 자유 </span>
+                                </a>
+                            </li>
+                        </ul>  
+                    </div>
+                    <!-- =========== 가로 메뉴 끝 =========== -->
+
                 </div>
                 <!-- ========== Topbar End ========== -->
 
