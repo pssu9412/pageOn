@@ -1,0 +1,6 @@
+/* 장르별 매출(원형 차트) 색상*/
+#simple-pie .ct-series-a .ct-slice-pie { fill: #FFB3BA; } /* 로맨스 */
+#simple-pie .ct-series-b .ct-slice-pie { fill: #FFDFBA; } /* 로판 */
+#simple-pie .ct-series-c .ct-slice-pie { fill: #FFFFBA; } /* 판타지 */
+#simple-pie .ct-series-d .ct-slice-pie { fill: #BAFFC9; } /* BL  */
+#simple-pie .ct-series-e .ct-slice-pie { fill: #BAE1FF; } /* GL  */
