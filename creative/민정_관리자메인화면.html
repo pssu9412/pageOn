@@ -45,6 +45,9 @@
     <!-- Simple-pie Chart CSS -->
     <link rel="stylesheet" href="assets/libs/chartist/chartist.min.css">
 
+    <!-- 커스텀 CSS -->
+    <link href="assets/css/min-custom.css" rel="stylesheet" type="text/css" />
+
   </head>
 
   <body>
@@ -1479,16 +1482,7 @@
                 <div class="col-lg-8">
                     <div class="card">
                         <div class="card-body pb-2">
-                            <div class="float-end d-none d-md-inline-block">
-                                <div class="btn-group mb-2">
-                                    <button type="button" class="btn btn-xs btn-light">Today</button>
-                                    <button type="button" class="btn btn-xs btn-light">Weekly</button>
-                                    <button type="button" class="btn btn-xs btn-secondary">Monthly</button>
-                                </div>
-                            </div>
-
-                            <h4 class="header-title mb-3">Sales Analytics</h4>
-
+                            <h4 class="header-title mb-3">매출 및 가입자 추이</h4>
                             <div dir="ltr">
                                 <div id="sales-analytics" class="mt-4" data-colors="#1abc9c,#4a81d4"></div>
                             </div>
@@ -2440,7 +2434,22 @@
 
     <!-- Simple-pie js -->
     <script src="assets/libs/chartist/chartist.min.js"></script>
-    <script src="assets/js/pages/chartist.init.js"></script>
+
+    <script>
+      var simplePieData = {
+        series: [40, 30, 20, 12, 8],
+        labels: ["로맨스", "로판", "판타지", "BL", "GL"] 
+      };
+
+      var total = simplePieData.series.reduce(function(a,b) {return a + b;});
+
+      new Chartist.Pie("#simple-pie", simplePieData, {
+        labelInterpolationFnc: function(e, i) {
+          var percent = Math.round(simplePieData.series[i] / total * 100);
+          return simplePieData.labels[i] + " " + percent + "%";
+        }
+      });
+    </script>
 
   </body>
 </html>
