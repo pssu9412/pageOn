@@ -5,6 +5,20 @@
 #simple-pie .ct-series-d .ct-slice-pie { fill: #BAFFC9; } /* BL  */
 #simple-pie .ct-series-e .ct-slice-pie { fill: #BAE1FF; } /* GL  */
 
+/* 원형차트 크기 */
+#simple-pie {
+  max-height: 400px !important;
+  height: 400px !important;
+  
+}
+
+/* 원형차트 글씨 */
+#simple-pie .ct-label{
+  fill : #555555  !important;
+  /* color : #555555; */
+  font-weight: bold;
+}
+
 .avatar-lg .fa-pen-nib .fa-hotel {
   position: absolute;
   top: 50%;
