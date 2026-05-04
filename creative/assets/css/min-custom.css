@@ -4,3 +4,10 @@
 #simple-pie .ct-series-c .ct-slice-pie { fill: #FFFFBA; } /* 판타지 */
 #simple-pie .ct-series-d .ct-slice-pie { fill: #BAFFC9; } /* BL  */
 #simple-pie .ct-series-e .ct-slice-pie { fill: #BAE1FF; } /* GL  */
+
+.avatar-lg .fa-pen-nib .fa-hotel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
