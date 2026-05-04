@@ -1,3 +1,4 @@
+/* 관리자 메인페이지 start ===========================================*/
 /* 장르별 매출(원형 차트) 색상*/
 #simple-pie .ct-series-a .ct-slice-pie { fill: #FFB3BA; } /* 로맨스 */
 #simple-pie .ct-series-b .ct-slice-pie { fill: #FFDFBA; } /* 로판 */
@@ -11,7 +12,6 @@
   height: 400px !important;
   
 }
-
 /* 원형차트 글씨 */
 #simple-pie .ct-label{
   fill : #555555  !important;
@@ -19,9 +19,20 @@
   font-weight: bold;
 }
 
+/* 아이콘 */
 .avatar-lg .fa-pen-nib .fa-hotel {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* 차트 title */
+.header-title.mb-0 {
+  font-size: 20px;
+}
+.header-title.mb-3 {
+  font-size: 20px;
+}
+
+/* 관리자 메인페이지 end ===================================== */
