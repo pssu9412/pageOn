@@ -38,3 +38,18 @@
     border-color: #ced4da !important;
     box-shadow: none !important;
 }
+
+/* tab 효과 */
+.nav-tabs .nav-link {
+    color: #6c757d;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #000 !important;
+    border-color: transparent transparent #000 !important;
+}
+
+.nav-tabs .nav-link.active {
+    color: #000 !important;
+    border-color: transparent transparent #000 !important;
+}
