@@ -53,8 +53,17 @@
                             <form id="signup-form" action="#">
                                 <div class="mb-3">
                                     <label for="signup-id" class="form-label">아이디</label>
-                                    <input class="form-control" type="text" id="signup-id" placeholder="5~20자 영문, 숫자 입력">
-                                    <div class="invalid-feedback">아이디는 5~20자 영문/숫자로 입력해주세요</div>
+                                
+                                    <div class="input-group">
+                                        <input class="form-control" type="text" id="signup-id" placeholder="5~20자 영문, 숫자 입력">
+                                        <button class="btn btn-dark" type="button" id="check-id-btn">
+                                            중복확인
+                                        </button>
+                                    </div>
+                                
+                                    <div class="invalid-feedback">
+                                        아이디는 5~20자 영문/숫자로 입력해주세요
+                                    </div>
                                 </div>
                             
                                 <div class="mb-3">
@@ -110,8 +119,17 @@
                             
                                 <div class="mb-3">
                                     <label for="signup-nick" class="form-label">닉네임</label>
-                                    <input class="form-control" type="text" id="signup-nick" placeholder="닉네임 입력">
-                                    <div class="invalid-feedback">닉네임을 입력해주세요</div>
+                                
+                                    <div class="input-group">
+                                        <input class="form-control" type="text" id="signup-nick" placeholder="닉네임 입력">
+                                        <button class="btn btn-dark" type="button" id="check-nick-btn">
+                                            중복확인
+                                        </button>
+                                    </div>
+                                
+                                    <div class="invalid-feedback">
+                                        닉네임을 입력해주세요
+                                    </div>
                                 </div>
                             
                                 <div class="mb-3">
@@ -166,230 +184,228 @@
     <!-- <script src="assets/js/pages/authentication.init.js"></script> -->
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const form = document.querySelector("#signup-form");
+        const form = document.querySelector("#signup-form");
 
-            const signupId = document.querySelector("#signup-id");
-            const signupPw = document.querySelector("#signup-pw");
-            const signupCpw = document.querySelector("#signup-cpw");
-            const signupEmail = document.querySelector("#signup-email");
-            const signupName = document.querySelector("#signup-name");
-            const signupPhone = document.querySelector("#signup-phone");
-            const signupNick = document.querySelector("#signup-nick");
-            const ageCheck = document.querySelector("#age-check");
-            const birthSelect = document.querySelector("#signup-birth");
+        const signupId = document.querySelector("#signup-id");
+        const signupPw = document.querySelector("#signup-pw");
+        const signupCpw = document.querySelector("#signup-cpw");
+        const signupEmail = document.querySelector("#signup-email");
+        const signupName = document.querySelector("#signup-name");
+        const signupPhone = document.querySelector("#signup-phone");
+        const signupNick = document.querySelector("#signup-nick");
+        const ageCheck = document.querySelector("#age-check");
+        const birthSelect = document.querySelector("#signup-birth");
 
-            const pwFeedback = document.querySelector(".pw-feedback");
-            const cpwFeedback = document.querySelector(".cpw-feedback");
-            const emailFeedback = document.querySelector(".email-feedback");
+        const pwFeedback = document.querySelector(".pw-feedback");
+        const cpwFeedback = document.querySelector(".cpw-feedback");
+        const emailFeedback = document.querySelector(".email-feedback");
 
-            // 출생연도
-            const currentYear = new Date().getFullYear();
-            for (let year = currentYear; year >= 1900; year--) {
-                const option = document.createElement("option");
-                option.value = year;
-                option.textContent = year;
-                birthSelect.appendChild(option);
+        // 출생연도
+        const currentYear = new Date().getFullYear();
+        for (let year = currentYear; year >= 1900; year--) {
+            const option = document.createElement("option");
+            option.value = year;
+            option.textContent = year;
+            birthSelect.appendChild(option);
+        }
+
+        function setValid(input) {
+            input.classList.remove("is-invalid");
+            input.classList.add("is-valid");
+        }
+
+        function setInvalid(input) {
+            input.classList.remove("is-valid");
+            input.classList.add("is-invalid");
+        }
+
+        function showFeedback(el) {
+            el.style.setProperty("display", "block", "important");
+        }
+
+        function hideFeedback(el) {
+            el.style.setProperty("display", "none", "important");
+        }
+
+        function validateId() {
+            const regex = /^[a-zA-Z0-9]{5,20}$/;
+            if (regex.test(signupId.value.trim())) {
+                setValid(signupId);
+                return true;
+            }
+            setInvalid(signupId);
+            return false;
+        }
+
+        function validatePw() {
+            const value = signupPw.value.trim();
+
+            const hasEng = /[a-zA-Z]/.test(value);
+            const hasNum = /[0-9]/.test(value);
+            const hasSpecial = /[^a-zA-Z0-9]/.test(value);
+
+            const typeCount = [hasEng, hasNum, hasSpecial].filter(Boolean).length;
+
+            if (value.length >= 8 && typeCount >= 2) {
+                setValid(signupPw);
+                hideFeedback(pwFeedback);
+                return true;
             }
 
-            function setValid(input) {
-                input.classList.remove("is-invalid");
-                input.classList.add("is-valid");
+            setInvalid(signupPw);
+            showFeedback(pwFeedback);
+            return false;
+        }
+
+        function validateCpw() {
+            if (signupCpw.value.trim() !== "" && signupPw.value === signupCpw.value) {
+                setValid(signupCpw);
+                hideFeedback(cpwFeedback);
+                return true;
             }
 
-            function setInvalid(input) {
-                input.classList.remove("is-valid");
-                input.classList.add("is-invalid");
+            setInvalid(signupCpw);
+            showFeedback(cpwFeedback);
+            return false;
+        }
+
+        function validateEmail() {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (regex.test(signupEmail.value.trim())) {
+                setValid(signupEmail);
+                hideFeedback(emailFeedback);
+                return true;
             }
 
-            function showFeedback(el) {
-                el.style.setProperty("display", "block", "important");
+            setInvalid(signupEmail);
+            showFeedback(emailFeedback);
+            return false;
+        }
+
+        function validateName() {
+            if (signupName.value.trim() !== "") {
+                setValid(signupName);
+                return true;
+            }
+            setInvalid(signupName);
+            return false;
+        }
+
+        function validatePhone() {
+            const regex = /^010-\d{4}-\d{4}$/;
+
+            if (regex.test(signupPhone.value.trim())) {
+                setValid(signupPhone);
+                return true;
             }
 
-            function hideFeedback(el) {
-                el.style.setProperty("display", "none", "important");
+            setInvalid(signupPhone);
+            return false;
+        }
+
+        function validateNick() {
+            if (signupNick.value.trim() !== "") {
+                setValid(signupNick);
+                return true;
+            }
+            setInvalid(signupNick);
+            return false;
+        }
+
+        function validateAgeCheck() {
+            if (ageCheck.checked) {
+                ageCheck.classList.remove("is-invalid");
+                return true;
+            }
+            ageCheck.classList.add("is-invalid");
+            return false;
+        }
+
+        // ✅ 전화번호 입력 (하이픈 + 검증 통합)
+        signupPhone.addEventListener("input", function () {
+            let value = signupPhone.value.replace(/[^0-9]/g, "");
+
+            if (value.length > 11) {
+                value = value.slice(0, 11);
             }
 
-            function validateId() {
-                const regex = /^[a-zA-Z0-9]{5,20}$/;
-                if (regex.test(signupId.value.trim())) {
-                    setValid(signupId);
-                    return true;
-                }
-                setInvalid(signupId);
-                return false;
+            if (value.length <= 3) {
+                signupPhone.value = value;
+            } else if (value.length <= 7) {
+                signupPhone.value = value.slice(0, 3) + "-" + value.slice(3);
+            } else {
+                signupPhone.value =
+                    value.slice(0, 3) + "-" +
+                    value.slice(3, 7) + "-" +
+                    value.slice(7);
             }
 
-            function validatePw() {
-                const value = signupPw.value.trim();
+            validatePhone();
+        });
 
-                const hasEng = /[a-zA-Z]/.test(value);
-                const hasNum = /[0-9]/.test(value);
-                const hasSpecial = /[^a-zA-Z0-9]/.test(value);
+        // 나머지 input 이벤트
+        signupId.addEventListener("input", validateId);
+        signupPw.addEventListener("input", function () {
+            validatePw();
+            validateCpw();
+        });
+        signupCpw.addEventListener("input", validateCpw);
+        signupEmail.addEventListener("input", validateEmail);
+        signupName.addEventListener("input", validateName);
+        signupNick.addEventListener("input", validateNick);
+        ageCheck.addEventListener("change", validateAgeCheck);
 
-                const typeCount = [hasEng, hasNum, hasSpecial].filter(Boolean).length;
+        // 비밀번호 보기
+        document.querySelectorAll(".toggle-pw").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                const target = document.querySelector("#" + btn.dataset.target);
+                const icon = btn.querySelector("i");
 
-                if (value.length >= 8 && typeCount >= 2) {
-                    setValid(signupPw);
-                    hideFeedback(pwFeedback);
-                    return true;
-                }
-
-                setInvalid(signupPw);
-                showFeedback(pwFeedback);
-                return false;
-            }
-
-            function validateCpw() {
-                if (signupCpw.value.trim() !== "" && signupPw.value === signupCpw.value) {
-                    setValid(signupCpw);
-                    hideFeedback(cpwFeedback);
-                    return true;
-                }
-
-                setInvalid(signupCpw);
-                showFeedback(cpwFeedback);
-                return false;
-            }
-
-            function validateEmail() {
-                const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-                if (regex.test(signupEmail.value.trim())) {
-                    setValid(signupEmail);
-                    hideFeedback(emailFeedback);
-                    return true;
-                }
-
-                setInvalid(signupEmail);
-                showFeedback(emailFeedback);
-                return false;
-            }
-
-            function validateName() {
-                if (signupName.value.trim() !== "") {
-                    setValid(signupName);
-                    return true;
-                }
-                setInvalid(signupName);
-                return false;
-            }
-
-            function validatePhone() {
-                const regex = /^010-\d{4}-\d{4}$/;
-
-                if (regex.test(signupPhone.value.trim())) {
-                    setValid(signupPhone);
-                    return true;
-                }
-
-                setInvalid(signupPhone);
-                return false;
-            }
-
-            function validateNick() {
-                if (signupNick.value.trim() !== "") {
-                    setValid(signupNick);
-                    return true;
-                }
-                setInvalid(signupNick);
-                return false;
-            }
-
-            function validateAgeCheck() {
-                if (ageCheck.checked) {
-                    ageCheck.classList.remove("is-invalid");
-                    return true;
-                }
-                ageCheck.classList.add("is-invalid");
-                return false;
-            }
-
-            // ✅ 전화번호 입력 (하이픈 + 검증 통합)
-            signupPhone.addEventListener("input", function () {
-                let value = signupPhone.value.replace(/[^0-9]/g, "");
-
-                if (value.length > 11) {
-                    value = value.slice(0, 11);
-                }
-
-                if (value.length <= 3) {
-                    signupPhone.value = value;
-                } else if (value.length <= 7) {
-                    signupPhone.value = value.slice(0, 3) + "-" + value.slice(3);
+                if (target.type === "password") {
+                    target.type = "text";
+                    icon.classList.remove("bi-eye-slash");
+                    icon.classList.add("bi-eye");
                 } else {
-                    signupPhone.value =
-                        value.slice(0, 3) + "-" +
-                        value.slice(3, 7) + "-" +
-                        value.slice(7);
+                    target.type = "password";
+                    icon.classList.remove("bi-eye");
+                    icon.classList.add("bi-eye-slash");
                 }
-
-                validatePhone();
             });
+        });
 
-            // 나머지 input 이벤트
-            signupId.addEventListener("input", validateId);
-            signupPw.addEventListener("input", function () {
-                validatePw();
-                validateCpw();
-            });
-            signupCpw.addEventListener("input", validateCpw);
-            signupEmail.addEventListener("input", validateEmail);
-            signupName.addEventListener("input", validateName);
-            signupNick.addEventListener("input", validateNick);
-            ageCheck.addEventListener("change", validateAgeCheck);
+        // 이메일 버튼
+        document.querySelector("#email-btn").addEventListener("click", function () {
+            if (!validateEmail()) {
+                alert("이메일을 먼저 올바르게 입력해주세요.");
+                return;
+            }
+            alert("인증메일을 발송했습니다.");
+        });
 
-            // 비밀번호 보기
-            document.querySelectorAll(".toggle-pw").forEach(function (btn) {
-                btn.addEventListener("click", function () {
-                    const target = document.querySelector("#" + btn.dataset.target);
-                    const icon = btn.querySelector("i");
+        // ✅ submit
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-                    if (target.type === "password") {
-                        target.type = "text";
-                        icon.classList.remove("bi-eye-slash");
-                        icon.classList.add("bi-eye");
-                    } else {
-                        target.type = "password";
-                        icon.classList.remove("bi-eye");
-                        icon.classList.add("bi-eye-slash");
-                    }
-                });
-            });
+            const result =
+                validateId() &
+                validatePw() &
+                validateCpw() &
+                validateEmail() &
+                validateName() &
+                validatePhone() &
+                validateNick() &
+                validateAgeCheck();
 
-            // 이메일 버튼
-            document.querySelector("#email-btn").addEventListener("click", function () {
-                if (!validateEmail()) {
-                    alert("이메일을 먼저 올바르게 입력해주세요.");
-                    return;
-                }
-                alert("인증메일을 발송했습니다.");
-            });
+            if (!result) return;
 
-            // ✅ submit
-            form.addEventListener("submit", function (e) {
-                e.preventDefault();
+            // 👉 하이픈 제거해서 hidden에 넣기
+            document.querySelector("#phone-hidden").value =
+                signupPhone.value.replace(/-/g, "");
 
-                const result =
-                    validateId() &
-                    validatePw() &
-                    validateCpw() &
-                    validateEmail() &
-                    validateName() &
-                    validatePhone() &
-                    validateNick() &
-                    validateAgeCheck();
+            alert("회원가입 가능합니다.");
 
-                if (!result) return;
-
-                // 👉 하이픈 제거해서 hidden에 넣기
-                document.querySelector("#phone-hidden").value =
-                    signupPhone.value.replace(/-/g, "");
-
-                alert("회원가입 가능합니다.");
-
-                form.submit(); // 실제 전송
-            });
+            form.submit(); // 실제 전송
         });
         </script>
 
