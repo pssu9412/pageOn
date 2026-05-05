@@ -61,7 +61,7 @@ span {
 
 .menubar ul.menu {
   /* font-weight: bold; */
-  width: 50% !important;
+  min-width: 50% !important;
   display: flex auto !important;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -70,7 +70,63 @@ span {
   margin: 0px;
 }
 
-.menu-on .menu-text {
+.menu .menu-item .menu-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  list-style: none;
+  position: relative;
+  color: var(--ct-menu-item-color);
+  gap: var(--ct-menu-link-item-gap);
+  -webkit-transition: var(--ct-menu-transition);
+  transition: var(--ct-menu-transition);
+  border-radius: var(--ct-border-radius);
+  font-size: var(--ct-menu-item-font-size);
+  padding: 0px 0px;
+}
+
+.menu-on {
   font-weight: bold;
   color: black;
+}
+
+/* ====== 본문 영역 ======= */
+.content-page {
+  background-color: white;
+}
+
+.content {
+  margin-top: 10px !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-fluid {
+  /* width: 75%; */
+  margin-left: 250px;
+}
+
+/* ===== 사이드바 ===== */
+.content-page .sidebar {
+  width: 230px;
+  background-color: #f0eee9 !important;
+  padding-top: 20px;
+}
+
+.sidebar .menu .menu-item .menu-link {
+  padding: var(--ct-menu-link-padding-y) var(--ct-menu-link-padding-x);
+}
+
+.sidebar .menu .menu-item .menu-link .menu-text {
+  padding: 0px 0px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sidebar .sub-menu .menu-item .menu-text {
+  font-size: var(--ct-menu-item-font-size) !important;
+  font-weight: normal !important;
 }
