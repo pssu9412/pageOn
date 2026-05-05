@@ -30,9 +30,11 @@
 /* 차트 title */
 .header-title.mb-0 {
   font-size: 20px;
+  color : #555555;
 }
 .header-title.mb-3 {
   font-size: 20px;
+  color : #555555
 }
 
 /* 관리자 메인페이지 end ===================================== */
