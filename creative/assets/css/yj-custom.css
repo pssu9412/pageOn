@@ -102,12 +102,17 @@ span {
   margin-top: 10px !important;
   display: flex;
   justify-content: space-between;
+  background-color: white !important;
 }
 
-.container-fluid {
-  /* width: 75%; */
-  margin-left: 250px;
+.content .row {
+  padding: 10px 0px;
 }
+
+/* .container-fluid {
+  width: 75%;
+  margin-left: 250px;
+} */
 
 /* ===== 사이드바 ===== */
 .content-page .sidebar {
@@ -129,4 +134,62 @@ span {
 .sidebar .sub-menu .menu-item .menu-text {
   font-size: var(--ct-menu-item-font-size) !important;
   font-weight: normal !important;
+}
+
+/* ======  carousel =========== */
+
+/* 메인 화면 이벤트 carousel */
+#carouselEvent .img-fluid {
+  width: 100%;
+  height: 600px;
+}
+
+/* 작품 carousel */
+#carouselworks .carousel-item {
+  display: flex;
+  padding: 0px 15px;
+}
+
+#carouselworks .card {
+  width: calc(100% / 6.5);
+  height: 335px;
+}
+
+#carouselworks .carousel-control-prev,
+.carousel-control-next {
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9); /* 살짝 투명 */
+  border-radius: 50%;
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#carouselworks .carousel-control-next-icon,
+.carousel-control-prev-icon {
+  display: none;
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100% 100%;
+}
+
+#carouselworks .carousel-control-prev i,
+.carousel-control-next i {
+  font-size: 20px;
+  color: black; /* 여기서 색 변경 가능 */
+}
+
+#carouselworks .card-img-top {
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+#carouselworks .card .card-body {
+  padding: 5px;
 }
