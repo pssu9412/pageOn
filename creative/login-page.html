@@ -8,6 +8,16 @@
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
 
+        <script src="https://t1.kakaocdn.net/kakao_js_sdk/${VERSION}/kakao.min.js" integrity="${INTEGRITY_VALUE}" crossorigin="anonymous"></script>
+
+        <script>
+            // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해야 합니다.
+            Kakao.init("349071cdf325faed2a604a2e6537f88f")
+
+            // SDK 초기화 여부를 판단합니다.
+            console.log(Kakao.isInitialized())
+        </script>
+
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
@@ -46,14 +56,18 @@
                                         </a>
                     
                                     </div>
+                                    <div id="login-feedback" class="text-danger small mt-2" style="display:none;">
+                                        입력 정보를 다시 확인하세요.
+                                    </div>
                                     <!-- <p class="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p> -->
                                 </div>
 
+                                
                                 <form action="#">
 
                                     <div class="mb-3">
-                                        <label for="emailaddress" class="form-label">아이디</label>
-                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="Enter your id">
+                                        <label for="id" class="form-label">아이디</label>
+                                        <input class="form-control" type="text" id="id" required="" placeholder="Enter your id">
                                     </div>
 
                                     <div class="mb-3">
@@ -82,14 +96,17 @@
                                 <div class="text-center">
                                     <ul class="social-list list-inline mt-3 mb-0">
                                         <li class="list-inline-item">
-                                            <a href="javascript: void(0);" class="social-list-item border-danger text-danger"><i class="mdi mdi-google"></i></a>
+                                            <a href="#" class="social-list-item border-info text-info">
+                                                <img src="assets/images/brands/g-suite.png" style="width:20px;"></a>
                                         </li>
                                         <!-- 카카오, 네이버 추가하기 -->
                                         <li class="list-inline-item">
-                                            <a href="javascript: void(0);" class="social-list-item border-info text-info"><i class="mdi mdi-twitter"></i></a>
+                                            <a href="#" class="social-list-item border-info text-info">
+                                                <img src="assets/images/brands/naver.png" style="width:20px;"></a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github"></i></a>
+                                            <a href="#" onclick="kakaoLogin(); return false;" class="social-list-item border-secondary text-secondary">
+                                                <img src="assets/images/brands/kakao.png" style="width:20px;"></a>
                                         </li>
                                     </ul>
                                     <div class="row mt-3">
@@ -120,6 +137,36 @@
 
         <!-- Authentication js -->
         <script src="assets/js/pages/authentication.init.js"></script>
+
+        <script>
+            const form = document.querySelector("form");
+            const idInput = document.querySelector("#id");
+            const pwInput = document.querySelector("#password");
+            const feedback = document.querySelector("#login-feedback");
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const id = idInput.value.trim();
+                const pw = pwInput.value.trim();
+
+                // 테스트용
+                if (id === "admin" && pw === "1234") {
+                    feedback.style.display = "none";
+
+                    location.href = "영주_상단바.html";
+                } else {
+                    feedback.style.display = "block";
+                }
+            });
+
+            // 카카오 소셜 로그인
+            function kakaoLogin() {
+                Kakao.Auth.authorize({
+                    redirectUri: 'http://localhost:8080/pageon/login/kakao'
+                });
+            }
+        </script>
 
     </body>
 </html>

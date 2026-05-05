@@ -35,7 +35,7 @@
                             <div class="card-body">
                                 <div class="text-center w-50 m-auto">
                                     <div class="auth-brand">
-                                        <a href="index.html" class="logo logo-dark text-center">
+                                        <a href="영주_상단바.html" class="logo logo-dark text-center">
                                             <span class="logo-lg">
                                                 <img src="assets/images/pageon/logo-gray.jpeg" alt="" height="100">
                                             </span>
@@ -47,19 +47,19 @@
 
                                 <ul class="nav nav-tabs nav-bordered nav-justified">
                                     <li class="nav-item">
-                                        <a href="#findemail-b2" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                                        <a href="#findemail" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
                                             이메일로 찾기
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#findphone-b2" data-bs-toggle="tab" aria-expanded="true" class="nav-link active">
+                                        <a href="#findphone" data-bs-toggle="tab" aria-expanded="true" class="nav-link active">
                                             핸드폰 번호로 찾기
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div class="tab-pane" id="findemail-b2">
-                                        <form action="#">
+                                    <div class="tab-pane" id="findemail">
+                                        <form id="findpw-email-form" action="#">
 
                                             <div class="mb-3">
                                                 <label for="find-id" class="form-label">아이디</label>
@@ -76,8 +76,8 @@
         
                                         </form>    
                                     </div>
-                                    <div class="tab-pane active" id="findphone-b2">
-                                        <form action="#">
+                                    <div class="tab-pane active" id="findphone">
+                                        <form id="findpw-phone-form" action="#">
 
                                             <div class="mb-3">
                                                 <label for="find-id" class="form-label">아이디</label>
@@ -97,6 +97,27 @@
                                             </div>
         
                                         </form>
+
+                                        <!-- 인증번호 발송 후  -->
+                                        <div id="verify-area" class="text-center mt-3" style="display:none;">
+                                            <p class="text-muted mb-3">
+                                                입력하신 정보로<br>
+                                                인증번호가 전송되었습니다.
+                                            </p>
+
+                                            <div class="mb-2 text-start">
+                                                <label for="auth-code" class="form-label">인증번호 입력</label>
+                                                <input class="form-control" type="text" id="auth-code" placeholder="인증번호 입력" maxlength="6">
+                                            </div>
+
+                                            <div id="auth-code-feedback" class="text-danger small mt-2" style="display:none;">
+                                                인증번호가 일치하지 않습니다.
+                                            </div>
+
+                                            <button class="btn btn-dark w-100 mt-3" type="button" id="reset-pw-btn" disabled>
+                                                비밀번호 재설정
+                                            </button>
+                                        </div>
                                     </div>
                                     
                                 </div>
@@ -190,6 +211,59 @@
                 }
             
                 validatePhone();
+            });
+
+            
+           // 인증번호 화면
+            const emailForm = document.querySelector("#findpw-email-form");
+            const phoneForm = document.querySelector("#findpw-phone-form");
+            const verifyArea = document.querySelector("#verify-area");
+            const authCode = document.querySelector("#auth-code");
+            const resetPwBtn = document.querySelector("#reset-pw-btn");
+            const authCodeFeedback = document.querySelector("#auth-code-feedback");
+
+            function showVerifyArea(form) {
+                form.style.display = "none";
+                verifyArea.style.display = "block";
+            }
+
+            emailForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                // 나중에 여기서 이메일 인증번호 발송 API 호출
+                showVerifyArea(emailForm);
+            });
+
+            phoneForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                // 나중에 여기서 핸드폰 인증번호 발송 API 호출
+                showVerifyArea(phoneForm);
+            });
+
+            // 입력 전 버튼 비활성화
+            authCode.addEventListener("input", function () {
+                if (authCode.value.trim().length > 0) {
+                    resetPwBtn.disabled = false;
+                } else {
+                    resetPwBtn.disabled = true;
+                }
+            });
+
+            // 비밀번호 재설정 클릭 시
+            resetPwBtn.addEventListener("click", function () {
+                const value = authCode.value.trim();
+
+                // 테스트용 인증번호
+                if (value === "123456") {
+                    authCode.classList.remove("is-invalid");
+                    authCodeFeedback.style.display = "none";
+
+                    location.href = "resetpw-page.html";
+                } else {
+                    authCode.classList.add("is-invalid");
+                    authCodeFeedback.style.display = "block";
+                }
             });
             </script>
         
