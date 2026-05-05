@@ -1,20 +1,29 @@
 /* 관리자 메인페이지 start ===========================================*/
 /* 장르별 매출(원형 차트) 색상*/
-#simple-pie .ct-series-a .ct-slice-pie { fill: #FFB3BA; } /* 로맨스 */
-#simple-pie .ct-series-b .ct-slice-pie { fill: #FFDFBA; } /* 로판 */
-#simple-pie .ct-series-c .ct-slice-pie { fill: #FFFFBA; } /* 판타지 */
-#simple-pie .ct-series-d .ct-slice-pie { fill: #BAFFC9; } /* BL  */
-#simple-pie .ct-series-e .ct-slice-pie { fill: #BAE1FF; } /* GL  */
+#simple-pie .ct-series-a .ct-slice-pie {
+  fill: #ffb3ba;
+} /* 로맨스 */
+#simple-pie .ct-series-b .ct-slice-pie {
+  fill: #ffdfba;
+} /* 로판 */
+#simple-pie .ct-series-c .ct-slice-pie {
+  fill: #ffffba;
+} /* 판타지 */
+#simple-pie .ct-series-d .ct-slice-pie {
+  fill: #baffc9;
+} /* BL  */
+#simple-pie .ct-series-e .ct-slice-pie {
+  fill: #bae1ff;
+} /* GL  */
 
 /* 원형차트 크기 */
 #simple-pie {
   max-height: 400px !important;
   height: 400px !important;
-  
 }
 /* 원형차트 글씨 */
-#simple-pie .ct-label{
-  fill : #555555  !important;
+#simple-pie .ct-label {
+  fill: #555555 !important;
   /* color : #555555; */
   font-weight: bold;
 }
@@ -30,11 +39,18 @@
 /* 차트 title */
 .header-title.mb-0 {
   font-size: 20px;
-  color : #555555;
+  color: #555555;
 }
 .header-title.mb-3 {
   font-size: 20px;
-  color : #555555
+  color: #555555;
+}
+
+/*  content 위치 조정  */
+.container-fluid {
+  margin-left: 0 !important;
+  flex: 1 !important;
+  padding-left: 20px !important;
 }
 
 /* 관리자 메인페이지 end ===================================== */
