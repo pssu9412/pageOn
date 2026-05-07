@@ -53,3 +53,46 @@
     color: #000 !important;
     border-color: transparent transparent #000 !important;
 }
+
+/* lounge table 효과 */
+.table-responsive table{
+    border-top: 1px solid #ced4da;
+}
+
+.lg-count {
+    width: 10%;
+}
+
+.lg-date {
+    width:15%;
+}
+
+.lg-writer {
+    width:20%;
+}
+
+.lg-no {
+    width: 5%;
+}
+
+.lg-no-text {
+    font-size: 10px;
+}
+
+/* 페이징 효과 */
+.pagination .page-item.active .page-link {
+    background-color: #323a46;
+    border-color: #323a46;
+    color: #fff;
+}
+
+.pagination .page-link:hover {
+    background-color: #f1f3f5;
+    color: #323a46;
+}
+
+.pagination .page-link:focus {
+    box-shadow: 0 0 0 0.15rem rgba(50, 58, 70, 0.25);
+    border-color: #323a46;
+    color: #323a46;
+}
