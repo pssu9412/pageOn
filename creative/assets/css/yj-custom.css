@@ -136,26 +136,16 @@ span {
   font-weight: normal !important;
 }
 
-/* ======  carousel =========== */
+/* ====== carousel & 작품 슬라이드 관련 css =========== */
 
-/* 메인 화면 이벤트 carousel */
-#carouselEvent .img-fluid {
+/* 메인 화면 이벤트 carousel 관련 */
+#event-carousel .carousel-item,
+.img-fluid {
   width: 100%;
   height: 600px;
 }
 
-/* 작품 carousel */
-#carouselworks .carousel-item {
-  display: flex;
-  padding: 0px 15px;
-}
-
-#carouselworks .card {
-  width: calc(100% / 6.5);
-  height: 335px;
-}
-
-#carouselworks .carousel-control-prev,
+#event-carousel .carousel-control-prev,
 .carousel-control-next {
   width: 40px;
   height: 40px;
@@ -169,7 +159,7 @@ span {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-#carouselworks .carousel-control-next-icon,
+#event-carousel .carousel-control-next-icon,
 .carousel-control-prev-icon {
   display: none;
   width: 2rem;
@@ -179,17 +169,126 @@ span {
   background-size: 100% 100%;
 }
 
-#carouselworks .carousel-control-prev i,
+#event-carousel .carousel-control-prev i,
 .carousel-control-next i {
   font-size: 20px;
   color: black; /* 여기서 색 변경 가능 */
 }
 
-#carouselworks .card-img-top {
-  aspect-ratio: 2 / 3;
-  object-fit: cover;
+/* 작품 슬라이드 */
+
+.works-slide .slide-title {
+  margin-bottom: 10px;
 }
 
-#carouselworks .card .card-body {
-  padding: 5px;
+.works-slide .card {
+  width: calc(100% / 6);
+  height: auto;
+  padding: 0px 5px;
+  /* overflow: visible; */
+}
+
+.works-slide .card-img-top {
+  aspect-ratio: 2 / 3;
+  /* object-fit: cover; */
+}
+
+.works-slide .card-body {
+  padding: 10px 0px;
+}
+
+.works-slide .card-body > div {
+  margin-bottom: 3px;
+}
+
+/* .slick-prev:before,
+.slick-next:before {
+  background-color: white;
+  color: black;
+  font-size: 30px;
+} */
+
+/* .slick-prev:before {
+  left: -20px;
+}
+
+.slick-next:before {
+  right: -20px;
+} */
+
+.slick-custom-prev,
+.slick-custom-next {
+  /* slick 버튼 커스텀 */
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.slick-custom-prev {
+  left: -10px;
+}
+
+.slick-custom-next {
+  right: -10px;
+}
+
+.slick-custom-prev i,
+.slick-custom-next i {
+  font-size: 24px;
+  color: black;
+}
+
+.slick-disabled {
+  opacity: 0.4;
+  cursor: default;
+  background: #f1f1f1;
+  color: #999;
+}
+
+.works-slide .card .card-body .title {
+  color: black;
+  font-size: 18px;
+}
+
+.works-slide .card .like-cnt {
+  color: red;
+}
+
+.thumbnail-wrap {
+  position: relative;
+}
+
+.adult-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 28px;
+  height: 28px;
+
+  border: 1px solid red;
+  border-radius: 50%;
+
+  background: white;
+  color: black;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
