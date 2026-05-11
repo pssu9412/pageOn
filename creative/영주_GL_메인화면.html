@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Page On</title>
+        <title>Page On - 로판</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -340,7 +340,7 @@
                             <!-- 선택된 페이지일 경우(class menu-on 부여) -->
                             <li class="menu-item">
                                 <a href="#" class="menu-link">
-                                    <span class="menu-text menu-on"> Best </span>
+                                    <span class="menu-text"> Best </span>
                                 </a>
                             </li>
                             <!-- ==================-->
@@ -353,7 +353,7 @@
 
                             <li class="menu-item">
                                 <a href="#" class="menu-link">
-                                    <span class="menu-text"> 로판 </span>
+                                    <span class="menu-text menu-on"> 로판 </span>
                                 </a>
                             </li>
 
@@ -435,9 +435,10 @@
 
                         </div>
 
+                        <!-- ========= 신작 랙 시작 ========== -->
                         <div class="row works-slide new-works">
                             <div class="slide-title d-flex justify-content-between align-items-baseline">
-                                <h3>신작</h3>
+                                <h3>GL 신작</h3>
                                 <!-- <a href="#" class="more-link"><span>더보기</span></a> -->
                                 
                             </div>
@@ -616,10 +617,12 @@
                             </div>
                             
                         </div>
+                        <!-- ========= 신작 랙 끝 ========== -->
 
+                        <!-- ========= 구매베스트 랙 시작========== -->
                         <div class="row works-slide bestseller-works">
                             <div class="slide-title d-flex justify-content-between align-items-baseline">
-                                <h3>구매 베스트</h3>
+                                <h3>GL 구매 베스트</h3>
                                 <a href="#" class="more-link"><span>더보기</span></a>
                                 
                             </div>
@@ -799,10 +802,12 @@
                             </div>
                             
                         </div>
+                        <!-- ========= 구매베스트 랙 끝 ========== -->
 
+                        <!-- ========= 선호베스트 랙 시작 ========== -->
                         <div class="row works-slide favorite-works">
                             <div class="slide-title d-flex justify-content-between align-items-baseline">
-                                <h3>선호 베스트</h3>
+                                <h3>GL 선호 베스트</h3>
                                 <a href="#" class="more-link"><span>더보기</span></a>
                                 
                             </div>
@@ -965,10 +970,12 @@
                             </div>
                             
                         </div>
+                        <!-- ========= 선호베스트 랙 끝========== -->
 
+                        <!-- ========= 최신업데이트 랙 시작========== -->
                         <div class="row works-slide updated-works">
                             <div class="slide-title d-flex justify-content-between align-items-baseline">
-                                <h3>최신 업데이트</h3>
+                                <h3>GL 최신 업데이트</h3>
                                 <a href="#" class="more-link"><span>더보기</span></a>
                                 
                             </div>
@@ -1149,9 +1156,12 @@
                             </div>
                             
                         </div>
-
+                        <!-- ========= 최신업데이트 랙 끝========== -->
+                        
                         <script>
                             $(document).ready(function(){
+
+                                // slick 사용위한 구문
                                 $('.slide-wrapper').slick({
                                     dots: false,
                                     infinite: false,
@@ -1168,34 +1178,7 @@
                                     '<i class="mdi mdi-chevron-right"></i>' +
                                     '</button>',
                                     adaptiveHeight: true,
-                                    // responsive: [
-                                    //     {
-                                    //     breakpoint: 1024,
-                                    //     settings: {
-                                    //         slidesToShow: 3,
-                                    //         slidesToScroll: 3,
-                                    //         infinite: true,
-                                    //         dots: true
-                                    //     }
-                                    //     },
-                                    //     {
-                                    //     breakpoint: 600,
-                                    //     settings: {
-                                    //         slidesToShow: 2,
-                                    //         slidesToScroll: 2
-                                    //     }
-                                    //     },
-                                    //     {
-                                    //     breakpoint: 480,
-                                    //     settings: {
-                                    //         slidesToShow: 1,
-                                    //         slidesToScroll: 1
-                                    //     }
-                                    //     }
-                                    //     // You can unslick at a given breakpoint now by adding:
-                                    //     // settings: "unslick"
-                                    //     // instead of a settings object
-                                    // ]
+                                    
                                 });
                             })
                         </script>
