@@ -30,11 +30,6 @@
         <!-- 개인 custom css -->
         <link rel="stylesheet" href="assets/css/yj-custom.css">
         <link rel="stylesheet" href="assets/css/ssu-custom.css">
-
-        <style>
-
-
-        </style>
     
     </head>
 
@@ -633,6 +628,8 @@
                             <div class="text-center">
                                 <p class="text-dark fw-bold fs-2 mb-3 mt-3"> 페이지 라운지 </p>
                             </div>
+
+                            <!-- 라운지 테이블 인클루드 하기 -->
                             <div class="lounge-middle d-flex justify-content-between align-items-center mb-1">
                                 <div class="d-flex align-items-center gap-1">
                                     <input type="checkbox" id="hideNotice">
@@ -660,30 +657,120 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <!-- 공지글 -->
+                                        <tr class="notice-row">
+                                            <td class="notice-cell">
+                                                <span class="notice-badge">공지</span>
+                                            </td>
+                                            <td class="text-start">
+                                                <a href="#" class="post-title">
+                                                    <span>게시판 이용자분들께서는 필독해주세요.</span>
+                                                </a>
+                                            </td>
+                                            <td>게시판지기</td>
+                                            <td>25.01.22</td>
+                                            <td>797169</td>
+                                        </tr>
+                                    
+                                        <tr class="notice-row">
+                                            <td class="notice-cell">
+                                                <span class="notice-badge">공지</span>
+                                            </td>
+                                            <td class="text-start">
+                                                <a href="#" class="post-title">
+                                                    <span>게시판 이용자분들께서는 필독해주세요.</span>
+                                                </a>
+                                            </td>
+                                            <td>게시판지기</td>
+                                            <td>26.01.26</td>
+                                            <td>562158</td>
+                                        </tr>
+                                    
+                                        <!-- 일반글 -->
                                         <tr>
-                                            <td class="lg-no-text">1</td>
-                                            <td>화산귀환 봐야되는데 엄두가 안 남;;;</td>
-                                            <td>닉네임이열글자라면요</td>
+                                            <td class="lg-no-text">2645</td>
+                                            <td class="text-start">
+                                                <a href="#" class="post-title">
+                                                    <span>사천당가 시비로 살아남기 달글 210차</span>
+                                    
+                                                    <i class="mdi mdi-image-outline image-icon"></i>
+                                    
+                                                    <span class="comment-count">1027</span>
+                                                </a>
+                                            </td>
+                                            <td>독자</td>
+                                            <td>26.01.05</td>
+                                            <td>2222</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td class="lg-no-text">2644</td>
+                                            <td class="text-start">
+                                                <a href="#" class="post-title">
+                                                    <span>화산귀환 달글 3002차</span>
+                                                    <i class="mdi mdi-image-outline image-icon"></i>
+                                    
+                                                    <span class="comment-count">1673</span>
+                                                </a>
+                                            </td>
+                                            <td>독자</td>
                                             <td>26.05.11</td>
-                                            <td>@mdo</td>
+                                            <td>24565</td>
                                         </tr>
+                                    
                                         <tr>
-                                            <td class="lg-no-text">1</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>@fat</td>
+                                            <td class="lg-no-text">2643</td>
+                                            <td class="text-start">
+                                                <a href="#" class="post-title">
+                                                    <span>어두운 바다의 등불이 되어 달글 809차</span>
+                                                    <i class="mdi mdi-image-outline image-icon"></i>
+                                    
+                                                    <span class="comment-count">108</span>
+                                    
+                                                </a>
+                                            </td>
+                                            <td>독자</td>
+                                            <td>25.11.10</td>
+                                            <td>1085</td>
                                         </tr>
+                                    
                                         <tr>
-                                            <td class="lg-no-text">1233423</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                            <td>@twitter</td>
+                                            <td class="lg-no-text">2642</td>
+                                            <td class="text-start">
+                                                <a href="#" class="post-title">
+                                                    <span>이결어망 | 이 결혼은 어차피 망하게 되어있다 달글 1103차</span>
+                                                    <i class="mdi mdi-image-outline image-icon"></i>
+                                    
+                                                    <span class="comment-count">5423</span>
+                                                </a>
+                                            </td>
+                                            <td>독자</td>
+                                            <td>25.11.09</td>
+                                            <td>999</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
+                            <!-- 검색 -->
+                            <div class="board-search">
+                                <form class="search-box" action="" method="get">
+                                    <select name="searchType" class="form-select search-select">
+                                        <option value="title_content">제목 + 내용</option>
+                                        <option value="title">제목</option>
+                                        <option value="content">내용</option>
+                                        <option value="writer">작성자</option>
+                                    </select>
+                                
+                                    <div class="search-input-wrap">
+                                        <input type="text" name="keyword" class="form-control" placeholder="검색어를 입력하세요.">
+                                        <button type="submit" class="search-btn">
+                                            <i class="mdi mdi-magnify"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- 페이징 인클루드 하기 -->
                             <nav class="d-flex justify-content-center">
                                 <ul class="pagination pagination-rounded">
                                     <li class="page-item">
@@ -723,7 +810,6 @@
 
         </div>
         <!-- END wrapper -->
-iv>
         
         <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>
@@ -735,5 +821,6 @@ iv>
         <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
         <script src="assets/libs/selectize/js/standalone/selectize.min.js"></script>
 
+        <script src="assets/js/lounge-notice.js"></script>
     </body>
 </html>
