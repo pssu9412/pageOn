@@ -626,7 +626,7 @@
                                 <div class="lounge-form-wrap">
 
                                     <!-- 게시판 선택 -->
-                                    <div class="mb-3">
+                                    <div class="mb-1">
                                         <select class="lounge-board-select">
                                             <option>페이지 라운지</option>
                                             <option>독자 라운지</option>
@@ -637,20 +637,27 @@
                                     <!-- 제목 -->
                                     <input type="text" class="lounge-title-input" placeholder="제목을 입력하세요.">
                         
-                                    <!-- 첨부 메뉴 -->
-                                    <div class="lounge-attach-menu">
-                                        <button type="button"><i class="mdi mdi-image"></i> 사진</button>
-                                        <button type="button"><i class="mdi mdi-file-plus-outline"></i> 파일</button>
-                                        <button type="button"><i class="mdi mdi-checkbox-marked-outline"></i> 투표</button>
-                                    </div>
                         
                                     <!-- 에디터 -->
-                                    <div id="snow-editor" class="lounge-editor"></div>
+                                    <div class="lounge-editor-box">
+                                        <div class="lounge-editor-notice">
+                                            권리침해, 욕설, 비방, 명예훼손, 혐오, 불법촬영물 등의 내용을 게시하면 운영정책 및 관련 법률에 의해 제재될 수 있습니다.<br>
+                                            본인이 쓴 게시글 및 댓글에 대한 법적 책임은 본인에게 있습니다.<br>
+                                            게시판 또는 게시글 검색 허용으로 설정된 경우 내가 작성한 댓글과 작성자 정보가 외부에 공개될 수 있습니다.
+                                        </div>
+
+                                        <div id="snow-editor" class="lounge-editor"></div>
+                                    </div>
                         
                                     <!-- 하단 버튼 -->
                                     <div class="lounge-form-btns">
-                                        <button type="button" class="btn btn-light">취소</button>
-                                        <button type="submit" class="btn btn-dark">등록</button>
+                                        <button type="button"
+                                            class="btn btn-light rounded-pill"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#cancel-modal">
+                                            취소
+                                        </button>
+                                        <button type="submit" class="btn btn-dark rounded-pill">등록</button>
                                     </div>
                         
                                 </div>
@@ -666,6 +673,38 @@
                 </footer>
                 <!-- end Footer -->
 
+            </div>
+
+            <div id="cancel-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-sm modal-dialog-centered">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h4 class="modal-title">글쓰기 취소</h4>
+
+                            <button type="button" class="btn-close"
+                                data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            작성 중인 내용은 저장되지 않습니다.<br>
+                            정말 글쓰기를 취소하시겠습니까?
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light rounded-pill"
+                                data-bs-dismiss="modal">
+                                취소
+                            </button>
+
+                            <button type="button" class="btn btn-dark rounded-pill"
+                                onclick="history.back()">
+                                확인
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
             <!-- ============================================================== -->
@@ -688,7 +727,6 @@
         <script>
             const quill = new Quill("#snow-editor", {
                 theme: "snow",
-                placeholder: "권리침해, 욕설, 비방, 명예훼손, 혐오, 불법촬영물 등의 내용을 게시하면 운영정책 및 관련 법률에 의해 제재될 수 있습니다.\n본인이 쓴 게시글 및 댓글에 대한 법적 책임은 본인에게 있습니다.\n게시판 또는 게시글 검색 허용으로 설정된 경우 내가 작성한 댓글과 작성자 정보가 외부에 공개될 수 있습니다.",
                 modules: {
                     toolbar: [
                         [{ font: [] }, { size: [] }],
@@ -696,7 +734,7 @@
                         [{ color: [] }, { background: [] }],
                         [{ align: [] }],
                         [{ list: "ordered" }, { list: "bullet" }],
-                        ["blockquote", "link"],
+                        ["blockquote", "link", "image", "video"],
                         ["clean"]
                     ]
                 }
