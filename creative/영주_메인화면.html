@@ -44,9 +44,9 @@
         <script type="text/javascript" src="assets/slick/slick.min.js" defer></script>
 
         <!-- 개인 custom css -->
-        <link rel="stylesheet" href="assets/css/yj-custom.css">
-
-        
+        <link rel="stylesheet" href="assets/css/yj-custom.css" />
+        <link rel="stylesheet" href="assets/css/min-custom.css" />
+        <link rel="stylesheet" href="assets/css/ssu-custom.css" />
     
     </head>
 
@@ -111,7 +111,7 @@
                             <div class="topbar-right-bottom">                                
 
                                 
-                                <ul class="topbar-menu d-flex align-items-center">
+                                <ul class="topbar-menu yj-topbar-menu d-flex align-items-center">
 
                                     <!-- 로그인 전 -->
                                     <!-- <li class="d-none d-sm-inline-block">
@@ -397,9 +397,24 @@
 
                     <!-- Start Content-->
                     <div class="container-fluid">
+                        <div class="row">
+                            <div id="event-carousel">
+                                <div class="event-carousel-item">
+                                    <img src="assets/images/pageon/event_banner_ex.png">
+                                </div>
+                                <div class="event-carousel-item">
+                                    <img class="d-block img-fluid" src="assets/images/small/img-2.jpg" alt="Second slide">
+                                </div>
+                                <div class="event-carousel-item">
+                                    <img src="assets/images/pageon/event_banner_ex.png">
+                                </div>
+                                
+
+                            </div>
+                        </div>
                         
                         <div class="row">
-                            <div id="event-carousel" class="carousel slide" data-bs-ride="carousel">
+                            <!-- <div id="event-carousel" class="carousel slide" data-bs-ride="carousel">
                                 <ol class="carousel-indicators">
                                     <li data-bs-target="#event-carousel" data-bs-slide-to="0" class="active"></li>
                                     <li data-bs-target="#event-carousel" data-bs-slide-to="1"></li>
@@ -426,7 +441,7 @@
                                     <i class="fe-chevron-right"></i>
                                     <span class="visually-hidden">Next</span>
                                 </a>
-                            </div>
+                            </div> -->
                             
                         </div>
                         
@@ -1152,6 +1167,19 @@
 
                         <script>
                             $(document).ready(function(){
+                                $('#event-carousel').slick({
+                                    dots:true,
+                                    speed:500,
+                                    prevArrow:
+                                    '<button class="slick-custom-prev">' +
+                                    '<i class="mdi mdi-chevron-left"></i>' +
+                                    '</button>',
+                                    nextArrow:
+                                    '<button class="slick-custom-next">' +
+                                    '<i class="mdi mdi-chevron-right"></i>' +
+                                    '</button>'
+                                });
+
                                 $('.slide-wrapper').slick({
                                     dots: false,
                                     infinite: false,
