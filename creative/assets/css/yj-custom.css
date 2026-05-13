@@ -405,3 +405,74 @@ span {
 .my-comment-list .comment-link:hover {
   text-decoration: underline;
 }
+
+/* 보유쿠폰함 페이지 */
+.coupon-list {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.coupon-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.coupon-table tr {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.coupon-table td {
+  padding: 28px 18px;
+  vertical-align: middle;
+}
+
+.coupon-info {
+  text-align: left;
+}
+
+.coupon-date {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 6px;
+}
+
+.coupon-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: black;
+}
+
+.coupon-condition {
+  font-size: 14px;
+  color: #888;
+}
+
+.coupon-expire {
+  width: 220px;
+  text-align: right;
+  color: #888;
+  white-space: nowrap;
+}
+
+.coupon-table > :not(caption) > * > * {
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.coupon-table {
+  border-top: none !important;
+}
+
+.coupon-status {
+  font-weight: 600;
+  text-align: right;
+}
+
+.coupon-status.used {
+  color: #4dabf7;
+}
+
+.coupon-status.expired {
+  color: #999;
+}
