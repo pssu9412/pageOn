@@ -353,7 +353,7 @@
 
                             <li class="menu-item">
                                 <a href="#" class="menu-link">
-                                    <span class="menu-text menu-on"> 로판 </span>
+                                    <span class="menu-text"> 로판 </span>
                                 </a>
                             </li>
 
@@ -371,7 +371,7 @@
                         
                             <li class="menu-item">
                                 <a href="#" class="menu-link">
-                                    <span class="menu-text"> GL </span>
+                                    <span class="menu-text menu-on"> GL </span>
                                 </a>
                             </li>
 
@@ -398,41 +398,21 @@
                     <!-- Start Content-->
                     <div class="container-fluid">
                         
+                        <!-- 이벤트 배너 -->
                         <div class="row">
-                            <div id="event-carousel" class="carousel slide" data-bs-ride="carousel">
-                                <ol class="carousel-indicators">
-                                    <li data-bs-target="#event-carousel" data-bs-slide-to="0" class="active"></li>
-                                    <li data-bs-target="#event-carousel" data-bs-slide-to="1"></li>
-                                    <li data-bs-target="#event-carousel" data-bs-slide-to="2"></li>
-                                </ol>
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="carousel-item active">
-                                        <img class="d-block img-fluid"  src="assets/images/pageon/event_banner_ex.png" alt="First slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block img-fluid" src="assets/images/small/img-2.jpg" alt="Second slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block img-fluid" src="assets/images/small/img-1.jpg" alt="Third slide">
-                                    </div>
+                            <div id="event-carousel">
+                                <div class="event-carousel-item">
+                                    <img src="assets/images/pageon/event_banner_ex.png">
                                 </div>
-                                <a class="carousel-control-prev" href="#event-carousel" role="button" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <i class="fe-chevron-left"></i>
-                                    <span class="visually-hidden">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#event-carousel" role="button" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <i class="fe-chevron-right"></i>
-                                    <span class="visually-hidden">Next</span>
-                                </a>
+                                <div class="event-carousel-item">
+                                    <img class="d-block img-fluid" src="assets/images/small/img-2.jpg" alt="Second slide">
+                                </div>
+                                <div class="event-carousel-item">
+                                    <img src="assets/images/pageon/event_banner_ex.png">
+                                </div>
+                                
+
                             </div>
-                            
-                        </div>
-                        
-                        <div>
-
-
                         </div>
 
                         <!-- ========= 신작 랙 시작 ========== -->
@@ -1161,7 +1141,21 @@
                         <script>
                             $(document).ready(function(){
 
-                                // slick 사용위한 구문
+                                // slick 사용을 위한 구문 - 이벤트배너
+                                $('#event-carousel').slick({
+                                    dots:true,
+                                    speed:500,
+                                    prevArrow:
+                                    '<button class="slick-custom-prev">' +
+                                    '<i class="mdi mdi-chevron-left"></i>' +
+                                    '</button>',
+                                    nextArrow:
+                                    '<button class="slick-custom-next">' +
+                                    '<i class="mdi mdi-chevron-right"></i>' +
+                                    '</button>'
+                                });
+
+                                // slick 사용을 위한 구문 - 작품 랙
                                 $('.slide-wrapper').slick({
                                     dots: false,
                                     infinite: false,
