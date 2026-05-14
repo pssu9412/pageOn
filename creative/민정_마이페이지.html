@@ -28,6 +28,7 @@
         <link rel="stylesheet" href="assets/css/min-custom.css"> 
         <link rel="stylesheet" href="assets/css/custom.css"> 
         <link rel="stylesheet" href="assets/css/yj-custom.css">
+        <link rel="stylesheet" href="assets/css/ssu-custom.css"> 
     </head>
 
     <body>
@@ -406,11 +407,11 @@
                                             <p class="text-muted mb-2 font-13"><strong>닉네임 :</strong> <span class="ms-2">단디</span></p>
                                         
                                             <p class="text-muted mb-2 font-13"><strong>포인트 :</strong><span class="ms-2">30,000 원</span>
-                                            <button type="button" class="btn btn-light rounded-pill waves-effect">내역보기</button>
+                                            <button type="button" class="btn btn-light btn-xs rounded-pill waves-effect">내역보기</button>
                                             </p>
                                         
                                             <p class="text-muted mb-2 font-13"><strong>보유 쿠폰 : </strong> <span class="ms-2">0 개</span>
-                                            <button type="button" class="btn btn-light rounded-pill waves-effect">쿠폰함</button>
+                                            <button type="button" class="btn btn-light btn-xs rounded-pill waves-effect">쿠폰함</button>
                                             </p>
                                         </div>                                      
                                     </div>                                 
@@ -513,63 +514,77 @@
                                                         <button onclick="showMain()">←</button>
                                                     </div>
                                                     <div class="sub-content">
-                                                        <!-- 아이디 -->
-                                                        <div class="info-row">
-                                                            <label>아이디</label>
-                                                            <div class="info-val" required>pak1221</div>
-                                                        </div>
-                                                        <!-- 이름 -->
-                                                        <div class="info-val">
-                                                            <label>이름</label>
-                                                            <div class="info-val" required>홍길동</div>
-                                                            <button class="btn-sm">성인인증</button>
-                                                        </div>
-                                                        <!-- 비밀번호 변경 구역 -->
-                                                        <div class="info-row align-start">
-                                                            <label>현재 비밀번호</label>
-                                                            <div class="info-val"><input type="password" class="input-plain"></div>
-                                                            <button class="btn-sm">확인</button>
-                                                        </div>
-                                                        <div class="info-row">
-                                                            <label>새 비밀번호</label>
-                                                            <div class="info-val"><input type="password" class="input-plain"></div>
-                                                        </div>
-                                                        <div class="info-row border-bold">
-                                                            <label>비밀번호 확인</label>
-                                                            <div class="info-val"><input type="password" class="input-plain"></div>
-                                                        </div>
+                                                        <form id="profile-form">   
+                                                            <!-- 아이디 -->
+                                                            <div class="info-row">
+                                                                <label>아이디</label>
+                                                                <div class="info-val" required>pak1221</div>
+                                                            </div>
+                                                            <!-- 이름 -->
+                                                            <div class="info-row">
+                                                                <label>이름</label>
+                                                                <div class="info-val" required>홍길동</div>
+                                                                <!-- 인증 완료 시 버튼 비활성화 -->
+                                                                <button type="button" class="btn btn-light btn-xs rounded-pill waves-effect">성인인증</button>
+                                                            </div>
+                                                            <!-- 비밀번호 변경 구역 -->
+                                                            <div class="info-row align-start">
+                                                                <label>현재 비밀번호</label>
+                                                                <div class="info-val"><input type="password" class="input-plain" name=""></div>
+                                                                <button type="button" class="btn btn-light btn-xs rounded-pill waves-effect">확인</button>
+                                                            </div>
+                                                            <div class="info-row">
+                                                                <!-- 현재 비밀번호 확인 후 밑에 칸 활성화, 확인 전 비활성화
+                                                                    8~16자? 특수문자, 영어, 숫자 포함
+                                                                -->
+                                                                <label>새 비밀번호</label>
+                                                                <div class="info-val"><input type="password" class="input-plain" name=""></div>
+                                                            </div>
+                                                            <div class="info-row border-bold">
+                                                                <!-- 비밀번호 다를 시 빨간 글씨로 비밀번호 확인하세요 문구 띄우기. -->
+                                                                <label>비밀번호 확인</label>
+                                                                <div class="info-val"><input type="password" class="input-plain" name=""></div>
+                                                            </div>
 
-                                                        <!-- 번호 -->
-                                                        <div class="info-row">
-                                                            <label>번호</label>
-                                                            <div class="info-val">010-1234-1234</div>
-                                                            <button class="btn-sm">변경</button>
-                                                        </div>
+                                                            <!-- 번호 -->
+                                                            <div class="info-row">
+                                                                <label>번호</label>
+                                                                <div class="info-val">
+                                                                    <input type="text" class="input-plain" name="phone" value="010-1234-1234" readonly>
+                                                                </div>
+                                                                <button type="button" class="btn btn-light btn-xs rounded-pill waves-effect">변경</button>
+                                                            </div>
 
-                                                        <!-- 이메일 -->
-                                                        <div class="info-row">
-                                                            <label>이메일</label>
-                                                            <div class="info-val">psk1221@gmail.com</div>
-                                                            <button class="btn-sm">변경</button>
-                                                        </div>
+                                                            <!-- 이메일 -->
+                                                            <div class="info-row">
+                                                                <label>이메일</label>
+                                                                <div class="info-val">
+                                                                    <input type="email" class="input-plain" name="email" value="psk1221@gmail.com" readonly>
+                                                                </div>
+                                                                <button type="button" class="btn btn-light btn-xs rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#centermodal">변경</button>
+                                                            </div>
 
-                                                        <!-- 계좌관리 -->
-                                                        <div class="info-row">
-                                                            <label>계좌관리</label>
-                                                            <div class="info-val">302-12345433-01 농협</div>
-                                                            <button class="btn-sm">변경</button>
-                                                        </div>
+                                                            <!-- 계좌관리 -->
+                                                            <div class="info-row">
+                                                                <!-- API 사용 -->
+                                                                <label>계좌관리</label>
+                                                                <div class="info-val">
+                                                                    <input type="text" class="input-plain" name="account" value="302-12345433-01 농협" readonly>
+                                                                </div>
+                                                                <button type="button" class="btn btn-light btn-xs rounded-pill waves-effect">변경</button>
+                                                            </div>
 
-                                                        <!-- 회원 탈퇴 -->
-                                                        <div class="info-row border-none">
-                                                            <label>회원 탈퇴</label>
-                                                        </div>
+                                                            <!-- 회원 탈퇴 -->
+                                                            <div class="info-row border-none">
+                                                                <label>회원 탈퇴</label>
+                                                            </div>
 
-                                                        <!-- 하단 버튼 -->
-                                                        <div class="form-actions">
-                                                            <button class="btn-gray" onclick="showMain()">돌아가기</button>
-                                                            <button class="btn-black">수정하기</button>
-                                                        </div>                                             
+                                                            <!-- 하단 버튼 -->
+                                                            <div class="form-actions">
+                                                                <button type="button" class="btn btn-light rounded-pill waves-effect" onclick="showMain()">돌아가기</button>
+                                                                <button type="submit" class="btn btn-dark rounded-pill waves-effect waves-light">수정하기</button>
+                                                            </div>
+                                                        </form>                                              
                                                     </div>
                                                 </div>
                                                 <!-- 서브페이지 : 내 정보 관리 end -->
@@ -625,6 +640,45 @@
                 <!-- end Footer -->
 
             </div>
+
+            <!-- 메일 변경 모달 -->
+            <!-- Center modal content -->
+            <div class="modal fade" id="centermodal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myCenterModalLabel">이메일 변경</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="d-flex gap-2 mb-2 align-item-center">
+                                <input type="email" class="form-control" placeholder="변경할 메일주소를 입력해주세요."></input>
+                                <button class="btn btn-secondary btn-xs waves-effect" style="white-space: nowrap;">발송</button>
+                            </div>
+                            <div class="d-flex gap-2 mb-2 align-item-center">
+                                <input type="text" class="form-control" placeholder="인증번호를 입력해주세요."></input>
+                                <button class="btn btn-secondary btn-xs waves-effect" style="white-space: nowrap;">확인</button>
+                            </div>
+                            <!-- 번호 일치 시 인증 완료 문구 띄우기 | 불일치 시 인증번호가 틀렸습니다 문구 띄우기 -->
+                            <span id="verify-msg" style="font-size: 13px;"></span>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-light rounded-pill waves-effect" data-bs-dismiss="modal">취소</button>
+                            <button class="btn btn-dark rounded-pill waves-effect waves-light">변경</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+
+
+
+
+
+
+
+
+
 
             <!-- ============================================================== -->
             <!-- End Page content -->
