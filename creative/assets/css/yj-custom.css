@@ -373,7 +373,7 @@ span {
   text-decoration: none;
 }
 
-/* 내글/댓글 관리 페이지 */
+/* === 내글/댓글 관리 페이지 === */
 .my-post-list tbody .text-start .post-title:hover {
   text-decoration: underline;
 }
@@ -406,7 +406,7 @@ span {
   text-decoration: underline;
 }
 
-/* 보유쿠폰함 페이지 */
+/* === 보유쿠폰함 페이지 === */
 .coupon-list {
   padding-left: 10px;
   padding-right: 10px;
@@ -477,7 +477,7 @@ span {
   color: #999;
 }
 
-/* 포인트 충전 페이지 */
+/* === 포인트 충전 페이지 === */
 .point-charge-page {
   max-width: 760px;
   margin: 0 auto;
@@ -723,6 +723,200 @@ span {
   font-weight: 700;
 }
 
-.charge-btn:hover {
+/* .charge-btn:hover {
   opacity: 0.9;
+} */
+
+/* 충전 완료 */
+.point-result-page {
+  max-width: 760px;
+  margin: 0 auto;
+
+  padding: 40px 0;
+}
+
+.result-card {
+  padding: 48px;
+
+  border: 1px solid #e9ecef;
+  border-radius: 16px;
+
+  background: white;
+}
+
+.result-icon {
+  width: 72px;
+  height: 72px;
+
+  margin: 0 auto 24px;
+
+  border-radius: 50%;
+
+  background: #111;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.result-title {
+  margin-bottom: 12px;
+
+  font-size: 30px;
+  font-weight: 700;
+
+  text-align: center;
+
+  color: #111;
+}
+
+.result-desc {
+  margin-bottom: 40px;
+
+  font-size: 16px;
+  color: #666;
+
+  text-align: center;
+}
+
+.result-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  margin-bottom: 40px;
+}
+
+.result-table tr {
+  border-bottom: 1px solid #ededed;
+}
+
+.result-table th,
+.result-table td {
+  padding: 18px 10px;
+
+  font-size: 15px;
+}
+
+.result-table th {
+  width: 180px;
+
+  color: #666;
+  font-weight: 600;
+
+  text-align: left;
+}
+
+.result-table td {
+  text-align: right;
+
+  font-weight: 700;
+  color: #111;
+}
+
+.result-buttons {
+  display: flex;
+  gap: 14px;
+}
+
+.result-btn {
+  flex: 1;
+
+  height: 52px;
+
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+
+  background: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.result-btn.dark {
+  background: #111;
+  border: none;
+
+  color: white;
+}
+
+.result-btn.full {
+  width: 100%;
+}
+
+/* 무통장 */
+.bank-box {
+  margin-bottom: 32px;
+
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+
+  overflow: hidden;
+}
+
+.bank-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 20px;
+
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.bank-row:last-child {
+  border-bottom: none;
+}
+
+.bank-row span {
+  color: #666;
+}
+
+.bank-row strong {
+  color: #111;
+  font-size: 16px;
+}
+
+.bank-notice {
+  margin-bottom: 32px;
+
+  font-size: 14px;
+  color: #777;
+
+  line-height: 1.8;
+}
+
+/* 충전 취소 & 실패 */
+.fail-icon {
+  width: 72px;
+  height: 72px;
+
+  margin: 0 auto 24px;
+
+  border-radius: 50%;
+
+  background: #ffe3e3;
+  color: #fa5252;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.fail-notice {
+  margin-bottom: 32px;
+
+  font-size: 14px;
+  color: #777;
+
+  line-height: 1.8;
 }
