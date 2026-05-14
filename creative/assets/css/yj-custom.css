@@ -476,3 +476,253 @@ span {
 .coupon-status.expired {
   color: #999;
 }
+
+/* 포인트 충전 페이지 */
+.point-charge-page {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* 보유 포인트 */
+.current-point-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 24px;
+
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+
+  margin-bottom: 32px;
+
+  background: white;
+}
+
+.current-point-box span {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+}
+
+.current-point-box strong {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* 충전 테이블 */
+.charge-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  margin-bottom: 40px;
+
+  background: white;
+}
+
+.charge-table thead th {
+  padding: 14px 12px;
+
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+
+  font-size: 15px;
+  font-weight: 600;
+  color: #777;
+
+  text-align: center;
+}
+
+.charge-table thead th:first-child {
+  text-align: left;
+}
+
+.charge-table thead th .blank {
+  margin-right: 25px;
+}
+
+.charge-table thead th:nth-child(2) {
+  text-align: center;
+}
+
+.charge-table thead th:last-child {
+  text-align: right;
+}
+
+.charge-table tbody tr {
+  transition: background 0.2s;
+}
+
+.charge-table tbody tr.charge-divider {
+  border-bottom: 2px solid #dcdcdc;
+}
+
+.charge-table tbody tr:hover {
+  background: #fafafa;
+}
+
+.charge-table tbody tr.active {
+  background: #f3f3f3;
+}
+
+.charge-table tbody td {
+  padding: 18px 12px;
+
+  vertical-align: middle;
+
+  font-size: 17px;
+  font-weight: 700;
+  color: #111;
+
+  border-bottom: none;
+}
+
+/* 라디오 + 금액 */
+.charge-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  cursor: pointer;
+
+  margin: 0;
+}
+
+.charge-label input[type="radio"] {
+  width: 16px;
+  height: 16px;
+
+  accent-color: black;
+}
+
+.charge-price {
+  color: #111;
+}
+
+/* 추가 포인트 */
+.bonus-point {
+  margin-right: 6px;
+
+  color: #111;
+  font-weight: 700;
+}
+
+.bonus-rate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 28px;
+  height: 18px;
+
+  padding: 0 6px;
+
+  border-radius: 999px;
+
+  background: #f3f3f3;
+
+  color: #ff6b6b;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* 총 포인트 */
+.total-point {
+  text-align: right;
+
+  color: #111;
+  font-weight: 700;
+}
+
+/* 결제 수단 */
+.section-title {
+  margin-bottom: 20px;
+
+  font-size: 24px;
+  font-weight: 700;
+
+  color: #111;
+}
+
+.payment-methods {
+  display: flex;
+
+  gap: 16px;
+
+  margin-bottom: 32px;
+
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+}
+
+.payment-item {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 20px;
+
+  cursor: pointer;
+
+  background: white;
+
+  transition: all 0.2s;
+}
+
+.payment-item:hover {
+  border-color: #adb5bd;
+}
+
+.payment-item input[type="radio"] {
+  accent-color: black;
+}
+
+.payment-item span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+}
+
+.payment-item .kakao-pay {
+  width: 73px;
+  height: 28px;
+}
+
+.payment-item .toss-pay {
+  width: 120px;
+  height: 28px;
+}
+
+/* 동의 */
+.agree-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 28px;
+
+  font-size: 15px;
+  color: #555;
+}
+
+.agree-box input[type="checkbox"] {
+  accent-color: black;
+}
+
+/* 충전 버튼 */
+.charge-btn {
+  width: 100%;
+  height: 54px;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.charge-btn:hover {
+  opacity: 0.9;
+}

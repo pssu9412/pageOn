@@ -391,291 +391,471 @@
                                     <div class="page-title-left">
                                         <ol class="breadcrumb yj-breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="#">마이페이지</a></li>
-                                            <li class="breadcrumb-item active">내 글/댓글 관리</li>
+                                            <li class="breadcrumb-item active">포인트 충전</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title yj-page-title">내 글/댓글 관리</h4>
+                                    <h4 class="page-title yj-page-title">포인트 충전</h4>
                                 </div>
-                            </div>
-                        </div>     
-
-                        <div class="row">
-                            <ul class="nav nav-tabs nav-bordered nav-justified">
-                                <li class="nav-item">
-                                    <a href="#my-posts" data-bs-toggle="tab" aria-expanded="true" class="nav-link active">
-                                        내 글
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#my-comments" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
-                                        내 댓글
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="my-posts">
-                                    <div class="lounge-middle d-flex justify-content-between align-items-end mb-1">
-                                        <div class="d-flex justify-content-end gap-1">
-                                            작성글 총 개수 :
-                                            <span>100</span>
-                                        </div>
-                                        <div class="mb-1">
-                                            <button type="button" class="btn btn-outline-secondary rounded-pill">선택 삭제</button>
-                                        </div>
-                                    </div>
-                                    <div class="table-responsive lounge my-post-list">
-                                        <table class="table mb-4 text-center align-middle">
-                                            <colgroup>
-                                                <col width="15%">
-                                                <col width="50%">
-                                                <col width="20%">
-                                                <col width="10%">
-                                            </colgroup>
-                                            <thead>
-                                                <tr>
-                                                    <th>게시판명</th>
-                                                    <th class="text-start">제목</th>
-                                                    <th>작성일</th>
-                                                    <th>
-                                                        <input type="checkbox" class="form-check-input post-check-all">
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <!-- 작성 글이 없을 때 -->
-                                                <!-- <tr>
-                                                    <td colspan="4">작성 글이 없습니다.</td>
-                                                </tr> -->
-                                                <!-- ================== -->
-
-
-
-                                                 <tr>
-                                                    <td>독자 라운지</td>
-                                                    <td class="text-start">
-                                                        <a href="#" class="post-title">
-                                                            <span>사천당가 시비로 살아남기 달글 210차 (댓글개수)</span>
-                                                        </a>
-                                                    </td>
-                                                    <td>26.01.05</td>
-                                                    <td>
-                                                        <input type="checkbox" class="form-check-input" name="" value="">
-                                                    </td>
-                                                </tr>
-                                            
-                                                <tr>
-                                                    <td>페이지 라운지</td>
-                                                    <td class="text-start">
-                                                        <a href="#" class="post-title">
-                                                            <span>화산귀환 달글 3002차 (댓글개수)</span>
-                                                        </a>
-                                                    </td>
-                                                    <td>26.05.11</td>
-                                                    <td>
-                                                        <input type="checkbox" class="form-check-input" name="" value="">
-                                                    </td>
-                                                </tr>
-                                            
-                                                <tr>
-                                                    <td>게시판명</td>
-                                                    <td class="text-start">
-                                                        <a href="#" class="post-title">
-                                                            <span>어두운 바다의 등불이 되어 달글 809차(댓글개수)</span>
-                                                        </a>
-                                                    </td>
-                                                    <td>25.11.10</td>
-                                                    <td>
-                                                        <input type="checkbox" class="form-check-input" name="" value="">
-                                                    </td>
-                                                </tr>
-                                            
-                                                <tr>
-                                                    <td>게시판명</td>
-                                                    <td class="text-start">
-                                                        <a href="#" class="post-title">
-                                                            <span>이결어망 | 이 결혼은 어차피 망하게 되어있다 달글 1103차 (댓글개수)</span>
-                                                        </a>
-                                                    </td>
-                                                    <td>25.11.09</td>
-                                                    <td>
-                                                        <input type="checkbox" class="form-check-input" name="" value="">
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-
-                                    <!-- 페이징 인클루드 하기 -->
-                                    <nav class="d-flex justify-content-center">
-                                        <ul class="pagination pagination-rounded">
-                                            <li class="page-item">
-                                                <a class="page-link" href="javascript: void(0);" aria-label="Previous">
-                                                    <span aria-hidden="true">&laquo;</span>
-                                                </a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="javascript: void(0);">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="javascript: void(0);">2</a></li>
-                                            <li class="page-item active"><a class="page-link" href="javascript: void(0);">3</a></li>
-                                            <li class="page-item"><a class="page-link" href="javascript: void(0);">4</a></li>
-                                            <li class="page-item"><a class="page-link" href="javascript: void(0);">5</a></li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="javascript: void(0);" aria-label="Next">
-                                                    <span aria-hidden="true">&raquo;</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-
-                                <div class="tab-pane" id="my-comments">
-                                    <div class="lounge-middle d-flex justify-content-between align-items-end mb-1">
-                                        <div class="d-flex justify-content-end gap-1">
-                                            작성 댓글 총 개수 :
-                                            <span>100</span>
-                                        </div>
-                                        <div class="mb-1">
-                                            <button type="button" class="btn btn-outline-secondary rounded-pill">선택 삭제</button>
-                                        </div>
-                                    </div>
-                                    <div class="table-responsive lounge my-comment-list">
-                                        <table class="table mb-4 text-center align-middle">
-                                            <colgroup>
-                                                <col width="15%">
-                                                <col width="50%">
-                                                <col width="20%">
-                                                <col width="10%">
-                                            </colgroup>
-                                            <thead>
-                                                <tr>
-                                                    <th>종류</th>
-                                                    <th class="text-start">내용</th>
-                                                    <th>작성일</th>
-                                                    <th>
-                                                        <input type="checkbox" class="form-check-input comment-check-all">
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                
-                                                <!-- 작성 댓글이 없을 때 -->
-                                                <!-- <tr>
-                                                    <td colspan="4">작성 댓글이 없습니다.</td>
-                                                </tr> -->
-                                                <!-- ================== -->
-
-                                                <tr>
-                                                    <td>댓글</td>
-                                                    <td class="text-start">
-                                                        <a href="#" class="comment-link">
-
-                                                            <div class="comment-post-title">
-                                                                화산귀환 100화
-                                                            </div>
-
-                                                            <div class="comment-content">
-                                                                청명이 진짜 너무 귀엽다...
-                                                            </div>
-
-                                                        </a>
-                                                    </td>
-                                                    <td>26.01.05</td>
-                                                    <td>
-                                                        <input type="checkbox" class="form-check-input" name="" value="">
-                                                    </td>
-                                                </tr>
-                                            
-                                                <tr>
-                                                    <td>댓글</td>
-                                                    <td class="text-start">
-                                                        <a href="#" class="comment-link">
-
-                                                            <div class="comment-post-title">
-                                                                화산귀환 100화
-                                                            </div>
-
-                                                            <div class="comment-content">
-                                                                청명이 진짜 너무 귀엽다...
-                                                            </div>
-
-                                                        </a>
-                                                    </td>
-                                                    <td>26.01.05</td>
-                                                    <td>
-                                                        <input type="checkbox" class="form-check-input" name="" value="">
-                                                    </td>
-                                                </tr>
-                                            
-                                                <tr>
-                                                    <td>댓글</td>
-                                                    <td class="text-start">
-                                                        <a href="#" class="comment-link">
-
-                                                            <div class="comment-post-title">
-                                                                화산귀환 100화
-                                                            </div>
-
-                                                            <div class="comment-content">
-                                                                청명이 진짜 너무 귀엽다...
-                                                            </div>
-
-                                                        </a>
-                                                    </td>
-                                                    <td>26.01.05</td>
-                                                    <td>
-                                                        <input type="checkbox" class="form-check-input" name="" value="">
-                                                    </td>
-                                                </tr>
-                                            
-                                                <tr>
-                                                    <td>댓글</td>
-                                                    <td class="text-start">
-                                                        <a href="#" class="comment-link">
-
-                                                            <div class="comment-post-title">
-                                                                화산귀환 100화
-                                                            </div>
-
-                                                            <div class="comment-content">
-                                                                청명이 진짜 너무 귀엽다...왜이렇게 귀엽지 진짜? 큰일나려고? 왜그러는건데 진짜청명이 진짜 너무 귀엽다...청명이 진짜 너무 귀엽다...청명이 진짜 너무 귀엽다...청명이 진짜 너무 귀엽다...청명이 진짜 너무 귀엽다...청명이 진짜 너무 귀엽다...청명이 진짜 너무 귀엽다...청명이 진짜 너무 귀엽다...청명이 진짜 너무 귀엽다...청명이 진짜 너무 귀엽다...청명이 진짜 너무 귀엽다...청명이 진짜 너무 귀엽다... 
-                                                            </div>
-
-                                                        </a>
-                                                    </td>
-                                                    <td>26.01.05</td>
-                                                    <td>
-                                                        <input type="checkbox" class="form-check-input" name="" value="">
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-
-                                    <!-- 페이징 인클루드 하기 -->
-                                    <nav class="d-flex justify-content-center">
-                                        <ul class="pagination pagination-rounded">
-                                            <li class="page-item">
-                                                <a class="page-link" href="javascript: void(0);" aria-label="Previous">
-                                                    <span aria-hidden="true">&laquo;</span>
-                                                </a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="javascript: void(0);">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="javascript: void(0);">2</a></li>
-                                            <li class="page-item active"><a class="page-link" href="javascript: void(0);">3</a></li>
-                                            <li class="page-item"><a class="page-link" href="javascript: void(0);">4</a></li>
-                                            <li class="page-item"><a class="page-link" href="javascript: void(0);">5</a></li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="javascript: void(0);" aria-label="Next">
-                                                    <span aria-hidden="true">&raquo;</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                
                             </div>
                         </div>
-                        <!-- end row-->
+                        
+                        <div class="row">
+                            <div class="current-point-box">
+
+                                <span>보유 포인트</span>
+
+                                <strong>1,000 P</strong>
+
+                            </div>
+
+                            <!-- 충전 금액 -->
+                            <div class="table-responsive">
+
+                                <table class="table charge-table mb-4 text-center align-middle">
+                                    <colgroup>
+                                        <col width="30%">
+                                        <col width="30%">
+                                        <col width="30%">
+                                    </colgroup>
+
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <span class="blank">
+
+                                                </span>
+                                                충전 금액
+                                            </th>
+                                            <th>추가 포인트</th>
+                                            <th>총 충전 포인트</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        
+                                    </tbody>
+
+                                        <tr>
+                                            <td>
+                                                <label class="charge-label">
+
+                                                    <input type="radio" name="charge-point">
+
+                                                    <span class="price">
+                                                        1,000원
+                                                    </span>
+
+                                                </label>
+                                            </td>
+
+                                            <td></td>
+
+                                            <td class="total-point">
+                                                1,000 P
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <label class="charge-label">
+
+                                                    <input type="radio" name="charge-point">
+
+                                                    <span class="price">
+                                                        3,000원
+                                                    </span>
+
+                                                </label>
+                                            </td>
+
+                                            <td></td>
+
+                                            <td class="total-point">
+                                                3,000 P
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <label class="charge-label">
+
+                                                    <input type="radio" name="charge-point">
+
+                                                    <span class="price">
+                                                        5,000원
+                                                    </span>
+
+                                                </label>
+                                            </td>
+
+                                            <td>
+                                                <span class="bonus-point">
+                                                    + 150 P
+                                                </span>
+
+                                                <span class="bonus-rate">
+                                                    3%
+                                                </span>
+                                            </td>
+
+                                            <td class="total-point">
+                                                5,000 P
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <label class="charge-label">
+
+                                                    <input type="radio" name="charge-point">
+
+                                                    <span class="price">
+                                                        10,000원
+                                                    </span>
+
+                                                </label>
+                                            </td>
+
+                                            <td>
+                                                <span class="bonus-point">
+                                                    + 300 P
+                                                </span>
+
+                                                <span class="bonus-rate">
+                                                    3%
+                                                </span>
+                                            </td>
+
+                                            <td class="total-point">
+                                                10,300 P
+                                            </td>
+                                        </tr>
+
+                                        <tr class="charge-divider">
+                                            <td>
+                                                <label class="charge-label">
+
+                                                    <input type="radio" name="charge-point">
+
+                                                    <span class="price">
+                                                        20,000원
+                                                    </span>
+
+                                                </label>
+                                            </td>
+
+                                            <td>
+                                                <span class="bonus-point">
+                                                    + 600 P
+                                                </span>
+
+                                                <span class="bonus-rate">
+                                                    3%
+                                                </span>
+                                            </td>
+
+                                            <td class="total-point">
+                                                20,600 P
+                                            </td>
+                                        </tr>
+
+                                        <tr class="active">
+
+                                            <td>
+                                                <label class="charge-label">
+
+                                                    <input type="radio" name="charge-point" checked>
+
+                                                    <span class="price">
+                                                        30,000원
+                                                    </span>
+
+                                                </label>
+                                            </td>
+
+                                            <td>
+                                                <span class="bonus-point">
+                                                    + 1,200 P
+                                                </span>
+
+                                                <span class="bonus-rate">
+                                                    4%
+                                                </span>
+                                            </td>
+
+                                            <td class="total-point">
+                                                31,200 P
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>
+                                                <label class="charge-label">
+
+                                                    <input type="radio" name="charge-point" checked>
+
+                                                    <span class="price">
+                                                        50,000원
+                                                    </span>
+
+                                                </label>
+                                            </td>
+
+                                            <td>
+                                                <span class="bonus-point">
+                                                    + 2,000 P
+                                                </span>
+
+                                                <span class="bonus-rate">
+                                                    4%
+                                                </span>
+                                            </td>
+
+                                            <td class="total-point">
+                                                52,000 P
+                                            </td>
+
+                                        </tr>
+
+                                        <tr class="charge-divider">
+
+                                            <td>
+                                                <label class="charge-label">
+
+                                                    <input type="radio" name="charge-point" checked>
+
+                                                    <span class="price">
+                                                        70,000원
+                                                    </span>
+
+                                                </label>
+                                            </td>
+
+                                            <td>
+                                                <span class="bonus-point">
+                                                    + 2,800 P
+                                                </span>
+
+                                                <span class="bonus-rate">
+                                                    4%
+                                                </span>
+                                            </td>
+
+                                            <td class="total-point">
+                                                72,800 P
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>
+                                                <label class="charge-label">
+
+                                                    <input type="radio" name="charge-point" checked>
+
+                                                    <span class="price">
+                                                        100,000원
+                                                    </span>
+
+                                                </label>
+                                            </td>
+
+                                            <td>
+                                                <span class="bonus-point">
+                                                    + 5,000 P
+                                                </span>
+
+                                                <span class="bonus-rate">
+                                                    5%
+                                                </span>
+                                            </td>
+
+                                            <td class="total-point">
+                                                105,000 P
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>
+                                                <label class="charge-label">
+
+                                                    <input type="radio" name="charge-point" checked>
+
+                                                    <span class="price">
+                                                        200,000원
+                                                    </span>
+
+                                                </label>
+                                            </td>
+
+                                            <td>
+                                                <span class="bonus-point">
+                                                    + 10,000 P
+                                                </span>
+
+                                                <span class="bonus-rate">
+                                                    5%
+                                                </span>
+                                            </td>
+
+                                            <td class="total-point">
+                                                210,000 P
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>
+                                                <label class="charge-label">
+
+                                                    <input type="radio" name="charge-point" checked>
+
+                                                    <span class="price">
+                                                        300,000원
+                                                    </span>
+
+                                                </label>
+                                            </td>
+
+                                            <td>
+                                                <span class="bonus-point">
+                                                    + 15,000 P
+                                                </span>
+
+                                                <span class="bonus-rate">
+                                                    5%
+                                                </span>
+                                            </td>
+
+                                            <td class="total-point">
+                                                315,000 P
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>
+                                                <label class="charge-label">
+
+                                                    <input type="radio" name="charge-point" checked>
+
+                                                    <span class="price">
+                                                        400,000원
+                                                    </span>
+
+                                                </label>
+                                            </td>
+
+                                            <td>
+                                                <span class="bonus-point">
+                                                    + 20,000 P
+                                                </span>
+
+                                                <span class="bonus-rate">
+                                                    5%
+                                                </span>
+                                            </td>
+
+                                            <td class="total-point">
+                                                420,000 P
+                                            </td>
+
+                                        </tr>
+
+                                        <tr class="charge-divider">
+
+                                            <td>
+                                                <label class="charge-label">
+
+                                                    <input type="radio" name="charge-point" checked>
+
+                                                    <span class="price">
+                                                        500,000원
+                                                    </span>
+
+                                                </label>
+                                            </td>
+
+                                            <td>
+                                                <span class="bonus-point">
+                                                    + 25,000 P
+                                                </span>
+
+                                                <span class="bonus-rate">
+                                                    5%
+                                                </span>
+                                            </td>
+
+                                            <td class="total-point">
+                                                525,000 P
+                                            </td>
+
+                                        </tr>
+
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+
+                            <!-- 결제 수단 -->
+                            <div class="payment-methods-box">
+                                <h3 class="section-title">결제 수단</h3>
+
+                                <div class="payment-methods">
+
+                                    <label class="payment-item">
+                                        <input type="radio" name="payment" value="toss" checked>
+
+                                        <span>
+                                            <img class="toss-pay" src="assets/images/brands/TossPay_Logo_Primary.png">
+                                        </span>
+
+                                        <!-- <span>토스페이</span> -->
+                                    </label>
+
+                                    <label class="payment-item">
+                                        <input type="radio" name="payment" value="kakao">
+
+                                        <span>
+                                            <img class="kakao-pay" src="assets/images/brands/kakaopayment_icon__medium.png">
+                                        </span>
+<!-- 
+                                        <span>카카오페이</span> -->
+                                    </label>
+
+                                    <label class="payment-item">
+                                        <input type="radio" name="payment" value="deposit">
+
+                                        <span>무통장입금</span>
+                                    </label>
+
+                                </div>
+
+                                <!-- 동의 -->
+                                <label class="agree-box">
+
+                                    <input type="checkbox">
+
+                                    상품 및 결제 정보를 확인했습니다.
+
+                                </label>
+
+                                <!-- 버튼 -->
+                                <button class="disabled btn btn-dark waves-effect waves-light charge-btn">
+                                    충전하기
+                                </button>
+                            </div>
+                            
+                        </div>
+                        <!-- end row -->
                         
                     </div> <!-- container -->
 
