@@ -145,52 +145,52 @@
   }
 }
 
-/* Settings */
-/* 설정 목록 컨테이너 */
+/* =============================================
+   Settings 탭 - 설정 목록
+   ============================================= */
+
+/* 설정 목록 전체 컨테이너 */
 .settings-list {
-  max-width: 600px; /* 적절한 너비 설정 */
+  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* 개별 항목 스타일 */
+/* 설정 각 항목 (텍스트 왼쪽, 버튼 오른쪽) */
 .settings-item {
-  display: flex;
-  justify-content: space-between; /* 텍스트는 왼쪽, 버튼은 오른쪽 */
-  align-items: center;
-  padding: 20px 10px;
-  border-bottom: 1px solid #eee;
-  text-decoration: none;
-  color: #333;
-  transition: background 0.2s;
-}
-
-/* 클릭 가능한 항목에 마우스 올렸을 때 */
-a.settings-item:hover {
-  background-color: #f9f9f9;
-}
-
-/* 구분선 스타일 */
-.settings-divider {
-  height: 1px;
-  background-color: #f5f5f5;
-  margin: 0; /* 컨테이너 패딩 무시하고 꽉 차게 */
-}
-.settings-item {
-  background-color: #ffffff !important; /* 배경을 무조건 흰색으로 */
-  border-bottom: 1px solid #f0f0f0; /* 아래쪽에만 아주 연한 선 추가 */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 10px;
+  border-bottom: 1px solid #f0f0f0;
+  text-decoration: none;
+  color: #333;
+  background-color: #ffffff;
+  transition: background 0.2s;
 }
 
-/* 3. 부모 컨테이너 배경색 확인 */
+/* 클릭 가능한 항목 hover 효과 */
+a.settings-item:hover {
+  background-color: #f9f9f9;
+}
+
+/* 항목 사이 구분선 (두꺼운 회색 선) */
+.settings-divider {
+  height: 8px;
+  background-color: #f5f5f5;
+  margin: 0;
+}
+
+/* 설정 탭 배경색 */
 #settings {
-  background-color: #ffffff !important;
+  background-color: #ffffff;
 }
 
-/* ON/OFF 버튼 스타일 */
+/* =============================================
+   Settings 탭 - 알림 ON/OFF 토글 버튼
+   ============================================= */
+
+/* 토글 버튼 공통 */
 .toggle-btn {
   border: none;
   padding: 6px 12px;
@@ -201,23 +201,30 @@ a.settings-item:hover {
   transition: all 0.2s ease;
 }
 
+/* 알림 ON 상태 */
 .toggle-btn.on {
   background-color: #e9ecef;
   color: #495057;
 }
 
+/* 알림 OFF 상태 */
 .toggle-btn.off {
   background-color: #f8f9fa;
   color: #adb5bd;
 }
 
-/* 서브 페이지 공통 */
+/* =============================================
+   Settings 탭 - 서브 페이지 공통
+   (내 정보 관리 / 차단 목록 / 1:1 문의)
+   ============================================= */
+
+/* 서브 페이지 전체 래퍼 */
 .sub-page {
   width: 100%;
   background: #fff;
 }
 
-/* 상단 헤더 (설정 > 상세명) */
+/* 서브 페이지 상단 헤더 (← 뒤로가기 버튼 영역) */
 .sub-header {
   display: flex;
   align-items: center;
@@ -228,6 +235,7 @@ a.settings-item:hover {
   margin-bottom: 10px;
 }
 
+/* 서브 페이지 뒤로가기 버튼 */
 .sub-header button {
   background: none;
   border: none;
@@ -236,7 +244,108 @@ a.settings-item:hover {
   margin-right: 10px;
 }
 
-/* 차단 해제 버튼 스타일 */
+/* =============================================
+   Settings 탭 - 내 정보 관리 서브 페이지
+   ============================================= */
+
+/* 내 정보 관리 내용 영역 */
+.sub-content {
+  padding: 0 10px;
+}
+
+/* 각 정보 행 (아이디 / 이름 / 비밀번호 등) */
+.info-row {
+  display: flex;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 16px;
+}
+
+/* 각 행의 라벨 (아이디, 이름, 번호 등 텍스트) */
+.info-row label {
+  min-width: 110px;
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+}
+
+/* 각 행의 값 영역 (실제 데이터 표시) */
+.info-row .info-val {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+}
+
+/* 각 행의 소형 버튼 (변경 / 성인인증 / 확인) */
+.info-row .btn-sm {
+  font-size: 12px;
+  padding: 4px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  color: #555;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* 소형 버튼 hover 효과 */
+.info-row .btn-sm:hover {
+  background: #f0eee9;
+}
+
+/* 구분선 없는 행 (회원 탈퇴 등 마지막 항목) */
+.info-row.border-none {
+  border-bottom: none;
+}
+
+/* 두꺼운 구분선 행 (비밀번호 확인 아래) */
+.info-row.border-bold {
+  border-bottom: 2px solid #ccc;
+}
+
+/* 비밀번호 입력 인풋 */
+.input-plain {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 14px;
+  width: 180px;
+}
+
+/* 하단 돌아가기 / 수정하기 버튼 영역 */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/* 돌아가기 버튼 */
+.btn-gray {
+  padding: 8px 24px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #f5f5f5;
+  color: #555;
+  cursor: pointer;
+}
+
+/* 수정하기 버튼 */
+.btn-black {
+  padding: 8px 24px;
+  border: none;
+  border-radius: 4px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+}
+
+/* =============================================
+   Settings 탭 - 차단 목록 서브 페이지
+   ============================================= */
+
+/* 차단 해제 버튼 */
 .btn-cancel {
   background: #f8f9fa;
   border: 1px solid #ddd;
@@ -245,7 +354,11 @@ a.settings-item:hover {
   cursor: pointer;
 }
 
-/* 1:1 문의하기 버튼 */
+/* =============================================
+   Settings 탭 - 1:1 문의 서브 페이지
+   ============================================= */
+
+/* 문의하기 버튼 */
 .btn-write {
   background: #333;
   color: #fff;
