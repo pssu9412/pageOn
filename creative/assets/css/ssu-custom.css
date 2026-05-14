@@ -398,6 +398,13 @@
     padding-left: 10px;
     border-bottom: 1px solid #eee;
 }
+
+.comment-view {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .comment-info {
     display: flex;
     align-items: center;
@@ -459,4 +466,89 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* 답글 더보기 */
+
+.comment-more-btn {
+    border: 0;
+    background: transparent;
+    color: #777;
+    padding: 0;
+}
+
+.comment-more-btn::after {
+    display: none;
+}
+
+.comment-actions .dropdown-menu {
+    min-width: 70px;
+    padding: 4px 0;
+}
+
+.comment-actions .dropdown-item {
+    padding: 5px 12px;
+    font-size: 13px;
+}
+
+/* 답글 수정 */
+.comment-edit-box {
+    width: 100%;
+}
+
+.comment-edit-textarea {
+    width: 100%;
+    min-height: 90px;
+    resize: none;
+}
+
+.comment-edit-bottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+/* 대댓글 */
+.reply-comment {
+    display: flex;
+    gap: 14px;
+    padding-left: 18px;
+    background-color: #f7f7f7;
+}
+
+.reply-arrow {
+    padding-top: 4px;
+    color: #333;
+    font-size: 15px;
+}
+
+.reply-comment .comment-view {
+    flex: 1;
+}
+
+.reply-write {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    padding: 16px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.reply-write textarea {
+    flex: 1;
+    min-height: 90%;
+    resize: none;
+}
+
+.reply-write .lounge-btn {
+    min-width: 60px;
+    flex-shrink: 0;
+}
+
+/* 내 댓글 */
+.my-comment {
+    background-color: #f7f7f7;
+    border-radius: 8px;
 }

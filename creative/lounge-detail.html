@@ -669,40 +669,175 @@
                                 </div>
 
                                 <div class="comment-list">
-                                    <div class="comment-item">
-                                        <div class="comment-main">
+                                    <div class="comment-item my-comment">
+                                        <!-- 기능 구현할 때 사용부분
+                                            <div class="comment-item 
+                                                ${comment.memberNo eq loginMember.memberNo ? 'my-comment' : ''}">
+                                        -->
 
-                                            <div class="comment-info">
-                                                <strong>닉넴닉넴</strong>
-                                                <span>2026.01.28</span>
+                                        <div class="comment-view">
+                                            <div class="comment-main">
+                                                <div class="comment-info">
+                                                    <strong>멍년두</strong>
+                                                    <span>2026.01.28</span>
+                                                </div>
+                                    
+                                                <p>돌아와 당신...</p>
                                             </div>
-
-                                            <p>나도 작가님 기다리는 중 ㅠ</p>
-
+                                    
+                                            <div class="comment-actions">
+                                                <button type="button" class="reply-open-btn">답글</button>
+                                    
+                                                <div class="dropdown">
+                                                    <button class="comment-more-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="mdi mdi-dots-vertical"></i>
+                                                    </button>
+                                    
+                                                    <!-- 본인 댓글일 때 -->
+                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                        <li>
+                                                            <a class="dropdown-item comment-edit-open" href="#">수정</a>
+                                                        </li>
+                                    
+                                                        <li>
+                                                            <a class="dropdown-item text-danger comment-delete-btn" href="#">삭제</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        <div class="comment-actions">
-                                            <button type="button">답글</button>
-                                            <button type="button">
-                                                <i class="mdi mdi-dots-vertical"></i>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="comment-item">
-                                        <div class="comment-main">
+                                        <!-- 수정할 때 -->
+                                        <div class="comment-edit-box" style="display: none;">
                                             <div class="comment-info">
                                                 <strong>멍년두</strong>
                                                 <span>2026.01.28</span>
                                             </div>
-                                            <p>돌아와 당신...</p>
+                                    
+                                            <textarea class="form-control comment-edit-textarea">돌아와 당신...</textarea>
+                                    
+                                            <div class="comment-edit-bottom">
+                                                <button type="button" class="btn btn-light lounge-btn comment-edit-cancel">
+                                                    취소
+                                                </button>
+                                    
+                                                <button type="button" class="btn btn-dark lounge-btn">
+                                                    등록
+                                                </button>
+                                            </div>
                                         </div>
+                                    
+                                    </div>
+                                    <!-- 답글 입력창 -->
+                                    <div class="reply-write" style="display: none;">
+                                        <textarea class="form-control" placeholder="댓글을 작성해주세요."></textarea>
 
-                                        <div class="comment-actions">
-                                            <button type="button">답글</button>
-                                            <button type="button"><i class="mdi mdi-dots-vertical"></i></button>
+                                        <button type="button" class="btn btn-dark lounge-btn">
+                                            등록
+                                        </button>
+                                    </div>
+
+                                    <div class="comment-item">
+
+                                        <div class="comment-view">
+                                            <div class="comment-main">
+                                                <div class="comment-info">
+                                                    <strong>닉넴닉넴</strong>
+                                                    <span>2026.01.28</span>
+                                                </div>
+                                    
+                                                <p>나도 작가님 기다리는 중 ㅠ</p>
+                                            </div>
+                                    
+                                            <div class="comment-actions">
+                                                <button type="button" class="reply-open-btn">답글</button>
+                                                <div class="dropdown">
+                                                    <button class="comment-more-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="mdi mdi-dots-vertical"></i>
+                                                    </button>
+                                    
+                                                    <!-- 본인 아닐 때 -->
+                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                        <li>
+                                                            <a class="dropdown-item comment-block-btn" href="#">
+                                                                차단
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item text-danger" href="#">
+                                                                신고
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </div>
+                                    
+                                    </div>
+                                    <!-- 답글 입력창 -->
+                                    <div class="reply-write" style="display: none;">
+                                        <textarea class="form-control" placeholder="댓글을 작성해주세요."></textarea>
+                                
+                                        <button type="button" class="btn btn-dark lounge-btn">
+                                            등록
+                                        </button>
+                                    </div>
+                                    
+                                    <!-- 대댓글 -->
+                                    <div class="comment-item reply-comment">
+                                    
+                                        <span class="reply-arrow">↪</span>
+                                    
+                                        <div class="comment-view">
+                                            <div class="comment-main">
+                                                <div class="comment-info">
+                                                    <strong>독자</strong>
+                                                    <span>2026.01.28</span>
+                                                </div>
+                                    
+                                                <p>ㅇㄹㄴㄷ버ㅓㅣㅏㅓㄴㄹ</p>
+                                            </div>
+                                    
+                                            <div class="comment-actions">
+                                                <div class="dropdown">
+                                                    <button class="comment-more-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="mdi mdi-dots-vertical"></i>
+                                                    </button>
+                                    
+                                                    <!-- 구현할 때 사용 -->
+                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                        <c:choose>
+                                                            <c:when test="${comment.memberNo eq loginMember.memberNo}">
+                                                                <li>
+                                                                    <a class="dropdown-item comment-edit-open" href="#">
+                                                                        수정
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="dropdown-item text-danger" href="#">
+                                                                        삭제
+                                                                    </a>
+                                                                </li>
+                                                            </c:when>
+                                                    
+                                                            <c:otherwise>
+                                                                <li>
+                                                                    <a class="dropdown-item" href="#">
+                                                                        차단
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="dropdown-item text-danger" href="#">
+                                                                        신고
+                                                                    </a>
+                                                                </li>
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
                                     </div>
                                 </div>
 
@@ -712,12 +847,50 @@
                                 </div>
 
                             </div>
+                            
 
                         </div>
                     
                     </div> <!-- container -->
 
                 </div> <!-- content -->
+
+                <!-- 차단, 삭제 모달 -->
+                <div class="modal fade" id="action-modal" tabindex="-1">
+                    <div class="modal-dialog modal-sm modal-dialog-centered">
+                        <div class="modal-content">
+                
+                            <div class="modal-body text-center py-4">
+                
+                                <p id="action-modal-text" class="mb-4">
+                                    댓글을 삭제하시겠습니까?
+                                </p>
+                
+                                <div class="d-flex justify-content-center gap-2">
+                
+                                    <button type="button"
+                                        class="btn btn-light lounge-btn"
+                                        data-bs-dismiss="modal">
+                
+                                        취소
+                
+                                    </button>
+                
+                                    <button type="button"
+                                        class="btn btn-dark lounge-btn"
+                                        id="action-confirm-btn">
+                
+                                        확인
+                
+                                    </button>
+                
+                                </div>
+                
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Footer Start -->
                 <footer class="footer footer-alt">
@@ -743,6 +916,100 @@
         <!-- Plugins js-->
         <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
         <script src="assets/libs/selectize/js/standalone/selectize.min.js"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            
+                document.querySelectorAll(".comment-edit-open").forEach(function (btn) {
+                    btn.addEventListener("click", function (e) {
+                        e.preventDefault();
+            
+                        const commentItem = btn.closest(".comment-item");
+                        const commentView = commentItem.querySelector(".comment-view");
+                        const editBox = commentItem.querySelector(".comment-edit-box");
+            
+                        commentView.style.display = "none";
+                        editBox.style.display = "block";
+                    });
+                });
+            
+                document.querySelectorAll(".comment-edit-cancel").forEach(function (btn) {
+                    btn.addEventListener("click", function () {
+                        const commentItem = btn.closest(".comment-item");
+                        const commentView = commentItem.querySelector(".comment-view");
+                        const editBox = commentItem.querySelector(".comment-edit-box");
+            
+                        editBox.style.display = "none";
+                        commentView.style.display = "flex";
+                    });
+                });
+
+                
+
+                const actionModal = new bootstrap.Modal(
+                    document.getElementById("action-modal")
+                );
+
+                const modalText = document.getElementById("action-modal-text");
+
+                // 삭제
+                document.querySelectorAll(".comment-delete-btn").forEach(function (btn) {
+
+                    btn.addEventListener("click", function (e) {
+                        e.preventDefault();
+
+                        modalText.textContent = "댓글을 삭제하시겠습니까?";
+
+                        actionModal.show();
+                    });
+
+                });
+
+                // 차단
+                document.querySelectorAll(".comment-block-btn").forEach(function (btn) {
+
+                    btn.addEventListener("click", function (e) {
+                        e.preventDefault();
+
+                        modalText.textContent = "이 회원을 차단하시겠습니까?";
+
+                        actionModal.show();
+                    });
+
+                });
+
+                // 답글 입력창 열기
+                document.querySelectorAll(".reply-open-btn").forEach(function (btn) {
+
+                    btn.addEventListener("click", function () {
+
+                        const commentItem = btn.closest(".comment-item");
+                        const replyWrite = commentItem.querySelector(".reply-write");
+
+                        if (replyWrite.style.display === "none" || replyWrite.style.display === "") {
+                            replyWrite.style.display = "flex";
+                        } else {
+                            replyWrite.style.display = "none";
+                        }
+
+                    });
+
+                });
+
+                document.querySelectorAll(".reply-open-btn").forEach(function (btn) {
+                    btn.addEventListener("click", function () {
+                        const commentItem = btn.closest(".comment-item");
+                        const replyWrite = commentItem.nextElementSibling;
+
+                        if (replyWrite.style.display === "none" || replyWrite.style.display === "") {
+                            replyWrite.style.display = "flex";
+                        } else {
+                            replyWrite.style.display = "none";
+                        }
+                    });
+                });
+            });
+        </script>
 
     </body>
 </html>
