@@ -605,6 +605,22 @@
     color: #6c757d;
 }
 
+.work-sort {
+    width: 95px;
+    height: 34px;
+    font-size: 12px;
+    padding: 0 24px 0 10px;
+    background-position: right 8px center;
+    background-size: 12px;
+}
+
+.genre-top {
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
 /* 필요시 사용 */
 /* .work-list .work-card {
     width: 100%;
