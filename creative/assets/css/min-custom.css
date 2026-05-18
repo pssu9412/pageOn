@@ -368,4 +368,8 @@ a.settings-item:hover {
   font-size: 13px;
 }
 
+.btn-write {
+  font-weight: bold !important;
+}
+
 /* 마이페이지 end ================================================ */
