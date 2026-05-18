@@ -920,3 +920,19 @@ span {
 
   line-height: 1.8;
 }
+
+/* === 포인트 내역 페이지 === */
+
+#pointUseDetailModal .point-use-list-section .point-use-table-wrap {
+  margin-top: 20px;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+#pointUseDetailModal .point-use-list-section .point-use-table-wrap table {
+  border-top: none;
+}
+
+#pointUseDetailModal .point-use-list-section .point-use-table-wrap tbody td {
+  border-bottom: none;
+}
