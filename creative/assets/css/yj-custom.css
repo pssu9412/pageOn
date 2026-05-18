@@ -238,21 +238,21 @@ span {
   /* overflow: visible; */
 }
 
-.works-slide .work-card .card-img-top {
+.work-card .card-img-top {
   aspect-ratio: 2 / 3;
   /* object-fit: cover; */
 }
 
-.works-slide .work-card .card-body {
+.work-card .card-body {
   padding: 10px 0px;
 }
 
-.works-slide .work-card .card-body > div {
+.work-card .card-body > div {
   margin-right: 10px;
   margin-bottom: 3px;
 }
 
-.works-slide .work-card .card-body .title {
+.work-card .card-body .title {
   color: black;
   font-size: 16px;
   font-weight: 450;
@@ -265,7 +265,7 @@ span {
   overflow: hidden;
 }
 
-.works-slide .work-card .like-cnt {
+.work-card .like-cnt {
   color: red;
 }
 
