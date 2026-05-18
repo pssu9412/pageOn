@@ -34,7 +34,7 @@
     <body>
 
         <!-- Begin page -->
-        <div id="wrapper">
+        < id="wrapper">
 
             <!-- Layout -->
             <!-- ========== Left Sidebar Start ========== -->
@@ -552,7 +552,12 @@
                                                                 <div class="info-val">
                                                                     <input type="text" class="input-plain" name="phone" value="010-1234-1234" readonly>
                                                                 </div>
-                                                                <button type="button" class="btn btn-light btn-xs rounded-pill waves-effect">변경</button>
+                                                                <button type="button" 
+                                                                        class="btn btn-light btn-xs rounded-pill waves-effect"
+                                                                        data-bs-toggle="modal" 
+                                                                        data-bs-target="#phoneModal"
+                                                                        >변경
+                                                                </button>
                                                             </div>
 
                                                             <!-- 이메일 -->
@@ -571,12 +576,19 @@
                                                                 <div class="info-val">
                                                                     <input type="text" class="input-plain" name="account" value="302-12345433-01 농협" readonly>
                                                                 </div>
-                                                                <button type="button" class="btn btn-light btn-xs rounded-pill waves-effect">변경</button>
+                                                                <button type="button" 
+                                                                        class="btn btn-light btn-xs rounded-pill waves-effect" 
+                                                                        data-bs-toggle="modal" 
+                                                                        data-bs-target="#accountModal">변경
+                                                                </button>
                                                             </div>
 
                                                             <!-- 회원 탈퇴 -->
                                                             <div class="info-row border-none">
-                                                                <label>회원 탈퇴</label>
+                                                            <label 
+                                                                data-bs-toggle="modal" 
+                                                                data-bs-target="#withdrawModal" 
+                                                                style="cursor: pointer;">회원 탈퇴</label>
                                                             </div>
 
                                                             <!-- 하단 버튼 -->
@@ -588,23 +600,118 @@
                                                     </div>
                                                 </div>
                                                 <!-- 서브페이지 : 내 정보 관리 end -->
+
                                                 <!-- 서브페이지 : 차단목록 start -->
                                                 <div id="page-block" class="sub-page" style="display:none;">
                                                     <div class="sub-header">
-                                                        <button onclick="showMain()">←</button>
+                                                        <button onclick="showMain()">← 차단 목록 관리</button>
                                                     </div>
                                                     <div class="sub-content">
+                                                        <div class="settings-list" id="block-list">
 
+                                                        <div class="settings-item">
+                                                            <span>호날두</span>
+                                                            <button class="btn-cancel" onclick="unblock(this)">차단 해제</button>
+                                                        </div>
+                                                        <div class="settings-item">
+                                                            <span>메시</span>
+                                                            <button class="btn-cancel" onclick="unblock(this)">차단 해제</button>
+                                                        </div>
+                                                        <div class="settings-item">
+                                                            <span>빨주노초</span>
+                                                            <button class="btn-cancel" onclick="unblock(this)">차단 해제</button>
+                                                        </div>
+                                                        <div class="settings-item">
+                                                            <span>알라리알라</span>
+                                                            <button class="btn-cancel" onclick="unblock(this)">차단 해제</button>
+                                                        </div>
+
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                <!-- 차단 목록 end -->
+
+                                                <!-- 1:1 문의 관리 -->
                                                 <div id="page-qna" class="sub-page" style="display:none;">
                                                     <div class="sub-header">
-                                                        <button onclick="showMain()">←</button>
+                                                        <button onclick="showMain()">← 1:1 문의</button>
                                                     </div>
-                                                    <div class="sub-content">
+                                                <div class="sub-content">
+
+                                                    <!-- 문의하기 버튼 -->
+                                                    <div class="d-flex justify-content-end mb-2">
+                                                        <button type="submit" class="btn btn-dark btn-xs rounded-pill waves-effect waves-light">문의하기</button>
+                                                    </div>
+
+                                                    <!-- 미답변 항목 -->
+                                                    <div class="settings-item qna-item" onclick="toggleQna(this)" style="cursor:pointer; flex-direction: column; align-items: flex-start;">
+                                                        <div class="d-flex justify-content-between w-100">
+                                                            <span>비밀번호 변경이 안 돼요</span>
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <span class="text-muted" style="font-size: 13px;">2025-11-24</span>
+                                                            </div>
+                                                        </div>
+                                                        <!-- 펼쳐지는 내용 -->
+                                                        <div class="qna-detail" style="display:none; width:100%; margin-top: 10px;">
+                                                            <div class="qna-question p-3 bg-light rounded">
+                                                                <p class="mb-0" style="font-size: 14px;">비밀번호 변경이 안 돼요. 도와주세요.</p>
+                                                            </div>
+                                                            <div class="d-flex justify-content-end mt-2">
+                                                                <button class="btn btn-light btn-white btn-xs rounded-pill waves-effect" 
+                                                                        onclick="event.stopPropagation(); deleteQna(this)">문의 삭제
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 미답변 항목 -->
+                                                    <div class="settings-item qna-item" onclick="toggleQna(this)" style="cursor:pointer; flex-direction: column; align-items: flex-start;">
+                                                        <div class="d-flex justify-content-between w-100">
+                                                            <span>잘못 구매 했어요.</span>
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <span class="text-muted" style="font-size: 13px;">2025-11-24</span>
+                                                            </div>
+                                                        </div>
+                                                        <!-- 펼쳐지는 내용 -->
+                                                        <div class="qna-detail" style="display:none; width:100%; margin-top: 10px;">
+                                                            <div class="qna-question p-3 bg-light rounded">
+                                                                <p class="mb-0" style="font-size: 14px;">환불되나요.</p>
+                                                            </div>
+                                                            <div class="d-flex justify-content-end mt-2">
+                                                                <button class="btn btn-light btn-white btn-xs rounded-pill waves-effect" 
+                                                                        onclick="event.stopPropagation(); deleteQna(this)">문의 삭제
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 답변 완료 항목 (문의 삭제 불가, 클릭 시 내용 펼치기) -->
+                                                    <div class="settings-item qna-item" onclick="toggleQna(this)" style="cursor:pointer; flex-direction: column; align-items: flex-start;">
+                                                        <div class="d-flex justify-content-between w-100">
+                                                            <span>계좌 변경이 안 돼요</span>
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <span class="text-muted" style="font-size: 13px;">2025-10-24</span>
+                                                                <span class="badge bg-secondary" style="font-size: 12px;">답변 완료</span>
+                                                            </div>
+                                                        </div>
+                                                        <!-- 펼쳐지는 내용 -->
+                                                        <div class="qna-detail" style="display:none; width:100%; margin-top: 10px;">
+                                                            <div class="qna-question p-3 bg-light rounded mb-2">
+                                                                <p class="mb-0" style="font-size: 14px;">계좌 변경이 안 돼요. 도와주세요.</p>
+                                                            </div>
+                                                            <div class="qna-answer p-3 bg-white border rounded">
+                                                                <p class="mb-0" style="font-size: 14px;">안녕하세요. 문의 주신 내용 담당 부서에서 순차적으로 처리 중으로 확인됩니다. 시간이 소요되는 점 너른 이해 부탁드립니다.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
                                                     </div>
                                                 </div>
+                                                </div>
+                                                </div>
+                                                <!-- 1:1 문의 관리 end -->
+
+
                                             </div>
                                             <!-- end settings content-->
     
@@ -641,6 +748,37 @@
 
             </div>
 
+            <!-- 번호 변경 모달 -->
+            <div class="modal fade" id="phoneModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">번호 변경</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- 번호 입력 + 인증번호 발송 -->
+                            <div class="d-flex gap-2 mb-2 align-items-center">
+                                <input type="tel" class="form-control" id="phone-input" placeholder="변경할 번호를 입력해주세요." style="width: 70%;">
+                                <button type="button" class="btn btn-light btn-xs rounded-pill waves-effect" style="white-space: nowrap;">인증번호 발송</button>
+                            </div>
+                            <!-- 인증번호 입력 + 확인 -->
+                            <div class="d-flex gap-2 mb-2 align-items-center">
+                                <input type="text" class="form-control" id="phone-verify-input" placeholder="인증번호를 입력해주세요." style="width: 70%;">
+                                <button type="button" class="btn btn-light btn-xs rounded-pill waves-effect" style="white-space: nowrap;">인증번호 확인</button>
+                            </div>
+                            <span id="phone-verify-msg" style="font-size: 13px;"></span>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-light rounded-pill waves-effect" data-bs-dismiss="modal">취소</button>
+                            <button class="btn btn-dark rounded-pill waves-effect waves-light">변경</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 번호 변경 모달 end -->
+
+
             <!-- 메일 변경 모달 -->
             <!-- Center modal content -->
             <div class="modal fade" id="centermodal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -668,16 +806,79 @@
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
+            </div><!-- 메일 변경 모달 end -->
 
+            <!-- 계좌 변경 모달 -->
+            <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">계좌 변경</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex gap-2 align-items-center">
+                    <select class="form-select" style="width: 40%;">
+                        <option value="">은행 선택</option>
+                        <option value="kb">국민은행</option>
+                        <option value="shinhan">신한은행</option>
+                        <option value="woori">우리은행</option>
+                        <option value="hana">하나은행</option>
+                        <option value="nh">농협</option>
+                        <option value="ibk">기업은행</option>
+                        <option value="kakao">카카오뱅크</option>
+                        <option value="toss">토스뱅크</option>
+                    </select>
+                    <input type="text" class="form-control" placeholder="계좌번호를 입력해주세요.">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-light rounded-pill waves-effect" data-bs-dismiss="modal">취소</button>
+                    <button class="btn btn-dark rounded-pill waves-effect waves-light">변경</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <!-- 계좌 변경 모달 end -->
 
+            <!-- 회원 탈퇴 모달 -->
+            <div id="withdrawModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-body p-4">
+                            <div class="text-center">
+                                <i class="dripicons-warning h1 text-warning"></i>
+                                <h4 class="mt-2">회원탈퇴</h4>
+                                <p class="mt-3">회원 탈퇴 시 보유 포인트 및 데이터 복구가 되지 않습니다. 정말로 탈퇴하시겠습니까?</p>
+                                <input type="text" class="form-control" placeholder="비밀번호 확인">
+                                <div class="modal-footer">
+                                    <button class="btn btn-light rounded-pill waves-effect" data-bs-dismiss="modal">취소</button>
+                                    <button class="btn btn-dark rounded-pill waves-effect waves-light">탈퇴</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!--  회원 탈퇴 모달 end  -->
 
-
-
-
-
-
-
+            <!-- 문의 삭제 모달 -->
+            <div id="deleteQnaModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-body p-4">
+                            <div class="text-center">
+                                <i class="dripicons-warning h1 text-warning"></i>
+                                <h4 class="mt-2">문의글 삭제</h4>
+                                <p class="mt-3">삭제 후 복구가 불가능합니다.</p>
+                                <div class="modal-footer">
+                                    <button class="btn btn-light rounded-pill waves-effect" data-bs-dismiss="modal">취소</button>
+                                    <button id="confirmDeleteBtn" class="btn btn-dark btn-white rounded-pill waves-effect waves-light">삭제</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!--  문의 삭제 모달 end  -->            
 
 
             <!-- ============================================================== -->
@@ -734,6 +935,43 @@
                 // 2. 메인 목록 다시 보여주기
                 document.getElementById('settings-main').style.display = 'block';
             }   
+
+            // 차단목록 페이지
+            // 차단목록 해제 버튼 클릭시
+            function unblock(btn) {
+            // 버튼의 부모인 settings-item 제거
+            btn.closest('.settings-item').remove();
+            }
+
+
+            // 1:1 문의 페이지
+            // 삭제할 항목 임시 저장
+            let targetQnaItem = null;
+
+            // 답변 완료 / 미답변 항목 펼치기 / 접기
+            function toggleQna(item) {
+            const detail = item.querySelector('.qna-detail');
+            if (detail) {
+                detail.style.display = detail.style.display === 'none' ? 'block' : 'none';
+            }
+            }
+
+            // 삭제 버튼 클릭 시 삭제 확인 모달 열기
+            function deleteQna(btn) {
+            event.stopPropagation(); // 펼치기 동작 방지
+            targetQnaItem = btn.closest('.qna-item'); // 삭제할 항목 저장
+            var modal = new bootstrap.Modal(document.getElementById('deleteQnaModal'));
+            modal.show();
+            }
+
+            // 모달에서 삭제 확인 클릭 시 항목 제거
+            document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+            if (targetQnaItem) {
+                targetQnaItem.remove();
+                targetQnaItem = null;
+            }
+            bootstrap.Modal.getInstance(document.getElementById('deleteQnaModal')).hide();
+            });
 
         </script>
 
