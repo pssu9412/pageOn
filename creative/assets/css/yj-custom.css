@@ -231,28 +231,28 @@ span {
 }
 
 /* 슬라이드 내부 작품 card 설정 */
-.works-slide .card {
+.works-slide .work-card {
   width: calc(100% / 6);
   height: auto;
   padding: 0px 5px;
   /* overflow: visible; */
 }
 
-.works-slide .card-img-top {
+.works-slide .work-card .card-img-top {
   aspect-ratio: 2 / 3;
   /* object-fit: cover; */
 }
 
-.works-slide .card-body {
+.works-slide .work-card .card-body {
   padding: 10px 0px;
 }
 
-.works-slide .card-body > div {
+.works-slide .work-card .card-body > div {
   margin-right: 10px;
   margin-bottom: 3px;
 }
 
-.works-slide .card .card-body .title {
+.works-slide .work-card .card-body .title {
   color: black;
   font-size: 16px;
   font-weight: 450;
@@ -265,16 +265,16 @@ span {
   overflow: hidden;
 }
 
-.works-slide .card .like-cnt {
+.works-slide .work-card .like-cnt {
   color: red;
 }
 
-.thumbnail-wrap {
+.work-card .thumbnail-wrap {
   position: relative;
 }
 
 /* 성인 작품 표시 뱃지 */
-.adult-badge {
+.work-card .adult-badge {
   position: absolute;
   top: 8px;
   right: 8px;
