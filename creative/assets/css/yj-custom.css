@@ -892,6 +892,38 @@ span {
   line-height: 1.8;
 }
 
+/* 무통장입금 영역 숨김 */
+.deposit-info-box {
+  display: none;
+  margin-bottom: 20px;
+}
+
+/* 계좌 정보 박스 */
+.deposit-account-box {
+  padding: 20px;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+}
+
+/* 계좌 정보 텍스트 */
+.deposit-account-info {
+  line-height: 1.8;
+  font-size: 15px;
+  color: #495057;
+}
+
+/* 입금자명 input */
+.deposit-user-input {
+  height: 45px;
+}
+
+/* 안내 문구 */
+.deposit-guide-text {
+  line-height: 1.6;
+  color: #868e96;
+}
+
 /* 충전 취소 & 실패 */
 .fail-icon {
   width: 72px;

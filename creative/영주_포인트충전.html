@@ -827,8 +827,8 @@
                                         <span>
                                             <img class="kakao-pay" src="assets/images/brands/kakaopayment_icon__medium.png">
                                         </span>
-<!-- 
-                                        <span>카카오페이</span> -->
+
+                                        <!-- <span>카카오페이</span> -->
                                     </label>
 
                                     <label class="payment-item">
@@ -836,6 +836,63 @@
 
                                         <span>무통장입금</span>
                                     </label>
+
+                                </div>
+
+                                <!-- 무통장입금 영역 -->
+                                <div class="deposit-info-box mt-4" id="depositInfoBox">
+
+                                    <!-- 계좌 정보 -->
+                                    <div class="deposit-account-box mb-4">
+
+                                        <h5 class="deposit-title mb-3">
+                                            입금 계좌
+                                        </h5>
+
+                                        <div class="deposit-account-info">
+
+                                            국민은행 123456-78-123456
+                                            <br>
+                                            예금주 : 페이지온
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <!-- 입금자명 -->
+                                    <div class="deposit-user-box">
+
+                                        <label for="depositUserName"
+                                            class="form-label deposit-user-label">
+
+                                            입금자명
+
+                                        </label>
+
+                                        <input type="text"
+                                               id="depositUserName"
+                                               class="form-control deposit-user-input"
+                                               value="홍길동"
+                                               placeholder="입금자명을 입력해주세요">
+
+                                    </div>
+
+
+
+                                    <!-- 안내 문구 -->
+                                    <div class="deposit-guide mt-3">
+
+                                        <small class="text-muted">
+
+                                            ※ 입금 확인 후 포인트가 충전됩니다.
+                                            <br>
+                                            ※ 입금자명이 다를 경우 확인이 지연될 수 있습니다.
+
+                                        </small>
+
+                                    </div>
 
                                 </div>
 
@@ -860,6 +917,34 @@
                     </div> <!-- container -->
 
                 </div> <!-- content -->
+
+                <script>
+
+                    const paymentRadios = document.querySelectorAll('input[name="payment"]');
+
+                    const depositInfoBox = document.getElementById('depositInfoBox');
+
+
+
+                    paymentRadios.forEach(radio => {
+
+                        radio.addEventListener('change', function () {
+
+                            if (this.value === 'deposit') {
+
+                                depositInfoBox.style.display = 'block';
+
+                            } else {
+
+                                depositInfoBox.style.display = 'none';
+
+                            }
+
+                        });
+
+                    });
+
+                </script>
 
                 <!-- Footer Start -->
                 <footer class="footer">
