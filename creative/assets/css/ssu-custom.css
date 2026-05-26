@@ -566,7 +566,7 @@
 }
 
 .work-container .row {
-    margin-left: 0;
+    margin-left: 10px;
     margin-right: 0;
 }
 
@@ -665,4 +665,757 @@
     font-size: 12px;
     font-weight: 600;
     color: #111;
+}
+
+
+/* 문의게시판 */
+.inquiry-container {
+    margin-left: 40px;
+}
+
+.inquiry-wrap {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0 40px;
+}
+
+.inquiry-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: #111;
+}
+
+/* 문의 작성 박스 */
+.inquiry-write-box {
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 28px;
+    background-color: #fff;
+}
+
+.inquiry-textarea {
+    width: 100%;
+    height: 90px;
+    border: none;
+    resize: none;
+    outline: none;
+    font-size: 13px;
+    color: #333;
+}
+
+.inquiry-textarea::placeholder {
+    color: #999;
+}
+
+.inquiry-write-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-btn {
+    border: none;
+    background: none;
+    color: #999;
+    font-size: 18px;
+    padding: 0;
+}
+
+.inquiry-action {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.secret-check {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: #555;
+    margin: 0;
+}
+
+/* 관리자 문의 리스트 */
+.admin-inquiry-list {
+    border-top: 1px solid #ddd;
+    margin-bottom: 28px;
+}
+
+.inquiry-item-wrap {
+    border-bottom: 1px solid #eee;
+}
+
+.inquiry-item {
+    min-height: 38px;
+    font-size: 13px;
+    color: #333;
+}
+
+.admin-inquiry-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 38px;
+    cursor: pointer;
+}
+
+.admin-inquiry-item:hover {
+    background-color: #fafafa;
+}
+
+.inquiry-left {
+    display: flex;
+    align-items: center;
+}
+
+.lock-icon {
+    width: 24px;
+    color: #999;
+    text-align: center;
+}
+
+.inquiry-content {
+    margin-right: 8px;
+}
+
+.inquiry-date {
+    color: #777;
+    font-size: 12px;
+}
+
+/* 답변 상태 */
+.answer-status {
+    min-width: 70px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.answer-status.waiting {
+    color: #d9534f;
+}
+
+.answer-status.complete {
+    color: #555;
+}
+
+/* 아코디언 내용 */
+.inquiry-detail {
+    display: none;
+    padding: 18px 24px 20px 36px;
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+}
+
+.inquiry-item-wrap.active .inquiry-detail {
+    display: block;
+}
+
+.question-box {
+    margin-bottom: 18px;
+}
+
+.detail-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.question-box p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.answer-textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+    outline: none;
+}
+
+.answer-textarea:focus {
+    border-color: #999;
+}
+
+.answer-textarea[readonly] {
+    background-color: #f8f8f8;
+    color: #333;
+    cursor: default;
+}
+
+.answer-textarea:not([readonly]) {
+    background-color: #fff;
+}
+
+.answer-btn-area {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+/* 검색 */
+.inquiry-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.search-select {
+    height: 34px;
+    border: 1px solid #aaa;
+    font-size: 13px;
+    padding: 0 8px;
+    outline: none;
+}
+
+.search-input-box {
+    display: flex;
+    align-items: center;
+    width: 280px;
+    height: 34px;
+    border: 1px solid #aaa;
+    border-left: none;
+}
+
+.search-input-box input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    font-size: 13px;
+}
+
+.search-input-box button {
+    width: 36px;
+    height: 100%;
+    border: none;
+    background: #fff;
+    color: #333;
+}
+
+.answer-complete-icon {
+    margin-left: 6px;
+    font-size: 13px;
+    color: #6c757d;
+    vertical-align: middle;
+}
+
+.answer-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.answer-title-row .detail-label {
+    margin-bottom: 0;
+}
+
+.answer-delete-btn {
+    border: none;
+    background: none;
+    color: #dc3545;
+    font-size: 16px;
+    padding: 0;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.answer-delete-btn:hover {
+    color: #b02a37;
+}
+
+/* 위시리스트 */
+.wishlist-container {
+    margin-left: 48px;
+}
+
+.wishlist-wrap {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 20px 0 40px;
+}
+
+.wishlist-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 22px;
+    color: #111;
+}
+
+.wishlist-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+/* 왼쪽 목록 박스 */
+.wishlist-box {
+    flex: 1;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+}
+
+.wishlist-top {
+    height: 46px;
+    padding: 0 18px;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wishlist-check-label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    color: #333;
+    margin: 0;
+}
+
+.wishlist-item {
+    display: flex;
+    align-items: center;
+    min-height: 86px;
+    padding: 14px 18px;
+    border-bottom: 1px solid #eee;
+}
+
+.wishlist-item:last-child {
+    border-bottom: none;
+}
+
+.wishlist-check {
+    width: 28px;
+}
+
+.wishlist-thumb {
+    width: 52px;
+    height: 66px;
+    background-color: #f1f1f1;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin-right: 16px;
+}
+
+.wishlist-info {
+    flex: 1;
+}
+
+.wishlist-work-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 4px;
+}
+
+.wishlist-author {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+.wishlist-delete-btn {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #777;
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: 3px;
+}
+
+.wishlist-delete-btn:hover {
+    background-color: #f8f8f8;
+}
+
+.wishlist-price {
+    width: 80px;
+    text-align: right;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* 오른쪽 요약 박스 */
+.wishlist-summary {
+    width: 260px;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+}
+
+.summary-selected {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 18px 18px 12px;
+    font-size: 13px;
+    color: #333;
+}
+
+.summary-selected i {
+    color: #9aa0a6;
+    font-size: 16px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 18px;
+    font-size: 12px;
+    color: #333;
+}
+
+.summary-row strong {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.summary-total {
+    margin-top: 42px;
+    padding: 14px 18px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #333;
+}
+
+.summary-total strong {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.wishlist-buy-btn {
+    width: 100%;
+    height: 54px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.wishlist-buy-btn:hover {
+    background-color: #222;
+}
+
+/* 위시리스트 결제 */
+.payment-modal-dialog {
+    max-width: 460px;
+}
+
+.payment-modal-content {
+    border: none;
+    border-radius: 0;
+}
+
+.payment-modal-body {
+    padding: 28px;
+    background-color: #fff;
+}
+
+.payment-section {
+    margin-bottom: 26px;
+}
+
+.payment-section-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #111;
+}
+
+.payment-box {
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+}
+
+.payment-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 42px;
+    padding: 0 16px;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 13px;
+    color: #222;
+}
+
+.payment-row:last-child {
+    border-bottom: none;
+}
+
+.payment-row strong {
+    font-size: 13px;
+    font-weight: 700;
+    color: #111;
+}
+
+.coupon-select {
+    width: 170px;
+    height: 30px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    padding: 0 8px;
+    outline: none;
+}
+
+.payment-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 54px;
+    padding: 0 16px;
+    background-color: #e5e5e5;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.payment-total-row strong {
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.payment-sub-row {
+    border-bottom: none;
+}
+
+.payment-sub-detail {
+    padding: 0 16px 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.payment-sub-detail div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    font-size: 11px;
+    color: #777;
+}
+
+.payment-sub-detail em {
+    font-style: normal;
+    color: #777;
+}
+
+.payment-agree {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 14px;
+    font-size: 12px;
+    color: #333;
+}
+
+.payment-agree input {
+    margin-top: 2px;
+}
+
+.payment-submit-btn {
+    width: 100%;
+    height: 54px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.payment-submit-btn:hover {
+    background-color: #222;
+}
+
+/* 구독페이지 */
+.sub-container {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: calc(100% - 48px);
+    max-width: 980px;
+    margin-left: 48px;
+    margin-right: auto;
+}
+
+.sub-wrap {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 0 40px;
+}
+
+.sub-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 14px;
+}
+
+/* 안내 박스 */
+.sub-notice {
+    height: 44px;
+    padding: 0 14px;
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 24px;
+}
+
+.sub-notice i {
+    font-size: 14px;
+    color: #888;
+}
+
+.sub-notice a {
+    color: #555;
+    text-decoration: underline;
+    margin-left: 6px;
+}
+
+/* 정렬 탭 */
+.sub-tabs {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 8px;
+}
+
+.sub-tab {
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 12px;
+    color: #666;
+    cursor: pointer;
+}
+
+.sub-tab.active {
+    color: #111;
+    font-weight: 700;
+}
+
+/* 리스트 */
+.sub-list {
+    border-top: 1px solid #dcdcdc;
+}
+
+.sub-item {
+    display: flex;
+    align-items: center;
+    min-height: 118px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    min-width: 0;
+}
+
+.sub-author {
+    width: 120px;
+    flex: 0 0 120px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #111;
+}
+
+.sub-books {
+    flex: 1 1 auto;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    cursor: grab;
+    user-select: none;
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+    margin-right: 15px;
+}
+
+.sub-books::-webkit-scrollbar {
+    display: none;
+}
+
+.sub-books.dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+}
+
+.sub-book {
+    display: flex;
+    align-items: center;
+    width: 160px;
+    flex: 0 0 160px;
+}
+
+.sub-thumb {
+    width: 50px;
+    height: 66px;
+    background-color: #f0f0f0;
+    color: #d0d0d0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.sub-book-info {
+    min-width: 0;
+}
+
+.sub-book-title {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 4px;
+    white-space: nowrap;
+}
+
+.sub-book-date {
+    font-size: 11px;
+    color: #777;
+}
+
+/* .sub-delete-btn {
+    flex-shrink: 0;
+    width: 46px;
+    height: 30px;
+    padding: 0 !important;
+    white-space: nowrap;
+} */
+.sub-delete-btn {
+    flex: 0 0 48px;
+    min-width: 48px;
+    width: 48px;
+    white-space: nowrap;
+    word-break: keep-all;
+}
+
+.sub-delete-btn span {
+    color: inherit;
+    white-space: nowrap;
+    word-break: keep-all;
 }
