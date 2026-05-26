@@ -2,6 +2,10 @@
   background-color: white;
 }
 
+body {
+  background-color: white !important;
+}
+
 /* ==== 상단바 ==== */
 .navbar-custom {
   padding: 0 30px !important;
@@ -967,4 +971,161 @@ span {
 
 #pointUseDetailModal .point-use-list-section .point-use-table-wrap tbody td {
   border-bottom: none;
+}
+
+/* ===== 회차 상세보기 ======= */
+
+.episode-viewer hr {
+  margin: 10px 0;
+}
+
+/* 회사 상세 헤더 */
+.episode-view-header {
+  background-color: #f0eee9 !important;
+}
+
+.back-to-eplist,
+.work-like-btn {
+  border: none;
+  background: none;
+
+  font-size: 14px;
+  color: #666666;
+}
+
+.episode-like-btn-wrap .work-like-btn .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* 회차 내용 */
+.episode-view-content {
+  margin-bottom: 80px;
+  color: black;
+}
+
+/* 작품(회차) 정보 */
+
+.episode-info-box {
+  display: flex;
+}
+
+.episode-info-box .episode-title,
+.episode-reply-preview-header .episode-reply-preview-title {
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.episode-report-btn {
+  border: none;
+  background: none;
+
+  font-size: 12px;
+
+  color: #6c757d;
+  /* color: #98a6ad; */
+}
+
+/* 회차 댓글 미리보기 */
+
+.episode-reply-preview-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.episode-reply-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.episode-reply-preview-header .more-episode-reply-btn {
+  font-size: 12px;
+}
+
+.episode-preview-reply {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.episode-preview-reply .preview-reply-top .preview-reply-writer {
+  color: black;
+  font-weight: bold;
+}
+
+.episode-preview-reply .preview-reply-content {
+  color: black;
+}
+
+.episode-preview-reply .preview-reply-date {
+  font-size: 12px;
+}
+
+/* 다음화 보기 버튼 */
+.next-episode-btn-wrap {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.next-episode-btn-wrap .next-episode-btn {
+  background-color: black;
+  color: white;
+  width: 300px;
+}
+
+/* 회차 상세보기 하단 메뉴 */
+.episode-bottom-menu {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+
+  margin: auto 0;
+  width: 100%;
+  max-width: 1170px;
+  height: 70px;
+  min-height: var(--ct-topbar-height);
+
+  background-color: #ffffff;
+
+  border-top: 1px solid #e9ecef;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  -webkit-transition: var(--ct-menu-transition);
+  transition: var(--ct-menu-transition);
+  z-index: 1000;
+}
+
+.episode-bottom-menu-item {
+  border: none;
+  background: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  color: #666666;
+  font-size: 13px;
+}
+
+/* .episode-bottom-menu-item.active {
+  color: #111111;
+  font-weight: 600;
+} */
+
+.episode-bottom-menu-icon {
+  font-size: 20px;
+}
+
+.episode-bottom-menu-text {
+  font-size: 12px;
 }
