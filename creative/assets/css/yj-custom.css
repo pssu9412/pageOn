@@ -1129,3 +1129,335 @@ span {
 .episode-bottom-menu-text {
   font-size: 12px;
 }
+
+/* ====== 회차 댓글 목록 ================ */
+
+/* 회사 댓글 헤더 */
+.episode-comment-header {
+  background-color: #f0eee9 !important;
+}
+
+.back-to-epdetail,
+.episode-comment-header .back-to-eplist-btn {
+  border: none;
+  background: none;
+
+  font-size: 14px;
+  color: #666666;
+}
+
+.episode-like-btn-wrap .back-to-eplist-btn .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* 회차 댓글 목록 */
+
+/* 헤더 */
+.epi-comment-header {
+  margin-bottom: 20px;
+}
+
+.epi-comment-title,
+.epi-comment-header .epi-comment-title span {
+  margin-bottom: 6px;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  color: #111;
+}
+
+.epi-comment-sort {
+  display: flex;
+  gap: 10px;
+}
+
+.epi-comment-sort button {
+  border: none;
+  background: none;
+
+  padding: 0;
+
+  color: #999;
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+.epi-comment-sort button.active {
+  color: #111;
+  font-weight: 700;
+}
+
+/* 작성 */
+.epi-comment-write-box {
+  display: flex;
+  gap: 12px;
+
+  margin-bottom: 40px;
+}
+
+.epi-comment-textarea {
+  width: 100%;
+  min-height: 48px;
+  max-height: 160px;
+
+  padding: 12px 16px;
+
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+
+  resize: none;
+
+  overflow-y: auto;
+
+  line-height: 1.5;
+}
+
+.epi-comment-input {
+  flex: 1;
+
+  resize: none;
+
+  height: 48px;
+
+  padding: 0 16px;
+
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.epi-comment-submit-btn {
+  width: 72px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #111;
+  color: white;
+
+  font-weight: 600;
+}
+
+/* 댓글 */
+
+.epi-comment-item {
+  padding: 24px 0;
+
+  border-bottom: 1px solid #ededed;
+}
+
+.epi-comment-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 10px;
+}
+
+.epi-comment-user {
+  display: flex;
+  gap: 12px;
+
+  flex: 1;
+}
+
+.epi-comment-user-info {
+  flex: 1;
+}
+
+.epi-comment-profile {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.epi-comment-user-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-bottom: 8px;
+}
+
+.best-badge {
+  padding: 2px 6px;
+
+  border-radius: 4px;
+
+  background: #ff4d4f;
+  color: white;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.epi-comment-nickname {
+  font-weight: 700;
+  color: #111;
+}
+
+.epi-comment-date {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.epi-comment-content {
+  color: #333;
+  line-height: 1.6;
+}
+
+.epi-comment-menu {
+  color: #bbb;
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.epi-comment-modify-btns {
+  display: flex;
+  justify-content: end;
+
+  gap: 5px;
+}
+
+/* 액션 */
+.epi-comment-actions {
+  display: flex;
+  gap: 8px;
+
+  margin-top: 16px;
+  margin-left: 54px;
+}
+
+.epi-comment-actions .like-on {
+  color: red;
+}
+
+.epi-comment-action-btn {
+  height: 30px;
+
+  padding: 0 12px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #f5f5f5;
+
+  color: #777;
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+/* 답글 */
+.epi-reply-area {
+  margin-top: 20px;
+
+  padding: 24px;
+
+  background: #f8f8f8;
+}
+
+.epi-reply-item {
+  display: flex;
+  gap: 10px;
+
+  flex: 1;
+
+  margin-bottom: 20px;
+}
+
+.epi-reply-content-wrap {
+  flex: 1;
+}
+
+.epi-reply-arrow {
+  color: #aaa;
+}
+
+.epi-reply-write-box {
+  display: flex;
+  gap: 10px;
+
+  margin-top: 24px;
+}
+
+.epi-reply-write-box input {
+  flex: 1;
+
+  height: 42px;
+
+  padding: 0 14px;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+}
+
+.epi-reply-write-box button {
+  width: 90px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #111;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.epi-reply-close-wrap {
+  margin-top: 18px;
+
+  text-align: right;
+}
+
+.epi-reply-close-btn {
+  height: 34px;
+
+  padding: 0 14px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #888;
+  color: white;
+
+  font-size: 13px;
+}
+
+/* 페이지네이션 */
+.comment-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 40px;
+}
+
+.page-btn,
+.page-arrow {
+  border: none;
+  background: none;
+
+  color: #666;
+
+  cursor: pointer;
+}
+
+.page-btn.active {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 8px;
+
+  background: #111;
+  color: white;
+}
