@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="horizontal" data-topbar-color="dark">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Page On</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/pageon/logo-gray.jpeg">
+
+        <!-- Plugins css -->
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/selectize/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Theme Config Js -->
+        <script src="assets/js/head.js"></script>
+
+        <!-- Bootstrap css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+        <!-- App css -->
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- Icons css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    
+        <!-- 개인 custom css -->
+        <link rel="stylesheet" href="assets/css/yj-custom.css">
+        <link rel="stylesheet" href="assets/css/ssu-custom.css">
+    
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Layout -->
+            <!-- ========== Left Sidebar Start ========== -->
+            
+            <!-- ========== Left Sidebar End ========== -->
+
+            
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+
+                <!-- ========== Topbar Start (상단바) ========== -->
+                <div class="navbar-custom">
+                    <div class="topbar">
+                        <div class="topbar-menu d-flex align-items-center gap-1">
+
+                            <!-- (로고)Topbar Brand Logo -->
+                            <div class="logo-box">
+                                <!-- Brand Logo Light -->
+                                <a href="index.html" class="logo-light">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-lg">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm">
+                                    <!-- <img src="assets/images/logo-light.png" alt="logo" class="logo-lg"> -->
+                                    <!-- <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm"> -->
+                                </a>
+
+                                <!-- Brand Logo Dark -->
+                                <a href="index.html" class="logo-dark">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="dark logo" class="logo-lg">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm">
+                                    <!-- <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm"> -->
+                                </a>
+                            </div>
+
+                            <!-- Sidebar Menu Toggle Button -->
+                            <!-- <button class="button-toggle-menu">
+                                <i class="mdi mdi-menu"></i>
+                            </button> -->
+                            
+                        </div>
+
+                        <div class="topbar-menu d-flex flex-column align-items-center">
+
+                            <div class="topbar-right-top">
+                                <div class="app-search dropdown">
+                                    <form>
+                                        <input type="search" class="form-control rounded-pill" placeholder="Search..." id="top-search">
+                                        <span class="fe-search search-icon font-16"></span>
+                                    </form>
+                                </div>
+
+                            </div>
+                            <div class="topbar-right-bottom">                                
+
+                                
+                                <ul class="topbar-menu d-flex align-items-center">
+
+                                    <!-- 로그인 전 -->
+                                    <!-- <li class="d-none d-sm-inline-block">
+                                        <a href="#" class="nav-link waves-effect waves-light">
+                                            <span class="d-none d-md-inline-block">
+                                                로그인/회원가입
+                                            </span>
+                                        </a>
+
+                                    </li> -->
+                                    <!-- ============ -->
+
+                                    
+
+
+                                    <!-- ============= 사용자 로그인 후 =================-->
+                                    <!-- 장바구니-->
+                                    <li class="d-none d-sm-inline-block">
+                                        <a href="#" class="nav-link waves-effect waves-light">
+                                            <i class="fe-shopping-cart font-22"></i>
+                                        </a>
+                                    </li> 
+
+                                    <!-- 알림 드롭다운 Notofication dropdown -->
+                                    <li class="dropdown notification-list">
+                                        <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                            <i class="fe-bell font-22"></i>
+                                            <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
+                                            <div class="p-2 border-top-0 border-start-0 border-end-0 border-dashed border">
+                                                <div class="row align-items-center">
+                                                    <div class="col">
+                                                        <h6 class="m-0 font-16 fw-semibold"> 알림</h6>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <a href="javascript: void(0);" class="text-dark text-decoration-underline">
+                                                            <small>전체 삭제</small>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="px-1" style="max-height: 300px;" data-simplebar>
+
+                                                <h5 class="text-muted font-13 fw-normal mt-2">오늘</h5>
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card unread-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon bg-primary">
+                                                                    <i class="mdi mdi-comment-account-outline"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Datacorp <small class="fw-normal text-muted ms-1">1 min ago</small></h5>
+                                                                <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon bg-info">
+                                                                    <i class="mdi mdi-account-plus"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Admin <small class="fw-normal text-muted ms-1">1 hours ago</small></h5>
+                                                                <small class="noti-item-subtitle text-muted">New user formistered</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <h5 class="text-muted font-13 fw-normal mt-0">어제</h5>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon">
+                                                                    <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Cristina Pride <small class="fw-normal text-muted ms-1">1 day ago</small></h5>
+                                                                <small class="noti-item-subtitle text-muted">Hi, How are you? What about our next meeting</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <h5 class="text-muted font-13 fw-normal mt-0">2021년 12월 30일</h5>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon bg-primary">
+                                                                    <i class="mdi mdi-comment-account-outline"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Datacorp</h5>
+                                                                <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon">
+                                                                    <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Karen Robinson</h5>
+                                                                <small class="noti-item-subtitle text-muted">Wow ! this admin looks good and awesome design</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <div class="text-center">
+                                                    <i class="mdi mdi-dots-circle mdi-spin text-muted h3 mt-0"></i>
+                                                </div>
+                                            </div>
+
+                                            <!-- All-->
+                                            <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item border-top border-light py-2">
+                                                전체 읽음
+                                            </a>
+
+                                        </div>
+                                    </li>
+
+                                    <!-- User Dropdown -->
+                                    <li class="dropdown">
+                                        <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                            <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
+                                            <span class="ms-1 d-none d-md-inline-block">
+                                                Geneva <i class="mdi mdi-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
+
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-user"></i>
+                                                <span>마이 페이지</span>
+                                            </a>
+
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-book-open"></i>
+                                                <span>내 서재</span>
+                                            </a>
+
+                                            <!-- ====== 관리자가 로그인 할 때 ====== -->
+                                            <div class="dropdown-divider"></div>
+                                            
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-settings"></i>
+                                                <span>관리자홈</span>
+                                            </a>
+                                            <!-- ================================= -->
+
+                                            <!-- item-->
+                                            <div class="dropdown-divider"></div>
+
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-log-out"></i>
+                                                <span>로그아웃</span>
+                                            </a>
+
+                                        </div>
+                                    </li>
+
+                                    <!-- Right Bar offcanvas button (Theme Customization Panel) -->
+                                    <!-- <li>
+                                        <a class="nav-link waves-effect waves-light" data-bs-toggle="offcanvas" href="#theme-settings-offcanvas">
+                                            <i class="fe-settings font-22"></i>
+                                        </a>
+                                    </li> -->
+ 
+                                </ul>
+                                <!-- ==============================-->
+
+                            </div>
+                        </div>
+
+                        
+
+                        
+                    </div>
+
+
+                    <!-- ========== 가로 메뉴 시작 ========== -->
+                    <div class="menubar">
+                        <ul class="menu">
+                            
+                            <!-- 선택된 페이지일 경우(class menu-on 부여) -->
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text menu-on"> Best </span>
+                                </a>
+                            </li>
+                            <!-- ==================-->
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> 로맨스 </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> 로판 </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> 판타지 </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> BL </span>
+                                </a>
+                            </li>
+                        
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> GL </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> 자유 </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> EVENT </span>
+                                </a>
+                            </li>
+                        </ul>  
+                    </div>
+                    <!-- =========== 가로 메뉴 끝 =========== -->
+
+                </div>
+                <!-- ========== Topbar End ========== -->
+
+                <div class="content">
+
+
+                    <!-- 여기에 본문 내용 작성!!!!! -->
+                    <!-- Start Content-->
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-12">
+
+                                <section class="work-form-wrap">
+                            
+                                    <h5 class="work-form-title">작품 등록</h5>
+                                    <hr class="work-form-divider">
+                            
+                                    <!-- 상단 영역 : 왼쪽 표지 / 오른쪽 입력 -->
+                                    <div class="work-form-main">
+                            
+                                        <!-- 왼쪽 표지 -->
+                                        <div class="work-cover-area">
+                            
+                                            <div class="work-cover-preview" id="coverPreview">
+                                                <i class="bi bi-image"></i>
+                                                <span id="coverTitleText"></span>
+                                            </div>
+                            
+                                            <button type="button" class="btn btn-dark rounded-pill btn-sm" id="coverUploadBtn">
+                                                표지 등록하기
+                                            </button>
+                            
+                                            <input type="file" id="coverFileInput" accept="image/*" hidden>
+                            
+                                        </div>
+                            
+                                        <!-- 오른쪽 입력 : 장르까지만 -->
+                                        <div class="work-input-form">
+                            
+                                            <!-- 숨김 토글 -->
+                                            <div class="work-hidden-row">
+                                                <label class="work-hidden-switch">
+                                                    <input type="checkbox" id="hiddenToggle">
+                                                    <span class="work-hidden-slider"></span>
+                                                </label>
+                                                <span class="work-hidden-text">숨김</span>
+                                            </div>
+                            
+                                            <!-- 무료 / 유료 -->
+                                            <div class="work-radio-row">
+                                                <label>
+                                                    <input type="radio" name="priceType" value="free" checked>
+                                                    <span>무료</span>
+                                                </label>
+                            
+                                                <label>
+                                                    <input type="radio" name="priceType" value="paid">
+                                                    <span>유료</span>
+                                                </label>
+                                            </div>
+                            
+                                            <!-- 표지 제목 삽입 -->
+                                            <input type="text" class="form-control work-cover-title-input" placeholder="글 삽입">
+                            
+                                            <!-- 무료 표지 템플릿 -->
+                                            <div class="cover-template-list">
+                                                <button type="button" class="cover-template-item active">
+                                                    <i class="bi bi-image"></i>
+                                                </button>
+                                                <button type="button" class="cover-template-item">
+                                                    <i class="bi bi-image"></i>
+                                                </button>
+                                                <button type="button" class="cover-template-item">
+                                                    <i class="bi bi-image"></i>
+                                                </button>
+                                                <button type="button" class="cover-template-item">
+                                                    <i class="bi bi-image"></i>
+                                                </button>
+                                                <button type="button" class="cover-template-item">
+                                                    <i class="bi bi-image"></i>
+                                                </button>
+                                            </div>
+                            
+                                            <!-- 성인 체크 -->
+                                            <div class="work-adult-row">
+                                                <label>
+                                                    <input type="checkbox" id="adultCheck">
+                                                    <span>성인</span>
+                                                </label>
+                                            </div>
+                            
+                                            <!-- 작품명 -->
+                                            <div class="work-form-line">
+                                                <label><span class="required-mark">*</span>작품명</label>
+                                                <input type="text" class="form-control work-input" id="workTitleInput">
+                                            </div>
+                            
+                                            <!-- 장르 -->
+                                            <div class="work-form-line">
+                                                <label><span class="required-mark">*</span>장르</label>
+                                                <select class="form-select work-input" id="genreSelect">
+                                                    <option value="">장르 선택</option>
+                                                    <option value="romanceFantasy">로판</option>
+                                                    <option value="romance">로맨스</option>
+                                                    <option value="martialArts">무협</option>
+                                                    <option value="fantasy">판타지</option>
+                                                </select>
+                                            </div>
+                            
+                                        </div>
+                            
+                                    </div>
+                            
+                                    <!-- 키워드 선택 : 장르 아래 독립 영역 -->
+                                    <div class="work-keyword-area">
+                            
+                                        <div class="keyword-select-row">
+                            
+                                            <select class="form-select keyword-select" data-type="material">
+                                                <option value="">소재</option>
+                                            </select>
+                            
+                                            <select class="form-select keyword-select" data-type="mainCharacter">
+                                                <option value="">주인공</option>
+                                            </select>
+                            
+                                            <select class="form-select keyword-select" data-type="job">
+                                                <option value="">직업</option>
+                                            </select>
+                            
+                                            <select class="form-select keyword-select" data-type="mood">
+                                                <option value="">분위기</option>
+                                            </select>
+                            
+                                            <select class="form-select keyword-select" data-type="relation">
+                                                <option value="">관계</option>
+                                            </select>
+                            
+                                            <span class="keyword-help-text">
+                                                최대 10개 키워드를 설정할 수 있습니다.
+                                            </span>
+                            
+                                        </div>
+                            
+                                        <div class="selected-keyword-area" id="selectedKeywordArea"></div>
+                            
+                                    </div>
+                            
+                                    <!-- 작품 소개 -->
+                                    <div class="work-intro-box">
+                                        <label>작품 소개(줄거리)</label>
+                                        <textarea class="form-control work-intro-textarea"></textarea>
+                                    </div>
+                            
+                                    <!-- 하단 버튼 -->
+                                    <div class="work-form-btn-area">
+                                        <button type="button" class="btn btn-light rounded-pill work-bottom-btn">
+                                            뒤로가기
+                                        </button>
+                            
+                                        <button type="button" class="btn btn-dark rounded-pill work-bottom-btn">
+                                            등록하기
+                                        </button>
+                                    </div>
+                            
+                                </section>
+                            
+                            </div>
+                        </div>
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                <!-- Footer Start -->
+                <footer class="footer footer-alt">
+                    &copy;by <a href="" class="text-black-50">PageOn</a> 
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+        
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+        <!-- Plugins js-->
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/selectize/js/standalone/selectize.min.js"></script>
+
+        <script>
+            // 장르별 임시 키워드
+            const keywordData = {
+                romanceFantasy: {
+                    material: ["회귀물","빙의물"],
+                    mainCharacter: ["악녀","순정녀","능력녀"],
+                    job: ["황녀","마법사","하인","귀족"],
+                    mood: ["궁중물","육아물"],
+                    relation: ["계약결혼"]
+                },
+                romance: {
+                    material: ["재회물"],
+                    mainCharacter: ["상처녀"],
+                    job: ["회사원"],
+                    mood: ["달달물"],
+                    relation: ["첫사랑"]
+                },
+                martialArts: {
+                    material: ["복수"],
+                    mainCharacter: ["천재"],
+                    job: ["검객"],
+                    mood: ["성장물"],
+                    relation: ["사제관계"]
+                },
+                fantasy: {
+                    material: ["마법"],
+                    mainCharacter: ["먼치킨"],
+                    job: ["마법사"],
+                    mood: ["모험물"],
+                    relation: ["동료"]
+                }
+            };
+        
+            const keywordPlaceholderMap = {
+                material: "소재",
+                mainCharacter: "주인공",
+                job: "직업",
+                mood: "분위기",
+                relation: "관계"
+            };
+        
+            const genreSelect = document.querySelector("#genreSelect");
+            const keywordSelects = document.querySelectorAll(".keyword-select");
+            const selectedKeywordArea = document.querySelector("#selectedKeywordArea");
+        
+            const workTitleInput = document.querySelector("#workTitleInput");
+            const coverTitleInput = document.querySelector(".work-cover-title-input");
+            const coverTitleText = document.querySelector("#coverTitleText");
+        
+            const coverTemplateItems = document.querySelectorAll(".cover-template-item");
+        
+            let selectedKeywords = [];
+        
+            // 장르 변경 시 키워드 옵션 변경
+            genreSelect.addEventListener("change", function () {
+                const genre = genreSelect.value;
+                const genreKeywords = keywordData[genre];
+        
+                selectedKeywords = [];
+                renderSelectedKeywords();
+        
+                keywordSelects.forEach(function (select) {
+                    const type = select.dataset.type;
+                    const placeholder = keywordPlaceholderMap[type];
+        
+                    select.innerHTML = `<option value="">${placeholder}</option>`;
+        
+                    if (!genreKeywords) {
+                        return;
+                    }
+        
+                    genreKeywords[type].forEach(function (keyword) {
+                        const option = document.createElement("option");
+                        option.value = keyword;
+                        option.textContent = keyword;
+                        select.appendChild(option);
+                    });
+                });
+            });
+        
+            // 키워드 선택 시 칩 추가
+            keywordSelects.forEach(function (select) {
+                select.addEventListener("change", function () {
+                    const keyword = select.value;
+        
+                    if (keyword === "") {
+                        return;
+                    }
+        
+                    if (selectedKeywords.includes(keyword)) {
+                        alert("이미 선택한 키워드입니다.");
+                        select.value = "";
+                        return;
+                    }
+        
+                    if (selectedKeywords.length >= 10) {
+                        alert("키워드는 최대 10개까지 선택할 수 있습니다.");
+                        select.value = "";
+                        return;
+                    }
+        
+                    selectedKeywords.push(keyword);
+                    renderSelectedKeywords();
+        
+                    select.value = "";
+                });
+            });
+        
+            // 선택된 키워드 칩 렌더링
+            function renderSelectedKeywords() {
+                selectedKeywordArea.innerHTML = "";
+        
+                selectedKeywords.forEach(function (keyword) {
+                    const chip = document.createElement("span");
+                    chip.className = "keyword-chip";
+        
+                    chip.innerHTML = `
+                        ${keyword}
+                        <button type="button" data-keyword="${keyword}">×</button>
+                    `;
+        
+                    selectedKeywordArea.appendChild(chip);
+                });
+            }
+        
+            // 키워드 칩 삭제
+            selectedKeywordArea.addEventListener("click", function (event) {
+                const deleteBtn = event.target.closest("button");
+        
+                if (!deleteBtn) {
+                    return;
+                }
+        
+                const keyword = deleteBtn.dataset.keyword;
+        
+                selectedKeywords = selectedKeywords.filter(function (item) {
+                    return item !== keyword;
+                });
+        
+                renderSelectedKeywords();
+            });
+        
+            // 작품명 입력 시 표지 제목에도 반영
+            workTitleInput.addEventListener("input", function () {
+                coverTitleText.textContent = workTitleInput.value;
+            });
+        
+            // 표지용 글 삽입 input을 따로 쓰고 싶을 경우
+            coverTitleInput.addEventListener("input", function () {
+                coverTitleText.textContent = coverTitleInput.value;
+            });
+        
+            // 무료 표지 템플릿 선택 표시
+            coverTemplateItems.forEach(function (item) {
+                item.addEventListener("click", function () {
+                    coverTemplateItems.forEach(function (template) {
+                        template.classList.remove("active");
+                    });
+        
+                    item.classList.add("active");
+                });
+            });
+        </script>
+    </body>
+</html>
