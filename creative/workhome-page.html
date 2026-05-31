@@ -390,13 +390,13 @@
                                                 <span class="author-grade-label">작가</span>
                                                 <span class="author-name">김차차</span>
                             
-                                                <button type="button" class="btn btn-outline-secondary rounded-pill btn-sm author-mini-btn">
+                                                <a href="workhome-page.html" class="btn btn-outline-secondary rounded-pill btn-sm author-mini-btn active">
                                                     작품 리스트
-                                                </button>
-                            
-                                                <button type="button" class="btn btn-outline-secondary rounded-pill btn-sm author-mini-btn">
+                                                </a>
+
+                                                <a href="worksell-page.html" class="btn btn-outline-secondary rounded-pill btn-sm author-mini-btn">
                                                     판매 이력
-                                                </button>
+                                                </a>
                                             </div>
                             
                                             <p class="author-intro">
@@ -415,82 +415,86 @@
                                     </div>
                             
                                     <hr class="author-divider">
-                            
-                                    <!-- 필터 + 작품 등록 -->
-                                    <div class="author-toolbar">
-                                        <div class="author-filter">
-                                            <label>
-                                                <input type="radio" name="workStatus" value="all" checked>
-                                                <span>전체</span>
-                                            </label>
-                                            
-                                            <label>
-                                                <input type="radio" name="workStatus" value="serial">
-                                                <span>연재</span>
-                                            </label>
-                                            
-                                            <label>
-                                                <input type="radio" name="workStatus" value="pause">
-                                                <span>휴재</span>
-                                            </label>
-                                            
-                                            <label>
-                                                <input type="radio" name="workStatus" value="complete">
-                                                <span>완결</span>
-                                            </label>
-                                        </div>
-                            
-                                        <button type="button" class="btn btn-dark btn-sm author-work-add-btn">
-                                            작품 등록
-                                        </button>
-                                    </div>
-                            
-                                    <!-- 작품 리스트 -->
-                                    <div class="author-work-list">
 
-                                        <div class="author-work-card" data-episode-count="2" data-status="serial">
-                                            <div class="author-work-thumb">
-                                                <i class="bi bi-image"></i>
+                                    <div class="workhome-body">
+
+                                        <!-- 필터 + 작품 등록 -->
+                                        <div class="author-toolbar">
+                                            <div class="author-filter">
+                                                <label>
+                                                    <input type="radio" name="workStatus" value="all" checked>
+                                                    <span>전체</span>
+                                                </label>
+                                                
+                                                <label>
+                                                    <input type="radio" name="workStatus" value="serial">
+                                                    <span>연재</span>
+                                                </label>
+                                                
+                                                <label>
+                                                    <input type="radio" name="workStatus" value="pause">
+                                                    <span>휴재</span>
+                                                </label>
+                                                
+                                                <label>
+                                                    <input type="radio" name="workStatus" value="complete">
+                                                    <span>완결</span>
+                                                </label>
                                             </div>
-                                    
-                                            <div class="author-work-title">
-                                                <span class="work-status serial">[연재]</span>
-                                                어쩌다 이혼은 망하게 되었다.
+                                
+                                            <button type="button" class="btn btn-dark btn-sm author-work-add-btn">
+                                                작품 등록
+                                            </button>
+                                        </div>
+                                
+                                        <!-- 작품 리스트 -->
+                                        <div class="author-work-list">
+    
+                                            <div class="author-work-card" data-episode-count="2" data-status="serial">
+                                                <div class="author-work-thumb">
+                                                    <i class="bi bi-image"></i>
+                                                </div>
+                                        
+                                                <div class="author-work-title">
+                                                    <span class="work-status serial">[연재]</span>
+                                                    어쩌다 이혼은 망하게 되었다.
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="author-work-card" data-episode-count="5" data-status="complete">
+                                                <div class="author-work-thumb">
+                                                    <i class="bi bi-image"></i>
+                                                </div>
+                                        
+                                                <div class="author-work-title">
+                                                    <span class="work-status complete">[완결]</span>
+                                                    사내에서 정숙할 것
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="author-work-card" data-episode-count="4" data-status="serial">
+                                                <div class="author-work-thumb">
+                                                    <i class="bi bi-image"></i>
+                                                </div>
+                                        
+                                                <div class="author-work-title">
+                                                    <span class="work-status serial">[연재]</span>
+                                                    페레니케
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="author-work-card" data-episode-count="1" data-status="complete">
+                                                <div class="author-work-thumb">
+                                                    <i class="bi bi-image"></i>
+                                                </div>
+                                        
+                                                <div class="author-work-title">
+                                                    <span class="work-status complete">[완결]</span>
+                                                    쏘 롱, 써머
+                                                </div>
                                             </div>
                                         </div>
-                                    
-                                        <div class="author-work-card" data-episode-count="5" data-status="complete">
-                                            <div class="author-work-thumb">
-                                                <i class="bi bi-image"></i>
-                                            </div>
-                                    
-                                            <div class="author-work-title">
-                                                <span class="work-status complete">[완결]</span>
-                                                사내에서 정숙할 것
-                                            </div>
-                                        </div>
-                                    
-                                        <div class="author-work-card" data-episode-count="4" data-status="serial">
-                                            <div class="author-work-thumb">
-                                                <i class="bi bi-image"></i>
-                                            </div>
-                                    
-                                            <div class="author-work-title">
-                                                <span class="work-status serial">[연재]</span>
-                                                페레니케
-                                            </div>
-                                        </div>
-                                    
-                                        <div class="author-work-card" data-episode-count="1" data-status="complete">
-                                            <div class="author-work-thumb">
-                                                <i class="bi bi-image"></i>
-                                            </div>
-                                    
-                                            <div class="author-work-title">
-                                                <span class="work-status complete">[완결]</span>
-                                                쏘 롱, 써머
-                                            </div>
-                                        </div>
+                            
                                     
                                     </div>
                             
