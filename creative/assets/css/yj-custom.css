@@ -6,12 +6,39 @@ body {
   background-color: white !important;
 }
 
-/* ==== 상단바 ==== */
+.container {
+  background-color: white !important;
+}
+
+/* ======== 영역 관련 css 수정 테스트  =========== */
+.content-page {
+  background-color: white;
+  padding: 0 !important;
+}
+
+/* .content-page .content {
+  padding: 0 !important;
+} */
+
 .navbar-custom {
-  padding: 0 30px !important;
-  /* margin: 0; */
+  padding: 0 !important;
   background-color: white;
 }
+
+/* 상단 메뉴와 본문 폭 강제 통일 */
+.menubar,
+.content-page .content,
+.navbar-custom .topbar {
+  width: 100% !important;
+  max-width: 1170px !important;
+  margin: 0 auto !important;
+}
+
+/* ==== 상단바 ==== */
+/* .navbar-custom {
+  padding: 0 30px !important;
+  background-color: white;
+} */
 
 .navbar-custom .topbar {
   margin: 0 auto !important;
@@ -70,17 +97,35 @@ span {
   padding: 0;
   border-radius: 0;
   /* border-top: 1px solid #6c757d; */
+
+  overflow: hidden; /* 영역 밖 숨김 */
 }
 
 .menubar ul.menu {
   /* font-weight: bold; */
   min-width: 50% !important;
-  display: flex auto !important;
+  display: flex !important;
+  flex: auto;
   flex-wrap: nowrap;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   margin: 0px;
+
+  overflow-x: auto; /* 필요시 가로 스크롤 */
+  overflow-y: hidden;
+
+  white-space: nowrap;
+
+  scrollbar-width: none; /* 파이어폭스 */
+}
+
+.menubar ul.menu::-webkit-scrollbar {
+  display: none; /* 크롬 스크롤바 숨김 */
+}
+
+.menubar .menu .menu-item {
+  flex: 0 0 auto; /* 메뉴 크기 줄어들지 않음 */
 }
 
 .menubar .menu .menu-item .menu-link {
@@ -107,12 +152,12 @@ span {
 }
 
 /* ====== 본문 영역 ======= */
-.content-page {
+/* .content-page {
   background-color: white;
   padding: 0px 30px !important;
   max-width: 1170px;
   margin: 0 auto;
-}
+} */
 
 .content-page .content {
   margin-top: 10px !important;
@@ -235,6 +280,10 @@ span {
 }
 
 /* 슬라이드 내부 작품 card 설정 */
+.work-card {
+  box-shadow: none !important;
+}
+
 .works-slide .work-card {
   width: calc(100% / 6);
   height: auto;
@@ -254,6 +303,13 @@ span {
 .work-card .card-body > div {
   margin-right: 10px;
   margin-bottom: 3px;
+}
+
+.work-card .card-body .rank {
+  font-size: 18px;
+  font-style: italic;
+  color: black;
+  font-weight: bold;
 }
 
 .work-card .card-body .title {
@@ -1460,4 +1516,164 @@ span {
 
   background: #111;
   color: white;
+}
+
+/* ======  자유 연재 페이지 ================================================= */
+
+.free-serial-page {
+  padding: 20px 10px 60px;
+}
+
+/* 필터 */
+.free-filter-wrap {
+  padding: 20px 24px;
+
+  border-radius: 12px;
+
+  background: #f0eee9;
+
+  margin-bottom: 20px;
+}
+
+.free-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  padding: 10px 0;
+}
+
+.free-filter-row + .free-filter-row {
+  border-top: 1px solid #ececec;
+}
+
+.filter-label input {
+  display: none;
+}
+
+.filter-label span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 36px;
+  padding: 0 14px;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  color: #555;
+}
+
+.filter-label input:checked + span {
+  color: black;
+
+  font-weight: 700;
+}
+
+/* 무료 유료 */
+.free-pay-filter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+
+  margin-bottom: 20px;
+}
+
+.free-pay-filter label {
+  font-size: 14px;
+  color: #444;
+}
+
+/* 기본스타일 제거, 버튼 모양 재설정 */
+input[type="radio"] {
+  -webkit-appearance: none; /*웹킷 브라우저에서 기본 스타일 제거 */
+  -moz-appearance: none; /*모질라 브라우저에서 기본 스타일 제거 */
+  appearance: none; /* 기본 브라우저에서 기본 스타일 제거 */
+  width: 13px;
+  height: 13px;
+  border: 1px solid #ccc; /* 체크되지 않았을 때의 테두리 색상 */
+  border-radius: 50%;
+  outline: none; /* focus 시에 나타나는 기본 스타일 제거*/
+  cursor: pointer;
+}
+/* 체크 시 버튼 모양 스타일 */
+input[type="radio"]:checked {
+  background-color: #111; /* 체크 시 내부 원 색상*/
+  border: 2px solid #fff; /* 라인이 아닌, 라인과 원 사이 색상*/
+  box-shadow: 0 0 0 1px #111; /* 라인*/
+}
+
+/* 작품 */
+.free-work-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+
+  margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+  .free-work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.free-work-card {
+  border: 1px solid #ececec;
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  background: white;
+}
+
+.free-work-thumb img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+
+  object-fit: cover;
+}
+
+.free-work-info {
+  padding: 14px;
+}
+
+.free-work-episode {
+  margin-bottom: 4px;
+
+  font-size: 13px;
+  color: #666;
+}
+
+.free-work-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  margin-bottom: 8px;
+
+  font-weight: 700;
+  color: #111;
+}
+
+.free-work-author,
+.free-work-count {
+  margin-bottom: 3px;
+
+  font-size: 13px;
+  color: #999;
+}
+
+.free-work-price {
+  margin-top: 10px;
+
+  font-weight: 700;
+  color: #111;
+}
+
+/* 페이지네이션 */
+.free-pagination {
+  margin-top: 20px;
 }
