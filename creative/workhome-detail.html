@@ -172,7 +172,7 @@
                                                             </div>
                                                             <div class="flex-grow-1 text-truncate ms-2">
                                                                 <h5 class="noti-item-title fw-semibold font-14">Admin <small class="fw-normal text-muted ms-1">1 hours ago</small></h5>
-                                                                <small class="noti-item-subtitle text-muted">New user registered</small>
+                                                                <small class="noti-item-subtitle text-muted">New user formistered</small>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -380,17 +380,17 @@
                         <div class="row">
                             <div class="col-12">
 
-                                <section class="author-wrap">
-                            
+                                <section class="author-wrap work-manage-wrap">
+
                                     <!-- 작가 정보 영역 -->
                                     <div class="author-profile">
-                            
+
                                         <div class="author-info">
                                             <div class="author-name-row">
                                                 <span class="author-grade-label">작가</span>
                                                 <span class="author-name">김차차</span>
-                            
-                                                <a href="workhome-page.html" class="btn btn-outline-secondary rounded-pill btn-sm author-mini-btn active">
+
+                                                <a href="workhome-page.html" class="btn btn-outline-secondary rounded-pill btn-sm author-mini-btn">
                                                     작품 리스트
                                                 </a>
 
@@ -398,108 +398,202 @@
                                                     판매 이력
                                                 </a>
                                             </div>
-                            
-                                            <p class="author-intro">
-                                                소개말 | 빨강 망토 차차를 좋아해서 김차차 입니다. 차차차도 잘 춥니다.
-                                            </p>
                                         </div>
-                            
-                                        <button 
-                                            type="button" 
-                                            class="btn btn-dark btn-sm author-request-btn"
-                                            id="authorRequestBtn"
-                                            disabled>
-                                            작가 요청
-                                        </button>
-                            
+
                                     </div>
-                            
+
                                     <hr class="author-divider">
 
+                                    <!-- 여기부터만 안쪽으로 들어감 -->
                                     <div class="workhome-body">
 
-                                        <!-- 필터 + 작품 등록 -->
-                                        <div class="author-toolbar">
-                                            <div class="author-filter">
-                                                <label>
-                                                    <input type="radio" name="workStatus" value="all" checked>
-                                                    <span>전체</span>
-                                                </label>
-                                                
-                                                <label>
-                                                    <input type="radio" name="workStatus" value="serial">
-                                                    <span>연재</span>
-                                                </label>
-                                                
-                                                <label>
-                                                    <input type="radio" name="workStatus" value="pause">
-                                                    <span>휴재</span>
-                                                </label>
-                                                
-                                                <label>
-                                                    <input type="radio" name="workStatus" value="complete">
-                                                    <span>완결</span>
-                                                </label>
+                                        <!-- 작품 상세 영역 -->
+                                        <div class="work-manage-info">
+
+                                            <div class="work-manage-cover">
+                                                <i class="bi bi-image"></i>
                                             </div>
-                                
-                                            <button type="button" class="btn btn-dark btn-sm author-work-add-btn">
-                                                작품 등록
+
+                                            <div class="work-manage-detail">
+                                                <div class="work-manage-meta">
+                                                    <span>로맨스 판타지</span>
+                                                </div>
+
+                                                <h3 class="work-manage-title">
+                                                    이 결혼은 어차피 망하게 되어있다.
+                                                </h3>
+
+                                                <div class="work-manage-like">
+                                                    <span class="work-manage-heart">♥</span>
+                                                    <span>(1,800)</span>
+                                                </div>
+
+                                                <p class="work-manage-desc">작품 소개글</p>
+
+                                                <button type="button" class="work-manage-notice-btn" id="noticeOpenBtn">
+                                                    새 공지 등록
+                                                </button>
+                                            </div>
+
+                                            <button type="button" class="btn btn-secondary btn-sm work-manage-edit-btn">
+                                                상세 수정
+                                            </button>
+
+                                        </div>
+
+                                        <hr class="author-divider">
+
+                                        <!-- 회차 등록 버튼 -->
+                                        <div class="work-manage-action-row">
+                                            <button type="button" class="btn btn-secondary btn-sm">
+                                                회차 등록
                                             </button>
                                         </div>
-                                
-                                        <!-- 작품 리스트 -->
-                                        <div class="author-work-list">
-    
-                                            <div class="author-work-card" data-episode-count="2" data-status="serial">
-                                                <div class="author-work-thumb">
-                                                    <i class="bi bi-image"></i>
-                                                </div>
-                                        
-                                                <div class="author-work-title">
-                                                    <span class="work-status serial">[연재]</span>
-                                                    어쩌다 이혼은 망하게 되었다.
-                                                </div>
-                                            </div>
-                                        
-                                            <div class="author-work-card" data-episode-count="5" data-status="complete">
-                                                <div class="author-work-thumb">
-                                                    <i class="bi bi-image"></i>
-                                                </div>
-                                        
-                                                <div class="author-work-title">
-                                                    <span class="work-status complete">[완결]</span>
-                                                    사내에서 정숙할 것
-                                                </div>
-                                            </div>
-                                        
-                                            <div class="author-work-card" data-episode-count="4" data-status="serial">
-                                                <div class="author-work-thumb">
-                                                    <i class="bi bi-image"></i>
-                                                </div>
-                                        
-                                                <div class="author-work-title">
-                                                    <span class="work-status serial">[연재]</span>
-                                                    페레니케
-                                                </div>
-                                            </div>
-                                        
-                                            <div class="author-work-card" data-episode-count="1" data-status="complete">
-                                                <div class="author-work-thumb">
-                                                    <i class="bi bi-image"></i>
-                                                </div>
-                                        
-                                                <div class="author-work-title">
-                                                    <span class="work-status complete">[완결]</span>
-                                                    쏘 롱, 써머
-                                                </div>
-                                            </div>
+
+                                        <!-- 탭 -->
+                                        <div class="work-manage-tab-area">
+                                            <button type="button" class="work-manage-tab active" data-tab="episode">
+                                                회차 목록
+                                            </button>
+
+                                            <button type="button" class="work-manage-tab restricted-tab" data-tab="restricted">
+                                                규제 회차
+                                                <span class="restricted-dot"></span>
+                                            </button>
+
+                                            <button type="button" class="work-manage-tab" data-tab="notice">
+                                                공지 목록
+                                            </button>
                                         </div>
-                            
-                                    
+
+                                        <!-- 탭 내용 -->
+                                        <div class="work-manage-panel-area">
+
+                                            <!-- 회차 목록 -->
+                                            <div class="work-tab-panel active" id="episodePanel">
+
+                                                <div class="work-episode-row">
+                                                    <div class="work-episode-title">
+                                                        이 결혼은 어차피 망하게 되어있다. 3화
+                                                        <span class="episode-hidden">숨김</span>
+                                                    </div>
+                                                    <div class="work-episode-date">2026.01.15</div>
+                                                </div>
+
+                                                <div class="work-episode-row">
+                                                    <div class="work-episode-title">
+                                                        이 결혼은 어차피 망하게 되어있다. 2화
+                                                        <span class="episode-free">무료</span>
+                                                    </div>
+                                                    <div class="work-episode-date">2026.01.08</div>
+                                                </div>
+
+                                                <div class="work-episode-row">
+                                                    <div class="work-episode-title">
+                                                        이 결혼은 어차피 망하게 되어있다. 1화
+                                                        <span class="episode-free">무료</span>
+                                                    </div>
+                                                    <div class="work-episode-date">2026.01.01</div>
+                                                </div>
+
+                                            </div>
+
+                                            <!-- 규제 회차 -->
+                                            <div class="work-tab-panel" id="restrictedPanel">
+
+                                                <div class="work-episode-row">
+                                                    <div class="work-episode-title">
+                                                        이 결혼은 어차피 망하게 되어있다. 3화
+                                                        <span class="episode-restricted">규제중</span>
+                                                        <span class="episode-reason">신고 사유: 폭력성</span>
+                                                    </div>
+                                                    <div class="work-episode-date">2026.01.15</div>
+                                                </div>
+
+                                                <div class="work-episode-row">
+                                                    <div class="work-episode-title">
+                                                        이 결혼은 어차피 망하게 되어있다. 2화
+                                                        <span class="episode-restricted">규제중</span>
+                                                        <span class="episode-reason">신고 사유: 성인물</span>
+                                                    </div>
+                                                    <div class="work-episode-date">2026.01.08</div>
+                                                </div>
+
+                                            </div>
+
+                                            <!-- 공지 목록 -->
+                                            <div class="work-tab-panel" id="noticePanel">
+
+                                                <div class="work-episode-row">
+                                                    <div class="work-episode-title">
+                                                        휴재 공지입니다.
+                                                    </div>
+                                                    <div class="work-episode-date">2026.01.20</div>
+                                                </div>
+
+                                                <div class="work-episode-row">
+                                                    <div class="work-episode-title">
+                                                        연재 일정 안내
+                                                    </div>
+                                                    <div class="work-episode-date">2026.01.05</div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
                                     </div>
-                            
+
                                 </section>
-                            
+
+                                <!-- 페이징 -->
+                                <nav class="d-flex justify-content-center work-manage-pagination">
+                                    <ul class="pagination pagination-rounded">
+                                        <li class="page-item">
+                                            <a class="page-link" href="javascript: void(0);" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">4</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">5</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="javascript: void(0);" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+
+                            </div>
+
+                            <!-- 공지 등록 모달 -->
+                            <div class="modal fade" id="noticeModal" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered notice-modal-dialog">
+                                    <div class="modal-content notice-modal-content">
+
+                                        <div class="modal-body notice-modal-body">
+
+                                            <input type="text" class="form-control notice-title-input" placeholder="공지 제목">
+
+                                            <textarea class="form-control notice-content-textarea" placeholder="공지 내용"></textarea>
+
+                                            <div class="notice-modal-btn-area">
+                                                <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">
+                                                    취소하기
+                                                </button>
+
+                                                <button type="button" class="btn btn-secondary btn-sm">
+                                                    등록하기
+                                                </button>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div> <!-- container -->
@@ -532,36 +626,33 @@
         <script src="assets/libs/selectize/js/standalone/selectize.min.js"></script>
 
         <script>
-            const authorRequestBtn = document.querySelector("#authorRequestBtn");
-            const authorWorkCards = document.querySelectorAll(".author-work-card");
-        
-            let canRequestAuthor = false;
-        
-            authorWorkCards.forEach(function (card) {
-                const episodeCount = Number(card.dataset.episodeCount);
-        
-                if (episodeCount >= 5) {
-                    canRequestAuthor = true;
-                }
-            });
-        
-            authorRequestBtn.disabled = !canRequestAuthor;
+            const workManageTabs = document.querySelectorAll(".work-manage-tab");
+            const workTabPanels = document.querySelectorAll(".work-tab-panel");
 
-            document.querySelectorAll('input[name="workStatus"]').forEach(function (radio) {
-                radio.addEventListener("change", function () {
-                    const selectedStatus = this.value;
-                    const workCards = document.querySelectorAll(".author-work-card");
+            workManageTabs.forEach(function (tab) {
+                tab.addEventListener("click", function () {
+                    const target = tab.dataset.tab;
 
-                    workCards.forEach(function (card) {
-                        const cardStatus = card.dataset.status;
-
-                        if (selectedStatus === "all" || selectedStatus === cardStatus) {
-                            card.style.display = "";
-                        } else {
-                            card.style.display = "none";
-                        }
+                    workManageTabs.forEach(function (item) {
+                        item.classList.remove("active");
                     });
+
+                    workTabPanels.forEach(function (panel) {
+                        panel.classList.remove("active");
+                    });
+
+                    tab.classList.add("active");
+
+                    document.querySelector("#" + target + "Panel").classList.add("active");
                 });
+            });
+
+            const noticeOpenBtn = document.querySelector("#noticeOpenBtn");
+            const noticeModalElement = document.querySelector("#noticeModal");
+
+            noticeOpenBtn.addEventListener("click", function () {
+                const noticeModal = new bootstrap.Modal(noticeModalElement);
+                noticeModal.show();
             });
         </script>
     </body>

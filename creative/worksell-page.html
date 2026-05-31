@@ -381,126 +381,157 @@
                             <div class="col-12">
 
                                 <section class="author-wrap">
-                            
-                                    <!-- 작가 정보 영역 -->
+
+                                    <!-- 작가 정보 영역: 작품홈과 동일 -->
                                     <div class="author-profile">
-                            
+
                                         <div class="author-info">
                                             <div class="author-name-row">
                                                 <span class="author-grade-label">작가</span>
                                                 <span class="author-name">김차차</span>
-                            
-                                                <a href="workhome-page.html" class="btn btn-outline-secondary rounded-pill btn-sm author-mini-btn active">
+
+                                                <a href="workhome-page.html" class="btn btn-outline-secondary rounded-pill btn-sm author-mini-btn">
                                                     작품 리스트
                                                 </a>
 
-                                                <a href="worksell-page.html" class="btn btn-outline-secondary rounded-pill btn-sm author-mini-btn">
+                                                <a href="worksell-page.html" class="btn btn-outline-secondary rounded-pill btn-sm author-mini-btn active">
                                                     판매 이력
                                                 </a>
                                             </div>
-                            
+
                                             <p class="author-intro">
                                                 소개말 | 빨강 망토 차차를 좋아해서 김차차 입니다. 차차차도 잘 춥니다.
                                             </p>
                                         </div>
-                            
-                                        <button 
-                                            type="button" 
-                                            class="btn btn-dark btn-sm author-request-btn"
-                                            id="authorRequestBtn"
-                                            disabled>
-                                            작가 요청
-                                        </button>
-                            
+
                                     </div>
-                            
+
                                     <hr class="author-divider">
 
                                     <div class="workhome-body">
 
-                                        <!-- 필터 + 작품 등록 -->
-                                        <div class="author-toolbar">
-                                            <div class="author-filter">
-                                                <label>
-                                                    <input type="radio" name="workStatus" value="all" checked>
-                                                    <span>전체</span>
-                                                </label>
-                                                
-                                                <label>
-                                                    <input type="radio" name="workStatus" value="serial">
-                                                    <span>연재</span>
-                                                </label>
-                                                
-                                                <label>
-                                                    <input type="radio" name="workStatus" value="pause">
-                                                    <span>휴재</span>
-                                                </label>
-                                                
-                                                <label>
-                                                    <input type="radio" name="workStatus" value="complete">
-                                                    <span>완결</span>
-                                                </label>
-                                            </div>
-                                
-                                            <button type="button" class="btn btn-dark btn-sm author-work-add-btn">
-                                                작품 등록
-                                            </button>
-                                        </div>
-                                
-                                        <!-- 작품 리스트 -->
-                                        <div class="author-work-list">
+                                        <!-- 판매 이력 영역 -->
+                                        <div class="author-sell-toolbar">
+                                            <div class="author-sell-date">
+                                                <select class="form-select author-sell-sort" id="sellSortSelect">
+                                                    <option value="reg">등록순</option>
+                                                    <option value="name">이름순</option>
+                                                </select>
     
-                                            <div class="author-work-card" data-episode-count="2" data-status="serial">
-                                                <div class="author-work-thumb">
-                                                    <i class="bi bi-image"></i>
-                                                </div>
-                                        
-                                                <div class="author-work-title">
-                                                    <span class="work-status serial">[연재]</span>
-                                                    어쩌다 이혼은 망하게 되었다.
-                                                </div>
+                                                <input type="month" class="form-control author-sell-date-input" id="startMonthInput">
+    
+                                                <span class="author-sell-date-dash">-</span>
+    
+                                                <input type="month" class="form-control author-sell-date-input" id="endMonthInput">    
                                             </div>
-                                        
-                                            <div class="author-work-card" data-episode-count="5" data-status="complete">
-                                                <div class="author-work-thumb">
-                                                    <i class="bi bi-image"></i>
-                                                </div>
-                                        
-                                                <div class="author-work-title">
-                                                    <span class="work-status complete">[완결]</span>
-                                                    사내에서 정숙할 것
-                                                </div>
-                                            </div>
-                                        
-                                            <div class="author-work-card" data-episode-count="4" data-status="serial">
-                                                <div class="author-work-thumb">
-                                                    <i class="bi bi-image"></i>
-                                                </div>
-                                        
-                                                <div class="author-work-title">
-                                                    <span class="work-status serial">[연재]</span>
-                                                    페레니케
-                                                </div>
-                                            </div>
-                                        
-                                            <div class="author-work-card" data-episode-count="1" data-status="complete">
-                                                <div class="author-work-thumb">
-                                                    <i class="bi bi-image"></i>
-                                                </div>
-                                        
-                                                <div class="author-work-title">
-                                                    <span class="work-status complete">[완결]</span>
-                                                    쏘 롱, 써머
-                                                </div>
+    
+                                            <div class="author-sell-status">
+                                                <label class="sell-status-check">
+                                                    <input type="checkbox" name="settlementStatus" value="complete" checked>
+                                                    <span>정산 완료</span>
+                                                </label>
+    
+                                                <label class="sell-status-check">
+                                                    <input type="checkbox" name="settlementStatus" value="incomplete" checked>
+                                                    <span>정산 미완료</span>
+                                                </label>
                                             </div>
                                         </div>
-                            
+    
+                                        <table class="author-sell-table">
+                                            <thead id="sellThead">
+                                                <tr>
+                                                    <th>작품명</th>
+                                                    <th>정산 기간</th>
+                                                    <th>정산 예정 금액</th>
+                                                    <th>정산 완료 금액</th>
+                                                </tr>
+                                            </thead>
+    
+                                            <tbody id="sellTbody">
+                                                <tr data-status="incomplete" data-month="2026-03" data-reg-order="1">
+                                                    <td>
+                                                        <button type="button" class="sell-work-link" data-work-no="1" data-work-title="페레니케">
+                                                            페레니케
+                                                        </button>
+                                                    </td>
+                                                    <td>2026.03.05 ~ 현재 날짜</td>
+                                                    <td>841,500</td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-dark btn-sm rounded-pill">
+                                                            정산 요청
+                                                        </button>
+                                                    </td>
+                                                </tr>
+    
+                                                <tr data-status="complete" data-month="2026-02" data-reg-order="2">
+                                                    <td>
+                                                        <button type="button" class="sell-work-link" data-work-no="2" data-work-title="사내에서는 정숙할 것">
+                                                            사내에서는 정숙할 것
+                                                        </button>
+                                                    </td>
+                                                    <td>2026.02.01 ~ 2026.02.28</td>
+                                                    <td>13,776,160</td>
+                                                    <td>13,776,160</td>
+                                                </tr>
+    
+                                                <tr data-status="complete" data-month="2026-01" data-reg-order="3">
+                                                    <td>
+                                                        <button type="button" class="sell-work-link" data-work-no="2" data-work-title="사내에서는 정숙할 것">
+                                                            사내에서는 정숙할 것
+                                                        </button>
+                                                    </td>
+                                                    <td>2026.01.01 ~ 2026.01.31</td>
+                                                    <td>17,220,200</td>
+                                                    <td>17,220,200</td>
+                                                </tr>
+    
+                                                <tr data-status="complete" data-month="2026-01" data-reg-order="4">
+                                                    <td>
+                                                        <button type="button" class="sell-work-link" data-work-no="3" data-work-title="이결망">
+                                                            이결망
+                                                        </button>
+                                                    </td>
+                                                    <td>2026.01.07 ~ 2026.01.31</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+    
+                                                <tr class="empty-row"><td></td><td></td><td></td><td></td></tr>
+                                                <tr class="empty-row"><td></td><td></td><td></td><td></td></tr>
+                                                <tr class="empty-row"><td></td><td></td><td></td><td></td></tr>
+                                                <tr class="empty-row"><td></td><td></td><td></td><td></td></tr>
+                                                <tr class="empty-row"><td></td><td></td><td></td><td></td></tr>
+                                                <tr class="empty-row"><td></td><td></td><td></td><td></td></tr>
                                     
+                                            </tbody>
+                                        </table>
                                     </div>
-                            
+                                    
                                 </section>
-                            
+                                <!-- 페이징 인클루드 하기 -->
+                                <nav class="d-flex justify-content-center">
+                                    <ul class="pagination pagination-rounded">
+                                        <li class="page-item">
+                                            <a class="page-link" href="javascript: void(0);" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">2</a></li>
+                                        <li class="page-item active"><a class="page-link" href="javascript: void(0);">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">4</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">5</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="javascript: void(0);" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+
                             </div>
+
                         </div>
                     </div> <!-- container -->
 
@@ -530,39 +561,212 @@
         <!-- Plugins js-->
         <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
         <script src="assets/libs/selectize/js/standalone/selectize.min.js"></script>
-
+       
         <script>
-            const authorRequestBtn = document.querySelector("#authorRequestBtn");
-            const authorWorkCards = document.querySelectorAll(".author-work-card");
-        
-            let canRequestAuthor = false;
-        
-            authorWorkCards.forEach(function (card) {
-                const episodeCount = Number(card.dataset.episodeCount);
-        
-                if (episodeCount >= 5) {
-                    canRequestAuthor = true;
+            const sellSortSelect = document.querySelector("#sellSortSelect");
+            const sellThead = document.querySelector("#sellThead");
+            const sellTbody = document.querySelector("#sellTbody");
+
+            const startMonthInput = document.querySelector("#startMonthInput");
+            const endMonthInput = document.querySelector("#endMonthInput");
+
+            const settlementStatusChecks = document.querySelectorAll('input[name="settlementStatus"]');
+
+            // 현재 화면 상태
+            // workList: 작품별 판매 이력
+            // episodeList: 선택한 작품의 회차별 판매 이력
+            let currentView = "workList";
+
+            // 처음 작품별 판매 이력 목록 저장
+            const originalSellThead = sellThead.innerHTML;
+            const originalSellTbody = sellTbody.innerHTML;
+
+            // 시작 월 변경 시 필터 적용
+            startMonthInput.addEventListener("change", function () {
+                if (currentView === "workList") {
+                    filterSellRows();
                 }
             });
-        
-            authorRequestBtn.disabled = !canRequestAuthor;
 
-            document.querySelectorAll('input[name="workStatus"]').forEach(function (radio) {
-                radio.addEventListener("change", function () {
-                    const selectedStatus = this.value;
-                    const workCards = document.querySelectorAll(".author-work-card");
+            // 종료 월 변경 시 필터 적용
+            endMonthInput.addEventListener("change", function () {
+                if (currentView === "workList") {
+                    filterSellRows();
+                }
+            });
 
-                    workCards.forEach(function (card) {
-                        const cardStatus = card.dataset.status;
-
-                        if (selectedStatus === "all" || selectedStatus === cardStatus) {
-                            card.style.display = "";
-                        } else {
-                            card.style.display = "none";
-                        }
-                    });
+            // 정산 상태 체크박스 변경 시 필터 적용
+            settlementStatusChecks.forEach(function (checkbox) {
+                checkbox.addEventListener("change", function () {
+                    if (currentView === "workList") {
+                        filterSellRows();
+                    }
                 });
             });
+
+            // 작품별 판매 이력 필터
+            function filterSellRows() {
+                const startMonth = startMonthInput.value;
+                const endMonth = endMonthInput.value;
+
+                const checkedStatuses = Array.from(settlementStatusChecks)
+                    .filter(function (checkbox) {
+                        return checkbox.checked;
+                    })
+                    .map(function (checkbox) {
+                        return checkbox.value;
+                    });
+
+                const rows = sellTbody.querySelectorAll("tr:not(.empty-row)");
+
+                rows.forEach(function (row) {
+                    const rowMonth = row.dataset.month;
+                    const rowStatus = row.dataset.status;
+
+                    const startMatched = startMonth === "" || rowMonth >= startMonth;
+                    const endMatched = endMonth === "" || rowMonth <= endMonth;
+                    const statusMatched = checkedStatuses.includes(rowStatus);
+
+                    if (startMatched && endMatched && statusMatched) {
+                        row.style.display = "";
+                    } else {
+                        row.style.display = "none";
+                    }
+                });
+            }
+
+            // 작품명 클릭 시 해당 작품의 회차별 판매 이력 조회
+            sellTbody.addEventListener("click", function (event) {
+                const workBtn = event.target.closest(".sell-work-link");
+
+                if (!workBtn) {
+                    return;
+                }
+
+                const workNo = workBtn.dataset.workNo;
+                const workTitle = workBtn.dataset.workTitle;
+
+                // 실제 AJAX 연결 전 임시 데이터
+                const sampleEpisodeList = [
+                    {
+                        episodeNo: 1,
+                        settlementPeriod: "2026.03.01 ~ 2026.03.31",
+                        salesAmount: "120,000"
+                    },
+                    {
+                        episodeNo: 2,
+                        settlementPeriod: "2026.03.01 ~ 2026.03.31",
+                        salesAmount: "98,500"
+                    },
+                    {
+                        episodeNo: 3,
+                        settlementPeriod: "2026.03.01 ~ 2026.03.31",
+                        salesAmount: "75,000"
+                    }
+                ];
+
+                renderEpisodeSellList(workTitle, sampleEpisodeList);
+
+                console.log("선택 작품 번호:", workNo);
+            });
+
+            // 회차별 판매 이력 렌더링
+            function renderEpisodeSellList(workTitle, episodeList) {
+                currentView = "episodeList";
+
+                sellThead.innerHTML = `
+                    <tr>
+                        <th>작품명</th>
+                        <th>회차</th>
+                        <th>정산 기간</th>
+                        <th>판매 금액</th>
+                    </tr>
+                `;
+
+                sellTbody.innerHTML = "";
+
+                episodeList.forEach(function (episode) {
+                    const tr = document.createElement("tr");
+
+                    tr.innerHTML = `
+                        <td>${workTitle}</td>
+                        <td>${episode.episodeNo}화</td>
+                        <td>${episode.settlementPeriod}</td>
+                        <td>${episode.salesAmount}</td>
+                    `;
+
+                    sellTbody.appendChild(tr);
+                });
+
+                fillEmptyRows(episodeList.length);
+            }
+
+            // 작품별 판매 이력 목록으로 복귀
+            function renderWorkSellList() {
+                currentView = "workList";
+
+                sellThead.innerHTML = originalSellThead;
+                sellTbody.innerHTML = originalSellTbody;
+
+                filterSellRows();
+            }
+
+            // 빈 행 채우기
+            function fillEmptyRows(currentRowCount) {
+                const minRowCount = 9;
+                const emptyRowCount = minRowCount - currentRowCount;
+
+                for (let i = 0; i < emptyRowCount; i++) {
+                    const tr = document.createElement("tr");
+                    tr.className = "empty-row";
+
+                    tr.innerHTML = `
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    `;
+
+                    sellTbody.appendChild(tr);
+                }
+            }
+
+            sellSortSelect.addEventListener("change", function () {
+                if (currentView === "workList") {
+                    sortSellRows();
+                    filterSellRows();
+                }
+            });
+
+            function sortSellRows() {
+                const sortType = sellSortSelect.value;
+                const rows = Array.from(sellTbody.querySelectorAll("tr:not(.empty-row)"));
+                const emptyRows = Array.from(sellTbody.querySelectorAll("tr.empty-row"));
+
+                rows.sort(function (a, b) {
+                    if (sortType === "name") {
+                        const aName = a.querySelector(".sell-work-link")?.textContent.trim() || "";
+                        const bName = b.querySelector(".sell-work-link")?.textContent.trim() || "";
+
+                        return aName.localeCompare(bName, "ko");
+                    }
+
+                    const aReg = Number(a.dataset.regOrder || 0);
+                    const bReg = Number(b.dataset.regOrder || 0);
+
+                    return aReg - bReg;
+                });
+
+                sellTbody.innerHTML = "";
+
+                rows.forEach(function (row) {
+                    sellTbody.appendChild(row);
+                });
+
+                emptyRows.forEach(function (row) {
+                    sellTbody.appendChild(row);
+                });
+            }
         </script>
     </body>
 </html>
