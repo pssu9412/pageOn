@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="horizontal" data-topbar-color="dark">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Page On</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/pageon/logo-gray.jpeg">
+
+        <!-- Plugins css -->
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/selectize/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Theme Config Js -->
+        <script src="assets/js/head.js"></script>
+
+        <!-- Bootstrap css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+        <!-- App css -->
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- Icons css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    
+        <!-- 개인 custom css -->
+        <link rel="stylesheet" href="assets/css/yj-custom.css">
+        <link rel="stylesheet" href="assets/css/ssu-custom.css">
+    
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Layout -->
+            <!-- ========== Left Sidebar Start ========== -->
+            
+            <!-- ========== Left Sidebar End ========== -->
+
+            
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+
+                <!-- ========== Topbar Start (상단바) ========== -->
+                <div class="navbar-custom">
+                    <div class="topbar">
+                        <div class="topbar-menu d-flex align-items-center gap-1">
+
+                            <!-- (로고)Topbar Brand Logo -->
+                            <div class="logo-box">
+                                <!-- Brand Logo Light -->
+                                <a href="index.html" class="logo-light">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-lg">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm">
+                                    <!-- <img src="assets/images/logo-light.png" alt="logo" class="logo-lg"> -->
+                                    <!-- <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm"> -->
+                                </a>
+
+                                <!-- Brand Logo Dark -->
+                                <a href="index.html" class="logo-dark">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="dark logo" class="logo-lg">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm">
+                                    <!-- <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm"> -->
+                                </a>
+                            </div>
+
+                            <!-- Sidebar Menu Toggle Button -->
+                            <!-- <button class="button-toggle-menu">
+                                <i class="mdi mdi-menu"></i>
+                            </button> -->
+                            
+                        </div>
+
+                        <div class="topbar-menu d-flex flex-column align-items-center">
+
+                            <div class="topbar-right-top">
+                                <div class="app-search dropdown">
+                                    <form>
+                                        <input type="search" class="form-control rounded-pill" placeholder="Search..." id="top-search">
+                                        <span class="fe-search search-icon font-16"></span>
+                                    </form>
+                                </div>
+
+                            </div>
+                            <div class="topbar-right-bottom">                                
+
+                                
+                                <ul class="topbar-menu d-flex align-items-center">
+
+                                    <!-- 로그인 전 -->
+                                    <!-- <li class="d-none d-sm-inline-block">
+                                        <a href="#" class="nav-link waves-effect waves-light">
+                                            <span class="d-none d-md-inline-block">
+                                                로그인/회원가입
+                                            </span>
+                                        </a>
+
+                                    </li> -->
+                                    <!-- ============ -->
+
+                                    
+
+
+                                    <!-- ============= 사용자 로그인 후 =================-->
+                                    <!-- 장바구니-->
+                                    <li class="d-none d-sm-inline-block">
+                                        <a href="#" class="nav-link waves-effect waves-light">
+                                            <i class="fe-shopping-cart font-22"></i>
+                                        </a>
+                                    </li> 
+
+                                    <!-- 알림 드롭다운 Notofication dropdown -->
+                                    <li class="dropdown notification-list">
+                                        <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                            <i class="fe-bell font-22"></i>
+                                            <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
+                                            <div class="p-2 border-top-0 border-start-0 border-end-0 border-dashed border">
+                                                <div class="row align-items-center">
+                                                    <div class="col">
+                                                        <h6 class="m-0 font-16 fw-semibold"> 알림</h6>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <a href="javascript: void(0);" class="text-dark text-decoration-underline">
+                                                            <small>전체 삭제</small>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="px-1" style="max-height: 300px;" data-simplebar>
+
+                                                <h5 class="text-muted font-13 fw-normal mt-2">오늘</h5>
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card unread-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon bg-primary">
+                                                                    <i class="mdi mdi-comment-account-outline"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Datacorp <small class="fw-normal text-muted ms-1">1 min ago</small></h5>
+                                                                <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon bg-info">
+                                                                    <i class="mdi mdi-account-plus"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Admin <small class="fw-normal text-muted ms-1">1 hours ago</small></h5>
+                                                                <small class="noti-item-subtitle text-muted">New user formistered</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <h5 class="text-muted font-13 fw-normal mt-0">어제</h5>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon">
+                                                                    <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Cristina Pride <small class="fw-normal text-muted ms-1">1 day ago</small></h5>
+                                                                <small class="noti-item-subtitle text-muted">Hi, How are you? What about our next meeting</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <h5 class="text-muted font-13 fw-normal mt-0">2021년 12월 30일</h5>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon bg-primary">
+                                                                    <i class="mdi mdi-comment-account-outline"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Datacorp</h5>
+                                                                <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon">
+                                                                    <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Karen Robinson</h5>
+                                                                <small class="noti-item-subtitle text-muted">Wow ! this admin looks good and awesome design</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <div class="text-center">
+                                                    <i class="mdi mdi-dots-circle mdi-spin text-muted h3 mt-0"></i>
+                                                </div>
+                                            </div>
+
+                                            <!-- All-->
+                                            <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item border-top border-light py-2">
+                                                전체 읽음
+                                            </a>
+
+                                        </div>
+                                    </li>
+
+                                    <!-- User Dropdown -->
+                                    <li class="dropdown">
+                                        <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                            <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
+                                            <span class="ms-1 d-none d-md-inline-block">
+                                                Geneva <i class="mdi mdi-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
+
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-user"></i>
+                                                <span>마이 페이지</span>
+                                            </a>
+
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-book-open"></i>
+                                                <span>내 서재</span>
+                                            </a>
+
+                                            <!-- ====== 관리자가 로그인 할 때 ====== -->
+                                            <div class="dropdown-divider"></div>
+                                            
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-settings"></i>
+                                                <span>관리자홈</span>
+                                            </a>
+                                            <!-- ================================= -->
+
+                                            <!-- item-->
+                                            <div class="dropdown-divider"></div>
+
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-log-out"></i>
+                                                <span>로그아웃</span>
+                                            </a>
+
+                                        </div>
+                                    </li>
+
+                                    <!-- Right Bar offcanvas button (Theme Customization Panel) -->
+                                    <!-- <li>
+                                        <a class="nav-link waves-effect waves-light" data-bs-toggle="offcanvas" href="#theme-settings-offcanvas">
+                                            <i class="fe-settings font-22"></i>
+                                        </a>
+                                    </li> -->
+ 
+                                </ul>
+                                <!-- ==============================-->
+
+                            </div>
+                        </div>
+
+                        
+
+                        
+                    </div>
+
+
+                    <!-- ========== 가로 메뉴 시작 ========== -->
+                    <div class="menubar">
+                        <ul class="menu">
+                            
+                            <!-- 선택된 페이지일 경우(class menu-on 부여) -->
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text menu-on"> Best </span>
+                                </a>
+                            </li>
+                            <!-- ==================-->
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> 로맨스 </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> 로판 </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> 판타지 </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> BL </span>
+                                </a>
+                            </li>
+                        
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> GL </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> 자유 </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> EVENT </span>
+                                </a>
+                            </li>
+                        </ul>  
+                    </div>
+                    <!-- =========== 가로 메뉴 끝 =========== -->
+
+                </div>
+                <!-- ========== Topbar End ========== -->
+
+                <div class="content">
+
+
+                    <!-- 여기에 본문 내용 작성!!!!! -->
+                    <!-- Start Content-->
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-12">
+
+                                <section class="author-wrap work-manage-wrap">
+
+                                    <!-- 작가 정보 영역 -->
+                                    <div class="author-profile">
+
+                                        <div class="author-info">
+                                            <div class="author-name-row">
+                                                <span class="author-grade-label">작가</span>
+                                                <span class="author-name">김차차</span>
+
+                                                <a href="workhome-page.html" class="btn btn-outline-secondary rounded-pill btn-sm author-mini-btn">
+                                                    작품 리스트
+                                                </a>
+
+                                                <a href="worksell-page.html" class="btn btn-outline-secondary rounded-pill btn-sm author-mini-btn">
+                                                    판매 이력
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <hr class="author-divider">
+
+                                    <!-- 여기부터만 안쪽으로 들어감 -->
+                                    <div class="workhome-body">
+
+                                        <!-- 작품 상세 영역 -->
+                                        <div class="work-manage-info">
+
+                                            <div class="work-manage-cover">
+                                                <i class="bi bi-image"></i>
+                                            </div>
+
+                                            <div class="work-manage-detail">
+                                                <div class="work-manage-meta">
+                                                    <span>로맨스 판타지</span>
+                                                </div>
+
+                                                <h3 class="work-manage-title">
+                                                    이 결혼은 어차피 망하게 되어있다.
+                                                </h3>
+
+                                                <div class="work-manage-like">
+                                                    <span class="work-manage-heart">♥</span>
+                                                    <span>(1,800)</span>
+                                                </div>
+
+                                                <p class="work-manage-desc">작품 소개글</p>
+
+                                                <button type="button" class="work-manage-notice-btn" id="noticeOpenBtn">
+                                                    새 공지 등록
+                                                </button>
+                                            </div>
+
+                                            <button type="button" class="btn btn-secondary btn-sm work-manage-edit-btn">
+                                                상세 수정
+                                            </button>
+
+                                        </div>
+
+                                        <hr class="author-divider">
+
+                                        <!-- 회차 등록 버튼 -->
+                                        <div class="work-manage-action-row">
+                                            <button type="button" class="btn btn-secondary btn-sm">
+                                                회차 등록
+                                            </button>
+                                        </div>
+
+                                        <!-- 탭 -->
+                                        <div class="work-manage-tab-area">
+                                            <button type="button" class="work-manage-tab active" data-tab="episode">
+                                                회차 목록
+                                            </button>
+
+                                            <button type="button" class="work-manage-tab restricted-tab" data-tab="restricted">
+                                                규제 회차
+                                                <span class="restricted-dot"></span>
+                                            </button>
+
+                                            <button type="button" class="work-manage-tab" data-tab="notice">
+                                                공지 목록
+                                            </button>
+                                        </div>
+
+                                        <!-- 탭 내용 -->
+                                        <div class="work-manage-panel-area">
+
+                                            <!-- 회차 목록 -->
+                                            <div class="work-tab-panel active" id="episodePanel">
+
+                                                <div class="work-episode-row">
+                                                    <div class="work-episode-title">
+                                                        이 결혼은 어차피 망하게 되어있다. 3화
+                                                        <span class="episode-hidden">숨김</span>
+                                                    </div>
+                                                    <div class="work-episode-date">2026.01.15</div>
+                                                </div>
+
+                                                <div class="work-episode-row">
+                                                    <div class="work-episode-title">
+                                                        이 결혼은 어차피 망하게 되어있다. 2화
+                                                        <span class="episode-free">무료</span>
+                                                    </div>
+                                                    <div class="work-episode-date">2026.01.08</div>
+                                                </div>
+
+                                                <div class="work-episode-row">
+                                                    <div class="work-episode-title">
+                                                        이 결혼은 어차피 망하게 되어있다. 1화
+                                                        <span class="episode-free">무료</span>
+                                                    </div>
+                                                    <div class="work-episode-date">2026.01.01</div>
+                                                </div>
+
+                                            </div>
+
+                                            <!-- 규제 회차 -->
+                                            <div class="work-tab-panel" id="restrictedPanel">
+
+                                                <div class="work-episode-row">
+                                                    <div class="work-episode-title">
+                                                        이 결혼은 어차피 망하게 되어있다. 3화
+                                                        <span class="episode-restricted">규제중</span>
+                                                        <span class="episode-reason">신고 사유: 폭력성</span>
+                                                    </div>
+                                                    <div class="work-episode-date">2026.01.15</div>
+                                                </div>
+
+                                                <div class="work-episode-row">
+                                                    <div class="work-episode-title">
+                                                        이 결혼은 어차피 망하게 되어있다. 2화
+                                                        <span class="episode-restricted">규제중</span>
+                                                        <span class="episode-reason">신고 사유: 성인물</span>
+                                                    </div>
+                                                    <div class="work-episode-date">2026.01.08</div>
+                                                </div>
+
+                                            </div>
+
+                                            <!-- 공지 목록 -->
+                                            <div class="work-tab-panel" id="noticePanel">
+
+                                                <div class="work-episode-row">
+                                                    <div class="work-episode-title">
+                                                        휴재 공지입니다.
+                                                    </div>
+                                                    <div class="work-episode-date">2026.01.20</div>
+                                                </div>
+
+                                                <div class="work-episode-row">
+                                                    <div class="work-episode-title">
+                                                        연재 일정 안내
+                                                    </div>
+                                                    <div class="work-episode-date">2026.01.05</div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </section>
+
+                                <!-- 페이징 -->
+                                <nav class="d-flex justify-content-center work-manage-pagination">
+                                    <ul class="pagination pagination-rounded">
+                                        <li class="page-item">
+                                            <a class="page-link" href="javascript: void(0);" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">4</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">5</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="javascript: void(0);" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+
+                            </div>
+
+                            <!-- 공지 등록 모달 -->
+                            <div class="modal fade" id="noticeModal" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered notice-modal-dialog">
+                                    <div class="modal-content notice-modal-content">
+
+                                        <div class="modal-body notice-modal-body">
+
+                                            <input type="text" class="form-control notice-title-input" placeholder="공지 제목">
+
+                                            <textarea class="form-control notice-content-textarea" placeholder="공지 내용"></textarea>
+
+                                            <div class="notice-modal-btn-area">
+                                                <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">
+                                                    취소하기
+                                                </button>
+
+                                                <button type="button" class="btn btn-secondary btn-sm">
+                                                    등록하기
+                                                </button>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                <!-- Footer Start -->
+                <footer class="footer footer-alt">
+                    &copy;by <a href="" class="text-black-50">PageOn</a> 
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+        
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+        <!-- Plugins js-->
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/selectize/js/standalone/selectize.min.js"></script>
+
+        <script>
+            const workManageTabs = document.querySelectorAll(".work-manage-tab");
+            const workTabPanels = document.querySelectorAll(".work-tab-panel");
+
+            workManageTabs.forEach(function (tab) {
+                tab.addEventListener("click", function () {
+                    const target = tab.dataset.tab;
+
+                    workManageTabs.forEach(function (item) {
+                        item.classList.remove("active");
+                    });
+
+                    workTabPanels.forEach(function (panel) {
+                        panel.classList.remove("active");
+                    });
+
+                    tab.classList.add("active");
+
+                    document.querySelector("#" + target + "Panel").classList.add("active");
+                });
+            });
+
+            const noticeOpenBtn = document.querySelector("#noticeOpenBtn");
+            const noticeModalElement = document.querySelector("#noticeModal");
+
+            noticeOpenBtn.addEventListener("click", function () {
+                const noticeModal = new bootstrap.Modal(noticeModalElement);
+                noticeModal.show();
+            });
+        </script>
+    </body>
+</html>
