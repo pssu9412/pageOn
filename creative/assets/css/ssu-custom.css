@@ -1488,7 +1488,14 @@
 /* 구분선 */
 .author-divider {
     margin: 16px 0 14px;
-    border-color: #ddd;
+    border-color: #424242;
+}
+
+/* 작가홈: 구분선 아래 본문만 안쪽으로 들여쓰기 */
+.workhome-body {
+    padding-left: 30px;
+    padding-right: 30px;
+    box-sizing: border-box;
 }
 
 /* 필터 + 작품 등록 */
@@ -1859,4 +1866,423 @@
     min-width: 90px;
     height: 38px;
     font-size: 14px;
+}
+
+/* 작품홈- 작품 판매이력 */
+.author-sell-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.author-sell-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #111;
+}
+
+.author-sell-date-input {
+    width: 150px;
+    height: 28px;
+    border-radius: 0;
+    background-color: #e5e5e5;
+    border: 1px solid #d4d4d4;
+}
+
+.author-sell-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #111;
+}
+
+.author-sell-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 1px solid #333;
+}
+
+.author-sell-table th,
+.author-sell-table td {
+    height: 32px;
+    border: 1px solid #999;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+    color: #111;
+}
+
+.author-sell-table th {
+    font-weight: 700;
+    background-color: #fff;
+}
+
+.sell-work-link {
+    border: 0;
+    background: none;
+    padding: 0;
+    color: #111;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.sell-work-link:hover {
+    text-decoration: underline;
+}
+
+.sell-status-check {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.sell-status-check input {
+    width: 13px;
+    height: 13px;
+    margin: 0;
+}
+
+.author-sell-date-input {
+    width: 150px;
+    height: 28px;
+    border-radius: 0;
+    background-color: #e5e5e5;
+    border: 1px solid #d4d4d4;
+    font-size: 13px;
+}
+
+.author-sell-sort {
+    width: 90px;
+    height: 28px;
+    border-radius: 0;
+    font-size: 13px;
+    padding: 2px 8px;
+}
+
+/* ==============================
+   작품 상세 관리 페이지
+============================== */
+
+.work-manage-wrap {
+    width: 100%;
+    padding: 16px 0 0;
+    box-sizing: border-box;
+}
+
+/* ==============================
+   작품 상세 관리 페이지
+============================== */
+
+.work-manage-wrap {
+    width: 100%;
+    padding-top: 16px;
+    box-sizing: border-box;
+}
+
+/* 작품 상세 영역 */
+.work-manage-info {
+    position: relative;
+    display: flex;
+    width: 100%;
+    gap: 18px;
+    padding-top: 26px;
+    padding-bottom: 34px;
+    box-sizing: border-box;
+}
+
+/* 웹소설 표지 비율 */
+.work-manage-cover {
+    flex: 0 0 160px;
+    width: 160px;
+    height: 220px;
+    background-color: #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c7c7c7;
+    font-size: 34px;
+}
+
+.work-manage-detail {
+    flex: 1;
+    min-width: 0;
+    padding-top: 8px;
+    padding-right: 110px;
+}
+
+.work-manage-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 4px;
+    font-size: 11px;
+    color: #777;
+}
+
+.work-manage-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.25;
+}
+
+.work-manage-like {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-top: 4px;
+    font-size: 11px;
+    color: #111;
+}
+
+.work-manage-heart {
+    color: #ff2d2d;
+    font-size: 11px;
+}
+
+.work-manage-desc {
+    margin: 6px 0 0;
+    font-size: 12px;
+    color: #333;
+}
+
+.work-manage-notice-btn {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #111;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.work-manage-notice-btn:hover {
+    text-decoration: underline;
+}
+
+.work-manage-edit-btn {
+    position: absolute;
+    top: 36px;
+    right: 0;
+}
+
+/* 회차 등록 버튼 */
+.work-manage-action-row {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+/* 탭 */
+.work-manage-tab-area {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid #333;
+}
+
+.work-manage-tab {
+    position: relative;
+    min-width: 72px;
+    height: 30px;
+    padding: 0 10px;
+    border: 0;
+    border-right: 1px solid #cfcfcf;
+    background-color: #e5e5e5;
+    color: #111;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.work-manage-tab.active {
+    background-color: #fff;
+}
+
+.work-manage-tab.restricted-tab {
+    color: #e00000;
+}
+
+.restricted-dot {
+    position: absolute;
+    top: -5px;
+    right: 8px;
+    width: 10px;
+    height: 10px;
+    background-color: #e00000;
+    border-radius: 50%;
+}
+
+/* 탭 내용 */
+.work-manage-panel-area {
+    width: 100%;
+}
+
+.work-tab-panel {
+    display: none;
+}
+
+.work-tab-panel.active {
+    display: block;
+}
+
+/* 회차 / 규제 / 공지 목록 */
+.work-episode-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 130px;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    border-bottom: 1px solid #999;
+    font-size: 13px;
+    color: #111;
+}
+
+.work-episode-title {
+    min-width: 0;
+    padding-left: 15px;
+    padding-right: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.work-episode-date {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 10px;
+    font-weight: 700;
+    border-left: 1px dotted #999;
+}
+
+.episode-hidden {
+    margin-left: 18px;
+    color: #ff3333;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.episode-free {
+    display: inline-block;
+    margin-left: 18px;
+    padding: 1px 8px;
+    border: 1px solid #555;
+    font-size: 11px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.2;
+}
+
+.episode-restricted {
+    display: inline-block;
+    margin-left: 18px;
+    padding: 1px 8px;
+    border: 1px solid #e00000;
+    color: #e00000;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.episode-reason {
+    margin-left: 10px;
+    color: #777;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+/* 공지 등록 모달 */
+.notice-modal-dialog {
+    max-width: 260px;
+}
+
+.notice-modal-content {
+    border-radius: 0;
+    border: 1px solid #555;
+}
+
+.notice-modal-body {
+    padding: 22px 32px 12px;
+}
+
+.notice-title-input {
+    height: 24px;
+    border-radius: 12px;
+    background-color: #e5e5e5;
+    border: 1px solid #777;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.notice-content-textarea {
+    height: 155px;
+    resize: none;
+    border-radius: 12px;
+    background-color: #e5e5e5;
+    border: 1px solid #777;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.notice-modal-btn-area {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.notice-modal-btn-area .btn {
+    min-width: 58px;
+    height: 24px;
+    padding: 2px 8px;
+    font-size: 11px;
+}
+
+/* 좁은 화면 대응 */
+@media (max-width: 768px) {
+    .work-manage-body {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .work-manage-info {
+        gap: 14px;
+    }
+
+    .work-manage-cover {
+        flex-basis: 105px;
+        width: 120px;
+        height: 160px;
+    }
+
+    .work-manage-title {
+        font-size: 20px;
+    }
+
+    .work-manage-detail {
+        padding-right: 0;
+    }
+
+    .work-manage-edit-btn {
+        position: static;
+        align-self: flex-start;
+        margin-left: auto;
+    }
+
+    .work-episode-row {
+        grid-template-columns: minmax(0, 1fr) 95px;
+    }
 }
