@@ -306,10 +306,7 @@
 
                             </div>
                         </div>
-
-                        
-
-                        
+ 
                     </div>
 
 
@@ -370,10 +367,10 @@
                 <div class="content">
 
                     <!-- Start Content-->
-                    <div class="container-fluid">
+                    <div class="container-fluid" id="mypage-container">
 
                         <!-- start page title -->
-                        <div class="row">
+                        <div class="row" id="mypage-row">
                             <div class="col-12">
                                 <div class="page-title-box">
                                     <div class="page-title-right">
@@ -389,15 +386,19 @@
                         <!-- end page title -->
                         <!-- end page title -->
 
-                        <div class="row">
+                        <div class="row" id="mypage-content-row">
                             <div class="col-lg-4 col-xl-4">
                                 <div class="card text-center">
                                     <div class="card-body">
                                         <img src="assets/images/users/user-1.jpg" class="rounded-circle avatar-lg img-thumbnail"
                                         alt="profile-image">
 
-                                        <h4 class="mb-0">이름</h4>
-                                        <p class="text-muted">abc@gami.com</p>
+                                        <h4 class="mb-0">이름
+                                            <i class="fe-edit" style="font-size: 16px; cursor: pointer; color: #aaa;" 
+                                                onclick="showProfileEdit()">
+                                            </i>
+                                        </h4>
+                                        <p class="text-muted">abc@gami.com</p> 
 
                                         <div class="text-start mt-3">
                                             <h4 class="font-13 text-uppercase">About Me :</h4>
@@ -508,6 +509,7 @@
                                                         </a>
                                                     </div>    
                                                 </div>
+
                                                 <!-- 서브페이지 : 내 정보 관리 start -->
                                                 <div id="page-profile" class="sub-page" style="display:none;">
                                                     <div class="sub-header">
@@ -723,28 +725,52 @@
                         </div>
                         <!-- end row-->
 
+
                     </div> <!-- container -->
+
+                    <!-- 서브페이지 : 프로필 수정 start -->
+                    <div id="page-profile-edit" style="display:none;">
+                        <div class="sub-header">
+                            <button onclick="hideProfileEdit()">←</button>
+                            <span>내 프로필 수정</span>
+                        </div>
+                        <div class="sub-content">
+                            <!-- 프로필 이미지 -->
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <img src="assets/images/users/user-1.jpg" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                                <div class="d-flex flex-column gap-2">
+                                    <button type="button" class="btn btn-light btn-sm rounded-pill waves-effect">이미지 선택</button>
+                                    <button type="button" class="btn btn-light btn-sm rounded-pill waves-effect">기본 프로필로 설정</button>
+                                </div>
+                            </div>
+                            <!-- 닉네임 -->
+                            <div class="info-row">
+                            <label>닉네임</label>
+                            <div class="info-val">
+                                <input type="text" class="input-plain" id="nickname-input" value="모래">
+                                <span id="nickname-msg" style="font-size: 11px; margin-left: 8px;"></span>
+                            </div>
+                            <button type="button" class="btn btn-light btn-xs rounded-pill waves-effect" onclick="checkNickname()">중복 확인</button>
+                            </div>
+                            <!-- 작가의 말 -->
+                            <div class="info-row">
+                                <label>작가의 말</label>
+                                <div class="info-val">
+                                    <textarea class="input-plain" rows="3" style="width: 100%;">잘 부탁드립니다.</textarea>
+                                </div>
+                            </div>
+                            <!-- 하단 버튼 -->
+                            <div class="form-actions mt-4">
+                                <button class="btn btn-light rounded-pill waves-effect" onclick="hideProfileEdit()">돌아가기</button>
+                                <button class="btn btn-dark rounded-pill waves-effect waves-light">수정하기</button>
+                            </div>                                                         
+                            
+                        </div>                                                   
+                    </div>
+                    <!-- 서브페이지 : 프로필 수정 end -->
 
                 </div> <!-- content -->
 
-                <!-- Footer Start -->
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div><script>document.write(new Date().getFullYear())</script> © Page On - <a href="" target="_blank">PageOn.com</a></div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-none d-md-flex gap-4 align-item-center justify-content-md-end footer-links">
-                                    <a href="javascript: void(0);">About</a>
-                                    <a href="javascript: void(0);">Support</a>
-                                    <a href="javascript: void(0);">Contact Us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-                <!-- end Footer -->
 
             </div>
 
@@ -906,7 +932,8 @@
                         });
                     });
                 });  
-
+             
+                
             // 서브페이지 --------------------------------------------------------
             // 서브 페이지 열기
             function showSubPage(pageId) {
@@ -972,6 +999,65 @@
             }
             bootstrap.Modal.getInstance(document.getElementById('deleteQnaModal')).hide();
             });
+            // 서브페이지 END -------------------------------------------------------
+
+            
+            /* 마이페이지 프로필 수정----------------------------  */
+
+            // 프로필 수정 페이지 열기
+            function showProfileEdit() {
+                document.getElementById('mypage-container').style.display = 'none';
+                const sidebar = document.querySelector('.sidebar');
+                if (sidebar) sidebar.style.display = 'none';
+                document.querySelector('.content').style.padding = '0';
+                document.querySelector('.content').style.minHeight = 'auto'; // ✅ 추가
+                document.getElementById('page-profile-edit').style.display = 'block';
+                window.scrollTo(0, 0);
+            }
+                // 프로필 수정 페이지 닫기
+            function hideProfileEdit() {
+                document.getElementById('page-profile-edit').style.display = 'none';
+                document.getElementById('mypage-container').style.display = 'block';
+                const sidebar = document.querySelector('.sidebar');
+                if (sidebar) sidebar.style.display = 'block';
+                document.querySelector('.content').style.padding = '';
+                document.querySelector('.content').style.minHeight = ''; // ✅ 추가
+                window.scrollTo(0, 0);
+            }
+
+            // 닉네임 유효성 검사
+            // 닉네임 중복 확인
+            function checkNickname() {
+                const input = document.getElementById('nickname-input').value.trim();
+                const msg = document.getElementById('nickname-msg');
+
+                // 사용중인 닉네임 목록 (실제로는 서버에서 확인)
+                const usedNicknames = ['모래', '단디', '호날두'];
+
+                if (input === '') {
+                    msg.style.color = 'red';
+                    msg.textContent = '닉네임을 입력해주세요.';
+                } else if (usedNicknames.includes(input)) {
+                    msg.style.color = 'red';
+                    msg.textContent = '이미 사용중인 닉네임입니다.';
+                } else {
+                    msg.style.color = 'black';
+                    msg.textContent = '사용 가능한 닉네임입니다.';
+                }
+            }
+
+
+
+            /* 마이페이지 프로필 수정 end----------------------------  */            
+
+
+
+
+
+
+
+
+
 
         </script>
 

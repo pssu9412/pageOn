@@ -372,4 +372,10 @@ a.settings-item:hover {
   font-weight: bold !important;
 }
 
+/* 프로필 변경 */
+#page-profile-edit {
+  padding: 20px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
 /* 마이페이지 end ================================================ */
