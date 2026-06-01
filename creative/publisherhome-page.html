@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="horizontal" data-topbar-color="dark">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Page On</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/pageon/logo-gray.jpeg">
+
+        <!-- Plugins css -->
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/selectize/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Theme Config Js -->
+        <script src="assets/js/head.js"></script>
+
+        <!-- Bootstrap css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+        <!-- App css -->
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- Icons css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    
+        <!-- 개인 custom css -->
+        <link rel="stylesheet" href="assets/css/yj-custom.css">
+        <link rel="stylesheet" href="assets/css/ssu-custom.css">
+    
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Layout -->
+            <!-- ========== Left Sidebar Start ========== -->
+            
+            <!-- ========== Left Sidebar End ========== -->
+
+            
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+
+                <!-- ========== Topbar Start (상단바) ========== -->
+                <div class="navbar-custom">
+                    <div class="topbar">
+                        <div class="topbar-menu d-flex align-items-center gap-1">
+
+                            <!-- (로고)Topbar Brand Logo -->
+                            <div class="logo-box">
+                                <!-- Brand Logo Light -->
+                                <a href="index.html" class="logo-light">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-lg">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm">
+                                    <!-- <img src="assets/images/logo-light.png" alt="logo" class="logo-lg"> -->
+                                    <!-- <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm"> -->
+                                </a>
+
+                                <!-- Brand Logo Dark -->
+                                <a href="index.html" class="logo-dark">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="dark logo" class="logo-lg">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm">
+                                    <!-- <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm"> -->
+                                </a>
+                            </div>
+
+                            <!-- Sidebar Menu Toggle Button -->
+                            <!-- <button class="button-toggle-menu">
+                                <i class="mdi mdi-menu"></i>
+                            </button> -->
+                            
+                        </div>
+
+                        <div class="topbar-menu d-flex flex-column align-items-center">
+
+                            <div class="topbar-right-top">
+                                <div class="app-search dropdown">
+                                    <form>
+                                        <input type="search" class="form-control rounded-pill" placeholder="Search..." id="top-search">
+                                        <span class="fe-search search-icon font-16"></span>
+                                    </form>
+                                </div>
+
+                            </div>
+                            <div class="topbar-right-bottom">                                
+
+                                
+                                <ul class="topbar-menu d-flex align-items-center">
+
+                                    <!-- 로그인 전 -->
+                                    <!-- <li class="d-none d-sm-inline-block">
+                                        <a href="#" class="nav-link waves-effect waves-light">
+                                            <span class="d-none d-md-inline-block">
+                                                로그인/회원가입
+                                            </span>
+                                        </a>
+
+                                    </li> -->
+                                    <!-- ============ -->
+
+                                    
+
+
+                                    <!-- ============= 사용자 로그인 후 =================-->
+                                    <!-- 장바구니-->
+                                    <li class="d-none d-sm-inline-block">
+                                        <a href="#" class="nav-link waves-effect waves-light">
+                                            <i class="fe-shopping-cart font-22"></i>
+                                        </a>
+                                    </li> 
+
+                                    <!-- 알림 드롭다운 Notofication dropdown -->
+                                    <li class="dropdown notification-list">
+                                        <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                            <i class="fe-bell font-22"></i>
+                                            <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
+                                            <div class="p-2 border-top-0 border-start-0 border-end-0 border-dashed border">
+                                                <div class="row align-items-center">
+                                                    <div class="col">
+                                                        <h6 class="m-0 font-16 fw-semibold"> 알림</h6>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <a href="javascript: void(0);" class="text-dark text-decoration-underline">
+                                                            <small>전체 삭제</small>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="px-1" style="max-height: 300px;" data-simplebar>
+
+                                                <h5 class="text-muted font-13 fw-normal mt-2">오늘</h5>
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card unread-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon bg-primary">
+                                                                    <i class="mdi mdi-comment-account-outline"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Datacorp <small class="fw-normal text-muted ms-1">1 min ago</small></h5>
+                                                                <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon bg-info">
+                                                                    <i class="mdi mdi-account-plus"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Admin <small class="fw-normal text-muted ms-1">1 hours ago</small></h5>
+                                                                <small class="noti-item-subtitle text-muted">New user registered</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <h5 class="text-muted font-13 fw-normal mt-0">어제</h5>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon">
+                                                                    <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Cristina Pride <small class="fw-normal text-muted ms-1">1 day ago</small></h5>
+                                                                <small class="noti-item-subtitle text-muted">Hi, How are you? What about our next meeting</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <h5 class="text-muted font-13 fw-normal mt-0">2021년 12월 30일</h5>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon bg-primary">
+                                                                    <i class="mdi mdi-comment-account-outline"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Datacorp</h5>
+                                                                <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon">
+                                                                    <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Karen Robinson</h5>
+                                                                <small class="noti-item-subtitle text-muted">Wow ! this admin looks good and awesome design</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <div class="text-center">
+                                                    <i class="mdi mdi-dots-circle mdi-spin text-muted h3 mt-0"></i>
+                                                </div>
+                                            </div>
+
+                                            <!-- All-->
+                                            <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item border-top border-light py-2">
+                                                전체 읽음
+                                            </a>
+
+                                        </div>
+                                    </li>
+
+                                    <!-- User Dropdown -->
+                                    <li class="dropdown">
+                                        <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                            <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
+                                            <span class="ms-1 d-none d-md-inline-block">
+                                                Geneva <i class="mdi mdi-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
+
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-user"></i>
+                                                <span>마이 페이지</span>
+                                            </a>
+
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-book-open"></i>
+                                                <span>내 서재</span>
+                                            </a>
+
+                                            <!-- ====== 관리자가 로그인 할 때 ====== -->
+                                            <div class="dropdown-divider"></div>
+                                            
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-settings"></i>
+                                                <span>관리자홈</span>
+                                            </a>
+                                            <!-- ================================= -->
+
+                                            <!-- item-->
+                                            <div class="dropdown-divider"></div>
+
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-log-out"></i>
+                                                <span>로그아웃</span>
+                                            </a>
+
+                                        </div>
+                                    </li>
+
+                                    <!-- Right Bar offcanvas button (Theme Customization Panel) -->
+                                    <!-- <li>
+                                        <a class="nav-link waves-effect waves-light" data-bs-toggle="offcanvas" href="#theme-settings-offcanvas">
+                                            <i class="fe-settings font-22"></i>
+                                        </a>
+                                    </li> -->
+ 
+                                </ul>
+                                <!-- ==============================-->
+
+                            </div>
+                        </div>
+
+                        
+
+                        
+                    </div>
+
+
+                    <!-- ========== 가로 메뉴 시작 ========== -->
+                    <div class="menubar">
+                        <ul class="menu">
+                            
+                            <!-- 선택된 페이지일 경우(class menu-on 부여) -->
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text menu-on"> Best </span>
+                                </a>
+                            </li>
+                            <!-- ==================-->
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> 로맨스 </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> 로판 </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> 판타지 </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> BL </span>
+                                </a>
+                            </li>
+                        
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> GL </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> 자유 </span>
+                                </a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <span class="menu-text"> EVENT </span>
+                                </a>
+                            </li>
+                        </ul>  
+                    </div>
+                    <!-- =========== 가로 메뉴 끝 =========== -->
+
+                </div>
+                <!-- ========== Topbar End ========== -->
+
+                <div class="content">
+
+
+                    <!-- 여기에 본문 내용 작성!!!!! -->
+                    <!-- Start Content-->
+                    <div class="container">
+
+                        <div class="row">
+                            <section class="publisher-workhome-wrap">
+
+                                <!-- 페이지 제목 -->
+                                <div class="author-info">
+                                    <div class="author-name-row">
+                                        <span class="author-name">리코</span>
+                                        <span class="author-grade-label">출판</span>
+                                
+                                        <a href="publisherhome-page.html"
+                                           class="btn btn-outline-secondary rounded-pill btn-sm author-mini-btn active">
+                                            작가 리스트
+                                        </a>
+                                
+                                        <a href="publisher-sell-page.html"
+                                           class="btn btn-outline-secondary rounded-pill btn-sm author-mini-btn">
+                                            판매 이력
+                                        </a>
+                                    </div>
+                                </div>
+                            
+                                <hr class="author-divider">
+                            
+                                <!-- 구분선 아래부터 안쪽 패딩 -->
+                                <div class="workhome-body">
+                            
+                                    <!-- 상단 검색 / 등록 -->
+                                    <div class="publisher-workhome-top-row">
+
+                                        <select class="form-select publisher-author-sort-select" id="authorSortSelect">
+                                            <option value="reg">등록순</option>
+                                            <option value="desc">내림차순</option>
+                                            <option value="asc">오름차순</option>
+                                            <option value="recent">최근활동순</option>
+                                        </select>
+                                    
+                                        <div class="publisher-workhome-search-area">
+                                            <input type="text"
+                                                   class="form-control publisher-workhome-search-input"
+                                                   placeholder="작가명 검색">
+                                    
+                                            <button type="button"
+                                                class="btn btn-secondary btn-sm publisher-author-add-btn publisher-author-create-btn"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#authorAddModal">
+                                               작가 등록
+                                           </button>
+                                        </div>
+                                    
+                                    </div>
+
+                                    <!-- 작가 카드 목록 -->
+                                    <div class="publisher-author-list">
+
+                                        <div class="publisher-author-card" data-author-name="모래" data-created-order="1" data-recent-order="2">
+                                            
+                                            <div class="publisher-author-action-area">
+                                                <button type="button"
+                                                        class="publisher-author-icon-btn publisher-author-edit-btn"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#authorAddModal"
+                                                        data-author-name="모래"
+                                                        data-author-desc="작가 소개 말입니다.">
+                                                    <i class="bi bi-pencil"></i>
+                                                </button>
+                                                <button type="button"
+                                                        class="publisher-author-icon-btn publisher-author-delete-btn"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#authorDeleteModal"
+                                                        data-author-name="모래">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </div>
+
+                                            <h4 class="publisher-author-name">• 모래</h4>
+
+                                            <div class="publisher-author-info">
+                                                <p>작품 수 : 5</p>
+                                                <p>최근 작품 : 사천당 시비로 살아남기</p>
+                                            </div>
+
+                                            <div class="publisher-author-link-row">
+                                                <a href="workhome-page.html">&gt; 작품 리스트</a>
+                                                <a href="worksell-page.html">&gt; 판매 이력</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="publisher-author-card" data-author-name="김차차" data-created-order="2" data-recent-order="1">
+                                            <div class="publisher-author-action-area">
+                                                <button type="button" class="publisher-author-icon-btn">
+                                                    <i class="bi bi-pencil"></i>
+                                                </button>
+                                                <button type="button" class="publisher-author-icon-btn">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </div>
+
+                                            <h4 class="publisher-author-name">• 김차차</h4>
+
+                                            <div class="publisher-author-info">
+                                                <p>작품 수 : 8</p>
+                                                <p>최근 작품 : 페네게</p>
+                                            </div>
+
+                                            <div class="publisher-author-link-row">
+                                                <a href="workhome-page.html">&gt; 작품 리스트</a>
+                                                <a href="worksell-page.html">&gt; 판매 이력</a>
+                                            </div>
+                                        </div>
+
+                                    </div>          
+                            
+                                    <!-- 페이징 -->
+                                    <nav class="d-flex justify-content-center">
+                                        <ul class="pagination pagination-rounded">
+                                            <li class="page-item">
+                                                <a class="page-link" href="javascript: void(0);" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="javascript: void(0);">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript: void(0);">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript: void(0);">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript: void(0);">4</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript: void(0);">5</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="javascript: void(0);" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            
+                            </section>
+
+                            <div class="modal fade" id="authorAddModal" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered publisher-author-modal-dialog">
+                                    <div class="modal-content publisher-author-modal-content">
+                            
+                                        <div class="modal-body publisher-author-modal-body">
+                            
+                                            <input type="text"
+                                                class="form-control publisher-author-input publisher-author-name-input"
+                                                placeholder="작가명 입력">
+
+                                            <input type="text"
+                                                class="form-control publisher-author-input publisher-author-desc-input"
+                                                placeholder="작가 소개 말 입력">
+                            
+                                            <div class="publisher-author-modal-btn-area">
+                                                <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">
+                                                    취소하기
+                                                </button>
+                            
+                                                <button type="button" class="btn btn-secondary btn-sm">
+                                                    등록하기
+                                                </button>
+                                            </div>
+                            
+                                        </div>
+                            
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="authorDeleteModal" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered publisher-author-delete-dialog">
+                                    <div class="modal-content publisher-author-delete-content">
+                            
+                                        <div class="modal-body publisher-author-delete-body">
+                            
+                                            <p class="publisher-author-delete-text" id="authorDeleteText">
+                                                김차차 작가님을 목록에서 삭제하시겠습니까?<br>
+                                                삭제 시 데이터 복구가 어려울 수 있습니다.
+                                            </p>
+                            
+                                            <div class="publisher-author-delete-btn-area">
+                                                <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">
+                                                    취소하기
+                                                </button>
+                            
+                                                <button type="button" class="btn btn-light btn-sm publisher-author-delete-confirm-btn">
+                                                    삭제하기
+                                                </button>
+                                            </div>
+                            
+                                        </div>
+                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                <!-- Footer Start -->
+                <footer class="footer footer-alt">
+                    &copy;by <a href="" class="text-black-50">PageOn</a> 
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+        
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+        <!-- Plugins js-->
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/selectize/js/standalone/selectize.min.js"></script>
+
+        <script>
+            const authorSortSelect = document.querySelector("#authorSortSelect");
+            const authorList = document.querySelector(".publisher-author-list");
+
+            authorSortSelect.addEventListener("change", function () {
+                const sortValue = authorSortSelect.value;
+                const authorCards = Array.from(document.querySelectorAll(".publisher-author-card"));
+
+                authorCards.sort(function (a, b) {
+                    const nameA = a.dataset.authorName;
+                    const nameB = b.dataset.authorName;
+
+                    const createdA = Number(a.dataset.createdOrder);
+                    const createdB = Number(b.dataset.createdOrder);
+
+                    const recentA = Number(a.dataset.recentOrder);
+                    const recentB = Number(b.dataset.recentOrder);
+
+                    if (sortValue === "reg") {
+                        return createdA - createdB;
+                    }
+
+                    if (sortValue === "desc") {
+                        return nameB.localeCompare(nameA, "ko");
+                    }
+
+                    if (sortValue === "asc") {
+                        return nameA.localeCompare(nameB, "ko");
+                    }
+
+                    if (sortValue === "recent") {
+                        return recentA - recentB;
+                    }
+
+                    return 0;
+                });
+
+                authorCards.forEach(function (card) {
+                    authorList.appendChild(card);
+                });
+            });
+            
+            const authorNameInput = document.querySelector(".publisher-author-name-input");
+            const authorDescInput = document.querySelector(".publisher-author-desc-input");
+            const authorDeleteText = document.querySelector("#authorDeleteText");
+        
+            document.querySelectorAll(".publisher-author-edit-btn").forEach(function (btn) {
+                btn.addEventListener("click", function () {
+                    const authorName = btn.dataset.authorName;
+                    const authorDesc = btn.dataset.authorDesc;
+        
+                    authorNameInput.value = authorName;
+                    authorDescInput.value = authorDesc;
+                });
+            });
+        
+            document.querySelectorAll(".publisher-author-delete-btn").forEach(function (btn) {
+                btn.addEventListener("click", function () {
+                    const authorName = btn.dataset.authorName;
+        
+                    authorDeleteText.innerHTML =
+                        authorName + " 작가님을 목록에서 삭제하시겠습니까?<br>" +
+                        "삭제 시 데이터 복구가 어려울 수 있습니다.";
+                });
+            });
+
+            document.querySelector(".publisher-author-create-btn").addEventListener("click", function () {
+                authorNameInput.value = "";
+                authorDescInput.value = "";
+            });
+        </script>
+    </body>
+</html>
