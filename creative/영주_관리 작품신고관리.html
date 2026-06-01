@@ -330,64 +330,6 @@
                         
                     </div>
 
-
-                    <!-- ========== 가로 메뉴 시작 ========== -->
-                    <div class="menubar d-none">
-                        <ul class="menu">
-                            
-                            <!-- 선택된 페이지일 경우(class menu-on 부여) -->
-                            <li class="menu-item menu-on">
-                                <a href="#menuDashboards" data-bs-toggle="collapse" class="menu-link">
-                                    <span class="menu-text"> Best </span>
-                                </a>
-                            </li>
-                            <!-- ==================-->
-
-                            <li class="menu-item">
-                                <a href="#menuDashboards" data-bs-toggle="collapse" class="menu-link">
-                                    <span class="menu-text"> 로맨스 </span>
-                                </a>
-                            </li>
-
-                            <li class="menu-item">
-                                <a href="#menuDashboards" data-bs-toggle="collapse" class="menu-link">
-                                    <span class="menu-text"> 로판 </span>
-                                </a>
-                            </li>
-
-                            <li class="menu-item">
-                                <a href="#menuDashboards" data-bs-toggle="collapse" class="menu-link">
-                                    <span class="menu-text"> 판타지 </span>
-                                </a>
-                            </li>
-
-                            <li class="menu-item">
-                                <a href="#menuDashboards" data-bs-toggle="collapse" class="menu-link">
-                                    <span class="menu-text"> BL </span>
-                                </a>
-                            </li>
-                        
-                            <li class="menu-item">
-                                <a href="#menuDashboards" data-bs-toggle="collapse" class="menu-link">
-                                    <span class="menu-text"> GL </span>
-                                </a>
-                            </li>
-
-                            <li class="menu-item">
-                                <a href="#menuDashboards" data-bs-toggle="collapse" class="menu-link">
-                                    <span class="menu-text"> 자유 </span>
-                                </a>
-                            </li>
-
-                            <li class="menu-item">
-                                <a href="#" class="menu-link">
-                                    <span class="menu-text"> EVENT </span>
-                                </a>
-                            </li>
-                        </ul>  
-                    </div>
-                    <!-- =========== 가로 메뉴 끝 =========== -->
-
                 </div>
                 <!-- ========== Topbar End ========== -->
 
@@ -482,7 +424,7 @@
                       </a>
                   </li>
                   <li class="menu-item">
-                      <a href="#report-menu" data-bs-toggle="collapse" class="menu-link">
+                      <a href="#report-menu" data-bs-toggle="collapse" class="menu-link menu-on">
                           <span class="menu-text menu-on"> 신고 문의 관리 </span>
                           <span class="menu-arrow menu-on"></span>
                       </a>
@@ -490,12 +432,12 @@
                           <ul class="sub-menu">
                               <li class="menu-item">
                                   <a href="#" class="menu-link">
-                                      <span class="menu-text menu-on">게시물 신고</span>
+                                      <span class="menu-text">게시물 신고</span>
                                   </a>
                               </li>
                               <li class="menu-item">
                                   <a href="#" class="menu-link">
-                                      <span class="menu-text">작품 신고</span>
+                                      <span class="menu-text menu-on">작품 신고</span>
                                   </a>
                               </li>
                           </ul>
@@ -514,7 +456,7 @@
             <!-- 페이지 제목 -->
             <div class="report-page">
 
-                <h2 class="report-page-title">게시물 신고 관리</h2>
+                <h2 class="report-page-title">작품 신고 관리</h2>
 
                 <!-- 필터 영역 -->
                 <div class="report-filter-wrap">
@@ -576,48 +518,6 @@
                                       name="status"
                                       value="complete">
                                 <span>처리완료</span>
-                            </label>
-
-                        </div>
-
-                    </div>
-
-                    <!-- 대상 유형 -->
-                    <div class="report-filter-row">
-
-                        <div class="report-filter-label">
-                            대상 유형
-                        </div>
-
-                        <div class="report-filter-content d-flex gap-4">
-
-                            <label class="filter-radio">
-                                <input type="radio"
-                                      name="targetType"
-                                      value=""
-                                      checked>
-                                <span>전체</span>
-                            </label>
-
-                            <label class="filter-radio">
-                                <input type="radio"
-                                      name="targetType"
-                                      value="post">
-                                <span>게시글</span>
-                            </label>
-
-                            <label class="filter-radio">
-                                <input type="radio"
-                                      name="targetType"
-                                      value="comment">
-                                <span>댓글</span>
-                            </label>
-
-                            <label class="filter-radio">
-                                <input type="radio"
-                                      name="targetType"
-                                      value="episodeComment">
-                                <span>회차 댓글</span>
                             </label>
 
                         </div>
@@ -785,8 +685,7 @@
 
                     <table class="table report-table align-middle text-center">
                         <colgroup>
-                          <col width="90px">
-                          <col width="200px">
+                          <col width="290px">
                           <col width="110px">
                           <col width="160px">
                           <col width="100px">
@@ -797,8 +696,7 @@
                         <thead class="table-light">
                             <tr>
 
-                                <th>대상 유형</th>
-                                <th>대상컨텐츠</th>
+                                <th>대상 컨텐츠</th>
                                 <th>작성자ID</th>
                                 <th>대표 신고사유</th>
                                 <th>누적 신고 수</th>
@@ -813,10 +711,9 @@
 
                             <tr class="report-row">
 
-                                <td>댓글</td>
                                 <td>
                                   <div class="ellipsis-cell">
-                                      댓글내용 요약.......................
+                                      멋진신세계 존잼 8화
                                   </div>
                                 </td>
 
@@ -844,8 +741,7 @@
 
                             <tr class="report-row">
 
-                                <td>작품</td>
-                                <td>작품명...?</td>
+                                <td>작품명...? + 10화</td>
                                 <td>sdfc3456</td>
                                 <td>동일작품 중복 업로드</td>
                                 <td>3건</td>
@@ -861,8 +757,7 @@
 
                             <tr class="report-row">
 
-                                <td>게시글</td>
-                                <td>게시글 제목......?</td>
+                                <td>작품명...? + 10화</td>
                                 <td>djklsldkfi</td>
                                 <td>홍보 영리 목적</td>
 
@@ -882,8 +777,7 @@
 
                             <tr class="report-row">
 
-                                <td>회차 댓글</td>
-                                <td>댓글내용~~~~~</td>
+                                <td>작품명...? + 10화</td>
                                 <td>soengk</td>
                                 <td>신고 사유 어떤것</td>
                                 <td>1건</td>
