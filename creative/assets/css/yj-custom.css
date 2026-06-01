@@ -1636,3 +1636,190 @@ input[type="radio"]:checked {
 .free-pagination {
   margin-top: 20px;
 }
+
+/* ======== 신고 관리 ============================================= */
+
+.report-page {
+  padding: 5px 15px;
+}
+
+/* 게시물 신고 목록 */
+.report-page-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.report-filter-wrap {
+  background-color: #f0eee9;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.report-filter-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  margin-bottom: 5px;
+}
+
+.report-filter-row {
+  display: flex;
+  align-items: flex-start;
+
+  padding: 15px 0;
+
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.report-filter-label {
+  width: 140px;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.report-filter-content {
+  flex: 1;
+}
+
+.report-filter-row .report-filter-content .report-select {
+  width: 30%;
+}
+
+.filter-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  cursor: pointer;
+}
+
+.custom-date-wrap {
+  display: none;
+  align-items: center;
+  gap: 12px;
+}
+
+.report-search-btn-wrap {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 15px;
+}
+
+/* .report-search-btn {
+  width: 180px;
+  height: 52px;
+
+  border-radius: 12px;
+
+  background-color: black;
+  color: white;
+
+  font-size: 18px;
+  font-weight: 700;
+} */
+
+.report-top-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+.report-sort-wrap,
+.report-search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.report-top-label {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.report-select-sm {
+  width: 130px;
+}
+
+.report-keyword-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.report-keyword-btn {
+  width: 50px;
+  height: 38px;
+
+  border: 1px solid #ced4da;
+  background-color: white;
+}
+
+.report-keyword-wrap input {
+  padding-right: 40px;
+}
+
+.report-keyword-wrap .search-icon {
+  position: absolute;
+
+  top: 50%;
+  right: 14px;
+
+  transform: translateY(-50%);
+
+  color: #777;
+  cursor: pointer;
+}
+
+.report-table {
+  table-layout: fixed;
+}
+
+.report-table th {
+  background-color: #f3f3f3;
+}
+
+.report-row {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.report-row:hover {
+  background-color: #fafafa;
+}
+
+.ellipsis-cell {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content-cell {
+  max-width: 170px;
+}
+
+.writer-cell {
+  max-width: 110px;
+}
+
+.report-status {
+  font-weight: 700;
+}
+
+.report-status.pending {
+  color: #ff4d4f;
+}
+
+.report-status.complete {
+  color: #1677ff;
+}
