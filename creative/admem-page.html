@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en" data-layout="horizontal" data-topbar-color="dark">
+  <head>
+    <meta charset="utf-8" />
+    <title>Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="A fully featured admin theme which can be used to build CRM, CMS, etc."
+      name="description"
+    />
+    <meta content="Coderthemes" name="author" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <!-- Plugins css -->
+    <link
+      href="assets/libs/flatpickr/flatpickr.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/libs/selectize/css/selectize.bootstrap3.css"
+      rel="stylesheet"
+      type="text/css"
+    /> 
+
+    <!-- Theme Config Js -->
+    <script src="assets/js/head.js"></script>
+
+    <!-- Bootstrap css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-style"
+    />
+
+    <!-- App css -->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Icons css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Simple-pie Chart CSS -->
+    <link rel="stylesheet" href="assets/libs/chartist/chartist.min.css">
+
+    <!-- 커스텀 CSS -->
+    <link href="assets/css/min-custom.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/css/yj-custom.css">
+    <link rel="stylesheet" href="assets/css/ssu-custom.css"> 
+  </head>
+
+  <body>
+    <!-- Begin page -->
+    <div id="wrapper">
+
+      <!-- Layout -->
+      <!-- ========== Left Sidebar Start ========== -->
+
+      <!-- ========== Left Sidebar End ========== -->
+      <div class="content-page">
+
+                <!-- ========== Topbar Start (상단바) ========== -->
+                <div class="navbar-custom">
+                    <div class="topbar">
+                        <div class="topbar-menu d-flex align-items-center gap-1">
+
+                            <!-- (로고)Topbar Brand Logo -->
+                            <div class="logo-box">
+                                <!-- Brand Logo Light -->
+                                <a href="index.html" class="logo-light">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-lg">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm">
+                                    <!-- <img src="assets/images/logo-light.png" alt="logo" class="logo-lg"> -->
+                                    <!-- <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm"> -->
+                                </a>
+
+                                <!-- Brand Logo Dark -->
+                                <a href="index.html" class="logo-dark">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="dark logo" class="logo-lg">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm">
+                                    <!-- <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm"> -->
+                                </a>
+                            </div>
+
+                            <!-- Sidebar Menu Toggle Button -->
+                            <!-- <button class="button-toggle-menu">
+                                <i class="mdi mdi-menu"></i>
+                            </button> -->
+                            
+                        </div>
+
+                        <div class="topbar-menu d-flex flex-column align-items-center">
+
+                            <div class="topbar-right-top">
+                                <div class="app-search dropdown">
+                                    <form>
+                                        <input type="search" class="form-control rounded-pill" placeholder="Search..." id="top-search">
+                                        <span class="fe-search search-icon font-16"></span>
+                                    </form>
+                                </div>
+
+                            </div>
+                            <div class="topbar-right-bottom">                                
+
+                                
+                                <ul class="topbar-menu d-flex align-items-center">
+
+                                    <!-- 로그인 전 -->
+                                    <!-- <li class="d-none d-sm-inline-block">
+                                        <a href="#" class="nav-link waves-effect waves-light">
+                                            <span class="d-none d-md-inline-block">
+                                                로그인/회원가입
+                                            </span>
+                                        </a>
+
+                                    </li> -->
+                                    <!-- ============ -->
+
+                                    
+
+
+                                    <!-- ============= 사용자 로그인 후 =================-->
+                                    <!-- 장바구니-->
+                                    <li class="d-none d-sm-inline-block">
+                                        <a href="#" class="nav-link waves-effect waves-light">
+                                            <i class="fe-shopping-cart font-22"></i>
+                                        </a>
+                                    </li> 
+
+                                    <!-- 알림 드롭다운 Notofication dropdown -->
+                                    <li class="dropdown notification-list">
+                                        <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                            <i class="fe-bell font-22"></i>
+                                            <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
+                                            <div class="p-2 border-top-0 border-start-0 border-end-0 border-dashed border">
+                                                <div class="row align-items-center">
+                                                    <div class="col">
+                                                        <h6 class="m-0 font-16 fw-semibold"> 알림</h6>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <a href="javascript: void(0);" class="text-dark text-decoration-underline">
+                                                            <small>전체 삭제</small>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="px-1" style="max-height: 300px;" data-simplebar>
+
+                                                <h5 class="text-muted font-13 fw-normal mt-2">오늘</h5>
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card unread-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon bg-primary">
+                                                                    <i class="mdi mdi-comment-account-outline"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Datacorp <small class="fw-normal text-muted ms-1">1 min ago</small></h5>
+                                                                <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon bg-info">
+                                                                    <i class="mdi mdi-account-plus"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Admin <small class="fw-normal text-muted ms-1">1 hours ago</small></h5>
+                                                                <small class="noti-item-subtitle text-muted">New user registered</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <h5 class="text-muted font-13 fw-normal mt-0">어제</h5>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon">
+                                                                    <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Cristina Pride <small class="fw-normal text-muted ms-1">1 day ago</small></h5>
+                                                                <small class="noti-item-subtitle text-muted">Hi, How are you? What about our next meeting</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <h5 class="text-muted font-13 fw-normal mt-0">2021년 12월 30일</h5>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon bg-primary">
+                                                                    <i class="mdi mdi-comment-account-outline"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Datacorp</h5>
+                                                                <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon">
+                                                                    <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Karen Robinson</h5>
+                                                                <small class="noti-item-subtitle text-muted">Wow ! this admin looks good and awesome design</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <div class="text-center">
+                                                    <i class="mdi mdi-dots-circle mdi-spin text-muted h3 mt-0"></i>
+                                                </div>
+                                            </div>
+
+                                            <!-- All-->
+                                            <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item border-top border-light py-2">
+                                                전체 읽음
+                                            </a>
+
+                                        </div>
+                                    </li>
+
+                                    <!-- User Dropdown -->
+                                    <li class="dropdown">
+                                        <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                            <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
+                                            <span class="ms-1 d-none d-md-inline-block">
+                                                Geneva <i class="mdi mdi-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
+
+                                          <!--  -->
+                                            <!-- item-->
+                                            <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-user"></i>
+                                                <span>마이 페이지</span>
+                                            </a>
+
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-book-open"></i>
+                                                <span>내 서재</span>
+                                            </a> -->
+
+                                            <!-- ====== 관리자가 로그인 할 때 ====== -->
+                                            <div class="dropdown-divider"></div>
+                                            
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-settings"></i>
+                                                <span>관리자홈</span>
+                                            </a>
+                                            <!-- ================================= -->
+
+                                            <!-- item-->
+                                            <div class="dropdown-divider"></div>
+
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-log-out"></i>
+                                                <span>로그아웃</span>
+                                            </a>
+
+                                        </div>
+                                    </li>
+
+                                    <!-- Right Bar offcanvas button (Theme Customization Panel) -->
+                                    <!-- <li>
+                                        <a class="nav-link waves-effect waves-light" data-bs-toggle="offcanvas" href="#theme-settings-offcanvas">
+                                            <i class="fe-settings font-22"></i>
+                                        </a>
+                                    </li> -->
+ 
+                                </ul>
+                                <!-- ==============================-->
+
+                            </div>
+                        </div>
+                        
+                    </div>
+
+
+                </div>
+                <!-- ========== Topbar End ========== -->
+
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
+        <div class="content">
+          <!-- ============= 사이드바 시작 ============= -->
+          <div class="sidebar">
+              <ul class="menu">
+                  <li class="menu-item">
+                      <a href="#" class="menu-link">
+                          <span class="menu-text menu-on"> MAIN </span>
+                      </a>            
+                  </li>
+
+                  <li class="menu-item">
+                      <a href="#romance" data-bs-toggle="collapse" class="menu-link" aria-expanded="true">
+                          <span class="menu-text"> 회원관리 </span>
+                          <!-- <span class="menu-arrow"></span> -->
+                      </a>
+                  </li>
+
+                  <li class="menu-item">
+                      <a href="#rofan" data-bs-toggle="collapse" class="menu-link">
+                          <span class="menu-text"> 출판사 관리 </span>
+                          <!-- <span class="menu-arrow"></span> -->
+                      </a>
+                  </li>
+
+                  <li class="menu-item">
+                      <a href="#fantasy" data-bs-toggle="collapse" class="menu-link">
+                          <span class="menu-text"> 작가 관리 </span>
+                          <!-- <span class="menu-arrow"></span> -->
+                      </a>
+                  </li>
+
+                  <li class="menu-item">
+                      <a href="#bl" data-bs-toggle="collapse" class="menu-link">
+                          <span class="menu-text"> 매출 </span>
+                          <!-- <span class="menu-arrow"></span> -->
+                      </a>
+                  </li>
+
+                  <li class="menu-item">
+                      <a href="#gl" data-bs-toggle="collapse" class="menu-link">
+                          <span class="menu-text"> 작품 관리 </span>
+                          <!-- <span class="menu-arrow"></span> -->
+                      </a>
+                  </li>
+
+                  <li class="menu-item">
+                      <a href="#community" data-bs-toggle="collapse" class="menu-link">
+                          <span class="menu-text"> 게시판 관리 </span>
+                          <span class="menu-arrow"></span>
+                      </a>
+                      <div class="collapse" id="community">
+                          <ul class="sub-menu">
+                              <li class="menu-item">
+                                  <a href="ecommerce-dashboard.html" class="menu-link">
+                                      <span class="menu-text">이벤트</span>
+                                  </a>
+                              </li>
+                              <li class="menu-item">
+                                  <a href="ecommerce-dashboard.html" class="menu-link">
+                                      <span class="menu-text">독자 게시판</span>
+                                  </a>
+                              </li>
+                              <li class="menu-item">
+                                  <a href="ecommerce-products.html" class="menu-link">
+                                      <span class="menu-text">달글 게시판</span>
+                                  </a>
+                              </li>
+                              <li class="menu-item">
+                                  <a href="ecommerce-product-detail.html" class="menu-link">
+                                      <span class="menu-text">작가 게시판</span>
+                                  </a>
+                              </li>
+                              <li class="menu-item">
+                                  <a href="ecommerce-product-detail.html" class="menu-link">
+                                      <span class="menu-text">1:1 문의 게시판</span>
+                                  </a>
+                              </li>
+                              
+                          </ul>
+                      </div>
+                  </li>
+                  <li class="menu-item">
+                      <a href="#community" data-bs-toggle="collapse" class="menu-link">
+                          <span class="menu-text"> 정산 요청 관리 </span>
+                          <!-- <span class="menu-arrow"></span> -->
+                      </a>
+                  </li>
+                  <li class="menu-item">
+                      <a href="#community" data-bs-toggle="collapse" class="menu-link">
+                          <span class="menu-text"> 신고 문의 관리 </span>
+                          <!-- <span class="menu-arrow"></span> -->
+                      </a>
+                  </li>                  
+
+              </ul>
+          </div>
+          <!-- ============= 사이드바 끝 ============= -->
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- 회원관리 본문 -->
+                    <div class="admem-content">
+
+                        <section class="admem-wrap">
+
+                            <h3 class="admem-title">회원 목록</h3>
+
+                            <!-- 검색 영역 -->
+                            <div class="admem-search-box">
+
+                                <div class="admem-search-title">
+                                    <i class="bi bi-filter"></i>
+                                    필터 · 검색
+                                </div>
+
+                                <div class="admem-filter-row">
+                                    <span class="admem-filter-label">회원 등급</span>
+
+                                    <label>
+                                        <input type="radio" name="memberGrade" checked>
+                                        전체
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" name="memberGrade">
+                                        일반
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" name="memberGrade">
+                                        작가
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" name="memberGrade">
+                                        출판사
+                                    </label>
+                                </div>
+
+                                <div class="admem-filter-row">
+                                    <span class="admem-filter-label">상태</span>
+
+                                    <label>
+                                        <input type="radio" name="memberStatus" checked>전체
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" name="memberStatus">정상
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" name="memberStatus">규제
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" name="memberStatus">탈퇴
+                                    </label>
+                                </div>
+
+                                <div class="admem-input-row">
+                                    <label>
+                                        아이디 :
+                                        <input type="text" class="form-control admem-search-input" placeholder="Value">
+                                    </label>
+
+                                    <label>
+                                        이름 :
+                                        <input type="text" class="form-control admem-search-input" placeholder="Value">
+                                    </label>
+
+                                    <label>
+                                        번호 :
+                                        <input type="text" class="form-control admem-search-input" placeholder="Value">
+                                    </label>
+
+                                    <button type="button" class="btn btn-dark btn-sm admem-search-btn">
+                                        조회하기
+                                    </button>
+                                </div>
+
+                            </div>
+
+                            <!-- 정렬 -->
+                            <div class="admem-sort-row">
+                                <button type="button" class="admem-sort-btn active">오름차순</button>
+                                <button type="button" class="admem-sort-btn">내림차순</button>
+                            </div>
+
+                            <!-- 회원 테이블 -->
+                            <div class="admem-table-wrap">
+                                <table class="admem-table">
+                                    <thead>
+                                        <tr>
+                                            <th>회원번호</th>
+                                            <th>아이디</th>
+                                            <th>닉네임</th>
+                                            <th>이름</th>
+                                            <th>등급</th>
+                                            <th>상태</th>
+                                            <th>가입일</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr class="admem-row"
+                                            data-member-no="1028"
+                                            data-member-id="morae"
+                                            data-member-nick="나비와 모래"
+                                            data-member-name="김모래"
+                                            data-member-grade="일반"
+                                            data-member-status="정상"
+                                            data-member-email="morae@test.com"
+                                            data-member-phone="010-1111-2222"
+                                            data-member-recent="2026.01.22"
+                                            data-member-date="2026.01.20"
+                                            data-member-leave-date="-"
+                                            data-member-account="국민 123456-78-901234"
+                                            data-member-intro="작가의 책을 좋아합니다.">
+                                        </tr>
+
+                                        <tr class="admem-row"
+                                            data-member-no="1027"
+                                            data-member-id="chacha"
+                                            data-member-nick="김차차"
+                                            data-member-name="김차차"
+                                            data-member-grade="작가"
+                                            data-member-status="정상"
+                                            data-member-email="chacha@test.com"
+                                            data-member-phone="010-3333-4444"
+                                            data-member-birth="1991.03.12"
+                                            data-member-date="2026.01.18"
+                                            data-member-intro="로맨스 판타지 작가입니다.">
+                                            <td>1027</td>
+                                            <td>chacha</td>
+                                            <td>김차차</td>
+                                            <td>김차차</td>
+                                            <td>작가</td>
+                                            <td>정상</td>
+                                            <td>2026.01.18</td>
+                                        </tr>
+
+                                        <tr class="admem-row"
+                                            data-member-no="1026"
+                                            data-member-id="rico"
+                                            data-member-nick="리코 출판"
+                                            data-member-name="리코"
+                                            data-member-grade="출판사"
+                                            data-member-status="정상"
+                                            data-member-email="rico@test.com"
+                                            data-member-phone="02-1234-5678"
+                                            data-member-birth="-"
+                                            data-member-date="2026.01.15"
+                                            data-member-intro="리코 출판사 계정입니다.">
+                                            <td>1026</td>
+                                            <td>rico</td>
+                                            <td>리코 출판</td>
+                                            <td>리코</td>
+                                            <td>출판사</td>
+                                            <td>정상</td>
+                                            <td>2026.01.15</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- 페이징 -->
+                            <nav class="d-flex justify-content-center">
+                                <ul class="pagination pagination-rounded">
+                                    <li class="page-item">
+                                        <a class="page-link" href="javascript:void(0);">&laquo;</a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="javascript:void(0);">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="javascript:void(0);">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="javascript:void(0);">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="javascript:void(0);">4</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="javascript:void(0);">5</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="javascript:void(0);">&raquo;</a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                        </section>
+
+                    </div>
+
+                    <!-- 회원 상세 모달 -->
+                    <div class="modal fade" id="memberDetailModal" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered admem-modal-dialog">
+                            <div class="modal-content admem-modal-content">
+
+                                <div class="modal-body admem-modal-body">
+
+                                    <h5 class="admem-modal-title">회원 상세 정보</h5>
+
+                                    <div class="admem-modal-profile-row">
+                                        <div class="admem-profile-icon">
+                                            <i class="bi bi-person"></i>
+                                        </div>
+
+                                        <div class="admem-profile-main">
+                                            <div class="admem-profile-line">
+                                                <span id="modalMemberNick">나비와 모래</span>
+                                            </div>
+                                            <div class="admem-profile-line">
+                                                포인트 <span id="modalMemberPoint">1,028</span>
+                                            </div>
+                                            <div class="admem-profile-line">
+                                                <span id="modalMemberIntro">작가의 책을 좋아합니다.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="admem-modal-form">
+
+                                        <!-- 이메일 / 상태 -->
+                                        <div class="admem-modal-row">
+                                            <div class="admem-modal-field admem-field-email">
+                                                <span class="admem-modal-label">이메일 :</span>
+                                                <input type="text" class="form-control admem-modal-input" id="modalMemberEmail">
+                                            </div>
+                                    
+                                            <div class="admem-modal-field admem-field-status">
+                                                <span class="admem-modal-label">상태 :</span>
+                                                <input type="text" class="form-control admem-modal-input" id="modalMemberStatus">
+                                            </div>
+                                        </div>
+                                    
+                                        <!-- 이름 / 등급 -->
+                                        <div class="admem-modal-row">
+                                            <div class="admem-modal-field admem-field-name">
+                                                <span class="admem-modal-label">이름 :</span>
+                                                <input type="text" class="form-control admem-modal-input" id="modalMemberName">
+                                            </div>
+                                    
+                                            <div class="admem-modal-field admem-field-grade">
+                                                <span class="admem-modal-label">등급 :</span>
+                                                <input type="text" class="form-control admem-modal-input" id="modalMemberGrade">
+                                            </div>
+                                        </div>
+                                    
+                                        <!-- 연락처 / 최근방문일 -->
+                                        <div class="admem-modal-row">
+                                            <div class="admem-modal-field admem-field-phone">
+                                                <span class="admem-modal-label">연락처 :</span>
+                                                <input type="text" class="form-control admem-modal-input" id="modalMemberPhone">
+                                            </div>
+                                    
+                                            <div class="admem-modal-field admem-field-recent">
+                                                <span class="admem-modal-label">최근방문일 :</span>
+                                                <input type="text" class="form-control admem-modal-input" id="modalMemberRecent">
+                                            </div>
+                                        </div>
+                                    
+                                        <!-- 가입일 / 탈퇴일 -->
+                                        <div class="admem-modal-row">
+                                            <div class="admem-modal-field admem-field-date">
+                                                <span class="admem-modal-label">가입일 :</span>
+                                                <input type="text" class="form-control admem-modal-input" id="modalMemberDate">
+                                            </div>
+                                    
+                                            <div class="admem-modal-field admem-field-leave">
+                                                <span class="admem-modal-label">탈퇴일 :</span>
+                                                <input type="text" class="form-control admem-modal-input" id="modalMemberLeaveDate">
+                                            </div>
+                                        </div>
+                                    
+                                        <!-- 계좌번호 -->
+                                        <div class="admem-modal-row">
+                                            <div class="admem-modal-field admem-field-account">
+                                                <span class="admem-modal-label">계좌번호 :</span>
+                                                <input type="text" class="form-control admem-modal-input" id="modalMemberAccount">
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+
+                                    <div class="admem-modal-btn-area">
+                                        <button type="button" class="btn btn-light btn-sm">
+                                            수정
+                                        </button>
+
+                                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">
+                                            확인
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+
+    </div>
+    <!-- Footer Start -->
+    <footer class="footer footer-alt">
+        &copy;by <a href="" class="text-black-50">PageOn</a> 
+    </footer>
+    <!-- end Footer -->
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <!-- Plugins js-->
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/libs/selectize/js/standalone/selectize.min.js"></script>
+
+    <script>
+        const memberRows = document.querySelectorAll(".admem-row");
+        const memberDetailModalElement = document.querySelector("#memberDetailModal");
+    
+        memberRows.forEach(function (row) {
+            row.addEventListener("click", function () {
+                document.querySelector("#modalMemberNick").textContent = row.dataset.memberNick;
+                document.querySelector("#modalMemberIntro").textContent = row.dataset.memberIntro;
+    
+                document.querySelector("#modalMemberEmail").value = row.dataset.memberEmail || "";
+                document.querySelector("#modalMemberStatus").value = row.dataset.memberStatus || "";
+                document.querySelector("#modalMemberName").value = row.dataset.memberName || "";
+                document.querySelector("#modalMemberGrade").value = row.dataset.memberGrade || "";
+                document.querySelector("#modalMemberPhone").value = row.dataset.memberPhone || "";
+                document.querySelector("#modalMemberRecent").value = row.dataset.memberRecent || "";
+                document.querySelector("#modalMemberDate").value = row.dataset.memberDate || "";
+                document.querySelector("#modalMemberLeaveDate").value = row.dataset.memberLeaveDate || "";
+                document.querySelector("#modalMemberAccount").value = row.dataset.memberAccount || "";
+    
+                const memberDetailModal = new bootstrap.Modal(memberDetailModalElement);
+                memberDetailModal.show();
+            });
+        });
+    </script>
+
+  </body>
+</html>
