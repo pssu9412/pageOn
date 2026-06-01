@@ -524,20 +524,113 @@
                                             <!-- 공지 목록 -->
                                             <div class="work-tab-panel" id="noticePanel">
 
-                                                <div class="work-episode-row">
-                                                    <div class="work-episode-title">
-                                                        휴재 공지입니다.
+                                                <div class="accordion notice-accordion" id="noticeAccordion">
+                                            
+                                                    <!-- 공지 1 -->
+                                                    <div class="accordion-item notice-accordion-item">
+                                                        <h2 class="accordion-header" id="noticeHeading1">
+                                                            <button class="accordion-button collapsed notice-accordion-button"
+                                                                    type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#noticeCollapse1"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="noticeCollapse1">
+                                            
+                                                                <div class="notice-header-text">
+                                                                    <span class="notice-title">휴재 공지입니다.</span>
+                                                                    <span class="notice-date">2026.01.20</span>
+                                                                </div>
+                                            
+                                                            </button>
+                                                        </h2>
+                                            
+                                                        <div id="noticeCollapse1"
+                                                             class="accordion-collapse collapse"
+                                                             aria-labelledby="noticeHeading1"
+                                                             data-bs-parent="#noticeAccordion">
+                                            
+                                                            <div class="accordion-body notice-accordion-body">
+                                            
+                                                                <div class="notice-body-content">
+                                            
+                                                                    <div class="notice-content">휴재 공지 내용입니다.
+                                                                    </div>
+                                            
+                                                                    <div class="notice-action-area">
+                                                                        <button type="button"
+                                                                                class="notice-icon-btn notice-edit-btn"
+                                                                                data-bs-toggle="modal"
+                                                                                data-bs-target="#noticeModal"
+                                                                                data-notice-title="휴재 공지입니다."
+                                                                                data-notice-content="휴재 공지 내용입니다.">
+                                                                            <i class="bi bi-pencil-square"></i>
+                                                                        </button>
+                                            
+                                                                        <button type="button" class="notice-icon-btn notice-delete-btn">
+                                                                            <i class="bi bi-trash"></i>
+                                                                        </button>
+                                                                    </div>
+                                            
+                                                                </div>
+                                            
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="work-episode-date">2026.01.20</div>
-                                                </div>
-
-                                                <div class="work-episode-row">
-                                                    <div class="work-episode-title">
-                                                        연재 일정 안내
+                                            
+                                                    <!-- 공지 2 -->
+                                                    <div class="accordion-item notice-accordion-item">
+                                                        <h2 class="accordion-header" id="noticeHeading2">
+                                                            <button class="accordion-button collapsed notice-accordion-button"
+                                                                    type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#noticeCollapse2"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="noticeCollapse2">
+                                            
+                                                                <div class="notice-header-text">
+                                                                    <span class="notice-title">연재 일정 안내</span>
+                                                                    <span class="notice-date">2026.01.05</span>
+                                                                </div>
+                                            
+                                                            </button>
+                                                        </h2>
+                                            
+                                                        <div id="noticeCollapse2"
+                                                             class="accordion-collapse collapse"
+                                                             aria-labelledby="noticeHeading2"
+                                                             data-bs-parent="#noticeAccordion">
+                                            
+                                                            <div class="accordion-body notice-accordion-body">
+                                            
+                                                                <div class="notice-body-content">
+                                            
+                                                                    <div class="notice-content">연재 일정 안내 내용입니다.
+                                                                        다음 회차는 다음주 목요일 밤에 업로드 됩니다.
+                                                                    </div>
+                                            
+                                                                    <div class="notice-action-area">
+                                                                        <button type="button"
+                                                                                class="notice-icon-btn notice-edit-btn"
+                                                                                data-bs-toggle="modal"
+                                                                                data-bs-target="#noticeModal"
+                                                                                data-notice-title="연재 일정 안내"
+                                                                                data-notice-content="연재 일정 안내 내용입니다.&#10;다음 회차는 다음주 목요일 밤에 업로드 됩니다.">
+                                                                            <i class="bi bi-pencil-square"></i>
+                                                                        </button>
+                                            
+                                                                        <button type="button" class="notice-icon-btn notice-delete-btn">
+                                                                            <i class="bi bi-trash"></i>
+                                                                        </button>
+                                                                    </div>
+                                            
+                                                                </div>
+                                            
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="work-episode-date">2026.01.05</div>
+                                            
                                                 </div>
-
+                                            
                                             </div>
 
                                         </div>
@@ -547,14 +640,14 @@
                                 </section>
 
                                 <!-- 페이징 -->
-                                <nav class="d-flex justify-content-center work-manage-pagination">
+                                <nav class="d-flex justify-content-center">
                                     <ul class="pagination pagination-rounded">
                                         <li class="page-item">
                                             <a class="page-link" href="javascript: void(0);" aria-label="Previous">
                                                 <span aria-hidden="true">&laquo;</span>
                                             </a>
                                         </li>
-                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">1</a></li>
+                                        <li class="page-item active"><a class="page-link" href="javascript: void(0);">1</a></li>
                                         <li class="page-item"><a class="page-link" href="javascript: void(0);">2</a></li>
                                         <li class="page-item"><a class="page-link" href="javascript: void(0);">3</a></li>
                                         <li class="page-item"><a class="page-link" href="javascript: void(0);">4</a></li>
@@ -654,6 +747,41 @@
                 const noticeModal = new bootstrap.Modal(noticeModalElement);
                 noticeModal.show();
             });
+
+            // 수정 모달
+            document.querySelectorAll(".notice-edit-btn").forEach(function (btn) {
+                btn.addEventListener("click", function () {
+                    const title = btn.dataset.noticeTitle;
+                    const content = btn.dataset.noticeContent;
+
+                    document.querySelector(".notice-title-input").value = title;
+                    document.querySelector(".notice-content-textarea").value = content;
+                });
+            });
+
+            // 규제 회차 알람
+            const restrictedDot = document.querySelector(".restricted-dot");
+
+                workManageTabs.forEach(function (tab) {
+                    tab.addEventListener("click", function () {
+                        const target = tab.dataset.tab;
+
+                        workManageTabs.forEach(function (item) {
+                            item.classList.remove("active");
+                        });
+
+                        workTabPanels.forEach(function (panel) {
+                            panel.classList.remove("active");
+                        });
+
+                        tab.classList.add("active");
+                        document.querySelector("#" + target + "Panel").classList.add("active");
+
+                        if (target === "restricted") {
+                            restrictedDot.classList.add("hidden");
+                        }
+                    });
+                });
         </script>
     </body>
 </html>
