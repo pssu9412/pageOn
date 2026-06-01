@@ -76,7 +76,8 @@ span {
 }
 
 /* 로고 */
-.navbar-custom .logo-box .logo-lg {
+.navbar-custom .logo-box .logo-lg,
+.navbar-custom .logo-box .logo-sm {
   height: 70px;
 }
 
@@ -1620,59 +1621,17 @@ input[type="radio"]:checked {
   }
 }
 
-.free-work-card {
-  border: 1px solid #ececec;
-  border-radius: 10px;
-
-  overflow: hidden;
-
-  background: white;
+.ribbon-box .gold-ribbon span {
+  background: linear-gradient(135deg, #fff4b0 0%, #ffd700 45%, #b8860b 100%);
 }
 
-.free-work-thumb img {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-
-  object-fit: cover;
+.ribbon-box .silver-ribbon span {
+  background: linear-gradient(135deg, #f8f8f8 0%, #cfcfcf 45%, #8f8f8f 100%);
 }
 
-.free-work-info {
-  padding: 14px;
+.ribbon-box .bronze-ribbon span {
+  background: linear-gradient(135deg, #f3c6a5 0%, #cd7f32 45%, #8b5a2b 100%);
 }
-
-.free-work-episode {
-  margin-bottom: 4px;
-
-  font-size: 13px;
-  color: #666;
-}
-
-.free-work-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-
-  margin-bottom: 8px;
-
-  font-weight: 700;
-  color: #111;
-}
-
-.free-work-author,
-.free-work-count {
-  margin-bottom: 3px;
-
-  font-size: 13px;
-  color: #999;
-}
-
-.free-work-price {
-  margin-top: 10px;
-
-  font-weight: 700;
-  color: #111;
-}
-
 /* 페이지네이션 */
 .free-pagination {
   margin-top: 20px;
