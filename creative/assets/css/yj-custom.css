@@ -1643,7 +1643,7 @@ input[type="radio"]:checked {
   padding: 5px 15px;
 }
 
-/* 게시물 신고 목록 */
+/* 게시물 & 작품 신고 목록 */
 .report-page-title {
   font-size: 22px;
   font-weight: 700;
@@ -1822,4 +1822,100 @@ input[type="radio"]:checked {
 
 .report-status.complete {
   color: #1677ff;
+}
+
+.report-status.rejected {
+  color: #6c757d;
+}
+
+/* 신고 상세 조회 */
+.report-detail-card {
+  border: 1px solid #f3f3f3;
+}
+
+.report-detail-card .card-body {
+  padding: 15px 24px;
+}
+
+.report-card-header {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.report-detail-card .report-info-row {
+  padding: 8px 18px;
+}
+
+.report-detail-card span {
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.report-detail-card .report-value {
+  color: black;
+  font-weight: bold;
+}
+
+.report-detail-card .content-box a {
+  text-decoration: underline;
+}
+
+.report-page textarea,
+#reportHistoryModal textarea {
+  resize: none;
+}
+
+.report-modal-section {
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.report-detail-card .report-history-wrap {
+  padding: 5px 10px;
+}
+
+.report-history-wrap {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.report-history-wrap thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  background: #f8f9fa;
+}
+
+.report-history-row {
+  cursor: pointer;
+}
+
+.report-history-row:hover {
+  background: #fafafa;
+}
+
+/* 신고 상세조회 & 조치 확인 모달 */
+#reportHistoryModal .modal-header,
+#reportActionConfirmModal .modal-header {
+  background-color: black;
+}
+
+#reportHistoryModal .modal-header .modal-title,
+#reportActionConfirmModal .modal-header .modal-title {
+  color: white;
+}
+
+#reportHistoryModal .modal-row {
+  margin-bottom: 10px;
+}
+
+#reportHistoryModal .modal-row .label {
+  margin-right: 5px;
 }
