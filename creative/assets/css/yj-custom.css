@@ -1637,7 +1637,7 @@ input[type="radio"]:checked {
   margin-top: 20px;
 }
 
-/* ======== 신고 관리 ============================================= */
+/* ======== 신고 & 작품 관리 ============================================= */
 
 .report-page {
   padding: 5px 15px;
@@ -1918,4 +1918,18 @@ input[type="radio"]:checked {
 
 #reportHistoryModal .modal-row .label {
   margin-right: 5px;
+}
+
+/* 작품 관리 */
+.work-top-wrap {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 14px;
+}
+
+.work-mg-select {
+  width: 150px;
 }
