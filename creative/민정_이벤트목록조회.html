@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="horizontal" data-topbar-color="dark">
+
+
+    <head>
+        <meta charset="utf-8" />
+        <title>이벤트</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+		<!-- Theme Config Js -->
+		<script src="assets/js/head.js"></script>
+
+		<!-- Bootstrap css -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+		<!-- App css -->
+		<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- Icons css -->
+		<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- 개인 custom css -->
+        <link rel="stylesheet" href="assets/css/min-custom.css"> 
+        <link rel="stylesheet" href="assets/css/custom.css"> 
+        <link rel="stylesheet" href="assets/css/yj-custom.css">
+        <link rel="stylesheet" href="assets/css/ssu-custom.css"> 
+    </head>
+    <body>
+ <!-- Begin page -->
+    <div id="wrapper">
+      <div class="content-page">
+ 
+        <!-- ========== Topbar Start ========== -->
+        <div class="navbar-custom">
+          <div class="topbar">
+            <div class="topbar-menu d-flex align-items-center gap-1">
+              <div class="logo-box">
+                <a href="민정_마이페이지.html" class="logo-light">
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-lg" />
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm" />
+                </a>
+                <a href="민정_마이페이지.html" class="logo-dark">
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="dark logo" class="logo-lg" />
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm" />
+                </a>
+              </div>
+            </div>
+ 
+            <div class="topbar-menu d-flex flex-column align-items-center">
+              <div class="topbar-right-top">
+                <div class="app-search dropdown">
+                  <form>
+                    <input type="search" class="form-control rounded-pill" placeholder="Search..." id="top-search" />
+                    <span class="fe-search search-icon font-16"></span>
+                  </form>
+                </div>
+              </div>
+              <div class="topbar-right-bottom">
+                <ul class="topbar-menu d-flex align-items-center">
+                  <li class="d-none d-sm-inline-block">
+                    <a href="#" class="nav-link waves-effect waves-light">
+                      <i class="fe-shopping-cart font-22"></i>
+                    </a>
+                  </li>
+                  <li class="dropdown notification-list">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button">
+                      <i class="fe-bell font-22"></i>
+                      <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
+                    </a>
+                  </li>
+                  <li class="dropdown">
+                    <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button">
+                      <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle" />
+                      <span class="ms-1 d-none d-md-inline-block"> Geneva <i class="mdi mdi-chevron-down"></i> </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+ 
+          <!-- 가로 메뉴 -->
+          <div class="menubar">
+            <ul class="menu">
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">Best</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로맨스</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로판</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">판타지</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">BL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">GL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">자유</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link active"><span class="menu-text">EVENT</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- ========== Topbar End ========== -->
+ 
+        <div class="content">
+          <div class="container-fluid">
+ 
+            <h4 class="event-title">이벤트</h4>
+ 
+            <!-- 탭 -->
+            <div class="event-tabs">
+              <button type="button" class="event-tab active" data-tab="ongoing" onclick="switchEventTab(this)">진행 중인 이벤트</button>
+              <button type="button" class="event-tab" data-tab="ended" onclick="switchEventTab(this)">지난 이벤트</button>
+            </div>
+ 
+            <!-- 진행 중인 이벤트 패널 -->
+            <div class="event-panel" id="event-panel-ongoing">
+              <div class="event-list" id="event-list-ongoing"></div>
+              <div class="event-pagination" id="event-pagination-ongoing"></div>
+            </div>
+ 
+            <!-- 지난 이벤트 패널 -->
+            <div class="event-panel" id="event-panel-ended" style="display:none;">
+              <div class="event-list" id="event-list-ended"></div>
+              <div class="event-pagination" id="event-pagination-ended"></div>
+            </div>
+ 
+          </div>
+        </div>
+        <!-- content end -->
+ 
+      </div>
+    </div>
+    <!-- END wrapper -->
+ 
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+ 
+    <script>
+      /* =============================================
+         이벤트 데이터 (추후 서버 데이터로 교체)
+         ============================================= */
+      const PAGE_SIZE = 10;
+ 
+      function makeDummyEvents(count, ended) {
+        const titles = [
+          '[20화 무료] 그놈은 멋있었다....',
+          '[60% 포인트백] 살인사건 발생! 범인을 찾아라',
+          '[30화 무료]그놈은 멋있었다....',
+        ];
+        const list = [];
+        for (let i = 1; i <= count; i++) {
+          list.push({
+            id: (ended ? 'ended-' : 'ongoing-') + i,
+            title: titles[i % titles.length],
+            period: '2026.02.20.(화) 07:00 ~ 2026.02.15.(일) 23:59',
+            content: '나의 기도를 들어준 건 오직 마신뿐.\n마신교의 신도를 모으고 도시를 운영하자!\n혜택 1. 50회 무료 대여!\n혜택 2. 유/무료 상관없이 30화 보고 리뷰 남긴 500명 추첨 500포인트!',
+            ended: ended,
+          });
+        }
+        return list;
+      }
+ 
+      const eventData = {
+        ongoing: makeDummyEvents(15, false),
+        ended: makeDummyEvents(28, true),
+      };
+ 
+      const pageState = {
+        ongoing: 1,
+        ended: 1,
+      };
+ 
+      /* =============================================
+         렌더링
+         ============================================= */
+      function renderEventList(tabKey) {
+        const all = eventData[tabKey];
+        const page = pageState[tabKey];
+        const totalPages = Math.max(1, Math.ceil(all.length / PAGE_SIZE));
+        const start = (page - 1) * PAGE_SIZE;
+        const pageItems = all.slice(start, start + PAGE_SIZE);
+ 
+        const listEl = document.getElementById('event-list-' + tabKey);
+ 
+        if (pageItems.length === 0) {
+          listEl.innerHTML = `
+            <div class="event-empty">
+              <i class="fe-calendar"></i>
+              <p>${tabKey === 'ongoing' ? '진행 중인 이벤트가 없어요.' : '지난 이벤트가 없어요.'}</p>
+            </div>
+          `;
+        } else {
+          listEl.innerHTML = pageItems
+            .map(
+              (ev) => `
+            <div class="event-item ${ev.ended ? 'ended' : ''}">
+              <div class="event-thumb">
+                <i class="fe-image"></i>
+              </div>
+              <div class="event-info">
+                <a href="이벤트상세.html?id=${ev.id}" class="event-item-title">
+                  ${ev.title}
+                  ${ev.ended ? '<span class="ended-badge">종료</span>' : ''}
+                </a>
+                <div class="event-meta-row">
+                  <span class="meta-label">기간</span>
+                  <span class="meta-content">${ev.period}</span>
+                </div>
+                <div class="event-meta-row">
+                  <span class="meta-label">내용</span>
+                  <span class="meta-content">${ev.content.replace(/\n/g, '<br>')}</span>
+                </div>
+              </div>
+            </div>
+          `
+            )
+            .join('');
+        }
+ 
+        renderPagination(tabKey, page, totalPages);
+      }
+ 
+      function renderPagination(tabKey, current, totalPages) {
+        const el = document.getElementById('event-pagination-' + tabKey);
+        if (totalPages <= 1) {
+          el.innerHTML = '';
+          return;
+        }
+ 
+        let html = `<button type="button" class="nav-btn" ${current === 1 ? 'disabled' : ''} onclick="goToPage('${tabKey}', ${current - 1})">&larr; 이전</button>`;
+ 
+        // 페이지 번호 영역 (현재 페이지 주변 + 처음/끝)
+        const pages = getPageNumbers(current, totalPages);
+        pages.forEach((p) => {
+          if (p === '...') {
+            html += `<span class="page-dots">...</span>`;
+          } else {
+            html += `<span class="page-num ${p === current ? 'active' : ''}" onclick="goToPage('${tabKey}', ${p})">${p}</span>`;
+          }
+        });
+ 
+        html += `<button type="button" class="nav-btn" ${current === totalPages ? 'disabled' : ''} onclick="goToPage('${tabKey}', ${current + 1})">다음 &rarr;</button>`;
+ 
+        el.innerHTML = html;
+      }
+ 
+      // 현재 페이지 기준 표시할 페이지 번호 목록 만들기 (예: 1 ... 67 68)
+      function getPageNumbers(current, total) {
+        const delta = 1;
+        const range = [];
+        const rangeWithDots = [];
+        let l;
+ 
+        for (let i = 1; i <= total; i++) {
+          if (i === 1 || i === total || (i >= current - delta && i <= current + delta)) {
+            range.push(i);
+          }
+        }
+ 
+        range.forEach((i) => {
+          if (l) {
+            if (i - l === 2) {
+              rangeWithDots.push(l + 1);
+            } else if (i - l !== 1) {
+              rangeWithDots.push('...');
+            }
+          }
+          rangeWithDots.push(i);
+          l = i;
+        });
+ 
+        return rangeWithDots;
+      }
+ 
+      function goToPage(tabKey, page) {
+        const totalPages = Math.max(1, Math.ceil(eventData[tabKey].length / PAGE_SIZE));
+        if (page < 1 || page > totalPages) return;
+        pageState[tabKey] = page;
+        renderEventList(tabKey);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+ 
+      /* =============================================
+         탭 전환
+         ============================================= */
+      function switchEventTab(btn) {
+        const tabKey = btn.dataset.tab;
+ 
+        document.querySelectorAll('.event-tab').forEach((tab) => tab.classList.remove('active'));
+        btn.classList.add('active');
+ 
+        document.querySelectorAll('.event-panel').forEach((panel) => (panel.style.display = 'none'));
+        document.getElementById('event-panel-' + tabKey).style.display = 'block';
+      }
+ 
+      /* =============================================
+         초기 렌더링
+         ============================================= */
+      renderEventList('ongoing');
+      renderEventList('ended');
+    </script>
+
+    </body>
