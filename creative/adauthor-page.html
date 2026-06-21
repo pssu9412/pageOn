@@ -1,0 +1,1364 @@
+<!doctype html>
+<html lang="en" data-layout="horizontal" data-topbar-color="dark">
+  <head>
+    <meta charset="utf-8" />
+    <title>Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="A fully featured admin theme which can be used to build CRM, CMS, etc."
+      name="description"
+    />
+    <meta content="Coderthemes" name="author" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <!-- Plugins css -->
+    <link
+      href="assets/libs/flatpickr/flatpickr.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/libs/selectize/css/selectize.bootstrap3.css"
+      rel="stylesheet"
+      type="text/css"
+    /> 
+
+    <!-- Theme Config Js -->
+    <script src="assets/js/head.js"></script>
+
+    <!-- Bootstrap css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-style"
+    />
+
+    <!-- App css -->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Icons css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Simple-pie Chart CSS -->
+    <link rel="stylesheet" href="assets/libs/chartist/chartist.min.css">
+
+    <!-- 커스텀 CSS -->
+    <link href="assets/css/min-custom.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/css/yj-custom.css">
+    <link rel="stylesheet" href="assets/css/ssu-custom.css"> 
+  </head>
+
+  <body>
+    <!-- Begin page -->
+    <div id="wrapper">
+
+      <!-- Layout -->
+      <!-- ========== Left Sidebar Start ========== -->
+
+      <!-- ========== Left Sidebar End ========== -->
+      <div class="content-page">
+
+                <!-- ========== Topbar Start (상단바) ========== -->
+                <div class="navbar-custom">
+                    <div class="topbar">
+                        <div class="topbar-menu d-flex align-items-center gap-1">
+
+                            <!-- (로고)Topbar Brand Logo -->
+                            <div class="logo-box">
+                                <!-- Brand Logo Light -->
+                                <a href="index.html" class="logo-light">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-lg">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm">
+                                    <!-- <img src="assets/images/logo-light.png" alt="logo" class="logo-lg"> -->
+                                    <!-- <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm"> -->
+                                </a>
+
+                                <!-- Brand Logo Dark -->
+                                <a href="index.html" class="logo-dark">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="dark logo" class="logo-lg">
+                                    <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm">
+                                    <!-- <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm"> -->
+                                </a>
+                            </div>
+
+                            <!-- Sidebar Menu Toggle Button -->
+                            <!-- <button class="button-toggle-menu">
+                                <i class="mdi mdi-menu"></i>
+                            </button> -->
+                            
+                        </div>
+
+                        <div class="topbar-menu d-flex flex-column align-items-center">
+
+                            <div class="topbar-right-top">
+                                <div class="app-search dropdown">
+                                    <form>
+                                        <input type="search" class="form-control rounded-pill" placeholder="Search..." id="top-search">
+                                        <span class="fe-search search-icon font-16"></span>
+                                    </form>
+                                </div>
+
+                            </div>
+                            <div class="topbar-right-bottom">                                
+
+                                
+                                <ul class="topbar-menu d-flex align-items-center">
+
+                                    <!-- 로그인 전 -->
+                                    <!-- <li class="d-none d-sm-inline-block">
+                                        <a href="#" class="nav-link waves-effect waves-light">
+                                            <span class="d-none d-md-inline-block">
+                                                로그인/회원가입
+                                            </span>
+                                        </a>
+
+                                    </li> -->
+                                    <!-- ============ -->
+
+                                    
+
+
+                                    <!-- ============= 사용자 로그인 후 =================-->
+                                    <!-- 장바구니-->
+                                    <li class="d-none d-sm-inline-block">
+                                        <a href="#" class="nav-link waves-effect waves-light">
+                                            <i class="fe-shopping-cart font-22"></i>
+                                        </a>
+                                    </li> 
+
+                                    <!-- 알림 드롭다운 Notofication dropdown -->
+                                    <li class="dropdown notification-list">
+                                        <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                            <i class="fe-bell font-22"></i>
+                                            <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
+                                            <div class="p-2 border-top-0 border-start-0 border-end-0 border-dashed border">
+                                                <div class="row align-items-center">
+                                                    <div class="col">
+                                                        <h6 class="m-0 font-16 fw-semibold"> 알림</h6>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <a href="javascript: void(0);" class="text-dark text-decoration-underline">
+                                                            <small>전체 삭제</small>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="px-1" style="max-height: 300px;" data-simplebar>
+
+                                                <h5 class="text-muted font-13 fw-normal mt-2">오늘</h5>
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card unread-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon bg-primary">
+                                                                    <i class="mdi mdi-comment-account-outline"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Datacorp <small class="fw-normal text-muted ms-1">1 min ago</small></h5>
+                                                                <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon bg-info">
+                                                                    <i class="mdi mdi-account-plus"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Admin <small class="fw-normal text-muted ms-1">1 hours ago</small></h5>
+                                                                <small class="noti-item-subtitle text-muted">New user registered</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <h5 class="text-muted font-13 fw-normal mt-0">어제</h5>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon">
+                                                                    <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Cristina Pride <small class="fw-normal text-muted ms-1">1 day ago</small></h5>
+                                                                <small class="noti-item-subtitle text-muted">Hi, How are you? What about our next meeting</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <h5 class="text-muted font-13 fw-normal mt-0">2021년 12월 30일</h5>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon bg-primary">
+                                                                    <i class="mdi mdi-comment-account-outline"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Datacorp</h5>
+                                                                <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                                                    <div class="card-body">
+                                                        <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0">
+                                                                <div class="notify-icon">
+                                                                    <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                                <h5 class="noti-item-title fw-semibold font-14">Karen Robinson</h5>
+                                                                <small class="noti-item-subtitle text-muted">Wow ! this admin looks good and awesome design</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <div class="text-center">
+                                                    <i class="mdi mdi-dots-circle mdi-spin text-muted h3 mt-0"></i>
+                                                </div>
+                                            </div>
+
+                                            <!-- All-->
+                                            <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item border-top border-light py-2">
+                                                전체 읽음
+                                            </a>
+
+                                        </div>
+                                    </li>
+
+                                    <!-- User Dropdown -->
+                                    <li class="dropdown">
+                                        <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                            <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
+                                            <span class="ms-1 d-none d-md-inline-block">
+                                                Geneva <i class="mdi mdi-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
+
+                                          <!--  -->
+                                            <!-- item-->
+                                            <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-user"></i>
+                                                <span>마이 페이지</span>
+                                            </a>
+
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-book-open"></i>
+                                                <span>내 서재</span>
+                                            </a> -->
+
+                                            <!-- ====== 관리자가 로그인 할 때 ====== -->
+                                            <div class="dropdown-divider"></div>
+                                            
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-settings"></i>
+                                                <span>관리자홈</span>
+                                            </a>
+                                            <!-- ================================= -->
+
+                                            <!-- item-->
+                                            <div class="dropdown-divider"></div>
+
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <i class="fe-log-out"></i>
+                                                <span>로그아웃</span>
+                                            </a>
+
+                                        </div>
+                                    </li>
+
+                                    <!-- Right Bar offcanvas button (Theme Customization Panel) -->
+                                    <!-- <li>
+                                        <a class="nav-link waves-effect waves-light" data-bs-toggle="offcanvas" href="#theme-settings-offcanvas">
+                                            <i class="fe-settings font-22"></i>
+                                        </a>
+                                    </li> -->
+ 
+                                </ul>
+                                <!-- ==============================-->
+
+                            </div>
+                        </div>
+                        
+                    </div>
+
+
+                </div>
+                <!-- ========== Topbar End ========== -->
+
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
+        <div class="content">
+          <!-- ============= 사이드바 시작 ============= -->
+          <div class="sidebar">
+              <ul class="menu">
+                  <li class="menu-item">
+                      <a href="#" class="menu-link">
+                          <span class="menu-text menu-on"> MAIN </span>
+                      </a>            
+                  </li>
+
+                  <li class="menu-item">
+                      <a href="#romance" data-bs-toggle="collapse" class="menu-link" aria-expanded="true">
+                          <span class="menu-text"> 회원관리 </span>
+                          <!-- <span class="menu-arrow"></span> -->
+                      </a>
+                  </li>
+
+                  <li class="menu-item">
+                      <a href="#rofan" data-bs-toggle="collapse" class="menu-link">
+                          <span class="menu-text"> 출판사 관리 </span>
+                          <!-- <span class="menu-arrow"></span> -->
+                      </a>
+                  </li>
+
+                  <li class="menu-item">
+                      <a href="#fantasy" data-bs-toggle="collapse" class="menu-link">
+                          <span class="menu-text"> 작가 관리 </span>
+                          <!-- <span class="menu-arrow"></span> -->
+                      </a>
+                  </li>
+
+                  <li class="menu-item">
+                      <a href="#bl" data-bs-toggle="collapse" class="menu-link">
+                          <span class="menu-text"> 매출 </span>
+                          <!-- <span class="menu-arrow"></span> -->
+                      </a>
+                  </li>
+
+                  <li class="menu-item">
+                      <a href="#gl" data-bs-toggle="collapse" class="menu-link">
+                          <span class="menu-text"> 작품 관리 </span>
+                          <!-- <span class="menu-arrow"></span> -->
+                      </a>
+                  </li>
+
+                  <li class="menu-item">
+                      <a href="#community" data-bs-toggle="collapse" class="menu-link">
+                          <span class="menu-text"> 게시판 관리 </span>
+                          <span class="menu-arrow"></span>
+                      </a>
+                      <div class="collapse" id="community">
+                          <ul class="sub-menu">
+                              <li class="menu-item">
+                                  <a href="ecommerce-dashboard.html" class="menu-link">
+                                      <span class="menu-text">이벤트</span>
+                                  </a>
+                              </li>
+                              <li class="menu-item">
+                                  <a href="ecommerce-dashboard.html" class="menu-link">
+                                      <span class="menu-text">독자 게시판</span>
+                                  </a>
+                              </li>
+                              <li class="menu-item">
+                                  <a href="ecommerce-products.html" class="menu-link">
+                                      <span class="menu-text">달글 게시판</span>
+                                  </a>
+                              </li>
+                              <li class="menu-item">
+                                  <a href="ecommerce-product-detail.html" class="menu-link">
+                                      <span class="menu-text">작가 게시판</span>
+                                  </a>
+                              </li>
+                              <li class="menu-item">
+                                  <a href="ecommerce-product-detail.html" class="menu-link">
+                                      <span class="menu-text">1:1 문의 게시판</span>
+                                  </a>
+                              </li>
+                              
+                          </ul>
+                      </div>
+                  </li>
+                  <li class="menu-item">
+                      <a href="#community" data-bs-toggle="collapse" class="menu-link">
+                          <span class="menu-text"> 정산 요청 관리 </span>
+                          <!-- <span class="menu-arrow"></span> -->
+                      </a>
+                  </li>
+                  <li class="menu-item">
+                      <a href="#community" data-bs-toggle="collapse" class="menu-link">
+                          <span class="menu-text"> 신고 문의 관리 </span>
+                          <!-- <span class="menu-arrow"></span> -->
+                      </a>
+                  </li>                  
+
+              </ul>
+          </div>
+          <!-- ============= 사이드바 끝 ============= -->
+
+            <!-- Start Content -->
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="ad-author-wrap">
+
+                        <!-- 상단 탭 -->
+                        <div class="ad-author-tabs">
+                            <button type="button"
+                                    class="ad-author-tab active"
+                                    data-tab="authorManage">
+                                작가 관리
+                            </button>
+
+                            <button type="button"
+                                    class="ad-author-tab"
+                                    data-tab="authorRequest">
+                                작가 요청
+                            </button>
+                        </div>
+
+                        <!-- 작가 관리 탭 -->
+                        <div id="authorManage" class="ad-author-tab-content active">
+
+                            <!-- 검색 및 정렬 -->
+                            <div class="ad-author-top-area">
+
+                                <div class="ad-author-search-wrap">
+                                    <input type="text"
+                                        id="authorSearchInput"
+                                        class="form-control ad-author-search-input"
+                                        placeholder="작가명을 입력하세요">
+
+                                    <button type="button"
+                                            id="authorSearchBtn"
+                                            class="ad-author-search-btn"
+                                            aria-label="검색">
+                                        <i class="bi bi-search"></i>
+                                    </button>
+                                </div>
+
+                                <select id="authorSortSelect"
+                                        class="form-select ad-author-sort-select">
+                                    <option value="register" selected>등록순</option>
+                                    <option value="name">이름순</option>
+                                </select>
+
+                            </div>
+
+                            <!-- 작가 목록 -->
+                            <div class="ad-author-table-wrap">
+                                <table class="ad-author-table">
+                                    <thead>
+                                        <tr>
+                                            <th>작가명</th>
+                                            <th>아이디</th>
+                                            <th>작가 등록일</th>
+                                            <th>상태</th>
+                                            <th>작품 수</th>
+                                            <th>최근 활동일</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="authorTableBody">
+
+                                        <tr class="ad-author-row"
+                                            data-name="김하린"
+                                            data-id="harin01"
+                                            data-register-date="2024-01-15"
+                                            data-status="정상"
+                                            data-work-count="5"
+                                            data-recent-date="2026-06-18"
+                                            data-nickname="하린"
+                                            data-publisher="A 출판사"
+                                            data-email="harin01@email.com"
+                                            data-grade="일반 작가"
+                                            data-subscriber="1,204"
+                                            data-report-count="0"
+                                            data-phone="010-1234-5678"
+                                            data-join-date="2023-11-21"
+                                            data-withdraw-date="-"
+                                            data-account="국민은행 123456-01-123456"
+                                            data-active="active">
+
+                                            <td>김하린</td>
+                                            <td>harin01</td>
+                                            <td>2024-01-15</td>
+                                            <td>
+                                                <span class="ad-author-status normal">정상</span>
+                                            </td>
+                                            <td>5</td>
+                                            <td>2026-06-18</td>
+                                        </tr>
+
+                                        <tr class="ad-author-row"
+                                            data-name="이서윤"
+                                            data-id="seoyoon22"
+                                            data-register-date="2024-01-16"
+                                            data-status="정지"
+                                            data-work-count="3"
+                                            data-recent-date="2026-06-12"
+                                            data-nickname="서윤"
+                                            data-publisher="B 출판사"
+                                            data-email="seoyoon22@email.com"
+                                            data-grade="일반 작가"
+                                            data-subscriber="816"
+                                            data-report-count="2"
+                                            data-phone="010-2345-6789"
+                                            data-join-date="2023-12-03"
+                                            data-withdraw-date="-"
+                                            data-account="신한은행 110-123-456789"
+                                            data-active="inactive">
+
+                                            <td>이서윤</td>
+                                            <td>seoyoon22</td>
+                                            <td>2024-01-16</td>
+                                            <td>
+                                                <span class="ad-author-status stop">정지</span>
+                                            </td>
+                                            <td>3</td>
+                                            <td>2026-06-12</td>
+                                        </tr>
+
+                                        <tr class="ad-author-row"
+                                            data-name="박민서"
+                                            data-id="minseo77"
+                                            data-register-date="2024-01-17"
+                                            data-status="경고"
+                                            data-work-count="8"
+                                            data-recent-date="2026-06-19"
+                                            data-nickname="민서"
+                                            data-publisher="C 출판사"
+                                            data-email="minseo77@email.com"
+                                            data-grade="계약 작가"
+                                            data-subscriber="2,410"
+                                            data-report-count="1"
+                                            data-phone="010-3456-7890"
+                                            data-join-date="2023-10-14"
+                                            data-withdraw-date="-"
+                                            data-account="우리은행 1002-345-678901"
+                                            data-active="active">
+
+                                            <td>박민서</td>
+                                            <td>minseo77</td>
+                                            <td>2024-01-17</td>
+                                            <td>
+                                                <span class="ad-author-status warning">경고</span>
+                                            </td>
+                                            <td>8</td>
+                                            <td>2026-06-19</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                        <!-- 작가 요청 탭 -->
+                        <div id="authorRequest" class="ad-author-tab-content">
+
+                            <!-- 상태 필터 및 정렬 -->
+                            <div class="ad-author-request-top">
+
+                                <div class="ad-author-request-filter">
+                                    <label>
+                                        <input type="radio"
+                                            name="authorRequestFilter"
+                                            value="대기중"
+                                            checked>
+                                        대기중
+                                    </label>
+
+                                    <label>
+                                        <input type="radio"
+                                            name="authorRequestFilter"
+                                            value="승인">
+                                        승인
+                                    </label>
+
+                                    <label>
+                                        <input type="radio"
+                                            name="authorRequestFilter"
+                                            value="반려">
+                                        반려
+                                    </label>
+
+                                    <label>
+                                        <input type="radio"
+                                            name="authorRequestFilter"
+                                            value="전체">
+                                        전체
+                                    </label>
+                                </div>
+
+                                <select id="authorRequestSort"
+                                        class="form-select ad-author-request-sort">
+                                    <option value="latest" selected>날짜순</option>
+                                    <option value="oldest">오래된순</option>
+                                </select>
+
+                            </div>
+
+                            <!-- 작가 요청 목록 -->
+                            <div class="ad-author-table-wrap">
+                                <table class="ad-author-table ad-author-request-table">
+
+                                    <thead>
+                                        <tr>
+                                            <th>요청일</th>
+                                            <th>회차 수</th>
+                                            <th>아이디</th>
+                                            <th>작가명</th>
+                                            <th>승인 / 반려</th>
+                                            <th>비고</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="authorRequestTableBody">
+
+                                        <tr class="ad-author-request-row"
+                                            data-request-date="2026-06-19"
+                                            data-request-status="대기중">
+
+                                            <td>2026-06-19</td>
+                                            <td>7</td>
+                                            <td>chulsoo01</td>
+                                            <td>김철수</td>
+
+                                            <td>
+                                                <select class="form-select ad-author-request-status">
+                                                    <option value="대기중" selected>대기중</option>
+                                                    <option value="승인">승인</option>
+                                                    <option value="반려">반려</option>
+                                                </select>
+                                            </td>
+
+                                            <td>
+                                                <input type="text"
+                                                    class="form-control ad-author-request-note"
+                                                    placeholder="-">
+                                            </td>
+                                        </tr>
+
+                                        <tr class="ad-author-request-row"
+                                            data-request-date="2026-06-18"
+                                            data-request-status="대기중">
+
+                                            <td>2026-06-18</td>
+                                            <td>5</td>
+                                            <td>younghee02</td>
+                                            <td>이영희</td>
+
+                                            <td>
+                                                <select class="form-select ad-author-request-status">
+                                                    <option value="대기중" selected>대기중</option>
+                                                    <option value="승인">승인</option>
+                                                    <option value="반려">반려</option>
+                                                </select>
+                                            </td>
+
+                                            <td>
+                                                <input type="text"
+                                                    class="form-control ad-author-request-note"
+                                                    placeholder="-">
+                                            </td>
+                                        </tr>
+
+                                        <tr class="ad-author-request-row"
+                                            data-request-date="2026-06-17"
+                                            data-request-status="승인">
+
+                                            <td>2026-06-17</td>
+                                            <td>8</td>
+                                            <td>minsoo77</td>
+                                            <td>박민수</td>
+
+                                            <td>
+                                                <select class="form-select ad-author-request-status">
+                                                    <option value="대기중">대기중</option>
+                                                    <option value="승인" selected>승인</option>
+                                                    <option value="반려">반려</option>
+                                                </select>
+                                            </td>
+
+                                            <td>
+                                                <input type="text"
+                                                    class="form-control ad-author-request-note"
+                                                    value="-">
+                                            </td>
+                                        </tr>
+
+                                        <tr class="ad-author-request-row"
+                                            data-request-date="2026-06-16"
+                                            data-request-status="반려">
+
+                                            <td>2026-06-16</td>
+                                            <td>4</td>
+                                            <td>sujin04</td>
+                                            <td>정수진</td>
+
+                                            <td>
+                                                <select class="form-select ad-author-request-status">
+                                                    <option value="대기중">대기중</option>
+                                                    <option value="승인">승인</option>
+                                                    <option value="반려" selected>반려</option>
+                                                </select>
+                                            </td>
+
+                                            <td>
+                                                <input type="text"
+                                                    class="form-control ad-author-request-note"
+                                                    value="등록 작품 기준 미충족">
+                                            </td>
+                                        </tr>
+
+                                        <tr class="ad-author-request-row"
+                                            data-request-date="2026-06-15"
+                                            data-request-status="대기중">
+
+                                            <td>2026-06-15</td>
+                                            <td>6</td>
+                                            <td>dongwook05</td>
+                                            <td>최동욱</td>
+
+                                            <td>
+                                                <select class="form-select ad-author-request-status">
+                                                    <option value="대기중" selected>대기중</option>
+                                                    <option value="승인">승인</option>
+                                                    <option value="반려">반려</option>
+                                                </select>
+                                            </td>
+
+                                            <td>
+                                                <input type="text"
+                                                    class="form-control ad-author-request-note"
+                                                    placeholder="-">
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- 작가 상세 정보 모달 -->
+            <div class="modal fade"
+                id="authorDetailModal"
+                tabindex="-1"
+                aria-labelledby="authorDetailModalLabel"
+                aria-hidden="true">
+
+                <div class="modal-dialog modal-dialog-centered ad-author-modal-dialog">
+                    <div class="modal-content ad-author-modal-content">
+
+                        <div class="modal-header ad-author-modal-header">
+                            <h5 class="modal-title" id="authorDetailModalLabel">
+                                작가 상세 정보
+                            </h5>
+
+                            <button type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="닫기">
+                            </button>
+                        </div>
+
+                        <div class="modal-body ad-author-modal-body">
+
+                            <!-- 상단 프로필 -->
+                            <div class="ad-author-profile-area">
+
+                                <div class="ad-author-profile-image">
+                                    <i class="bi bi-person"></i>
+                                </div>
+
+                                <div class="ad-author-profile-info">
+
+                                    <div class="ad-author-profile-row">
+                                        <div class="ad-author-profile-item">
+                                            <span class="ad-author-profile-label">닉네임</span>
+                                            <span id="modalAuthorNickname"
+                                                class="ad-author-profile-value"></span>
+                                        </div>
+
+                                        <div class="ad-author-profile-item">
+                                            <span class="ad-author-profile-label">아이디</span>
+                                            <span id="modalAuthorId"
+                                                class="ad-author-profile-value"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="ad-author-profile-row">
+                                        <div class="ad-author-profile-item full">
+                                            <span class="ad-author-profile-label">소속 출판사</span>
+                                            <span id="modalAuthorPublisher"
+                                                class="ad-author-profile-value"></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- 상세 정보 -->
+                            <div class="ad-author-detail-grid">
+
+                                <div class="ad-author-detail-item wide">
+                                    <label for="modalAuthorEmail">이메일 :</label>
+                                    <input type="text"
+                                        id="modalAuthorEmail"
+                                        class="form-control"
+                                        readonly>
+                                </div>
+
+                                <div class="ad-author-detail-item">
+                                    <label for="modalAuthorStatus">상태 :</label>
+
+                                    <select id="modalAuthorStatus"
+                                            class="form-select">
+                                        <option value="정상">정상</option>
+                                        <option value="경고">경고</option>
+                                        <option value="정지">정지</option>
+                                        <option value="자격 박탈">자격 박탈</option>
+                                    </select>
+                                </div>
+
+                                <div class="ad-author-detail-item">
+                                    <label for="modalAuthorName">이름 :</label>
+                                    <input type="text"
+                                        id="modalAuthorName"
+                                        class="form-control"
+                                        readonly>
+                                </div>
+
+                                <div class="ad-author-detail-item">
+                                    <label for="modalAuthorGrade">등급 :</label>
+                                    <input type="text"
+                                        id="modalAuthorGrade"
+                                        class="form-control"
+                                        readonly>
+                                </div>
+
+                                <div class="ad-author-detail-item">
+                                    <label for="modalAuthorWorkCount">작품 수 :</label>
+                                    <input type="text"
+                                        id="modalAuthorWorkCount"
+                                        class="form-control"
+                                        readonly>
+                                </div>
+
+                                <div class="ad-author-detail-item ad-author-active-item">
+                                    <span class="ad-author-detail-label">활성 여부 :</span>
+
+                                    <div class="ad-author-radio-wrap">
+                                        <label>
+                                            <input type="radio"
+                                                name="authorActive"
+                                                value="active">
+                                            활성화
+                                        </label>
+
+                                        <label>
+                                            <input type="radio"
+                                                name="authorActive"
+                                                value="inactive">
+                                            비활성화
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="ad-author-detail-item">
+                                    <label for="modalAuthorSubscriber">구독 수 :</label>
+                                    <input type="text"
+                                        id="modalAuthorSubscriber"
+                                        class="form-control"
+                                        readonly>
+                                </div>
+
+                                <div class="ad-author-detail-item">
+                                    <label for="modalAuthorReportCount">신고 수 :</label>
+                                    <input type="text"
+                                        id="modalAuthorReportCount"
+                                        class="form-control"
+                                        readonly>
+                                </div>
+
+                                <div class="ad-author-detail-item">
+                                    <label for="modalAuthorPhone">연락처 :</label>
+                                    <input type="text"
+                                        id="modalAuthorPhone"
+                                        class="form-control"
+                                        readonly>
+                                </div>
+
+                                <div class="ad-author-detail-item">
+                                    <label for="modalAuthorRecentDate">최근 방문일 :</label>
+                                    <input type="text"
+                                        id="modalAuthorRecentDate"
+                                        class="form-control"
+                                        readonly>
+                                </div>
+
+                                <div class="ad-author-detail-item">
+                                    <label for="modalAuthorJoinDate">가입일 :</label>
+                                    <input type="text"
+                                        id="modalAuthorJoinDate"
+                                        class="form-control"
+                                        readonly>
+                                </div>
+
+                                <div class="ad-author-detail-item">
+                                    <label for="modalAuthorWithdrawDate">탈퇴일 :</label>
+                                    <input type="text"
+                                        id="modalAuthorWithdrawDate"
+                                        class="form-control"
+                                        readonly>
+                                </div>
+
+                                <div class="ad-author-detail-item full">
+                                    <label for="modalAuthorAccount">계좌번호 :</label>
+                                    <input type="text"
+                                        id="modalAuthorAccount"
+                                        class="form-control"
+                                        readonly>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer ad-author-modal-footer">
+                            <button type="button"
+                                    id="authorModifyBtn"
+                                    class="ad-author-modal-btn modify">
+                                수정
+                            </button>
+
+                            <button type="button"
+                                    class="ad-author-modal-btn confirm"
+                                    data-bs-dismiss="modal">
+                                확인
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+
+    </div>
+    <!-- Footer Start -->
+    <footer class="footer footer-alt">
+        &copy;by <a href="" class="text-black-50">PageOn</a> 
+    </footer>
+    <!-- end Footer -->
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <!-- Plugins js-->
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/libs/selectize/js/standalone/selectize.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        
+            const tabButtons = document.querySelectorAll(".ad-author-tab");
+            const tabContents = document.querySelectorAll(".ad-author-tab-content");
+        
+            const authorRows = document.querySelectorAll(".ad-author-row");
+            const authorTableBody = document.getElementById("authorTableBody");
+        
+            const searchInput = document.getElementById("authorSearchInput");
+            const searchBtn = document.getElementById("authorSearchBtn");
+            const sortSelect = document.getElementById("authorSortSelect");
+        
+            const detailModalElement = document.getElementById("authorDetailModal");
+            const detailModal = new bootstrap.Modal(detailModalElement);
+        
+            let selectedAuthorRow = null;
+        
+        
+            /* ==============================
+               탭 전환
+            ============================== */
+        
+            tabButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+        
+                    const targetId = button.dataset.tab;
+        
+                    tabButtons.forEach(function (tabButton) {
+                        tabButton.classList.remove("active");
+                    });
+        
+                    tabContents.forEach(function (tabContent) {
+                        tabContent.classList.remove("active");
+                    });
+        
+                    button.classList.add("active");
+                    document.getElementById(targetId).classList.add("active");
+                });
+            });
+        
+        
+            /* ==============================
+               작가명 검색
+            ============================== */
+        
+            function searchAuthors() {
+                const keyword = searchInput.value.trim().toLowerCase();
+                const rows = authorTableBody.querySelectorAll(".ad-author-row");
+        
+                rows.forEach(function (row) {
+                    const authorName = row.dataset.name.toLowerCase();
+        
+                    if (authorName.includes(keyword)) {
+                        row.style.display = "";
+                    } else {
+                        row.style.display = "none";
+                    }
+                });
+            }
+        
+            searchBtn.addEventListener("click", searchAuthors);
+        
+            searchInput.addEventListener("keydown", function (event) {
+                if (event.key === "Enter") {
+                    searchAuthors();
+                }
+            });
+        
+        
+            /* ==============================
+               정렬
+               등록순 기본: 최근 등록일 우선
+            ============================== */
+        
+            sortSelect.addEventListener("change", function () {
+        
+                const sortValue = sortSelect.value;
+                const rows = Array.from(
+                    authorTableBody.querySelectorAll(".ad-author-row")
+                );
+        
+                rows.sort(function (a, b) {
+        
+                    if (sortValue === "name") {
+                        return a.dataset.name.localeCompare(
+                            b.dataset.name,
+                            "ko"
+                        );
+                    }
+        
+                    const dateA = new Date(a.dataset.registerDate);
+                    const dateB = new Date(b.dataset.registerDate);
+        
+                    return dateB - dateA;
+                });
+        
+                rows.forEach(function (row) {
+                    authorTableBody.appendChild(row);
+                });
+            });
+        
+        
+            /* ==============================
+               작가 상세 모달 열기
+            ============================== */
+        
+            authorRows.forEach(function (row) {
+                row.addEventListener("click", function () {
+        
+                    selectedAuthorRow = row;
+        
+                    document.getElementById("modalAuthorNickname").textContent =
+                        row.dataset.nickname;
+        
+                    document.getElementById("modalAuthorId").textContent =
+                        row.dataset.id;
+        
+                    document.getElementById("modalAuthorPublisher").textContent =
+                        row.dataset.publisher;
+        
+                    document.getElementById("modalAuthorEmail").value =
+                        row.dataset.email;
+        
+                    document.getElementById("modalAuthorStatus").value =
+                        row.dataset.status;
+        
+                    document.getElementById("modalAuthorName").value =
+                        row.dataset.name;
+        
+                    document.getElementById("modalAuthorGrade").value =
+                        row.dataset.grade;
+        
+                    document.getElementById("modalAuthorWorkCount").value =
+                        row.dataset.workCount;
+        
+                    document.getElementById("modalAuthorSubscriber").value =
+                        row.dataset.subscriber;
+        
+                    document.getElementById("modalAuthorReportCount").value =
+                        row.dataset.reportCount;
+        
+                    document.getElementById("modalAuthorPhone").value =
+                        row.dataset.phone;
+        
+                    document.getElementById("modalAuthorRecentDate").value =
+                        row.dataset.recentDate;
+        
+                    document.getElementById("modalAuthorJoinDate").value =
+                        row.dataset.joinDate;
+        
+                    document.getElementById("modalAuthorWithdrawDate").value =
+                        row.dataset.withdrawDate;
+        
+                    document.getElementById("modalAuthorAccount").value =
+                        row.dataset.account;
+        
+                    const activeRadio = document.querySelector(
+                        'input[name="authorActive"][value="' +
+                        row.dataset.active +
+                        '"]'
+                    );
+        
+                    if (activeRadio) {
+                        activeRadio.checked = true;
+                    }
+        
+                    detailModal.show();
+                });
+            });
+        
+        
+            /* ==============================
+               상태 및 활성 여부 수정
+            ============================== */
+        
+            document.getElementById("authorModifyBtn")
+                .addEventListener("click", function () {
+        
+                    if (!selectedAuthorRow) {
+                        return;
+                    }
+        
+                    const changedStatus =
+                        document.getElementById("modalAuthorStatus").value;
+        
+                    const selectedActiveRadio =
+                        document.querySelector(
+                            'input[name="authorActive"]:checked'
+                        );
+        
+                    const changedActive = selectedActiveRadio
+                        ? selectedActiveRadio.value
+                        : selectedAuthorRow.dataset.active;
+        
+                    selectedAuthorRow.dataset.status = changedStatus;
+                    selectedAuthorRow.dataset.active = changedActive;
+        
+                    const statusElement =
+                        selectedAuthorRow.querySelector(".ad-author-status");
+        
+                    statusElement.textContent = changedStatus;
+                    statusElement.className = "ad-author-status";
+        
+                    if (changedStatus === "정상") {
+                        statusElement.classList.add("normal");
+                    } else if (changedStatus === "경고") {
+                        statusElement.classList.add("warning");
+                    } else if (changedStatus === "정지") {
+                        statusElement.classList.add("stop");
+                    } else {
+                        statusElement.classList.add("revoke");
+                    }
+        
+                    /*
+                    실제 서버 연결 시 이 부분에서 Ajax 요청
+        
+                    $.ajax({
+                        url: "/admin/author/update",
+                        type: "POST",
+                        data: {
+                            authorId: selectedAuthorRow.dataset.id,
+                            status: changedStatus,
+                            active: changedActive
+                        },
+                        success: function(response) {
+                            alert("수정되었습니다.");
+                        }
+                    });
+                    */
+        
+                    alert("수정되었습니다.");
+                });
+        
+        });
+
+        /* ==============================
+        작가 요청 상태 필터
+        ============================== */
+
+        const requestFilterRadios = document.querySelectorAll(
+            'input[name="authorRequestFilter"]'
+        );
+
+        const requestTableBody = document.getElementById(
+            "authorRequestTableBody"
+        );
+
+        function filterAuthorRequests() {
+            const selectedFilter = document.querySelector(
+                'input[name="authorRequestFilter"]:checked'
+            ).value;
+
+            const requestRows = requestTableBody.querySelectorAll(
+                ".ad-author-request-row"
+            );
+
+            requestRows.forEach(function (row) {
+                const rowStatus = row.dataset.requestStatus;
+
+                if (
+                    selectedFilter === "전체" ||
+                    selectedFilter === rowStatus
+                ) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+
+        requestFilterRadios.forEach(function (radio) {
+            radio.addEventListener("change", filterAuthorRequests);
+        });
+
+
+        /* ==============================
+        작가 요청 날짜 정렬
+        ============================== */
+
+        document.getElementById("authorRequestSort")
+            .addEventListener("change", function () {
+
+                const sortValue = this.value;
+
+                const requestRows = Array.from(
+                    requestTableBody.querySelectorAll(
+                        ".ad-author-request-row"
+                    )
+                );
+
+                requestRows.sort(function (a, b) {
+                    const dateA = new Date(a.dataset.requestDate);
+                    const dateB = new Date(b.dataset.requestDate);
+
+                    if (sortValue === "oldest") {
+                        return dateA - dateB;
+                    }
+
+                    return dateB - dateA;
+                });
+
+                requestRows.forEach(function (row) {
+                    requestTableBody.appendChild(row);
+                });
+            });
+
+
+        /* ==============================
+        승인 / 반려 상태 변경
+        ============================== */
+
+        document.querySelectorAll(".ad-author-request-status")
+            .forEach(function (select) {
+
+                select.addEventListener("change", function () {
+
+                    const row = select.closest(
+                        ".ad-author-request-row"
+                    );
+
+                    const changedStatus = select.value;
+                    const noteInput = row.querySelector(
+                        ".ad-author-request-note"
+                    );
+
+                    row.dataset.requestStatus = changedStatus;
+
+                    if (changedStatus === "승인") {
+                        noteInput.value = "-";
+                    }
+
+                    if (
+                        changedStatus === "반려" &&
+                        noteInput.value.trim() === "-"
+                    ) {
+                        noteInput.value = "";
+                        noteInput.focus();
+                    }
+
+                    /*
+                    실제 서버 연결 시 Ajax 처리
+
+                    $.ajax({
+                        url: "/admin/author-request/update",
+                        type: "POST",
+                        data: {
+                            requestId: row.dataset.requestId,
+                            status: changedStatus,
+                            note: noteInput.value
+                        },
+                        success: function () {
+                            alert("처리 상태가 변경되었습니다.");
+                        }
+                    });
+                    */
+
+                    filterAuthorRequests();
+                });
+            });
+        </script>
+
+        
+  </body>
+</html>
