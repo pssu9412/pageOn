@@ -1816,15 +1816,18 @@ input[type="radio"]:checked {
   font-weight: 700;
 }
 
-.report-status.pending {
+.report-status.pending,
+.settle-status.pending {
   color: #ff4d4f;
 }
 
-.report-status.complete {
+.report-status.complete,
+.settle-status.complete {
   color: #1677ff;
 }
 
-.report-status.rejected {
+.report-status.rejected,
+.settle-status.unrequested {
   color: #6c757d;
 }
 
