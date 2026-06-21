@@ -121,9 +121,49 @@
                 <button type="button" class="library-tab" data-tab="favorite" onclick="switchLibraryTab(this)">선호작품</button>
                 <button type="button" class="library-tab" data-tab="recent" onclick="switchLibraryTab(this)">최근 본 작품</button>
               </div>
-              <button type="button" class="sort-btn" onclick="toggleSort()" title="정렬">
-                <i class="mdi mdi-sort-variant"></i>
-              </button>
+ 
+              <!-- 구매작품 탭 전용: 정렬만 -->
+              <div class="toolbar-actions" id="toolbar-purchased">
+                <div class="sort-dropdown">
+                  <button type="button" class="sort-btn" onclick="toggleSortMenu('sort-menu-purchased')">
+                    <i class="mdi mdi-sort-variant"></i>
+                    <span id="sort-label-purchased">최근 본 순</span>
+                  </button>
+                  <div class="sort-menu" id="sort-menu-purchased">
+                    <button type="button" class="selected" onclick="selectSort('purchased', '최근 본 순', this)">최근 본 순</button>
+                    <button type="button" onclick="selectSort('purchased', '이름순', this)">이름순</button>
+                  </div>
+                </div>
+              </div>
+ 
+              <!-- 선호작품 탭 전용: 정렬만 (등록순/이름순) -->
+              <div class="toolbar-actions" id="toolbar-favorite" style="display:none;">
+                <div class="sort-dropdown">
+                  <button type="button" class="sort-btn" onclick="toggleSortMenu('sort-menu-favorite')">
+                    <i class="mdi mdi-sort-variant"></i>
+                    <span id="sort-label-favorite">선작 등록순</span>
+                  </button>
+                  <div class="sort-menu" id="sort-menu-favorite">
+                    <button type="button" class="selected" onclick="selectSort('favorite', '선작 등록순', this)">선작 등록순</button>
+                    <button type="button" onclick="selectSort('favorite', '이름순', this)">이름순</button>
+                  </div>
+                </div>
+              </div>
+ 
+              <!-- 최근 본 작품 탭 전용: 편집(숨기기) + 정렬 -->
+              <div class="toolbar-actions" id="toolbar-recent" style="display:none;">
+                <button type="button" class="edit-btn" id="recent-edit-btn" onclick="toggleEditMode()">편집</button>
+                <div class="sort-dropdown">
+                  <button type="button" class="sort-btn" onclick="toggleSortMenu('sort-menu-recent')">
+                    <i class="mdi mdi-sort-variant"></i>
+                    <span id="sort-label-recent">조회순</span>
+                  </button>
+                  <div class="sort-menu" id="sort-menu-recent">
+                    <button type="button" class="selected" onclick="selectSort('recent', '조회순', this)">조회순</button>
+                    <button type="button" onclick="selectSort('recent', '이름순', this)">이름순</button>
+                  </div>
+                </div>
+              </div>
             </div>
  
             <!-- 구매작품 탭 -->
@@ -267,19 +307,84 @@
               </div>
             </div>
  
-            <!-- 선호작품 탭 (빈 상태 예시) -->
+            <!-- 선호작품 탭 -->
             <div class="library-panel" id="panel-favorite" style="display:none;">
-              <div class="library-empty">
+              <div class="library-grid">
+                <div class="book-card">
+                  <div class="book-cover">
+                    <i class="fe-image"></i>
+                    <div class="book-fav-toggle" onclick="unfavorite(this)" title="선작 해제">
+                      <i class="mdi mdi-heart"></i>
+                    </div>
+                    <span class="book-badge">총 15권</span>
+                  </div>
+                </div>
+                <div class="book-card">
+                  <div class="book-cover">
+                    <i class="fe-image"></i>
+                    <div class="book-fav-toggle" onclick="unfavorite(this)" title="선작 해제">
+                      <i class="mdi mdi-heart"></i>
+                    </div>
+                    <span class="book-badge">총 222화</span>
+                  </div>
+                </div>
+                <div class="book-card">
+                  <div class="book-cover">
+                    <i class="fe-image"></i>
+                    <div class="book-fav-toggle" onclick="unfavorite(this)" title="선작 해제">
+                      <i class="mdi mdi-heart"></i>
+                    </div>
+                    <span class="book-badge">총 48권</span>
+                  </div>
+                </div>
+              </div>
+ 
+              <!-- 빈 상태 (선작이 모두 사라지면 표시) -->
+              <div class="library-empty" id="favorite-empty" style="display:none;">
                 <i class="fe-heart"></i>
                 <p>아직 선호작품으로 등록한 작품이 없어요.</p>
               </div>
             </div>
  
-            <!-- 최근 본 작품 탭 (빈 상태 예시) -->
+            <!-- 최근 본 작품 탭 -->
             <div class="library-panel" id="panel-recent" style="display:none;">
-              <div class="library-empty">
-                <i class="fe-clock"></i>
-                <p>최근 본 작품이 없어요.</p>
+              <div class="library-grid" id="recent-grid">
+                <div class="book-card">
+                  <div class="book-cover">
+                    <i class="fe-image"></i>
+                    <div class="book-hide-toggle" onclick="toggleHide(this, event)" title="숨기기">
+                      <i class="mdi mdi-eye-off-outline"></i>
+                    </div>
+                    <span class="book-badge">총 11권</span>
+                  </div>
+                </div>
+                <div class="book-card">
+                  <div class="book-cover">
+                    <i class="fe-image"></i>
+                    <div class="book-hide-toggle" onclick="toggleHide(this, event)" title="숨기기">
+                      <i class="mdi mdi-eye-off-outline"></i>
+                    </div>
+                    <span class="book-badge">총 5권</span>
+                  </div>
+                </div>
+                <div class="book-card hidden-item">
+                  <div class="book-cover">
+                    <i class="fe-image"></i>
+                    <div class="book-hide-toggle hidden-state" onclick="toggleHide(this, event)" title="숨기기 해제">
+                      <i class="mdi mdi-eye-outline"></i>
+                    </div>
+                    <span class="book-badge">총 48권</span>
+                  </div>
+                </div>
+                <div class="book-card">
+                  <div class="book-cover">
+                    <i class="fe-image"></i>
+                    <div class="book-hide-toggle" onclick="toggleHide(this, event)" title="숨기기">
+                      <i class="mdi mdi-eye-off-outline"></i>
+                    </div>
+                    <span class="book-badge">총 222화</span>
+                  </div>
+                </div>
               </div>
             </div>
  
@@ -297,27 +402,106 @@
     <script src="assets/js/app.min.js"></script>
  
     <script>
-      // 탭 전환
+      // ===== 탭 전환 =====
       function switchLibraryTab(btn) {
+        const tabKey = btn.dataset.tab;
+ 
         document.querySelectorAll('.library-tab').forEach(tab => tab.classList.remove('active'));
         btn.classList.add('active');
  
-        document.querySelectorAll('.library-panel').forEach(panel => panel.style.display = 'none');
-        const target = document.getElementById('panel-' + btn.dataset.tab);
-        if (target) target.style.display = 'block';
+        // 패널 전환
+        document.querySelectorAll('.library-panel').forEach(panel => (panel.style.display = 'none'));
+        const targetPanel = document.getElementById('panel-' + tabKey);
+        if (targetPanel) targetPanel.style.display = 'block';
+ 
+        // 툴바(정렬/편집) 전환
+        document.querySelectorAll('.toolbar-actions').forEach(t => (t.style.display = 'none'));
+        const targetToolbar = document.getElementById('toolbar-' + tabKey);
+        if (targetToolbar) targetToolbar.style.display = 'flex';
+ 
+        // 다른 탭으로 이동하면 열려있던 정렬 메뉴 닫기
+        closeAllSortMenus();
       }
  
-      // 검색 (자리만 마련, 추후 실제 검색 로직 연결)
+      // ===== 검색 =====
       function searchLibrary() {
         const keyword = document.getElementById('library-search-input').value.trim();
         if (!keyword) return;
         console.log('내 서재 검색어:', keyword);
       }
  
-      // 정렬 버튼 (자리만 마련, 추후 정렬 옵션 메뉴 연결)
-      function toggleSort() {
-        console.log('정렬 버튼 클릭됨');
+      // ===== 정렬 드롭다운 =====
+      function closeAllSortMenus() {
+        document.querySelectorAll('.sort-menu').forEach(menu => menu.classList.remove('show'));
+      }
+ 
+      function toggleSortMenu(menuId) {
+        const menu = document.getElementById(menuId);
+        const wasOpen = menu.classList.contains('show');
+        closeAllSortMenus();
+        if (!wasOpen) menu.classList.add('show');
+      }
+ 
+      // 메뉴 바깥 클릭하면 닫기
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.sort-dropdown')) {
+          closeAllSortMenus();
+        }
+      });
+ 
+      function selectSort(tabKey, label, btn) {
+        document.getElementById('sort-label-' + tabKey).textContent = label;
+ 
+        // 선택 표시
+        const menu = btn.closest('.sort-menu');
+        menu.querySelectorAll('button').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+ 
+        closeAllSortMenus();
+ 
+        // TODO: 실제 정렬 로직 연결 (서버 데이터 받아오는 방식이면 여기서 재조회)
+        console.log(tabKey + ' 탭 정렬 기준 변경:', label);
+      }
+ 
+      // ===== 최근 본 작품: 편집(숨기기) 모드 =====
+      function toggleEditMode() {
+        const grid = document.getElementById('recent-grid');
+        const editBtn = document.getElementById('recent-edit-btn');
+        const isEditing = grid.classList.toggle('edit-mode');
+        editBtn.classList.toggle('on', isEditing);
+        editBtn.textContent = isEditing ? '완료' : '편집';
+      }
+ 
+      function toggleHide(toggleEl, event) {
+        event.preventDefault();
+        event.stopPropagation();
+ 
+        const card = toggleEl.closest('.book-card');
+        const icon = toggleEl.querySelector('i');
+        const isHidden = card.classList.toggle('hidden-item');
+ 
+        if (isHidden) {
+          toggleEl.classList.add('hidden-state');
+          toggleEl.title = '숨기기 해제';
+          icon.className = 'mdi mdi-eye-outline';
+        } else {
+          toggleEl.classList.remove('hidden-state');
+          toggleEl.title = '숨기기';
+          icon.className = 'mdi mdi-eye-off-outline';
+        }
+      }
+ 
+      // ===== 선호작품: 선작 해제 =====
+      function unfavorite(toggleEl) {
+        const card = toggleEl.closest('.book-card');
+        card.remove();
+ 
+        const grid = document.querySelector('#panel-favorite .library-grid');
+        const emptyState = document.getElementById('favorite-empty');
+        if (grid && grid.children.length === 0) {
+          grid.style.display = 'none';
+          if (emptyState) emptyState.style.display = 'block';
+        }
       }
     </script>
-
     </body>
