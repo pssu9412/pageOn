@@ -932,4 +932,489 @@ a.settings-item:hover {
         color: #ccc;
       }
 
-      
+       /* =============================================
+         이벤트 등록 페이지 전용 스타일
+         ============================================= */
+ 
+      .form-wrap {
+        max-width: 760px;
+      }
+ 
+      .page-title-bar {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 28px;
+      }
+ 
+      /* 폼 섹션 */
+      .form-section {
+        margin-bottom: 28px;
+      }
+ 
+      .form-section-label {
+        font-size: 14px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 10px;
+      }
+ 
+      .form-section-sub {
+        font-size: 13px;
+        color: #888;
+        margin-bottom: 8px;
+      }
+ 
+      /* 공통 입력 */
+      .form-control-plain {
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 9px 12px;
+        font-size: 14px;
+        color: #333;
+        background: #fff;
+      }
+ 
+      .form-control-plain:focus {
+        outline: none;
+        border-color: #999;
+      }
+ 
+      select.form-control-plain {
+        appearance: none;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23888'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        padding-right: 30px;
+      }
+ 
+      /* 기간 설정 행 */
+      .period-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+ 
+      .period-row .period-label {
+        width: 36px;
+        font-size: 13px;
+        color: #666;
+        flex-shrink: 0;
+      }
+ 
+      .period-row input[type='date'] {
+        flex: 1.4;
+      }
+ 
+      .period-row select {
+        flex: 1;
+      }
+ 
+      /* 파일첨부 */
+      .file-attach-row {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+ 
+      .file-btn {
+        align-self: flex-start;
+        background: #f5f5f5;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 7px 16px;
+        font-size: 13px;
+        color: #555;
+        cursor: pointer;
+      }
+ 
+      .file-btn:hover {
+        background: #eee;
+      }
+ 
+      .file-name-box {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 9px 12px;
+        font-size: 13px;
+        color: #999;
+        min-height: 38px;
+        display: flex;
+        align-items: center;
+      }
+ 
+      .file-name-box.has-file {
+        color: #333;
+      }
+ 
+      /* 간단 에디터 */
+      .editor-wrap {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+ 
+      .editor-toolbar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 10px;
+        background: #fafafa;
+        border-bottom: 1px solid #eee;
+        flex-wrap: wrap;
+      }
+ 
+      .editor-toolbar select {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 12px;
+        padding: 3px 6px;
+        background: #fff;
+      }
+ 
+      .editor-toolbar .tb-icon {
+        font-size: 14px;
+        color: #666;
+        cursor: pointer;
+        padding: 2px 4px;
+      }
+ 
+      .editor-toolbar .tb-icon:hover {
+        color: #000;
+      }
+ 
+      .editor-toolbar .divider {
+        width: 1px;
+        height: 16px;
+        background: #ddd;
+      }
+ 
+      .editor-body {
+        min-height: 140px;
+        padding: 12px;
+        font-size: 14px;
+        color: #333;
+        outline: none;
+      }
+ 
+      .editor-body:empty::before {
+        content: attr(data-placeholder);
+        color: #aaa;
+      }
+ 
+      .editor-count {
+        text-align: right;
+        font-size: 12px;
+        color: #aaa;
+        padding: 6px 10px;
+        border-top: 1px solid #eee;
+        background: #fafafa;
+      }
+ 
+      /* 선택된 작품 카드 */
+      .selected-work-card {
+        display: none;
+        align-items: center;
+        gap: 14px;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        padding: 14px;
+        margin-top: 10px;
+        background: #fafafa;
+      }
+ 
+      .selected-work-card.show {
+        display: flex;
+      }
+ 
+      .selected-work-thumb {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #d8d8d8;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+ 
+      .selected-work-thumb i {
+        font-size: 20px;
+        color: #aaa;
+      }
+ 
+      .selected-work-info {
+        flex: 1;
+        font-size: 13px;
+        color: #555;
+      }
+ 
+      .selected-work-info .work-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 4px;
+      }
+ 
+      .selected-work-remove {
+        background: none;
+        border: none;
+        color: #aaa;
+        font-size: 16px;
+        cursor: pointer;
+      }
+ 
+      .selected-work-remove:hover {
+        color: #555;
+      }
+ 
+      /* 비활성화 영역 */
+      .disabled-zone {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+ 
+      .free-episode-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+      }
+ 
+      .free-episode-row select {
+        width: 90px;
+      }
+ 
+      .free-episode-row span {
+        font-size: 13px;
+        color: #555;
+        white-space: nowrap;
+      }
+ 
+      /* 쿠폰 설정 */
+      .coupon-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+ 
+      .coupon-row label {
+        width: 110px;
+        font-size: 13px;
+        color: #555;
+        flex-shrink: 0;
+      }
+ 
+      .coupon-row input[type='number'] {
+        width: 100px;
+      }
+ 
+      .coupon-row .unit {
+        font-size: 13px;
+        color: #555;
+      }
+ 
+      .coupon-row select {
+        width: 110px;
+      }
+ 
+      /* 배너 위치 */
+      .banner-position-row {
+        margin-top: 10px;
+      }
+ 
+      .banner-position-row select {
+        width: 160px;
+      }
+ 
+      /* 하단 버튼 */
+      .form-actions-bar {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 36px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+      }
+ 
+      .btn-cancel-form {
+        padding: 9px 26px;
+        border: 1px solid #ccc;
+        border-radius: 999px;
+        background: #f5f5f5;
+        color: #555;
+        font-size: 14px;
+        cursor: pointer;
+      }
+ 
+      .btn-submit-form {
+        padding: 9px 30px;
+        border: none;
+        border-radius: 999px;
+        background: #222;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+ 
+      .btn-cancel-form:hover {
+        background: #ececec;
+      }
+ 
+      .btn-submit-form:hover {
+        background: #000;
+      }
+ 
+      /* =============================================
+         작품 선택 모달
+         ============================================= */
+      .work-modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+      }
+ 
+      .work-modal-overlay.show {
+        display: flex;
+      }
+ 
+      .work-modal {
+        background: #fff;
+        width: 680px;
+        max-width: 92vw;
+        max-height: 86vh;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+ 
+      .work-modal-header {
+        background: #1a1a1a;
+        color: #fff;
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 16px;
+        font-weight: 700;
+      }
+ 
+      .work-modal-header button {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+      }
+ 
+      .work-modal-body {
+        padding: 20px;
+        overflow-y: auto;
+      }
+ 
+      .work-search-label {
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+ 
+      .work-search-row {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+ 
+      .work-search-row select {
+        width: 110px;
+      }
+ 
+      .work-search-row .search-input-wrap {
+        position: relative;
+        flex: 1;
+      }
+ 
+      .work-search-row .search-input-wrap input {
+        width: 100%;
+        padding-right: 36px;
+      }
+ 
+      .work-search-row .search-input-wrap i {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #999;
+        cursor: pointer;
+      }
+ 
+      .work-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+ 
+      .work-table thead {
+        background: #f7f7f7;
+      }
+ 
+      .work-table th,
+      .work-table td {
+        padding: 11px 10px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+      }
+ 
+      .work-table th {
+        color: #555;
+        font-weight: 600;
+      }
+ 
+      .work-table tbody tr {
+        cursor: pointer;
+      }
+ 
+      .work-table tbody tr:hover {
+        background: #fafafa;
+      }
+ 
+      .work-table input[type='radio'] {
+        width: 16px;
+        height: 16px;
+        accent-color: #222;
+      }
+ 
+      .work-modal-footer {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        padding: 16px 20px;
+        border-top: 1px solid #eee;
+      }
+ 
+      .work-modal-footer button {
+        padding: 9px 28px;
+        border-radius: 999px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+ 
+      .work-modal-close-btn {
+        border: 1px solid #ccc;
+        background: #f5f5f5;
+        color: #555;
+      }
+ 
+      .work-modal-confirm-btn {
+        border: none;
+        background: #222;
+        color: #fff;
+        font-weight: 600;
+      }
