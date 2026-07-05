@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="horizontal" data-topbar-color="dark">
+
+
+    <head>
+        <meta charset="utf-8" />
+        <title>이벤트 등록</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+		<!-- Theme Config Js -->
+		<script src="assets/js/head.js"></script>
+
+		<!-- Bootstrap css -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+		<!-- App css -->
+		<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- Icons css -->
+		<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- 개인 custom css -->
+        <link rel="stylesheet" href="assets/css/min-custom.css"> 
+        <link rel="stylesheet" href="assets/css/custom.css"> 
+        <link rel="stylesheet" href="assets/css/yj-custom.css">
+        <link rel="stylesheet" href="assets/css/ssu-custom.css"> 
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <div class="content-page">
+        
+                <!-- ========== Topbar ========== -->
+                <div class="navbar-custom">
+                <div class="topbar">
+                    <div class="topbar-menu d-flex align-items-center gap-1">
+                    <div class="logo-box">
+                        <a href="index.html" class="logo-light">
+                        <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-lg" />
+                        <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm" />
+                        </a>
+                        <a href="index.html" class="logo-dark">
+                        <img src="assets/images/pageon/logo-gray.jpeg" alt="dark logo" class="logo-lg" />
+                        <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm" />
+                        </a>
+                    </div>
+                    </div>
+                    <div class="topbar-menu d-flex flex-column align-items-center">
+                    <div class="topbar-right-top">
+                        <div class="app-search dropdown">
+                        <form>
+                            <input type="search" class="form-control rounded-pill" placeholder="Search..." />
+                            <span class="fe-search search-icon font-16"></span>
+                        </form>
+                        </div>
+                    </div>
+                    <div class="topbar-right-bottom">
+                        <ul class="topbar-menu d-flex align-items-center">
+                        <li class="d-none d-sm-inline-block">
+                            <a href="#" class="nav-link waves-effect waves-light"><i class="fe-shopping-cart font-22"></i></a>
+                        </li>
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button">
+                            <i class="fe-bell font-22"></i>
+                            <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button">
+                            <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle" />
+                            <span class="ms-1 d-none d-md-inline-block">Geneva <i class="mdi mdi-chevron-down"></i></span>
+                            </a>
+                        </li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+                <div class="menubar">
+                    <ul class="menu">
+                    <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">Best</span></a></li>
+                    <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로맨스</span></a></li>
+                    <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로판</span></a></li>
+                    <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">판타지</span></a></li>
+                    <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">BL</span></a></li>
+                    <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">GL</span></a></li>
+                    <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">자유</span></a></li>
+                    <li class="menu-item"><a href="이벤트.html" class="menu-link"><span class="menu-text">EVENT</span></a></li>
+                    </ul>
+                </div>
+                </div>
+                <!-- ========== Topbar End ========== -->
+        
+                <div class="content">
+                <div class="container-fluid" style="max-width: 680px;">
+        
+                    <!-- 관리자 전용 버튼 (isAdmin=true 일 때만 노출) -->
+                    <div class="event-admin-bar" id="admin-bar" style="display:none;">
+                    <button type="button" class="btn-event-end" onclick="openConfirmModal('end')">이벤트 종료</button>
+                    <button type="button" class="btn-event-delete" onclick="openConfirmModal('delete')">삭제</button>
+                    </div>
+        
+                    <!-- 이벤트 이미지 -->
+                    <div class="event-detail-img">
+                    <i class="fe-image"></i>
+                    <!-- 실제 이미지: <img src="..." alt="이벤트 이미지"> -->
+                    </div>
+        
+                    <!-- 작품 이벤트 하단 영역 -->
+                    <div class="event-work-section" id="work-section" style="display:none;">
+                    <div class="event-work-desc" id="work-event-desc">
+                        <!-- JS로 채워짐 -->
+                    </div>
+                    <a href="#" class="work-preview-card" id="work-preview-card">
+                        <div class="work-preview-thumb"><i class="fe-image"></i></div>
+                        <div class="work-preview-info">
+                        <div class="work-name" id="work-name"></div>
+                        <div id="work-meta"></div>
+                        </div>
+                    </a>
+                    </div>
+        
+                    <!-- 포인트/쿠폰 이벤트 하단 영역 -->
+                    <div class="event-coupon-section" id="coupon-section" style="display:none;">
+                    <div class="event-coupon-title" id="coupon-title">할인 쿠폰 받기</div>
+                    <button type="button" class="btn-get-reward" id="btn-get-reward" onclick="openRewardModal()">
+                        포인트(or 쿠폰) 받기
+                    </button>
+                    <div class="reward-received-msg" id="reward-received-msg">이미 수령하셨습니다.</div>
+                    </div>
+        
+                </div>
+                </div>
+        
+            </div>
+            </div>
+        
+            <!-- 포인트/쿠폰 수령 결과 모달 -->
+            <div class="reward-modal-overlay" id="reward-modal-overlay">
+            <div class="reward-modal">
+                <div class="reward-modal-header">
+                <span>신고 상세 내용</span>
+                <button type="button" onclick="closeRewardModal()"><i class="mdi mdi-close"></i></button>
+                </div>
+                <div class="reward-modal-body" id="reward-modal-body">
+                <!-- JS로 채워짐 -->
+                </div>
+                <div class="reward-modal-footer">
+                <button type="button" class="reward-modal-confirm" onclick="closeRewardModal()">확인</button>
+                </div>
+            </div>
+            </div>
+        
+            <!-- 관리자 확인 모달 (종료/삭제) -->
+            <div class="confirm-modal-overlay" id="confirm-modal-overlay">
+            <div class="confirm-modal">
+                <div class="confirm-modal-title" id="confirm-modal-title"></div>
+                <div class="confirm-modal-desc" id="confirm-modal-desc"></div>
+                <div class="confirm-modal-actions">
+                <button type="button" class="confirm-cancel-btn" onclick="closeConfirmModal()">취소</button>
+                <button type="button" class="confirm-ok-btn" id="confirm-ok-btn" onclick="executeConfirmAction()">확인</button>
+                </div>
+            </div>
+            </div>
+        
+            <script src="assets/js/vendor.min.js"></script>
+            <script src="assets/js/app.min.js"></script>
+        
+            <script>
+            /* =============================================
+                더미 이벤트 데이터 (추후 서버 데이터로 교체)
+                ============================================= */
+            const eventDummyData = {
+                work: {
+                type: 'work',
+                title: '[20화 무료] 그놈은 멋있었다....',
+                desc: '이벤트 관련 문구..?(ex 그녀의 추리가 궁금하다면 ↓↓↓)',
+                work: {
+                    name: '봉골레 파스타 하나요~!',
+                    publisher: '양식집출판사',
+                    author: '요리사',
+                    totalEpisodes: 138,
+                    genre: '로맨스',
+                },
+                freeEpisodes: 20,
+                },
+                coupon: {
+                type: 'coupon',
+                title: '[10% 할인 쿠폰] 3장 지급 이벤트',
+                desc: '',
+                reward: {
+                    point: 5000,
+                    couponRate: 10,
+                    couponCount: 3,
+                },
+                },
+            };
+        
+            /* =============================================
+                현재 페이지 설정
+                isAdmin: 관리자 여부 (실제 서비스에서는 서버 세션/토큰으로 판단)
+                ============================================= */
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventType = urlParams.get('type') || 'work'; // 'work' | 'coupon'
+            const isAdmin = urlParams.get('admin') === 'true';  // 테스트: ?admin=true 추가 시 관리자 버튼 노출
+        
+            const eventData = eventDummyData[eventType] || eventDummyData['work'];
+        
+            /* =============================================
+                페이지 초기화
+                ============================================= */
+            function init() {
+                // 관리자 버튼 노출 처리
+                if (isAdmin) {
+                document.getElementById('admin-bar').style.display = 'flex';
+                }
+        
+                // 이벤트 종류에 따라 하단 영역 분기
+                if (eventType === 'work') {
+                renderWorkSection();
+                } else if (eventType === 'coupon') {
+                renderCouponSection();
+                }
+            }
+        
+            /* =============================================
+                작품 이벤트 렌더링
+                ============================================= */
+            function renderWorkSection() {
+                const section = document.getElementById('work-section');
+                const work = eventData.work;
+        
+                document.getElementById('work-event-desc').textContent = eventData.desc;
+                document.getElementById('work-name').textContent = work.name;
+                document.getElementById('work-meta').textContent =
+                `${work.publisher} | 총 ${work.totalEpisodes}화 | ${work.genre}`;
+        
+                section.style.display = 'block';
+            }
+        
+            /* =============================================
+                포인트/쿠폰 이벤트 렌더링
+                ============================================= */
+            function renderCouponSection() {
+                const section = document.getElementById('coupon-section');
+                const reward = eventData.reward;
+        
+                // 버튼 텍스트 동적 설정
+                const btn = document.getElementById('btn-get-reward');
+                if (reward.point && reward.couponCount) {
+                btn.textContent = `포인트 또는 쿠폰 받기`;
+                } else if (reward.point) {
+                btn.textContent = `${reward.point.toLocaleString()}P 받기`;
+                } else {
+                btn.textContent = `${reward.couponRate}% 할인 쿠폰 받기`;
+                }
+        
+                section.style.display = 'block';
+            }
+        
+            /* =============================================
+                포인트/쿠폰 수령 모달
+                ============================================= */
+            let rewardReceived = false;
+        
+            function openRewardModal() {
+                if (rewardReceived) return;
+        
+                const reward = eventData.reward;
+                let msg = '';
+        
+                if (reward.point && reward.couponCount) {
+                msg = `xxxx포인트를 받았습니다<br>(or ${reward.couponRate}% 할인 쿠폰을 ${reward.couponCount}장 받았습니다)`;
+                } else if (reward.point) {
+                msg = `${reward.point.toLocaleString()}포인트를 받았습니다`;
+                } else {
+                msg = `${reward.couponRate}% 할인 쿠폰을 ${reward.couponCount}장 받았습니다`;
+                }
+        
+                document.getElementById('reward-modal-body').innerHTML = msg;
+                document.getElementById('reward-modal-overlay').classList.add('show');
+            }
+        
+            function closeRewardModal() {
+                document.getElementById('reward-modal-overlay').classList.remove('show');
+        
+                // 수령 완료 처리
+                rewardReceived = true;
+                const btn = document.getElementById('btn-get-reward');
+                btn.disabled = true;
+                btn.textContent = '수령 완료';
+                document.getElementById('reward-received-msg').style.display = 'block';
+            }
+        
+            /* =============================================
+                관리자 종료/삭제 확인 모달
+                ============================================= */
+            let currentAdminAction = null;
+        
+            function openConfirmModal(action) {
+                currentAdminAction = action;
+        
+                const titleEl = document.getElementById('confirm-modal-title');
+                const descEl = document.getElementById('confirm-modal-desc');
+                const okBtn = document.getElementById('confirm-ok-btn');
+        
+                if (action === 'end') {
+                titleEl.textContent = '이벤트 종료';
+                descEl.textContent = '이벤트를 종료하시겠습니까?\n종료 후에는 다시 진행 중으로 변경할 수 없습니다.';
+                okBtn.textContent = '종료';
+                okBtn.className = 'confirm-ok-btn';
+                } else if (action === 'delete') {
+                titleEl.textContent = '이벤트 삭제';
+                descEl.textContent = '이벤트를 삭제하시겠습니까?\n삭제 후에는 복구가 불가능합니다.';
+                okBtn.textContent = '삭제';
+                okBtn.className = 'confirm-ok-btn danger';
+                }
+        
+                document.getElementById('confirm-modal-overlay').classList.add('show');
+            }
+        
+            function closeConfirmModal() {
+                document.getElementById('confirm-modal-overlay').classList.remove('show');
+                currentAdminAction = null;
+            }
+        
+            function executeConfirmAction() {
+                if (currentAdminAction === 'end') {
+                // TODO: 이벤트 종료 API 호출
+                alert('이벤트가 종료되었습니다.');
+                window.location.href = '이벤트.html';
+                } else if (currentAdminAction === 'delete') {
+                // TODO: 이벤트 삭제 API 호출
+                alert('이벤트가 삭제되었습니다.');
+                window.location.href = '이벤트.html';
+                }
+                closeConfirmModal();
+            }
+        
+            /* =============================================
+                실행
+                ============================================= */
+            init();
+            </script>     
+    
+    </body>
