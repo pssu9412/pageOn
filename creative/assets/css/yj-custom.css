@@ -1936,3 +1936,9 @@ input[type="radio"]:checked {
 .work-mg-select {
   width: 150px;
 }
+
+/* 정산 관리 */
+.settle-scroll-wrap {
+  max-height: 350px;
+  overflow-y: auto;
+}
