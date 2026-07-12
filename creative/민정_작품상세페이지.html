@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="horizontal" data-topbar-color="dark">
+
+
+    <head>
+        <meta charset="utf-8" />
+        <title>이벤트 등록</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+		<!-- Theme Config Js -->
+		<script src="assets/js/head.js"></script>
+
+		<!-- Bootstrap css -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+		<!-- App css -->
+		<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- Icons css -->
+		<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- 개인 custom css -->
+        <link rel="stylesheet" href="assets/css/min-custom.css"> 
+        <link rel="stylesheet" href="assets/css/custom.css"> 
+        <link rel="stylesheet" href="assets/css/yj-custom.css">
+        <link rel="stylesheet" href="assets/css/ssu-custom.css"> 
+    </head>
+
+  <body> 
+    <div id="wrapper">
+      <div class="content-page">
+ 
+        <!-- Topbar -->
+        <div class="navbar-custom">
+          <div class="topbar">
+            <div class="topbar-menu d-flex align-items-center gap-1">
+              <div class="logo-box">
+                <a href="index.html" class="logo-light">
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-lg" />
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm" />
+                </a>
+                <a href="index.html" class="logo-dark">
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="dark logo" class="logo-lg" />
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm" />
+                </a>
+              </div>
+            </div>
+            <div class="topbar-menu d-flex flex-column align-items-center">
+              <div class="topbar-right-top">
+                <div class="app-search dropdown">
+                  <form action="검색페이지.html" method="get">
+                    <input type="search" class="form-control rounded-pill" placeholder="Search..." name="q" />
+                    <span class="fe-search search-icon font-16"></span>
+                  </form>
+                </div>
+              </div>
+              <div class="topbar-right-bottom">
+                <ul class="topbar-menu d-flex align-items-center">
+                  <li class="d-none d-sm-inline-block"><a href="#" class="nav-link"><i class="fe-shopping-cart font-22"></i></a></li>
+                  <li class="dropdown notification-list">
+                    <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#">
+                      <i class="fe-bell font-22"></i>
+                      <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
+                    </a>
+                  </li>
+                  <li class="dropdown">
+                    <a class="nav-link dropdown-toggle nav-user me-0" data-bs-toggle="dropdown" href="#">
+                      <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle" />
+                      <span class="ms-1 d-none d-md-inline-block">Geneva <i class="mdi mdi-chevron-down"></i></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="menubar">
+            <ul class="menu">
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">Best</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로맨스</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로판</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">판타지</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">BL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">GL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">자유</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">EVENT</span></a></li>
+            </ul>
+          </div>
+        </div>
+ 
+        <div class="content">
+          <!-- 사이드바 -->
+          <div class="sidebar">
+            <ul class="menu">
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">베스트</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로맨스</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로판</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">판타지</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">BL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">GL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">자유</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">커뮤니티</span></a></li>
+              <li class="menu-item"><a href="키워드검색.html" class="menu-link"><span class="menu-text">키워드검색</span></a></li>
+            </ul>
+          </div>
+ 
+          <div class="container-fluid">
+ 
+            <!-- 작품 헤더 -->
+            <div class="work-header">
+              <div class="work-cover"><i class="fe-image"></i></div>
+              <div class="work-header-info">
+                <div class="work-title">어두운 바다의 등불이 되어</div>
+                <div class="work-favorites">♥(1,800)</div>
+                <div class="work-meta-row"><span class="work-genre-badge">로맨스</span><span class="work-status-badge">연재 중</span></div>
+                <div class="work-meta-row">연산호 작가 | 문학과 출판 | 총 4,228화</div>
+                <div class="work-action-row">
+                  <button type="button" class="btn-favorite" id="btn-favorite" onclick="toggleFavorite()">
+                    ♥ 선호
+                  </button>
+                  <button type="button" class="btn-alarm" id="btn-alarm" onclick="toggleAlarm()">
+                    🔔 알림
+                  </button>
+                  <button type="button" class="btn-first-episode" id="btn-first-ep" onclick="goFirstEpisode()">
+                    첫화보기
+                  </button>
+                </div>
+              </div>
+            </div>
+ 
+            <!-- 작품 소개 -->
+            <div class="work-intro-section">
+              <div class="work-intro-text" id="work-intro-text">
+                3,000년 마녀 페이지이에에.<br>
+                삼사만 가 당을 수없 불탈이 지고?<br>
+                내일이 작으면 더보기로 해두거나요...그 이상 그냥 다 넣어서 펼쳐요?
+              </div>
+              <button type="button" class="btn-expand" id="btn-expand" onclick="toggleIntro()">
+                더보기 <i class="mdi mdi-chevron-down" id="expand-icon"></i>
+              </button>
+            </div>
+ 
+            <!-- 탭 -->
+            <div class="work-tabs">
+              <button type="button" class="work-tab active" data-tab="episode" onclick="switchTab(this)">회차 목록</button>
+              <button type="button" class="work-tab" data-tab="notice" onclick="switchTab(this)">공지</button>
+            </div>
+ 
+            <!-- 회차 목록 패널 -->
+            <div class="tab-panel" id="panel-episode">
+              <div class="episode-header">
+                <div class="episode-sort-tabs">
+                  <button type="button" class="episode-sort-tab active" data-sort="newest" onclick="selectEpisodeSort(this)">신작순 ▼</button>
+                  <button type="button" class="episode-sort-tab" data-sort="oldest" onclick="selectEpisodeSort(this)">1화부터</button>
+                </div>
+                <button type="button" class="btn-select-buy" onclick="goSelectBuy()">선택구매</button>
+              </div>
+              <div class="episode-list" id="episode-list"></div>
+              <div class="work-pagination" id="episode-pagination"></div>
+            </div>
+ 
+            <!-- 공지 패널 -->
+            <div class="tab-panel" id="panel-notice" style="display:none;">
+              <div class="notice-list" id="notice-list"></div>
+              <div class="work-pagination" id="notice-pagination"></div>
+            </div>
+ 
+            <!-- 작가 프로필 -->
+            <div class="author-section">
+              <div class="author-card">
+                <div class="author-card-header">
+                  <div class="author-card-avatar"><i class="fe-user"></i></div>
+                  <div class="author-card-info">
+                    <div class="author-card-name">연산호</div>
+                    <div class="author-card-sub">+ 작가 신간 알림 · 소식</div>
+                  </div>
+                  <button type="button" class="btn-author-subscribe" id="btn-author-subscribe" onclick="toggleAuthorSubscribe()">구독</button>
+                </div>
+                <div class="author-card-intro">
+                  여기에 작가의 말이 나옵니다.<br>
+                  마찬가지로 작가의 말이 없으면 해당 없음으로 이 부분도 안 넣으면 되죠
+                </div>
+              </div>
+ 
+              <!-- 작가 대표작품 -->
+              <div class="mini-works-header">
+                <div class="mini-works-title">작가의 대표 작품</div>
+                <button type="button" class="btn-more-works" onclick="location.href='작가상세.html?id=1'">더보기</button>
+              </div>
+              <div class="mini-works-grid" id="author-works-grid"></div>
+ 
+              <!-- 현대 판타지 베스트 -->
+              <div class="mini-works-header">
+                <div class="mini-works-title">현대 판타지 베스트</div>
+              </div>
+              <div class="mini-works-grid" id="best-works-grid"></div>
+            </div>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- 결제 모달 -->
+    <div class="pay-modal-overlay" id="pay-modal">
+      <div class="pay-modal">
+        <div class="pay-modal-header">
+          <span>결제하기</span>
+          <button type="button" onclick="closePayModal()"><i class="mdi mdi-close"></i></button>
+        </div>
+        <div class="pay-modal-body">
+          <div class="pay-modal-work-title" id="pay-modal-work-title"></div>
+          <div class="pay-modal-price" id="pay-modal-price"></div>
+          <div class="pay-modal-my-point" id="pay-modal-my-point"></div>
+          <div class="pay-modal-warn" id="pay-modal-warn"></div>
+        </div>
+        <div class="pay-modal-actions" id="pay-modal-actions"></div>
+      </div>
+    </div>
+ 
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <script>
+      /* ── 상태 ── */
+      var isFavorite = false;
+      var isAlarmOn = false;
+      var isAuthorSubscribed = false;
+      var hasReadHistory = false; /* 읽은 기록 여부 (실제론 서버에서 받아옴) */
+      var episodeSort = 'newest';
+      var episodePage = 1;
+      var noticePage = 1;
+      var PAGE_SIZE = 10;
+      var pendingPayEpisode = null;
+ 
+      /* ── 더미 데이터 ── */
+      var dummyEpisodes = (function() {
+        var result = [];
+        for (var i = 1; i <= 68; i++) {
+          result.push({
+            id: i,
+            title: '어두운 바다의 등불이 되어 ' + i + '화',
+            date: '2023.04.' + (i % 28 + 1 < 10 ? '0' : '') + (i % 28 + 1),
+            isFree: i <= 3,
+            isOwned: i <= 2,
+            price: 100,
+          });
+        }
+        return result;
+      })();
+ 
+      var dummyNotices = (function() {
+        var result = [];
+        for (var i = 1; i <= 15; i++) {
+          result.push({
+            id: i,
+            title: '공지사항 ' + i + '번',
+            date: '2024.0' + (i % 9 + 1) + '.01',
+            content: '안녕하세요, 작가입니다. 이번 공지 내용을 안내드립니다. 많은 관심 부탁드립니다. 감사합니다.',
+          });
+        }
+        return result;
+      })();
+ 
+      var dummyMiniWorks = (function() {
+        var result = [];
+        for (var i = 0; i < 8; i++) {
+          result.push({ id: i, title: '그 놈은 멋있었다', favorites: Math.floor(Math.random() * 3000) });
+        }
+        return result;
+      })();
+ 
+      /* ── 첫화보기 / 이어보기 ── */
+      function goFirstEpisode() {
+        if (hasReadHistory) {
+          location.href = '회차뷰어.html?ep=last';
+        } else {
+          hasReadHistory = true;
+          location.href = '회차뷰어.html?ep=1';
+        }
+      }
+ 
+      function updateFirstEpBtn() {
+        var btn = document.getElementById('btn-first-ep');
+        btn.textContent = hasReadHistory ? '이어보기' : '첫화보기';
+      }
+ 
+      /* ── 선호 토글 ── */
+      function toggleFavorite() {
+        isFavorite = !isFavorite;
+        var btn = document.getElementById('btn-favorite');
+        var alarmBtn = document.getElementById('btn-alarm');
+        btn.classList.toggle('active', isFavorite);
+        btn.textContent = isFavorite ? '♥ 선호 중' : '♥ 선호';
+        alarmBtn.classList.toggle('show', isFavorite);
+        // TODO: 서버 API 호출
+      }
+ 
+      /* ── 알림 토글 ── */
+      function toggleAlarm() {
+        isAlarmOn = !isAlarmOn;
+        var btn = document.getElementById('btn-alarm');
+        btn.classList.toggle('active', isAlarmOn);
+        btn.textContent = isAlarmOn ? '🔔 알림 ON' : '🔔 알림';
+        // TODO: 서버 API 호출
+      }
+ 
+      /* ── 작품 소개 더보기 ── */
+      function toggleIntro() {
+        var text = document.getElementById('work-intro-text');
+        var icon = document.getElementById('expand-icon');
+        var btn = document.getElementById('btn-expand');
+        var isExpanded = text.classList.toggle('expanded');
+        icon.className = isExpanded ? 'mdi mdi-chevron-up' : 'mdi mdi-chevron-down';
+        btn.childNodes[0].textContent = isExpanded ? '접기 ' : '더보기 ';
+      }
+ 
+      /* ── 탭 전환 ── */
+      function switchTab(btn) {
+        document.querySelectorAll('.work-tab').forEach(function(t) { t.classList.remove('active'); });
+        btn.classList.add('active');
+        document.querySelectorAll('.tab-panel').forEach(function(p) { p.style.display = 'none'; });
+        document.getElementById('panel-' + btn.dataset.tab).style.display = 'block';
+      }
+ 
+      /* ── 회차 정렬 ── */
+      function selectEpisodeSort(btn) {
+        document.querySelectorAll('.episode-sort-tab').forEach(function(t) { t.classList.remove('active'); });
+        btn.classList.add('active');
+        episodeSort = btn.dataset.sort;
+        episodePage = 1;
+        renderEpisodes();
+      }
+ 
+      /* ── 회차 렌더링 ── */
+      function renderEpisodes() {
+        var eps = dummyEpisodes.slice();
+        if (episodeSort === 'newest') eps.reverse();
+ 
+        var total = eps.length;
+        var totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+        if (episodePage > totalPages) episodePage = 1;
+        var pageItems = eps.slice((episodePage - 1) * PAGE_SIZE, episodePage * PAGE_SIZE);
+ 
+        var list = document.getElementById('episode-list');
+        var html = '';
+        pageItems.forEach(function(ep) {
+          html += '<div class="episode-item" onclick="clickEpisode(' + ep.id + ', ' + ep.isOwned + ', ' + ep.isFree + ')">'
+            + '<div class="episode-thumb"><i class="fe-image"></i></div>'
+            + '<div class="episode-info">'
+            + '<div class="episode-title">' + ep.title + (ep.isFree ? '<span class="episode-free-badge">무료</span>' : '') + '</div>'
+            + '<div class="episode-date">' + ep.date + '</div>'
+            + '</div>'
+            + (ep.isOwned
+                ? '<button type="button" class="btn-episode-buy owned">소장</button>'
+                : '<button type="button" class="btn-episode-buy" onclick="event.stopPropagation(); openPayModal(' + ep.id + ', \'' + ep.title + '\', ' + ep.price + ')">소장</button>')
+            + '</div>';
+        });
+        list.innerHTML = html;
+        renderPagination('episode-pagination', episodePage, totalPages, 'episodePage', 'renderEpisodes');
+      }
+ 
+      function clickEpisode(id, isOwned, isFree) {
+        if (isOwned || isFree) {
+          location.href = '회차뷰어.html?ep=' + id;
+        } else {
+          openPayModal(id, '회차 ' + id + '화', 100);
+        }
+      }
+ 
+      function goSelectBuy() {
+        location.href = '선택구매.html';
+      }
+ 
+      /* ── 공지 렌더링 ── */
+      function renderNotices() {
+        var notices = dummyNotices.slice();
+        var total = notices.length;
+        var totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+        if (noticePage > totalPages) noticePage = 1;
+        var pageItems = notices.slice((noticePage - 1) * PAGE_SIZE, noticePage * PAGE_SIZE);
+ 
+        var list = document.getElementById('notice-list');
+        var html = '';
+        pageItems.forEach(function(n) {
+          html += '<div class="notice-item">'
+            + '<div class="notice-row" onclick="toggleNotice(this)">'
+            + '<span class="notice-title">' + n.title + '</span>'
+            + '<span class="notice-date">' + n.date + '</span>'
+            + '</div>'
+            + '<div class="notice-content">' + n.content + '</div>'
+            + '</div>';
+        });
+        list.innerHTML = html;
+        renderPagination('notice-pagination', noticePage, totalPages, 'noticePage', 'renderNotices');
+      }
+ 
+      function toggleNotice(row) {
+        var content = row.nextElementSibling;
+        content.classList.toggle('open');
+      }
+ 
+      /* ── 작가 구독 ── */
+      function toggleAuthorSubscribe() {
+        isAuthorSubscribed = !isAuthorSubscribed;
+        var btn = document.getElementById('btn-author-subscribe');
+        btn.textContent = isAuthorSubscribed ? '구독 중' : '구독';
+        btn.classList.toggle('subscribed', isAuthorSubscribed);
+        // TODO: 서버 API 호출
+      }
+ 
+      /* ── 미니 작품 그리드 렌더링 ── */
+      function renderMiniWorks(targetId, works) {
+        var shown = works.slice(0, 6);
+        var html = '';
+        shown.forEach(function(w) {
+          html += '<a href="작품상세.html?id=' + w.id + '" class="mini-work-card">'
+            + '<div class="mini-work-cover"><i class="fe-image"></i></div>'
+            + '<div class="mini-work-title">' + w.title + '</div>'
+            + '<div class="mini-work-favorites">♥(' + w.favorites.toLocaleString() + ')</div>'
+            + '</a>';
+        });
+        document.getElementById(targetId).innerHTML = html;
+      }
+ 
+      /* ── 결제 모달 ── */
+      var myPoint = 2000; /* 보유 포인트 (실제론 서버에서 받아옴) */
+ 
+      function openPayModal(epId, title, price, fromEpisodeDetail) {
+        pendingPayEpisode = epId;
+        var hasEnough = myPoint >= price;
+ 
+        document.getElementById('pay-modal-work-title').textContent = title;
+        document.getElementById('pay-modal-price').textContent = '결제 포인트: ' + price + (fromEpisodeDetail ? ' 원' : ' P');
+        document.getElementById('pay-modal-my-point').textContent = '보유 포인트: ' + (hasEnough ? myPoint.toLocaleString() : '0') + (fromEpisodeDetail ? ' 원' : ' P');
+        document.getElementById('pay-modal-warn').textContent = hasEnough ? '' : '보유 포인트가 부족합니다.';
+ 
+        var actions = document.getElementById('pay-modal-actions');
+        if (hasEnough) {
+          actions.innerHTML = fromEpisodeDetail
+            ? '<button type="button" class="pay-btn-primary" onclick="confirmPay(true)">결제하고 바로보기</button>'
+            : '<button type="button" class="pay-btn-primary" onclick="confirmPay(true)">결제하고 바로보기</button>'
+              + '<button type="button" class="pay-btn-secondary" onclick="confirmPay(false)">결제하고 다음에 보기</button>';
+        } else {
+          actions.innerHTML = '<button type="button" class="pay-btn-charge" onclick="location.href=\'포인트충전.html\'">포인트 충전하기</button>';
+        }
+ 
+        document.getElementById('pay-modal').classList.add('show');
+      }
+ 
+      function closePayModal() {
+        document.getElementById('pay-modal').classList.remove('show');
+        pendingPayEpisode = null;
+      }
+ 
+      function confirmPay(goNow) {
+        if (pendingPayEpisode) {
+          // TODO: 서버 결제 API 호출
+          closePayModal();
+          if (goNow) {
+            location.href = '회차뷰어.html?ep=' + pendingPayEpisode;
+          } else {
+            renderEpisodes();
+          }
+        }
+      }
+ 
+      /* ── 공통 페이지네이션 ── */
+      function renderPagination(elId, current, total, pageVar, renderFn) {
+        var el = document.getElementById(elId);
+        if (total <= 1) { el.innerHTML = ''; return; }
+        var pages = getPageNumbers(current, total);
+        var html = '<button ' + (current === 1 ? 'disabled' : '') + ' onclick="' + pageVar + '--; ' + renderFn + '()">&larr; 이전</button>';
+        pages.forEach(function(p) {
+          if (p === '...') html += '<span style="color:#ccc">...</span>';
+          else html += '<span class="page-num ' + (p === current ? 'active' : '') + '" onclick="' + pageVar + '=' + p + '; ' + renderFn + '()">' + p + '</span>';
+        });
+        html += '<button ' + (current === total ? 'disabled' : '') + ' onclick="' + pageVar + '++; ' + renderFn + '()">다음 &rarr;</button>';
+        el.innerHTML = html;
+      }
+ 
+      function getPageNumbers(current, total) {
+        var range = [], result = [], last;
+        for (var i = 1; i <= total; i++) {
+          if (i === 1 || i === total || Math.abs(i - current) <= 1) range.push(i);
+        }
+        range.forEach(function(i) {
+          if (last && i - last === 2) result.push(last + 1);
+          else if (last && i - last > 1) result.push('...');
+          result.push(i);
+          last = i;
+        });
+        return result;
+      }
+ 
+      /* ── 초기화 ── */
+      updateFirstEpBtn();
+      renderEpisodes();
+      renderNotices();
+      renderMiniWorks('author-works-grid', dummyMiniWorks);
+      renderMiniWorks('best-works-grid', dummyMiniWorks);
+    </script>
+
+
+
+  </body>

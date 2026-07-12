@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="horizontal" data-topbar-color="dark">
+
+
+    <head>
+        <meta charset="utf-8" />
+        <title>이벤트 등록</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+		<!-- Theme Config Js -->
+		<script src="assets/js/head.js"></script>
+
+		<!-- Bootstrap css -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+		<!-- App css -->
+		<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- Icons css -->
+		<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- 개인 custom css -->
+        <link rel="stylesheet" href="assets/css/min-custom.css"> 
+        <link rel="stylesheet" href="assets/css/custom.css"> 
+        <link rel="stylesheet" href="assets/css/yj-custom.css">
+        <link rel="stylesheet" href="assets/css/ssu-custom.css"> 
+    </head>
+<body>
+    <div id="wrapper">
+      <div class="content-page">
+        <div class="navbar-custom">
+          <div class="topbar">
+            <div class="topbar-menu d-flex align-items-center gap-1">
+              <div class="logo-box">
+                <a href="index.html" class="logo-light">
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-lg" />
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm" />
+                </a>
+              </div>
+            </div>
+            <div class="topbar-menu d-flex flex-column align-items-center">
+              <div class="topbar-right-top">
+                <div class="app-search dropdown">
+                  <form action="검색페이지.html" method="get">
+                    <input type="search" class="form-control rounded-pill" placeholder="Search..." name="q" />
+                    <span class="fe-search search-icon font-16"></span>
+                  </form>
+                </div>
+              </div>
+              <div class="topbar-right-bottom">
+                <ul class="topbar-menu d-flex align-items-center">
+                  <li class="d-none d-sm-inline-block"><a href="#" class="nav-link"><i class="fe-shopping-cart font-22"></i></a></li>
+                  <li class="dropdown notification-list">
+                    <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#">
+                      <i class="fe-bell font-22"></i>
+                      <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
+                    </a>
+                  </li>
+                  <li class="dropdown">
+                    <a class="nav-link dropdown-toggle nav-user me-0" data-bs-toggle="dropdown" href="#">
+                      <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle" />
+                      <span class="ms-1 d-none d-md-inline-block">Geneva <i class="mdi mdi-chevron-down"></i></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="menubar">
+            <ul class="menu">
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">Best</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로맨스</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로판</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">판타지</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">BL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">GL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">자유</span></a></li>
+            </ul>
+          </div>
+        </div>
+ 
+        <div class="content">
+          <div class="sidebar">
+            <ul class="menu">
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">베스트</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로맨스</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로판</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">판타지</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">BL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">GL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">자유</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">커뮤니티</span></a></li>
+              <li class="menu-item"><a href="키워드검색.html" class="menu-link"><span class="menu-text">키워드검색</span></a></li>
+            </ul>
+          </div>
+ 
+          <div class="container-fluid">
+            <div class="select-buy-wrap">
+ 
+              <!-- 헤더 -->
+              <div class="select-buy-header">
+                <button type="button" class="btn-back" onclick="history.back()">&#8249;</button>
+                <span class="select-buy-title">선택구매</span>
+              </div>
+ 
+              <!-- 전체선택 + 정렬 -->
+              <div class="select-buy-toolbar">
+                <label class="check-all-label">
+                  <input type="checkbox" id="check-all" onchange="toggleAll(this)" />
+                  전체선택
+                </label>
+                <div class="sort-select-wrap">
+                  <select id="sort-select" onchange="sortEpisodes()">
+                    <option value="newest">최신순</option>
+                    <option value="oldest">1화부터</option>
+                  </select>
+                </div>
+              </div>
+ 
+              <!-- 회차 리스트 -->
+              <div class="select-episode-list" id="select-episode-list"></div>
+ 
+              <!-- 하단 구매 버튼 -->
+              <div class="select-buy-footer">
+                <button type="button" class="btn-buy-selected" id="btn-buy-selected" onclick="openBuyModal()" disabled>
+                  총 0화 구매하기
+                </button>
+              </div>
+ 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- 결제 모달 -->
+    <div class="pay-modal-overlay" id="pay-modal">
+      <div class="pay-modal">
+        <div class="pay-modal-header">
+          <span>결제하기</span>
+          <button type="button" onclick="closeModal()"><i class="mdi mdi-close"></i></button>
+        </div>
+        <div class="pay-modal-body">
+          <div class="pay-modal-work-title" id="pay-modal-work-title"></div>
+          <div class="pay-modal-price" id="pay-modal-price"></div>
+          <div class="pay-modal-my-point" id="pay-modal-my-point"></div>
+          <div class="pay-modal-warn" id="pay-modal-warn"></div>
+        </div>
+        <div class="pay-modal-actions" id="pay-modal-actions"></div>
+      </div>
+    </div>
+ 
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <script>
+      var myPoint = 2000;
+      var PRICE_PER_EP = 100;
+ 
+      /* 더미 회차 데이터 */
+      var episodes = (function() {
+        var result = [];
+        for (var i = 1; i <= 68; i++) {
+          result.push({
+            id: i,
+            title: '어두운 바다의 등불이 되어 ' + i + '화',
+            date: '2025.04.18',
+            isFree: i <= 3,
+            isOwned: i <= 3,
+            checked: false,
+          });
+        }
+        return result;
+      })();
+ 
+      var currentSort = 'newest';
+ 
+      function getSortedEpisodes() {
+        var list = episodes.filter(function(ep) { return !ep.isOwned; });
+        if (currentSort === 'newest') list = list.slice().reverse();
+        return list;
+      }
+ 
+      function renderList() {
+        var list = getSortedEpisodes();
+        var html = '';
+        list.forEach(function(ep) {
+          html += '<div class="select-episode-item" onclick="toggleCheck(' + ep.id + ')">'
+            + '<input type="checkbox" ' + (ep.checked ? 'checked' : '') + ' onclick="event.stopPropagation(); toggleCheck(' + ep.id + ')" />'
+            + '<div class="ep-item-info">'
+            + '<div class="ep-item-title">' + ep.title + (ep.isFree ? '<span class="ep-free-badge">무료</span>' : '') + '</div>'
+            + '<div class="ep-item-date">' + ep.date + '</div>'
+            + '</div></div>';
+        });
+        document.getElementById('select-episode-list').innerHTML = html;
+        updateBuyBtn();
+      }
+ 
+      function toggleCheck(id) {
+        var ep = episodes.find(function(e) { return e.id === id; });
+        if (ep && !ep.isOwned) {
+          ep.checked = !ep.checked;
+          renderList();
+        }
+      }
+ 
+      function toggleAll(checkbox) {
+        var list = getSortedEpisodes();
+        list.forEach(function(ep) { ep.checked = checkbox.checked; });
+        renderList();
+      }
+ 
+      function sortEpisodes() {
+        currentSort = document.getElementById('sort-select').value;
+        renderList();
+      }
+ 
+      function updateBuyBtn() {
+        var selected = episodes.filter(function(ep) { return ep.checked; });
+        var btn = document.getElementById('btn-buy-selected');
+        btn.textContent = '총 ' + selected.length + '화 구매하기';
+        btn.disabled = selected.length === 0;
+      }
+ 
+      function openBuyModal() {
+        var selected = episodes.filter(function(ep) { return ep.checked; });
+        var count = selected.length;
+        var total = count * PRICE_PER_EP;
+        var hasEnough = myPoint >= total;
+ 
+        document.getElementById('pay-modal-work-title').textContent = '선택한 ' + count + '화';
+        document.getElementById('pay-modal-price').textContent = '결제 포인트: ' + total + ' P';
+        document.getElementById('pay-modal-my-point').textContent = '보유 포인트: ' + myPoint.toLocaleString() + ' P';
+        document.getElementById('pay-modal-warn').textContent = hasEnough ? '' : '보유 포인트가 부족합니다.';
+ 
+        var actions = document.getElementById('pay-modal-actions');
+        if (hasEnough) {
+          actions.innerHTML = '<button type="button" class="pay-btn-primary" onclick="confirmBuy()">결제하기</button>';
+        } else {
+          actions.innerHTML = '<button type="button" class="pay-btn-charge" onclick="location.href=\'포인트충전.html\'">포인트 충전하기</button>';
+        }
+        document.getElementById('pay-modal').classList.add('show');
+      }
+ 
+      function closeModal() {
+        document.getElementById('pay-modal').classList.remove('show');
+      }
+ 
+      function confirmBuy() {
+        var selected = episodes.filter(function(ep) { return ep.checked; });
+        var total = selected.length * PRICE_PER_EP;
+        myPoint -= total;
+        selected.forEach(function(ep) { ep.isOwned = true; ep.checked = false; });
+        closeModal();
+        alert('결제가 완료되었습니다!');
+        renderList();
+      }
+ 
+      renderList();
+    </script>
+  </body>
