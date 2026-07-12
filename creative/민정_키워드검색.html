@@ -31,11 +31,11 @@
         <link rel="stylesheet" href="assets/css/ssu-custom.css"> 
     </head>
 
-    <body>
-   <div id="wrapper">
+  <body>
+    <div id="wrapper">
       <div class="content-page">
  
-        <!-- ========== Topbar ========== -->
+        <!-- Topbar -->
         <div class="navbar-custom">
           <div class="topbar">
             <div class="topbar-menu d-flex align-items-center gap-1">
@@ -61,9 +61,7 @@
               </div>
               <div class="topbar-right-bottom">
                 <ul class="topbar-menu d-flex align-items-center">
-                  <li class="d-none d-sm-inline-block">
-                    <a href="#" class="nav-link"><i class="fe-shopping-cart font-22"></i></a>
-                  </li>
+                  <li class="d-none d-sm-inline-block"><a href="#" class="nav-link"><i class="fe-shopping-cart font-22"></i></a></li>
                   <li class="dropdown notification-list">
                     <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#">
                       <i class="fe-bell font-22"></i>
@@ -93,10 +91,8 @@
             </ul>
           </div>
         </div>
-        <!-- ========== Topbar End ========== -->
  
         <div class="content">
- 
           <!-- 사이드바 -->
           <div class="sidebar">
             <ul class="menu">
@@ -123,7 +119,6 @@
                     <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로판 전체</span></a></li>
                     <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">동양풍 로판</span></a></li>
                     <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">서양풍 로판</span></a></li>
-                    <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">가상 세계 로판</span></a></li>
                     <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로판 키워드 검색</span></a></li>
                   </ul>
                 </div>
@@ -138,7 +133,6 @@
                     <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">정통 판타지</span></a></li>
                     <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">퓨전 판타지</span></a></li>
                     <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">현대 판타지</span></a></li>
-                    <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">무협</span></a></li>
                     <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">판타지 키워드 검색</span></a></li>
                   </ul>
                 </div>
@@ -152,7 +146,6 @@
                     <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">BL 전체</span></a></li>
                     <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">현대물</span></a></li>
                     <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">판타지물</span></a></li>
-                    <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">역사/시대물</span></a></li>
                     <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">BL 키워드 검색</span></a></li>
                   </ul>
                 </div>
@@ -165,8 +158,6 @@
                   <ul class="sub-menu">
                     <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">GL 전체</span></a></li>
                     <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">현대물</span></a></li>
-                    <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">판타지물</span></a></li>
-                    <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">역사/시대물</span></a></li>
                     <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">GL 키워드 검색</span></a></li>
                   </ul>
                 </div>
@@ -181,13 +172,8 @@
  
           <div class="container-fluid">
             <div id="keyword-page-root">
- 
               <h4 class="keyword-page-title">키워드 검색</h4>
- 
-              <!-- 키워드 영역 -->
               <div class="keyword-section" id="keyword-section"></div>
- 
-              <!-- 검색결과 헤더 -->
               <div class="result-header">
                 <div class="result-count">검색결과 <span id="result-count-num">0</span>건</div>
                 <div class="result-filters">
@@ -200,17 +186,11 @@
                   </label>
                 </div>
               </div>
- 
-              <!-- 검색결과 그리드 -->
               <div id="work-grid"></div>
- 
-              <!-- 페이지네이션 -->
               <div class="keyword-pagination" id="keyword-pagination"></div>
- 
             </div>
           </div>
         </div>
- 
       </div>
     </div>
  
@@ -247,62 +227,33 @@
       </div>
     </div>
  
-  <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/vendor.min.js"></script>
     <script src="assets/js/app.min.js"></script>
     <script>
       var isAdmin = new URLSearchParams(window.location.search).get('admin') === 'true';
       if (isAdmin) document.getElementById('keyword-page-root').classList.add('admin-mode');
  
-      var GENRES = ['로맨스', '로판', '판타지', 'BL', 'GL'];
+      var GENRES = ['로맨스', '로판', '판타지', 'BL', 'GL', '자유'];
  
-        var keywordData = {
-            '로맨스': {
-                '소재': ['여장남자', '빙의물', '한생물', '생존물', '스포츠물'],
-                '주인공': ['여전사', '빌런', '망나니', '현직전'],
-                '직업': ['군인', '헌터', '아이돌', '마법사', '전마'],
-                '분위기': ['피비물', '힐링물', '사이다물', '100화자이상']
-            },
-            '로판': {
-                '소재': ['성장물', '복수물', '아카데미', '황실'],
-                '주인공': ['귀족영애', '빙의자', '회귀자', '평민'],
-                '직업': ['마법사', '기사', '황녀', '상인'],
-                '분위기': ['달달한', '진지한', '개그물']
-            },
-            '판타지': {
-                '소재': ['던전', '마법', '드래곤', '길드'],
-                '주인공': ['헌터', '마법사', '용사', '악당'],
-                '직업': ['헌터', '길드장', '마법사', '기사'],
-                '분위기': ['액션', '진지한', '성장물']
-            },
-            'BL': {
-                '소재': ['상사부하', '소꿉친구', '계약'],
-                '주인공': ['알파', '오메가', '베타'],
-                '직업': ['회사원', '의사', '형사'],
-                '분위기': ['달달한', '진지한', '19금']
-            },
-            'GL': {
-                '소재': ['학원물', '직장물'],
-                '주인공': ['여전사', '마법사'],
-                '직업': ['학생', '회사원'],
-                '분위기': ['순정', '성장물']
-            }
-        };
+      /* 키워드: 장르 무관하게 고정 */
+      var keywordData = {
+        '소재': ['여장남자', '빙의물', '한생물', '생존물', '스포츠물'],
+        '주인공': ['여전사', '빌런', '망나니', '현직전'],
+        '직업': ['군인', '헌터', '아이돌', '마법사', '전마'],
+        '분위기': ['피비물', '힐링물', '사이다물', '100화자이상']
+      };
  
       function makeDummyWorks(genre) {
         var titles = ['그놈은 멋있었다....', '봉골레 파스타 하나요~!', '살인사건 발생! 범인을 찾아라', '카르보나라 좋아하세요?'];
         var result = [];
+        var allKws = [];
+        Object.keys(keywordData).forEach(function(c) { allKws = allKws.concat(keywordData[c]); });
         for (var i = 0; i < 18; i++) {
-          var allKws = [];
-          var cats = keywordData[genre] || {};
-          Object.keys(cats).forEach(function(c) { allKws = allKws.concat(cats[c]); });
           result.push({
             id: genre + '-' + i,
             title: titles[i % titles.length],
-            publisher: 'OO출판사',
-            author: '카니니',
-            totalEpisodes: 138,
-            genre: genre,
-            price: 1800,
+            publisher: 'OO출판사', author: '카니니',
+            totalEpisodes: 138, genre: genre, price: 1800,
             favorites: Math.floor(Math.random() * 3000),
             desc: '그놈은 멋있었다....그 멋있는 놈이 왜...어카니아 라마이렇이 렇이아 이아 아...',
             isAdult: i % 5 === 0,
@@ -330,7 +281,7 @@
  
       function renderKeywords() {
         var section = document.getElementById('keyword-section');
-        var cats = keywordData[currentGenre] || {};
+        var cats = keywordData; /* 항상 고정 */
  
         var catSelect = document.getElementById('kw-add-category');
         var catOptions = '';
@@ -339,7 +290,7 @@
  
         var html = '';
  
-        // 장르 행
+        /* 장르 행 */
         html += '<div class="keyword-row"><span class="keyword-row-label">장르</span><div class="keyword-list">';
         GENRES.forEach(function(g) {
           var sel = g === currentGenre ? ' selected' : '';
@@ -347,7 +298,7 @@
         });
         html += '</div></div>';
  
-        // 카테고리별 키워드 행
+        /* 고정 카테고리 행 */
         Object.keys(cats).forEach(function(cat) {
           var kws = cats[cat];
           html += '<div class="keyword-row"><span class="keyword-row-label">' + cat + '</span><div class="keyword-list">';
@@ -355,7 +306,7 @@
             var sel = selectedKeywords.indexOf(kw) !== -1 ? ' selected' : '';
             html += '<span class="kw-wrap">'
               + '<button type="button" class="keyword-btn' + sel + '" onclick="toggleKeyword(\'' + kw + '\', this)">' + kw + '</button>'
-              + '<button type="button" class="kw-delete-btn" onclick="openDelModal(\'' + currentGenre + '\',\'' + cat + '\',\'' + kw + '\')">✕</button>'
+              + '<button type="button" class="kw-delete-btn" onclick="openDelModal(\'' + cat + '\',\'' + kw + '\')">✕</button>'
               + '</span>';
           });
           html += '<button type="button" class="keyword-add-btn" onclick="openAddModal(\'' + cat + '\')"><i class="mdi mdi-plus"></i> 키워드 추가</button>';
@@ -367,13 +318,8 @@
  
       function toggleKeyword(kw, btn) {
         var idx = selectedKeywords.indexOf(kw);
-        if (idx === -1) {
-          selectedKeywords.push(kw);
-          btn.classList.add('selected');
-        } else {
-          selectedKeywords.splice(idx, 1);
-          btn.classList.remove('selected');
-        }
+        if (idx === -1) { selectedKeywords.push(kw); btn.classList.add('selected'); }
+        else { selectedKeywords.splice(idx, 1); btn.classList.remove('selected'); }
         currentPage = 1;
         renderResults();
       }
@@ -436,11 +382,10 @@
       }
  
       function getPageNumbers(current, total) {
-        var range = [], result = [];
+        var range = [], result = [], last;
         for (var i = 1; i <= total; i++) {
           if (i === 1 || i === total || Math.abs(i - current) <= 1) range.push(i);
         }
-        var last;
         range.forEach(function(i) {
           if (last && i - last === 2) result.push(last + 1);
           else if (last && i - last > 1) result.push('...');
@@ -478,7 +423,7 @@
         var val = input.value.trim();
         if (!val) return;
         var cat = document.getElementById('kw-add-category').value;
-        var existing = (keywordData[currentGenre] && keywordData[currentGenre][cat]) ? keywordData[currentGenre][cat] : [];
+        var existing = keywordData[cat] || [];
         if (existing.indexOf(val) !== -1 || pendingAddKeywords.indexOf(val) !== -1) {
           alert(val + ' 은 이미 존재하는 키워드입니다.');
           return;
@@ -505,16 +450,15 @@
       function submitNewKeywords() {
         if (pendingAddKeywords.length === 0) { alert('추가할 키워드를 입력해주세요.'); return; }
         var cat = document.getElementById('kw-add-category').value;
-        if (!keywordData[currentGenre]) keywordData[currentGenre] = {};
-        if (!keywordData[currentGenre][cat]) keywordData[currentGenre][cat] = [];
-        pendingAddKeywords.forEach(function(kw) { keywordData[currentGenre][cat].push(kw); });
+        if (!keywordData[cat]) keywordData[cat] = [];
+        pendingAddKeywords.forEach(function(kw) { keywordData[cat].push(kw); });
         closeAddModal();
         renderKeywords();
       }
  
-      function openDelModal(genre, cat, kw) {
-        pendingDeleteKeyword = { genre: genre, cat: cat, kw: kw };
-        document.getElementById('kw-del-desc').textContent = kw + ' 키워드를 삭제하시겠습니까? 삭제 후 복구가 불가능합니다.';
+      function openDelModal(cat, kw) {
+        pendingDeleteKeyword = { cat: cat, kw: kw };
+        document.getElementById('kw-del-desc').textContent = "'" + kw + "' 키워드를 삭제하시겠습니까? 삭제 후 복구가 불가능합니다.";
         document.getElementById('kw-del-modal').classList.add('show');
       }
  
@@ -525,10 +469,9 @@
  
       function confirmDeleteKeyword() {
         if (!pendingDeleteKeyword) return;
-        var genre = pendingDeleteKeyword.genre;
         var cat = pendingDeleteKeyword.cat;
         var kw = pendingDeleteKeyword.kw;
-        keywordData[genre][cat] = keywordData[genre][cat].filter(function(k) { return k !== kw; });
+        keywordData[cat] = keywordData[cat].filter(function(k) { return k !== kw; });
         selectedKeywords = selectedKeywords.filter(function(k) { return k !== kw; });
         closeDelModal();
         renderKeywords();
@@ -538,5 +481,5 @@
       renderKeywords();
       renderResults();
     </script>
-    </body>
+  </body>
 </html>
