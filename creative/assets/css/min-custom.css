@@ -3014,3 +3014,874 @@ select.form-control-plain {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+
+/* =================================================================== */
+
+/* 작품 상세 페이지 ===================================================== */
+/* ── 작품 헤더 ── */
+.work-header {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.work-cover {
+  width: 130px;
+  height: 180px;
+  flex-shrink: 0;
+  background: #e9e9e9;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.work-cover i {
+  font-size: 36px;
+  color: #c5c5c5;
+}
+.work-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-header-info {
+  flex: 1;
+  min-width: 0;
+}
+.work-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 6px;
+}
+.work-favorites {
+  font-size: 14px;
+  color: #e03131;
+  margin-bottom: 8px;
+}
+.work-meta-row {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 4px;
+}
+.work-meta-row span {
+  color: #444;
+}
+.work-genre-badge {
+  display: inline-block;
+  font-size: 11px;
+  color: #fff;
+  background: #555;
+  border-radius: 4px;
+  padding: 2px 8px;
+  margin-right: 4px;
+}
+.work-status-badge {
+  display: inline-block;
+  font-size: 11px;
+  color: #fff;
+  background: #e03131;
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+/* 뱃지 색상 강제 적용 */
+.work-genre-badge {
+  background: #555 !important;
+  color: #fff !important;
+}
+.work-status-badge {
+  background: #e03131 !important;
+  color: #fff !important;
+}
+
+/* 선호 버튼 */
+.work-action-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.btn-favorite {
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: 1.5px solid #e03131;
+  background: #fff;
+  color: #e03131;
+}
+.btn-favorite.active {
+  background: #e03131;
+  color: #fff;
+}
+.btn-favorite:hover {
+  opacity: 0.8;
+}
+
+.btn-alarm {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: 1.5px solid #ddd;
+  background: #fff;
+  color: #555;
+  display: none;
+}
+.btn-alarm.show {
+  display: inline-block;
+}
+.btn-alarm.active {
+  border-color: #222;
+  background: #222;
+  color: #fff;
+}
+
+.btn-first-episode {
+  padding: 8px 24px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  background: #222;
+  color: #fff;
+}
+.btn-first-episode:hover {
+  background: #000;
+}
+
+/* 작품 소개 */
+.work-intro-section {
+  margin-bottom: 28px;
+}
+.work-intro-text {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.8;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 80px;
+}
+.work-intro-text.expanded {
+  max-height: 1000px;
+}
+.btn-expand {
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: #888;
+  cursor: pointer;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.btn-expand:hover {
+  color: #333;
+}
+
+/* ── 탭 ── */
+.work-tabs {
+  display: flex;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 24px;
+}
+.work-tab {
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #aaa;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.15s;
+}
+.work-tab.active {
+  color: #222;
+  border-bottom-color: #222;
+}
+.work-tab:hover {
+  color: #555;
+}
+
+/* ── 회차 목록 ── */
+.episode-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.episode-sort-tabs {
+  display: flex;
+  gap: 6px;
+}
+.episode-sort-tab {
+  padding: 5px 14px;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 12px;
+  color: #666;
+  cursor: pointer;
+}
+.episode-sort-tab.active {
+  background: #222;
+  border-color: #222;
+  color: #fff;
+  font-weight: 600;
+}
+.btn-select-buy {
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1.5px solid #222;
+  background: #fff;
+  color: #222;
+  cursor: pointer;
+}
+.btn-select-buy:hover {
+  background: #222;
+  color: #fff;
+}
+
+.episode-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.episode-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.episode-item:hover {
+  background: #fafafa;
+}
+.episode-thumb {
+  width: 60px;
+  height: 60px;
+  background: #e9e9e9;
+  border-radius: 6px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.episode-thumb i {
+  font-size: 18px;
+  color: #c5c5c5;
+}
+.episode-info {
+  flex: 1;
+  min-width: 0;
+}
+.episode-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.episode-date {
+  font-size: 12px;
+  color: #aaa;
+}
+.episode-free-badge {
+  font-size: 11px;
+  color: #fff;
+  background: #3b82f6;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-left: 6px;
+}
+.btn-episode-buy {
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #555;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.btn-episode-buy:hover {
+  border-color: #222;
+  color: #222;
+}
+.btn-episode-buy.owned {
+  background: #f5f5f5;
+  color: #aaa;
+  border-color: #eee;
+  cursor: default;
+}
+
+/* ── 공지 목록 ── */
+.notice-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.notice-item {
+  border-bottom: 1px solid #f0f0f0;
+}
+.notice-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  cursor: pointer;
+}
+.notice-row:hover {
+  background: #fafafa;
+}
+.notice-title {
+  font-size: 14px;
+  color: #333;
+}
+.notice-date {
+  font-size: 12px;
+  color: #aaa;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+.notice-content {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.7;
+  padding: 0 0 14px 0;
+  display: none;
+}
+.notice-content.open {
+  display: block;
+}
+
+/* ── 작가 프로필 ── */
+.author-section {
+  margin-bottom: 32px;
+}
+.author-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.author-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.author-card-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #e9e9e9;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.author-card-avatar i {
+  font-size: 22px;
+  color: #c5c5c5;
+}
+.author-card-info {
+  flex: 1;
+}
+.author-card-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 3px;
+}
+.author-card-sub {
+  font-size: 12px;
+  color: #888;
+}
+.btn-author-subscribe {
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1.5px solid #222;
+  background: #fff;
+  color: #222;
+  cursor: pointer;
+}
+.btn-author-subscribe.subscribed {
+  background: #222;
+  color: #fff;
+}
+.author-card-intro {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* 대표작품 / 베스트 그리드 */
+.mini-works-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.mini-works-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+}
+.btn-more-works {
+  font-size: 12px;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.btn-more-works:hover {
+  color: #333;
+}
+
+.mini-works-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-bottom: 28px;
+}
+@media (max-width: 768px) {
+  .mini-works-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.mini-work-card {
+  text-decoration: none;
+  color: inherit;
+}
+.mini-work-cover {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: #e9e9e9;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  overflow: hidden;
+}
+.mini-work-cover i {
+  font-size: 18px;
+  color: #c5c5c5;
+}
+.mini-work-title {
+  font-size: 12px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mini-work-favorites {
+  font-size: 11px;
+  color: #e03131;
+}
+
+/* 페이지네이션 */
+.work-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  color: #555;
+  margin: 16px 0 28px;
+}
+.work-pagination button {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 15px;
+  cursor: pointer;
+}
+.work-pagination button:disabled {
+  color: #e0e0e0;
+  cursor: default;
+}
+.work-pagination button:not(:disabled):hover {
+  color: #333;
+}
+.work-pagination .page-num {
+  cursor: pointer;
+  padding: 2px 4px;
+  color: #888;
+}
+.work-pagination .page-num.active {
+  font-weight: 700;
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* 결제 모달 */
+.pay-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+.pay-modal-overlay.show {
+  display: flex;
+}
+.pay-modal {
+  background: #fff;
+  width: 320px;
+  max-width: 92vw;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.pay-modal-header {
+  background: #1a1a1a;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.pay-modal-header button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+.pay-modal-body {
+  padding: 24px 20px 8px;
+  text-align: center;
+}
+.pay-modal-work-title {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+}
+.pay-modal-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #e03131;
+  margin-bottom: 8px;
+}
+.pay-modal-my-point {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 6px;
+}
+.pay-modal-warn {
+  font-size: 13px;
+  color: #e03131;
+  margin-bottom: 10px;
+  min-height: 20px;
+}
+.pay-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 20px 20px;
+}
+.pay-modal-actions button {
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.pay-btn-primary {
+  background: #222;
+  color: #fff;
+  border: none;
+}
+.pay-btn-primary:hover {
+  background: #000;
+}
+.pay-btn-secondary {
+  background: #fff;
+  color: #555;
+  border: 1px solid #ddd;
+}
+.pay-btn-secondary:hover {
+  border-color: #888;
+  color: #222;
+}
+.pay-btn-charge {
+  background: #fff;
+  color: #222;
+  border: 1.5px solid #222;
+}
+.pay-btn-charge:hover {
+  background: #222;
+  color: #fff;
+}
+
+/* 선택 구매 ======================== */
+.select-buy-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.select-buy-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+.btn-back {
+  position: absolute;
+  left: 0;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #555;
+  cursor: pointer;
+}
+.select-buy-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* 전체선택 + 정렬 */
+.select-buy-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 4px;
+}
+.check-all-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+.check-all-label input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: #222;
+  cursor: pointer;
+}
+
+.sort-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #888;
+}
+.sort-select-wrap select {
+  border: none;
+  font-size: 13px;
+  color: #555;
+  cursor: pointer;
+  background: transparent;
+}
+
+/* 회차 리스트 */
+.select-episode-list {
+  max-height: 420px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.select-episode-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #f5f5f5;
+  cursor: pointer;
+}
+.select-episode-item:last-child {
+  border-bottom: none;
+}
+.select-episode-item:hover {
+  background: #fafafa;
+}
+.select-episode-item input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: #222;
+  cursor: pointer;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.select-episode-item.owned {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.ep-item-info {
+  flex: 1;
+}
+.ep-item-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 4px;
+}
+.ep-item-date {
+  font-size: 12px;
+  color: #aaa;
+}
+.ep-free-badge {
+  display: inline-block;
+  font-size: 11px;
+  color: #fff;
+  background: #3b82f6;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-left: 6px;
+}
+
+/* 하단 구매 버튼 */
+.select-buy-footer {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  padding: 12px 0 0;
+}
+.btn-buy-selected {
+  width: 100%;
+  padding: 14px 0;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-buy-selected:hover {
+  background: #000;
+}
+.btn-buy-selected:disabled {
+  background: #ccc;
+  cursor: default;
+}
+
+/* 결제 모달 */
+.pay-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+.pay-modal-overlay.show {
+  display: flex;
+}
+.pay-modal {
+  background: #fff;
+  width: 320px;
+  max-width: 92vw;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.pay-modal-header {
+  background: #1a1a1a;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.pay-modal-header button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+.pay-modal-body {
+  padding: 24px 20px 8px;
+  text-align: center;
+}
+.pay-modal-work-title {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+}
+.pay-modal-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #e03131;
+  margin-bottom: 8px;
+}
+.pay-modal-my-point {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 6px;
+}
+.pay-modal-warn {
+  font-size: 13px;
+  color: #e03131;
+  margin-bottom: 10px;
+  min-height: 20px;
+}
+.pay-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 20px 20px;
+}
+.pay-modal-actions button {
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.pay-btn-primary {
+  background: #222;
+  color: #fff;
+  border: none;
+}
+.pay-btn-primary:hover {
+  background: #000;
+}
+.pay-btn-charge {
+  background: #fff;
+  color: #222;
+  border: 1.5px solid #222;
+}
+.pay-btn-charge:hover {
+  background: #222;
+  color: #fff;
+}
