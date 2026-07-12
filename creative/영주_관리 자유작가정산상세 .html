@@ -511,17 +511,15 @@
           <!-- Start Content-->
           <div class="container">
             <div class="report-page">
-              <h3 class="report-detail-title">
-                2026년 6월
-              </h3>
-
-              <h3 class="report-detail-title">
-                A 출판사 정산 상세
+              <h3 class="report-detail-title mb-2">
+              자유작가 정산 상세
               </h3>
 
               <div class="row">
                 
                 <div class="card report-detail-card">
+
+                  
 
                     <div class="card-header report-card-header">
                       정산 상태
@@ -530,27 +528,42 @@
                     <div class="card-body">
 
                         <div class="settle-summary-row">
-                            <span>정산월 :</span>
+                            <span>작가명 :</span>
                             <span class="fw-bold">
-                            2026-07
+                            홍길동
+                            </span>
+                        </div>
+
+                        <div class="settle-summary-row">
+                            <span>작품명 :</span>
+                            <span class="fw-bold">
+                            용사의 귀환
                             </span>
                         </div>
 
                         <div class="settle-summary-row">
                             <span>총 정산 금액 :</span>
                             <span class="report-value fw-bold">
-                            12,950,000원
+                            595,000원
                             </span>
                         </div>
-                        
+
+
                         <div class="settle-summary-row">
-                            <span>정산 기한 :</span>
-                            <span class="report-value  fw-bold">2026-07-10</span>
+                            <span>정산월 :</span>
+                            <span class="report-value fw-bold">
+                            2026-07
+                            </span>
+                        </div>
+
+                        <div class="settle-summary-row">
+                            <span>정산 요청일 :</span>
+                            <span class="fw-bold">2026-07-10</span>
                         </div>
 
                         <div class="settle-summary-row">
                             <span>정산 상태 :</span>
-                            <span class="settle-status pending">정산 대기</span>
+                            <span class="settle-status pending">요청 접수</span>
                         </div>
 
                         <div class="settle-summary-row">
@@ -573,34 +586,44 @@
                 <div class="card report-detail-card">
 
                     <div class="card-header report-card-header">
-                    정산 정보
+                      정산 정보
                     </div>
 
                     <div class="card-body p-0">
 
-                        <div class="table-responsive report-history-wrap">
+                        <div class="table-responsive report-history-wrap ">
 
-                            <table class="table settle-total-table table-bordered report-table text-center mb-0">
-
+                            <table class="table settle-total-table table-bordered text-center mb-0">
+                               
                                 <tbody>
 
                                     <tr>
-                                        <th>총 작품 수</th>
-                                        <td>15</td>
+                                        <th>총 판매건수</th>
+                                        <td>2,150 건</td>
                                     </tr>
 
                                     <tr>
 
                                         <th>총 판매금액</th>
-                                        <td>18,500,000원</td>
+                                        <td>850,000원</td>
+                                    </tr>
+                                    <tr>
+
+                                        <th>플랫폼 수수료</th>
+                                        <td>255,000원</td>
+                                    </tr>
+
+                                    <tr>
+
+                                        <th>정산 비율</th>
+                                        <td>70%</td>
                                     </tr>
 
                                     <tr>
 
                                         <th>총 정산금액</th>
-                                        <td class="fw-bold">12,950,000원</td>
+                                        <td class="fw-bold">595,000원</td>
                                     </tr>
-
                                 </tbody>
 
                             </table>
@@ -613,11 +636,11 @@
               </div>
 
               <div class="row">
-                <!-- 작품별 정산내역 -->
+                <!-- 회차별 판매내역 얘는 기능할때 할지 말지 결정 -->
                 <div class="card report-detail-card">
 
                     <div class="card-header report-card-header">
-                      작품별 정산내역
+                      판매 내역
                     </div>
 
                     <div class="card-body p-0">
@@ -629,9 +652,10 @@
                                 <thead class="table-light">
 
                                     <tr>
-                                        <th>작품명</th>
-                                        <th>판매금액</th>
-                                        <th>정산금액</th>
+                                        <th>회차</th>
+                                        <th>판매건수</th>
+                                        <th>금액</th>
+                                        <th>매출액</th>
                                     </tr>
 
                                 </thead>
@@ -640,84 +664,105 @@
 
                                     <tr>
 
-                                        <td>너에게로 전력</td>
+                                        <td>1화</td>
                                         <td>
-                                          5,000,000
+                                          100
                                         </td>
                                         <td>
-                                          3,500,000
+                                          100P
+                                        </td>
+                                        <td>
+                                          3,000
                                         </td>
                                         
                                     </tr>
 
                                    <tr>
 
-                                        <td>너에게로 전력</td>
+                                        <td>2화</td>
                                         <td>
-                                          5,000,000
+                                          100
                                         </td>
                                         <td>
-                                          3,500,000
-                                        </td>
-                                        
-                                    </tr>
-
-                                    <tr>
-
-                                        <td>너에게로 전력</td>
-                                        <td>
-                                          5,000,000
+                                          100P
                                         </td>
                                         <td>
-                                          3,500,000
+                                          3,000
                                         </td>
                                         
                                     </tr>
 
                                     <tr>
 
-                                        <td>너에게로 전력</td>
+                                        <td>3화</td>
                                         <td>
-                                          5,000,000
+                                          100
                                         </td>
                                         <td>
-                                          3,500,000
-                                        </td>
-                                        
-                                    </tr>
-
-                                    <tr>
-
-                                        <td>너에게로 전력</td>
-                                        <td>
-                                          5,000,000
+                                          100P
                                         </td>
                                         <td>
-                                          3,500,000
+                                          3,000
                                         </td>
                                         
                                     </tr>
 
                                     <tr>
 
-                                        <td>너에게로 전력</td>
+                                        <td>4화</td>
                                         <td>
-                                          5,000,000
+                                          100
                                         </td>
                                         <td>
-                                          3,500,000
+                                          100P
+                                        </td>
+                                        <td>
+                                          3,000
                                         </td>
                                         
                                     </tr>
 
                                     <tr>
 
-                                        <td>너에게로 전력</td>
+                                        <td>5화</td>
                                         <td>
-                                          5,000,000
+                                          100
                                         </td>
                                         <td>
-                                          3,500,000
+                                          100P
+                                        </td>
+                                        <td>
+                                          3,000
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>6화</td>
+                                        <td>
+                                          100
+                                        </td>
+                                        <td>
+                                          100P
+                                        </td>
+                                        <td>
+                                          3,000
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>7화</td>
+                                        <td>
+                                          100
+                                        </td>
+                                        <td>
+                                          100P
+                                        </td>
+                                        <td>
+                                          3,000
                                         </td>
                                         
                                     </tr>
