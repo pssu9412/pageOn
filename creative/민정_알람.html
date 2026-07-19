@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="horizontal" data-topbar-color="dark">
+
+
+    <head>
+        <meta charset="utf-8" />
+        <title>이벤트 등록</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+		<!-- Theme Config Js -->
+		<script src="assets/js/head.js"></script>
+
+		<!-- Bootstrap css -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+		<!-- App css -->
+		<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- Icons css -->
+		<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- 개인 custom css -->
+        <link rel="stylesheet" href="assets/css/min-custom.css"> 
+        <link rel="stylesheet" href="assets/css/custom.css"> 
+        <link rel="stylesheet" href="assets/css/yj-custom.css">
+        <link rel="stylesheet" href="assets/css/ssu-custom.css"> 
+    </head>
+
+  <body>
+    <div id="wrapper">
+      <div class="content-page">
+ 
+        <!-- Topbar -->
+        <div class="navbar-custom">
+          <div class="topbar">
+            <div class="topbar-menu d-flex align-items-center gap-1">
+              <div class="logo-box">
+                <a href="index.html" class="logo-light">
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-lg" />
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm" />
+                </a>
+                <a href="index.html" class="logo-dark">
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="dark logo" class="logo-lg" />
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm" />
+                </a>
+              </div>
+            </div>
+            <div class="topbar-menu d-flex flex-column align-items-center">
+              <div class="topbar-right-top">
+                <div class="app-search dropdown">
+                  <form action="검색페이지.html" method="get">
+                    <input type="search" class="form-control rounded-pill" placeholder="Search..." name="q" />
+                    <span class="fe-search search-icon font-16"></span>
+                  </form>
+                </div>
+              </div>
+              <div class="topbar-right-bottom">
+                <ul class="topbar-menu d-flex align-items-center">
+                  <li class="d-none d-sm-inline-block"><a href="#" class="nav-link"><i class="fe-shopping-cart font-22"></i></a></li>
+                  <li class="dropdown notification-list">
+                    <a class="nav-link" href="알림목록.html">
+                      <i class="fe-bell font-22"></i>
+                      <span class="badge bg-danger rounded-circle noti-icon-badge" id="alarm-badge">9</span>
+                    </a>
+                  </li>
+                  <li class="dropdown">
+                    <a class="nav-link dropdown-toggle nav-user me-0" data-bs-toggle="dropdown" href="#">
+                      <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle" />
+                      <span class="ms-1 d-none d-md-inline-block">Geneva <i class="mdi mdi-chevron-down"></i></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="menubar">
+            <ul class="menu">
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">Best</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로맨스</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로판</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">판타지</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">BL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">GL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">자유</span></a></li>
+            </ul>
+          </div>
+        </div>
+ 
+        <div class="content">
+          <div class="sidebar">
+            <ul class="menu">
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">베스트</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로맨스</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로판</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">판타지</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">BL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">GL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">자유</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">커뮤니티</span></a></li>
+              <li class="menu-item"><a href="키워드검색.html" class="menu-link"><span class="menu-text">키워드검색</span></a></li>
+            </ul>
+          </div>
+ 
+          <div class="container-fluid">
+            <h4 class="alarm-page-title">알림</h4>
+ 
+            <!-- 탭 -->
+            <div class="alarm-tabs">
+              <button type="button" class="alarm-tab active" data-tab="all" onclick="switchTab(this)">전체</button>
+              <button type="button" class="alarm-tab" data-tab="update" onclick="switchTab(this)">업데이트</button>
+              <button type="button" class="alarm-tab" data-tab="news" onclick="switchTab(this)">내소식</button>
+            </div>
+ 
+            <!-- 전체읽음 -->
+            <div class="alarm-toolbar">
+              <button type="button" class="btn-read-all" onclick="readAll()">전체 읽음 처리</button>
+            </div>
+ 
+            <!-- 알림 목록 -->
+            <div class="alarm-list" id="alarm-list"></div>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <script>
+      /* ── 더미 알림 데이터 ── */
+      /* 자동 삭제: 30일 지난 항목은 렌더링 시 제외 */
+      var EXPIRE_DAYS = 30;
+      var now = new Date();
+ 
+      var alarms = [
+        {
+          id: 1, type: 'update', read: false,
+          title: '[사친당가 시비로 살아남기] 의 최신편이 업데이트 되었습니다.',
+          desc: '아마도 장르 키워드...? #무협 이렇게..?',
+          date: '2026.07.19',
+          dateObj: new Date('2026-07-19'),
+          link: '작품상세.html?id=1',
+          thumb: null,
+        },
+        {
+          id: 2, type: 'update', read: false,
+          title: '김차차 작가님의 신작 [대충 신작 이름]이 등록되었습니다.',
+          desc: '아마도 장르 키워드...? #로판 이렇게..?',
+          date: '2026.07.18',
+          dateObj: new Date('2026-07-18'),
+          link: '작품상세.html?id=2',
+          thumb: null,
+        },
+        {
+          id: 3, type: 'news', read: true,
+          title: '222명이 내 댓글을 좋아합니다.',
+          desc: '대충 댓글내용 길면 ....으로 짤라',
+          date: '2026.07.18',
+          dateObj: new Date('2026-07-18'),
+          link: '#',
+          thumb: 'heart',
+        },
+        {
+          id: 4, type: 'news', read: true,
+          title: '내 작성글에 댓글이 등록되었습니다.',
+          desc: '대충 댓글내용 길면 ....으로 짤라',
+          date: '2026.07.17',
+          dateObj: new Date('2026-07-17'),
+          link: '#',
+          thumb: 'heart',
+        },
+        {
+          id: 5, type: 'update', read: true,
+          title: '[로맨스 작품명] 의 최신편이 업데이트 되었습니다.',
+          desc: '#로맨스 #현대 이렇게..?',
+          date: '2026.07.10',
+          dateObj: new Date('2026-07-10'),
+          link: '작품상세.html?id=3',
+          thumb: null,
+        },
+      ];
+ 
+      var currentTab = 'all';
+ 
+      /* ── 탭 전환 ── */
+      function switchTab(btn) {
+        document.querySelectorAll('.alarm-tab').forEach(function(t) { t.classList.remove('active'); });
+        btn.classList.add('active');
+        currentTab = btn.dataset.tab;
+        renderAlarms();
+      }
+ 
+      /* ── 알림 렌더링 ── */
+      function renderAlarms() {
+        /* 만료 필터: 30일 지난 항목 제외 */
+        var filtered = alarms.filter(function(a) {
+          var diff = (now - a.dateObj) / (1000 * 60 * 60 * 24);
+          return diff <= EXPIRE_DAYS;
+        });
+ 
+        /* 탭 필터 */
+        if (currentTab === 'update') {
+          filtered = filtered.filter(function(a) { return a.type === 'update'; });
+        } else if (currentTab === 'news') {
+          filtered = filtered.filter(function(a) { return a.type === 'news'; });
+        }
+ 
+        var list = document.getElementById('alarm-list');
+ 
+        if (filtered.length === 0) {
+          list.innerHTML = '<div class="alarm-empty"><i class="fe-bell"></i><p>알림이 없습니다.</p></div>';
+          return;
+        }
+ 
+        var html = '';
+        filtered.forEach(function(a) {
+          var thumbHtml = '';
+          if (a.thumb === 'heart') {
+            thumbHtml = '<div class="alarm-thumb heart"><i class="fe-heart"></i></div>';
+          } else {
+            thumbHtml = '<div class="alarm-thumb"><i class="fe-image"></i></div>';
+          }
+ 
+          html += '<div class="alarm-item ' + (a.read ? '' : 'unread') + '" id="alarm-' + a.id + '">'
+            + thumbHtml
+            + '<div class="alarm-info" onclick="clickAlarm(' + a.id + ')">'
+            + '<div class="alarm-title">' + a.title + '</div>'
+            + '<div class="alarm-desc">' + a.desc + '</div>'
+            + '<div class="alarm-date">' + a.date + '</div>'
+            + '</div>'
+            + '<button type="button" class="btn-alarm-delete" onclick="deleteAlarm(' + a.id + ')" title="삭제">'
+            + '<i class="mdi mdi-close"></i>'
+            + '</button>'
+            + '</div>';
+        });
+        list.innerHTML = html;
+ 
+        /* 뱃지 업데이트 */
+        updateBadge();
+      }
+ 
+      /* ── 알림 클릭 (읽음 처리 + 이동) ── */
+      function clickAlarm(id) {
+        var alarm = alarms.find(function(a) { return a.id === id; });
+        if (alarm) {
+          alarm.read = true;
+          updateBadge();
+          if (alarm.link && alarm.link !== '#') {
+            location.href = alarm.link;
+          }
+          renderAlarms();
+        }
+      }
+ 
+      /* ── 개별 삭제 ── */
+      function deleteAlarm(id) {
+        alarms = alarms.filter(function(a) { return a.id !== id; });
+        renderAlarms();
+      }
+ 
+      /* ── 전체 읽음 처리 ── */
+      function readAll() {
+        alarms.forEach(function(a) { a.read = true; });
+        updateBadge();
+        renderAlarms();
+      }
+ 
+      /* ── 뱃지 업데이트 ── */
+      function updateBadge() {
+        var unreadCount = alarms.filter(function(a) { return !a.read; }).length;
+        var badge = document.getElementById('alarm-badge');
+        if (badge) {
+          badge.textContent = unreadCount;
+          badge.style.display = unreadCount > 0 ? 'inline-block' : 'none';
+        }
+      }
+ 
+      /* 초기화 */
+      renderAlarms();
+    </script>
+  </body>
+</html>
