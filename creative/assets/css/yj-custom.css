@@ -1969,3 +1969,39 @@ input[type="radio"]:checked {
 .settle-total-table tbody td {
   color: black;
 }
+
+/* ==== 출판사 정산 내역 조회 ===== */
+.settle-date-wrap {
+  /* border: 1px solid #b3b3b3; */
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px 0px;
+  display: flex;
+  gap: 25px;
+}
+
+.filter-date-wrap {
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-date-wrap select {
+  width: 100px;
+}
+
+.pub-settle-total-table tbody tr th {
+  background-color: #f3f7f9 !important;
+  width: 20%;
+}
+
+.pub-settle-scroll-wrap {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.pub-settle-scroll-wrap thead th {
+  position: sticky;
+  top: 0;
+  background: #f8f9fa;
+  z-index: 10;
+}
