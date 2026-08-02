@@ -1,0 +1,276 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
+<!DOCTYPE html>
+<html lang="en" data-layout="horizontal" data-topbar-color="dark">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Page On</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="${contextPath}/assets/images/pageon/logo-gray.jpeg">
+
+		<!-- Theme Config Js -->
+		<script src="${contextPath}/assets/js/head.js"></script>
+
+		<!-- Bootstrap css -->
+		<link href="${contextPath}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+		<!-- App css -->
+		<link href="${contextPath}/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- Icons css -->
+		<link href="${contextPath}/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+        <link rel="stylesheet" href="${contextPath}/assets/css/ssu-custom.css"> 
+    </head>
+
+    <body>
+        <div class="account-pages mt-5 mb-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-4">
+                        <div class="card login-card">
+                            <div class="card-body">
+                                <div class="text-center w-50 m-auto">
+                                    <div class="auth-brand">
+                                        <a href="영주_상단바.html" class="logo logo-dark text-center">
+                                            <span class="logo-lg">
+                                                <img src="${contextPath}/assets/images/pageon/logo-gray.jpeg" alt="" height="100">
+                                            </span>
+                                        </a>
+                    
+                                    </div>
+                                    <p class="text-dark fw-bold fs-5 mb-3 mt-3">비밀번호 찾기</p>
+                                </div>
+
+                                <ul class="nav nav-tabs nav-bordered nav-justified">
+                                    <li class="nav-item">
+                                        <a href="#findemail" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                                            이메일로 찾기
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#findphone" data-bs-toggle="tab" aria-expanded="true" class="nav-link active">
+                                            핸드폰 번호로 찾기
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane" id="findemail">
+                                        <form id="findpw-email-form" action="#">
+
+                                            <div class="mb-3">
+                                                <label for="find-id" class="form-label">아이디</label>
+                                                <input class="form-control" type="text" id="find-id" required="" placeholder="Enter your id">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="find-email" class="form-label">이메일</label>
+                                                <input class="form-control" type="text" id="find-email" required="" placeholder="Enter your email">
+                                            </div>
+        
+                                            <div class="text-center">
+                                                <button class="btn btn-dark" type="submit" style="width: 200px;"> 인증번호 발송 </button>
+                                            </div>
+        
+                                        </form>    
+                                    </div>
+                                    <div class="tab-pane active" id="findphone">
+                                        <form id="findpw-phone-form" action="#">
+
+                                            <div class="mb-3">
+                                                <label for="find-id" class="form-label">아이디</label>
+                                                <input class="form-control" type="text" id="find-id" placeholder="Enter your id">
+                                            </div>
+                                            
+                                            <div class="mb-3">
+                                                <label for="find-phone" class="form-label">핸드폰 번호</label>
+                                                <input class="form-control" type="text" id="find-phone" placeholder="Enter your phone number">
+                                                <div class="invalid-feedback d-block phone-feedback" style="display:none !important;">
+                                                    핸드폰 번호 형식이 올바르지 않습니다.
+                                                </div>
+                                            </div>
+        
+                                            <div class="text-center">
+                                                <button class="btn btn-dark" type="submit" style="width: 200px;"> 인증번호 발송 </button>
+                                            </div>
+        
+                                        </form>
+
+                                        <!-- 인증번호 발송 후  -->
+                                        <div id="verify-area" class="text-center mt-3" style="display:none;">
+                                            <p class="text-muted mb-3">
+                                                입력하신 정보로<br>
+                                                인증번호가 전송되었습니다.
+                                            </p>
+
+                                            <div class="mb-2 text-start">
+                                                <label for="auth-code" class="form-label">인증번호 입력</label>
+                                                <input class="form-control" type="text" id="auth-code" placeholder="인증번호 입력" maxlength="6">
+                                            </div>
+
+                                            <div id="auth-code-feedback" class="text-danger small mt-2" style="display:none;">
+                                                인증번호가 일치하지 않습니다.
+                                            </div>
+
+                                            <button class="btn btn-dark w-100 mt-3" type="button" id="reset-pw-btn" disabled>
+                                                비밀번호 재설정
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            <!-- </div> -->
+                            
+                            </div> <!-- end card-body -->
+                        </div>
+                        <!-- end card -->
+
+                        <div class="row mt-3">
+                            <div class="col-12 text-center">
+                                <p class="text-black-50">Back to <a href="auth-login.html" class="text-black ms-1"><b>Log in</b></a></p>
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end page -->
+
+
+        <footer class="footer footer-alt">
+            &copy;by <a href="" class="text-black-50">PageOn</a> 
+        </footer>
+
+        <!-- Authentication js -->
+        <script src="${contextPath}/assets/js/pages/authentication.init.js"></script>
+
+        <!-- Vendor js -->
+        <script src="${contextPath}/assets/js/vendor.min.js"></script>
+
+        <!-- App js -->
+        <script src="${contextPath}/assets/js/app.min.js"></script>
+
+        <script>
+            const findPhone = document.querySelector("#find-phone");
+            const phoneFeedback = document.querySelector(".phone-feedback");
+            
+            function showFeedback(el) {
+                el.style.setProperty("display", "block", "important");
+            }
+            
+            function hideFeedback(el) {
+                el.style.setProperty("display", "none", "important");
+            }
+            
+            function setValid(input) {
+                input.classList.remove("is-invalid");
+                input.classList.add("is-valid");
+            }
+            
+            function setInvalid(input) {
+                input.classList.remove("is-valid");
+                input.classList.add("is-invalid");
+            }
+            
+            function validatePhone() {
+                const regex = /^010-\d{4}-\d{4}$/;
+            
+                if (regex.test(findPhone.value.trim())) {
+                    setValid(findPhone);
+                    hideFeedback(phoneFeedback);
+                    return true;
+                }
+            
+                setInvalid(findPhone);
+                showFeedback(phoneFeedback);
+                return false;
+            }
+            
+            findPhone.addEventListener("input", function () {
+                let value = findPhone.value.replace(/[^0-9]/g, "");
+            
+                if (value.length > 11) {
+                    value = value.slice(0, 11);
+                }
+            
+                if (value.length <= 3) {
+                    findPhone.value = value;
+                } else if (value.length <= 7) {
+                    findPhone.value = value.slice(0, 3) + "-" + value.slice(3);
+                } else {
+                    findPhone.value =
+                        value.slice(0, 3) + "-" +
+                        value.slice(3, 7) + "-" +
+                        value.slice(7);
+                }
+            
+                validatePhone();
+            });
+
+            
+           // 인증번호 화면
+            const emailForm = document.querySelector("#findpw-email-form");
+            const phoneForm = document.querySelector("#findpw-phone-form");
+            const verifyArea = document.querySelector("#verify-area");
+            const authCode = document.querySelector("#auth-code");
+            const resetPwBtn = document.querySelector("#reset-pw-btn");
+            const authCodeFeedback = document.querySelector("#auth-code-feedback");
+
+            function showVerifyArea(form) {
+                form.style.display = "none";
+                verifyArea.style.display = "block";
+            }
+
+            emailForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                // 나중에 여기서 이메일 인증번호 발송 API 호출
+                showVerifyArea(emailForm);
+            });
+
+            phoneForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                // 나중에 여기서 핸드폰 인증번호 발송 API 호출
+                showVerifyArea(phoneForm);
+            });
+
+            // 입력 전 버튼 비활성화
+            authCode.addEventListener("input", function () {
+                if (authCode.value.trim().length > 0) {
+                    resetPwBtn.disabled = false;
+                } else {
+                    resetPwBtn.disabled = true;
+                }
+            });
+
+            // 비밀번호 재설정 클릭 시
+            resetPwBtn.addEventListener("click", function () {
+                const value = authCode.value.trim();
+
+                // 테스트용 인증번호
+                if (value === "123456") {
+                    authCode.classList.remove("is-invalid");
+                    authCodeFeedback.style.display = "none";
+
+                    location.href = "resetpw-page.html";
+                } else {
+                    authCode.classList.add("is-invalid");
+                    authCodeFeedback.style.display = "block";
+                }
+            });
+            </script>
+        
+    </body>
+</html>

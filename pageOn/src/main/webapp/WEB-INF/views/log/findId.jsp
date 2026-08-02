@@ -1,0 +1,152 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
+<!DOCTYPE html>
+<html lang="en" data-layout="horizontal" data-topbar-color="dark">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Page On</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="${contextPath}/assets/images/pageon/logo-gray.jpeg">
+
+		<!-- Theme Config Js -->
+		<script src="${contextPath}/assets/js/head.js"></script>
+
+		<!-- Bootstrap css -->
+		<link href="${contextPath}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+		<!-- App css -->
+		<link href="${contextPath}/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- Icons css -->
+		<link href="${contextPath}/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+        <link rel="stylesheet" href="${contextPath}/assets/css/ssu-custom.css"> 
+    </head>
+
+    <body>
+        <div class="account-pages mt-5 mb-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-4">
+                        <div class="card login-card">
+                            <div class="card-body p-4">
+
+                                <div class="text-center w-50 m-auto">
+                                    <div class="auth-brand">
+                                        <a href="index.html" class="logo logo-dark text-center">
+                                            <span class="logo-lg">
+                                                <img src="${contextPath}/assets/images/pageon/logo-gray.jpeg" alt="" height="100">
+                                            </span>
+                                        </a>
+                    
+                                    </div>
+                                    <p class="text-dark fw-bold fs-5 mb-3 mt-3">아이디 찾기</p>
+                                </div>
+
+                                <form action="#">
+
+                                    <div class="mb-3">
+                                        <label for="find-name" class="form-label">이름</label>
+                                        <input class="form-control" type="text" id="find-name" required="" placeholder="Enter your name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="find-phone" class="form-label">핸드폰 번호</label>
+                                        <input class="form-control" type="text" id="find-phone" required="" placeholder="Enter your phone number">
+                                    </div>
+
+                                    <div class="text-center">
+                                        <button class="btn btn-dark" type="submit" style="width: 200px;"> 아이디 찾기 </button>
+                                    </div>
+
+                                </form>
+
+                                <!-- 일치 결과 -->
+                                <div id="findid-success" class="text-center mt-4" style="display:none;">
+                                    <p class="text-muted">회원님의 아이디는 다음과 같습니다.</p>
+                                    <h5 id="found-id">reader123</h5>
+
+                                    <button class="btn btn-dark mt-3" style="width:200px;">로그인</button>
+
+                                    <p class="text-black-50 mt-3">
+                                        비밀번호를 잊어버리셨나요?
+                                        <a href="findpw-page.html" class="text-black"><b>비밀번호 찾기</b></a>
+                                    </p>
+                                </div>
+
+                                <!-- 불일치 결과 -->
+                                <div id="findid-fail" class="text-center mt-4" style="display:none;">
+                                    <p class="text-muted">일치하는 회원 정보가 없습니다.</p>
+
+                                    <button class="btn btn-dark mt-3" style="width:200px;">다시 찾기</button>
+                                    <button class="btn btn-outline-dark mt-3 ms-2" style="width:200px;">메인화면으로 이동</button>
+
+                                    <p class="text-black-50 mt-3">
+                                        회원이 아니신가요?
+                                        <a href="signup-page.html" class="text-black"><b>회원가입</b></a>
+                                    </p>
+                                </div>
+
+                            </div> <!-- end card-body -->
+                        </div>
+                        <!-- end card -->
+
+                        <div class="row mt-3">
+                            <div class="col-12 text-center">
+                                <p class="text-black-50">Back to <a href="auth-login.html" class="text-black ms-1"><b>Log in</b></a></p>
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end page -->
+
+
+        <footer class="footer footer-alt">
+            &copy;by <a href="" class="text-black-50">PageOn</a> 
+        </footer>
+
+        <!-- Authentication js -->
+        <script src="${contextPath}/assets/js/pages/authentication.init.js"></script>
+
+        <script>
+            const form = document.querySelector("form");
+            
+            const successArea = document.querySelector("#findid-success");
+            const failArea = document.querySelector("#findid-fail");
+            
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+            
+                const name = document.querySelector("#find-name").value.trim();
+                const phone = document.querySelector("#find-phone").value.trim();
+            
+                if (!name || !phone) return;
+            
+                // 임시 테스트 (나중에 API로 바뀜)
+                const isFound = true; // false로 바꾸면 실패 테스트 가능
+            
+                form.style.display = "none";
+            
+                if (isFound) {
+                    successArea.style.display = "block";
+                } else {
+                    failArea.style.display = "block";
+                }
+            });
+        </script>
+        
+    </body>
+</html>

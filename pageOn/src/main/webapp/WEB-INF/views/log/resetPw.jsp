@@ -1,0 +1,221 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
+<!DOCTYPE html>
+<html lang="en" data-layout="horizontal" data-topbar-color="dark">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Page ON</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="${contextPath}/assets/images/pageon/logo-gray.jpeg">
+
+		<!-- Theme Config Js -->
+		<script src="${contextPath}/assets/js/head.js"></script>
+
+		<!-- Bootstrap css -->
+		<link href="${contextPath}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+		<!-- App css -->
+		<link href="${contextPath}/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- Icons css -->
+		<link href="${contextPath}/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+        <link rel="stylesheet" href="${contextPath}/assets/css/ssu-custom.css"> 
+    </head>
+
+    <body>
+        <div class="account-pages mt-5 mb-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-4">
+                        <div class="card login-card">
+                            <div class="card-body p-4">
+
+                                <div class="text-center w-50 m-auto">
+                                    <div class="auth-brand">
+                                        <a href="index.html" class="logo logo-dark text-center">
+                                            <span class="logo-lg">
+                                                <img src="${contextPath}/assets/images/pageon/logo-gray.jpeg" alt="" height="100">
+                                            </span>
+                                        </a>
+                    
+                                    </div>
+                                    <p class="text-dark fw-bold fs-5 mb-3 mt-3">비밀번호 재설정</p>
+                                </div>
+
+                                <form action="#">
+
+                                   <div class="mb-3">
+                                    <label for="resetpw" class="form-label">비밀번호</label>
+                                
+                                    <div class="input-group mb-2">
+                                        <input class="form-control" type="password" id="resetpw"
+                                               placeholder="8자 이상, 영문/숫자/특수문자 중 2가지 이상 입력">
+                                        <button class="btn btn-outline-secondary toggle-pw" type="button" data-target="resetpw">
+                                            <i class="bi bi-eye-slash"></i>
+                                        </button>
+                                    </div>
+                                
+                                    <div class="input-group">
+                                        <input class="form-control" type="password" id="resetcpw" placeholder="비밀번호 확인">
+                                        <button class="btn btn-outline-secondary toggle-pw" type="button" data-target="resetcpw">
+                                            <i class="bi bi-eye-slash"></i>
+                                        </button>                                    
+                                    </div>
+                                
+                                    <div class="invalid-feedback d-block pw-feedback" style="display:none !important;">
+                                        8자 이상, 영문/숫자/특수문자 중 2가지 이상 입력해주세요
+                                    </div>
+                                
+                                    <div class="invalid-feedback d-block cpw-feedback" style="display:none !important;">
+                                        비밀번호가 일치하지 않습니다.
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-dark w-100" type="submit">재설정 확인</button>
+
+                                </form>
+
+                            </div> <!-- end card-body -->
+                        </div>
+                        <!-- end card -->
+
+                        <div class="row mt-3">
+                            <div class="col-12 text-center">
+                                <p class="text-black-50">Back to <a href="auth-login.html" class="text-black ms-1"><b>Log in</b></a></p>
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end page -->
+
+
+        <footer class="footer footer-alt">
+            &copy;by <a href="" class="text-black-50">PageOn</a> 
+        </footer>
+
+        <!-- Authentication js -->
+        <script src="${contextPath}/assets/js/pages/authentication.init.js"></script>
+
+        <script>
+            const resetPw = document.querySelector("#resetpw");
+            const resetCpw = document.querySelector("#resetcpw");
+
+            const pwFeedback = document.querySelector(".pw-feedback");
+            const cpwFeedback = document.querySelector(".cpw-feedback");
+
+            // 에러 메세지
+            function showFeedback(el) {
+                el.style.setProperty("display", "block", "important");
+            }
+
+            // 에러 메세지 숨김
+            function hideFeedback(el) {
+                el.style.setProperty("display", "none", "important");
+            }
+
+            // 입력값 맞을 때
+            function setValid(input) {
+                input.classList.remove("is-invalid");
+                input.classList.add("is-valid");
+            }
+
+            // 입력값 틀릴 때
+            function setInvalid(input) {
+                input.classList.remove("is-valid");
+                input.classList.add("is-invalid");
+            }
+
+            // 비밀번호 검증
+            function validatePw() {
+                const value = resetPw.value.trim();
+
+                const hasEng = /[a-zA-Z]/.test(value);
+                const hasNum = /[0-9]/.test(value);
+                const hasSpecial = /[^a-zA-Z0-9]/.test(value);
+
+                const typeCount = [hasEng, hasNum, hasSpecial].filter(Boolean).length;
+
+                if (value.length >= 8 && typeCount >= 2) {
+                    setValid(resetPw);
+                    hideFeedback(pwFeedback);
+                    return true;
+                }
+
+                setInvalid(resetPw);
+                showFeedback(pwFeedback);
+                return false;
+            }
+
+            // 비밀번호 확인
+            function validateCpw() {
+                if (resetCpw.value.trim() !== "" && resetPw.value === resetCpw.value) {
+                    setValid(resetCpw);
+                    hideFeedback(cpwFeedback);
+                    return true;
+                }
+
+                setInvalid(resetCpw);
+                showFeedback(cpwFeedback);
+                return false;
+            }
+
+            // 입력할 때 실시간 검증
+            resetPw.addEventListener("input", function () {
+                validatePw();
+                validateCpw();
+            });
+
+            resetCpw.addEventListener("input", validateCpw);
+
+            // 비밀번호 보기
+            document.querySelectorAll(".toggle-pw").forEach(function (btn) {
+                btn.addEventListener("click", function () {
+                    const target = document.querySelector("#" + btn.dataset.target);
+                    const icon = btn.querySelector("i");
+
+                    if (target.type === "password") {
+                        target.type = "text";
+                        icon.classList.remove("bi-eye-slash");
+                        icon.classList.add("bi-eye");
+                    } else {
+                        target.type = "password";
+                        icon.classList.remove("bi-eye");
+                        icon.classList.add("bi-eye-slash");
+                    }
+                });
+            });
+
+            // submit 
+            const form = document.querySelector("form");
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const isPwValid = validatePw();
+                const isCpwValid = validateCpw();
+
+                if (isPwValid && isCpwValid) {
+                    location.href = "영주_상단바.html";
+                }
+            });
+
+            
+        </script>
+        
+    </body>
+</html>
