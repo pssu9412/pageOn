@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="horizontal" data-topbar-color="dark">
+
+
+    <head>
+        <meta charset="utf-8" />
+        <title>MyPage</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+		<!-- Theme Config Js -->
+		<script src="assets/js/head.js"></script>
+
+		<!-- Bootstrap css -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+		<!-- App css -->
+		<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- Icons css -->
+		<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- 개인 custom css -->
+        <link rel="stylesheet" href="assets/css/min-custom.css"> 
+        <link rel="stylesheet" href="assets/css/custom.css"> 
+        <link rel="stylesheet" href="assets/css/yj-custom.css">
+        <link rel="stylesheet" href="assets/css/ssu-custom.css"> 
+    </head>
+
+<body>
+    <div id="wrapper">
+      <div class="content-page">
+ 
+        <!-- Topbar -->
+        <div class="navbar-custom">
+          <div class="topbar">
+            <div class="topbar-menu d-flex align-items-center gap-1">
+              <div class="logo-box">
+                <a href="민정_관리자메인화면.html" class="logo-light">
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-lg" />
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm" />
+                </a>
+              </div>
+            </div>
+            <div class="topbar-menu d-flex flex-column align-items-center">
+              <div class="topbar-right-bottom">
+                <ul class="topbar-menu d-flex align-items-center">
+                  <li class="dropdown">
+                    <a class="nav-link dropdown-toggle nav-user me-0" data-bs-toggle="dropdown" href="#">
+                      <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle" />
+                      <span class="ms-1 d-none d-md-inline-block">관리자 <i class="mdi mdi-chevron-down"></i></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="menubar">
+            <ul class="menu">
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">Best</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로맨스</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로판</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">판타지</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">BL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">GL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">자유</span></a></li>
+            </ul>
+          </div>
+        </div>
+ 
+        <div class="content">
+          <!-- 사이드바 -->
+          <div class="sidebar">
+            <ul class="menu">
+              <li class="menu-item"><a href="민정_관리자메인화면.html" class="menu-link"><span class="menu-text">MAIN</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">회원관리</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">출판사 관리</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">작가 관리</span></a></li>
+              <li class="menu-item"><a href="민정_매출조회.html" class="menu-link menu-on"><span class="menu-text">매출</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">작품 관리</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">게시판 관리</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">정산 요청 관리</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">신고 문의 관리</span></a></li>
+            </ul>
+          </div>
+ 
+          <div class="container-fluid">
+            <!-- 브레드크럼 -->
+            <div class="breadcrumb-area">매출</div>
+ 
+            <!-- 페이지 타이틀 -->
+            <h4 class="page-title">매출 조회</h4>
+ 
+            <!-- 요약 카드 -->
+            <div class="summary-cards">
+              <div class="summary-card">
+                <div class="summary-card-label">오늘 매출</div>
+                <div class="summary-card-value" id="today-sales">2,280,000 원</div>
+              </div>
+              <div class="summary-card">
+                <div class="summary-card-label">오늘 판매 건수</div>
+                <div class="summary-card-value" id="today-count">352 건</div>
+              </div>
+              <div class="summary-card highlight">
+                <div class="summary-card-label">이번 달 매출</div>
+                <div class="summary-card-value" id="month-sales">38,540,000 원</div>
+                <div class="summary-card-rate up" id="month-rate">▲ 12.3 %</div>
+              </div>
+            </div>
+ 
+            <!-- 필터 -->
+            <div class="filter-wrap">
+              <span class="filter-label">조회 기간</span>
+              <input type="date" class="filter-date" id="filter-start" value="2026-02-01" />
+              <span class="filter-dash">-</span>
+              <input type="date" class="filter-date" id="filter-end" value="2026-02-28" />
+              <select class="filter-select" id="filter-genre">
+                <option value="">장르 선택</option>
+                <option value="로맨스">로맨스</option>
+                <option value="로판">로판</option>
+                <option value="판타지">판타지</option>
+                <option value="BL">BL</option>
+                <option value="GL">GL</option>
+                <option value="자유">자유</option>
+              </select>
+              <button type="button" class="btn-apply" onclick="applyFilter()">적용</button>
+            </div>
+ 
+            <!-- 매출 테이블 -->
+            <div class="sales-table-wrap">
+              <table class="sales-table">
+                <thead>
+                  <tr>
+                    <th>날짜</th>
+                    <th>총매출</th>
+                    <th>판매 건수</th>
+                    <th>상세</th>
+                  </tr>
+                </thead>
+                <tbody id="sales-tbody"></tbody>
+              </table>
+            </div>
+ 
+            <!-- 페이지네이션 -->
+            <div class="sales-pagination" id="sales-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- 상세 모달 -->
+    <div class="detail-modal-overlay" id="detail-modal">
+      <div class="detail-modal">
+        <div class="detail-modal-header">
+          <span id="detail-modal-title">상세 매출</span>
+          <button type="button" onclick="closeDetailModal()"><i class="mdi mdi-close"></i></button>
+        </div>
+        <div class="detail-modal-body" id="detail-modal-body"></div>
+      </div>
+    </div>
+ 
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <script>
+      var PAGE_SIZE = 10;
+      var currentPage = 1;
+      var filteredData = [];
+ 
+      /* 더미 데이터 생성 */
+      var allSalesData = (function() {
+        var works = ['어두운 바다의 등불이 되어', '봄의 아이', '하이라이트', '아구 게각 탱리왜', '어두운 바다의 등불이 되어'];
+        var publishers = ['A 출판사', 'B 출판사', 'C 출판사'];
+        var genres = ['로맨스', '로판', '판타지', 'BL', 'GL'];
+        var result = [];
+ 
+        for (var d = 1; d <= 50; d++) {
+          var month = d <= 28 ? '02' : '03';
+          var day = d <= 28 ? d : d - 28;
+          var dayStr = (day < 10 ? '0' : '') + day;
+          var dateStr = '2026-' + month + '-' + dayStr;
+          var totalSales = Math.floor(Math.random() * 1500000) + 500000;
+          var totalCount = Math.floor(Math.random() * 200) + 50;
+ 
+          /* 작품별 더미 */
+          var workDetails = works.map(function(w, i) {
+            var cnt = Math.floor(Math.random() * 40) + 10;
+            var amt = cnt * Math.floor(Math.random() * 5000 + 1000);
+            return { name: w, count: cnt, amount: amt, genre: genres[i % genres.length] };
+          });
+ 
+          /* 출판사별 더미 */
+          var pubDetails = publishers.map(function(p) {
+            var cnt = Math.floor(Math.random() * 80) + 20;
+            var amt = cnt * Math.floor(Math.random() * 5000 + 1000);
+            return { name: p, count: cnt, amount: amt };
+          });
+ 
+          result.push({
+            date: dateStr,
+            displayDate: '2026 - ' + month + '- ' + dayStr,
+            totalSales: totalSales,
+            totalCount: totalCount,
+            genre: genres[d % genres.length],
+            workDetails: workDetails,
+            pubDetails: pubDetails,
+          });
+        }
+        return result.reverse();
+      })();
+ 
+      /* 필터 적용 */
+      function applyFilter() {
+        var start = document.getElementById('filter-start').value;
+        var end = document.getElementById('filter-end').value;
+        var genre = document.getElementById('filter-genre').value;
+ 
+        filteredData = allSalesData.filter(function(row) {
+          var inRange = (!start || row.date >= start) && (!end || row.date <= end);
+          var inGenre = !genre || row.genre === genre;
+          return inRange && inGenre;
+        });
+ 
+        currentPage = 1;
+        renderTable();
+      }
+ 
+      /* 테이블 렌더링 */
+      function renderTable() {
+        var total = filteredData.length;
+        var totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+        if (currentPage > totalPages) currentPage = 1;
+        var pageItems = filteredData.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+ 
+        var tbody = document.getElementById('sales-tbody');
+        if (pageItems.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="4" style="padding:40px; color:#aaa;">조회 결과가 없습니다.</td></tr>';
+        } else {
+          var html = '';
+          pageItems.forEach(function(row) {
+            html += '<tr>'
+              + '<td>' + row.displayDate + '</td>'
+              + '<td>' + row.totalSales.toLocaleString() + ' 원</td>'
+              + '<td>' + row.totalCount.toLocaleString() + ' 건</td>'
+              + '<td><button type="button" class="btn-detail" onclick="openDetailModal(\'' + row.date + '\')">상세 &gt;</button></td>'
+              + '</tr>';
+          });
+          tbody.innerHTML = html;
+        }
+        renderPagination(currentPage, totalPages);
+      }
+ 
+      /* 페이지네이션 */
+      function renderPagination(current, total) {
+        var el = document.getElementById('sales-pagination');
+        if (total <= 1) { el.innerHTML = ''; return; }
+        var pages = getPageNumbers(current, total);
+        var html = '<button ' + (current===1?'disabled':'') + ' onclick="goPage(' + (current-1) + ')">&lt;</button>';
+        pages.forEach(function(p) {
+          if (p === '...') html += '<span style="color:#ccc">...</span>';
+          else html += '<span class="page-num ' + (p===current?'active':'') + '" onclick="goPage(' + p + ')">' + p + '</span>';
+        });
+        html += '<button ' + (current===total?'disabled':'') + ' onclick="goPage(' + (current+1) + ')">&gt;</button>';
+        el.innerHTML = html;
+      }
+ 
+      function getPageNumbers(current, total) {
+        var range = [], result = [], last;
+        for (var i = 1; i <= total; i++) {
+          if (i===1||i===total||Math.abs(i-current)<=1) range.push(i);
+        }
+        range.forEach(function(i) {
+          if (last && i-last===2) result.push(last+1);
+          else if (last && i-last>1) result.push('...');
+          result.push(i);
+          last = i;
+        });
+        return result;
+      }
+ 
+      function goPage(p) {
+        currentPage = p;
+        renderTable();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+ 
+      /* 상세 모달 */
+      function openDetailModal(date) {
+        var row = allSalesData.find(function(r) { return r.date === date; });
+        if (!row) return;
+ 
+        document.getElementById('detail-modal-title').textContent = '상세 매출 (' + row.displayDate + ')';
+ 
+        /* 작품별 합계 */
+        var workTotal = row.workDetails.reduce(function(acc, w) { return acc + w.amount; }, 0);
+        var workCountTotal = row.workDetails.reduce(function(acc, w) { return acc + w.count; }, 0);
+        var workHtml = '<div class="detail-section-title">작품별 매출</div>'
+          + '<table class="detail-table"><thead><tr><th>작품명</th><th>판매 수</th><th>매출액</th></tr></thead><tbody>';
+        row.workDetails.forEach(function(w) {
+          workHtml += '<tr><td>' + w.name + '</td><td>' + w.count + ' 건</td><td>' + w.amount.toLocaleString() + ' 원</td></tr>';
+        });
+        workHtml += '<tr class="total-row"><td>총 합계</td><td>판매 수</td><td>' + workTotal.toLocaleString() + '원</td></tr>';
+        workHtml += '</tbody></table>';
+ 
+        /* 출판사별 합계 */
+        var pubTotal = row.pubDetails.reduce(function(acc, p) { return acc + p.amount; }, 0);
+        var pubHtml = '<div class="detail-section-title">출판사별 매출</div>'
+          + '<table class="detail-table"><thead><tr><th>작품명</th><th>판매 수</th><th>매출액</th></tr></thead><tbody>';
+        row.pubDetails.forEach(function(p) {
+          pubHtml += '<tr><td>' + p.name + '</td><td>' + p.count + ' 건</td><td>' + p.amount.toLocaleString() + ' 원</td></tr>';
+        });
+        pubHtml += '<tr class="total-row"><td>총 합계</td><td>판매 수</td><td>' + pubTotal.toLocaleString() + '원</td></tr>';
+        pubHtml += '</tbody></table>';
+ 
+        document.getElementById('detail-modal-body').innerHTML = workHtml + pubHtml;
+        document.getElementById('detail-modal').classList.add('show');
+      }
+ 
+      function closeDetailModal() {
+        document.getElementById('detail-modal').classList.remove('show');
+      }
+ 
+      /* 모달 외부 클릭 시 닫기 */
+      document.getElementById('detail-modal').addEventListener('click', function(e) {
+        if (e.target === this) closeDetailModal();
+      });
+ 
+      /* 초기화 */
+      applyFilter();
+    </script>
+  </body>
+</html>
