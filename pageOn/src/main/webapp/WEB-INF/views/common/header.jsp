@@ -121,241 +121,199 @@
 
 
 					<ul class="topbar-menu d-flex align-items-center">
-
-						<!-- 로그인 전 -->
-						<!-- <li class="d-none d-sm-inline-block">
-                <a href="#" class="nav-link waves-effect waves-light">
+					
+						<c:choose>
+							<c:when test="${ empty loginUser }">
+								<li class="d-none d-sm-inline-block">
+									<a href="#" class="nav-link waves-effect waves-light">
                     <span class="d-none d-md-inline-block">
                         로그인/회원가입
                     </span>
-                </a>
-
-            </li> -->
-						<!-- ============ -->
-
-
-
-
-						<!-- ============= 사용자 로그인 후 =================-->
-						<!-- 장바구니-->
-						<li class="d-none d-sm-inline-block"><a href="#"
-							class="nav-link waves-effect waves-light"> <i
-								class="fe-shopping-cart font-22"></i>
-						</a></li>
-
-						<!-- 알림 드롭다운 Notofication dropdown -->
-						<li class="dropdown notification-list"><a
-							class="nav-link dropdown-toggle waves-effect waves-light arrow-none"
-							data-bs-toggle="dropdown" href="#" role="button"
-							aria-haspopup="false" aria-expanded="false"> <i
-								class="fe-bell font-22"></i> <span
-								class="badge bg-danger rounded-circle noti-icon-badge">9</span>
-						</a>
-							<div
-								class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
-								<div
-									class="p-2 border-top-0 border-start-0 border-end-0 border-dashed border">
-									<div class="row align-items-center">
-										<div class="col">
-											<h6 class="m-0 font-16 fw-semibold">알림</h6>
-										</div>
-										<div class="col-auto">
-											<a href="javascript: void(0);"
-												class="text-dark text-decoration-underline"> <small>전체
-													삭제</small>
-											</a>
-										</div>
-									</div>
-								</div>
-
-								<div class="px-1" style="max-height: 300px;" data-simplebar>
-
-									<h5 class="text-muted font-13 fw-normal mt-2">오늘</h5>
-									<!-- item-->
-									<a href="javascript:void(0);"
-										class="dropdown-item p-0 notify-item card unread-noti shadow-none mb-1">
-										<div class="card-body">
-											<span class="float-end noti-close-btn text-muted"><i
-												class="mdi mdi-close"></i></span>
-											<div class="d-flex align-items-center">
-												<div class="flex-shrink-0">
-													<div class="notify-icon bg-primary">
-														<i class="mdi mdi-comment-account-outline"></i>
-													</div>
-												</div>
-												<div class="flex-grow-1 text-truncate ms-2">
-													<h5 class="noti-item-title fw-semibold font-14">
-														Datacorp <small class="fw-normal text-muted ms-1">1
-															min ago</small>
-													</h5>
-													<small class="noti-item-subtitle text-muted">Caleb
-														Flakelar commented on Admin</small>
-												</div>
-											</div>
-										</div>
+                	</a>
+								</li>
+							</c:when>
+							<c:otherwise>
+								<li class="d-none d-sm-inline-block">
+									<a href="#" class="nav-link waves-effect waves-light"> 
+										<i class="fe-shopping-cart font-22"></i>
 									</a>
-
-									<!-- item-->
-									<a href="javascript:void(0);"
-										class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
-										<div class="card-body">
-											<span class="float-end noti-close-btn text-muted"><i
-												class="mdi mdi-close"></i></span>
-											<div class="d-flex align-items-center">
-												<div class="flex-shrink-0">
-													<div class="notify-icon bg-info">
-														<i class="mdi mdi-account-plus"></i>
-													</div>
-												</div>
-												<div class="flex-grow-1 text-truncate ms-2">
-													<h5 class="noti-item-title fw-semibold font-14">
-														Admin <small class="fw-normal text-muted ms-1">1
-															hours ago</small>
-													</h5>
-													<small class="noti-item-subtitle text-muted">New
-														user registered</small>
-												</div>
-											</div>
-										</div>
+								</li>
+								
+								<li class="dropdown notification-list">
+								
+									<a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+										<i class="fe-bell font-22"></i>
+										<span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
 									</a>
+									
+									<div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
+                      <div class="p-2 border-top-0 border-start-0 border-end-0 border-dashed border">
+                          <div class="row align-items-center">
+                              <div class="col">
+                                  <h6 class="m-0 font-16 fw-semibold"> 알림</h6>
+                              </div>
+                              <div class="col-auto">
+                                  <a href="javascript: void(0);" class="text-dark text-decoration-underline">
+                                      <small>전체 삭제</small>
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
 
-									<h5 class="text-muted font-13 fw-normal mt-0">어제</h5>
+                      <div class="px-1" style="max-height: 300px;" data-simplebar>
 
-									<!-- item-->
-									<a href="javascript:void(0);"
-										class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
-										<div class="card-body">
-											<span class="float-end noti-close-btn text-muted"><i
-												class="mdi mdi-close"></i></span>
-											<div class="d-flex align-items-center">
-												<div class="flex-shrink-0">
-													<div class="notify-icon">
-														<img src="assets/images/users/avatar-2.jpg"
-															class="img-fluid rounded-circle" alt="" />
-													</div>
-												</div>
-												<div class="flex-grow-1 text-truncate ms-2">
-													<h5 class="noti-item-title fw-semibold font-14">
-														Cristina Pride <small class="fw-normal text-muted ms-1">1
-															day ago</small>
-													</h5>
-													<small class="noti-item-subtitle text-muted">Hi,
-														How are you? What about our next meeting</small>
-												</div>
-											</div>
-										</div>
-									</a>
+                          <h5 class="text-muted font-13 fw-normal mt-2">오늘</h5>
+                          
+                          <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card unread-noti shadow-none mb-1">
+                              <div class="card-body">
+                                  <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                  <div class="d-flex align-items-center">
+                                      <div class="flex-shrink-0">
+                                          <div class="notify-icon bg-primary">
+                                              <i class="mdi mdi-comment-account-outline"></i>
+                                          </div>
+                                      </div>
+                                      <div class="flex-grow-1 text-truncate ms-2">
+                                          <h5 class="noti-item-title fw-semibold font-14">Datacorp <small class="fw-normal text-muted ms-1">1 min ago</small></h5>
+                                          <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
 
-									<h5 class="text-muted font-13 fw-normal mt-0">2021년 12월
-										30일</h5>
+                          
+                          <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                              <div class="card-body">
+                                  <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                  <div class="d-flex align-items-center">
+                                      <div class="flex-shrink-0">
+                                          <div class="notify-icon bg-info">
+                                              <i class="mdi mdi-account-plus"></i>
+                                          </div>
+                                      </div>
+                                      <div class="flex-grow-1 text-truncate ms-2">
+                                          <h5 class="noti-item-title fw-semibold font-14">Admin <small class="fw-normal text-muted ms-1">1 hours ago</small></h5>
+                                          <small class="noti-item-subtitle text-muted">New user registered</small>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
 
-									<!-- item-->
-									<a href="javascript:void(0);"
-										class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
-										<div class="card-body">
-											<span class="float-end noti-close-btn text-muted"><i
-												class="mdi mdi-close"></i></span>
-											<div class="d-flex align-items-center">
-												<div class="flex-shrink-0">
-													<div class="notify-icon bg-primary">
-														<i class="mdi mdi-comment-account-outline"></i>
-													</div>
-												</div>
-												<div class="flex-grow-1 text-truncate ms-2">
-													<h5 class="noti-item-title fw-semibold font-14">Datacorp</h5>
-													<small class="noti-item-subtitle text-muted">Caleb
-														Flakelar commented on Admin</small>
-												</div>
-											</div>
-										</div>
-									</a>
+                          <h5 class="text-muted font-13 fw-normal mt-0">어제</h5>
 
-									<!-- item-->
-									<a href="javascript:void(0);"
-										class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
-										<div class="card-body">
-											<span class="float-end noti-close-btn text-muted"><i
-												class="mdi mdi-close"></i></span>
-											<div class="d-flex align-items-center">
-												<div class="flex-shrink-0">
-													<div class="notify-icon">
-														<img src="assets/images/users/avatar-4.jpg"
-															class="img-fluid rounded-circle" alt="" />
-													</div>
-												</div>
-												<div class="flex-grow-1 text-truncate ms-2">
-													<h5 class="noti-item-title fw-semibold font-14">Karen
-														Robinson</h5>
-													<small class="noti-item-subtitle text-muted">Wow !
-														this admin looks good and awesome design</small>
-												</div>
-											</div>
-										</div>
-									</a>
+                          
+                          <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                              <div class="card-body">
+                                  <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                  <div class="d-flex align-items-center">
+                                      <div class="flex-shrink-0">
+                                          <div class="notify-icon">
+                                              <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" />
+                                          </div>
+                                      </div>
+                                      <div class="flex-grow-1 text-truncate ms-2">
+                                          <h5 class="noti-item-title fw-semibold font-14">Cristina Pride <small class="fw-normal text-muted ms-1">1 day ago</small></h5>
+                                          <small class="noti-item-subtitle text-muted">Hi, How are you? What about our next meeting</small>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
 
-									<div class="text-center">
-										<i class="mdi mdi-dots-circle mdi-spin text-muted h3 mt-0"></i>
-									</div>
-								</div>
+                          <h5 class="text-muted font-13 fw-normal mt-0">2021년 12월 30일</h5>
 
-								<!-- All-->
-								<a href="javascript:void(0);"
-									class="dropdown-item text-center text-primary notify-item border-top border-light py-2">
-									전체 읽음 </a>
+                          
+                          <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                              <div class="card-body">
+                                  <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                  <div class="d-flex align-items-center">
+                                      <div class="flex-shrink-0">
+                                          <div class="notify-icon bg-primary">
+                                              <i class="mdi mdi-comment-account-outline"></i>
+                                          </div>
+                                      </div>
+                                      <div class="flex-grow-1 text-truncate ms-2">
+                                          <h5 class="noti-item-title fw-semibold font-14">Datacorp</h5>
+                                          <small class="noti-item-subtitle text-muted">Caleb Flakelar commented on Admin</small>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
 
-							</div></li>
+                          
+                          <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card read-noti shadow-none mb-1">
+                              <div class="card-body">
+                                  <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                  <div class="d-flex align-items-center">
+                                      <div class="flex-shrink-0">
+                                          <div class="notify-icon">
+                                              <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" />
+                                          </div>
+                                      </div>
+                                      <div class="flex-grow-1 text-truncate ms-2">
+                                          <h5 class="noti-item-title fw-semibold font-14">Karen Robinson</h5>
+                                          <small class="noti-item-subtitle text-muted">Wow ! this admin looks good and awesome design</small>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
 
-						<!-- 낮/밤 모드 변경 (Light/Dark Mode Toggle Button) -->
-						<!-- <li class="d-none d-sm-inline-block">
-                                        <div class="nav-link waves-effect waves-light" id="light-dark-mode">
-                                            <i class="ri-moon-line font-22"></i>
-                                        </div>
-                                    </li> -->
+                          <div class="text-center">
+                              <i class="mdi mdi-dots-circle mdi-spin text-muted h3 mt-0"></i>
+                          </div>
+                      </div>
 
-						<!-- User Dropdown -->
-						<li class="dropdown"><a
-							class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light"
-							data-bs-toggle="dropdown" href="#" role="button"
-							aria-haspopup="false" aria-expanded="false"> <img
-								src="assets/images/users/user-1.jpg" alt="user-image"
-								class="rounded-circle"> <span
-								class="ms-1 d-none d-md-inline-block"> Geneva <i
-									class="mdi mdi-chevron-down"></i>
-							</span>
-						</a>
-							<div class="dropdown-menu dropdown-menu-end profile-dropdown ">
+                      
+                      <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item border-top border-light py-2">
+                          전체 읽음
+                      </a>
 
-								<!-- item-->
-								<a href="javascript:void(0);" class="dropdown-item notify-item">
-									<i class="fe-user"></i> <span>마이 페이지</span>
-								</a> <a href="javascript:void(0);" class="dropdown-item notify-item">
-									<i class="fe-book-open"></i> <span>내 서재</span>
-								</a>
+                  </div>
+								</li>
+								
+								<li class="dropdown">
+                   <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                       <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
+                       <span class="ms-1 d-none d-md-inline-block">
+                           Geneva <i class="mdi mdi-chevron-down"></i>
+                       </span>
+                   </a>
+                   <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
 
-								<!-- ====== 관리자가 로그인 할 때 ====== -->
-								<div class="dropdown-divider"></div>
+                       
+                       <a href="javascript:void(0);" class="dropdown-item notify-item">
+                           <i class="fe-user"></i>
+                           <span>마이 페이지</span>
+                       </a>
 
-								<a href="javascript:void(0);" class="dropdown-item notify-item">
-									<i class="fe-settings"></i> <span>관리자홈</span>
-								</a>
-								<!-- ================================= -->
+                       <a href="javascript:void(0);" class="dropdown-item notify-item">
+                           <i class="fe-book-open"></i>
+                           <span>내 서재</span>
+                       </a>
 
-								<!-- item-->
-								<div class="dropdown-divider"></div>
+                       
+                       <c:if test=" ${ loginUser.memLevel == 'A' } ">
+                       		<div class="dropdown-divider"></div>
+                       		
+                       		<a href="javascript:void(0);" class="dropdown-item notify-item">
+	                           <i class="fe-settings"></i>
+	                           <span>관리자홈</span>
+		                      </a>
+                       		
+                       </c:if>
+                       
+                       <div class="dropdown-divider"></div>
 
-								<!-- item-->
-								<a href="javascript:void(0);" class="dropdown-item notify-item">
-									<i class="fe-log-out"></i> <span>로그아웃</span>
-								</a>
+                       
+                       <a href="javascript:void(0);" class="dropdown-item notify-item">
+                           <i class="fe-log-out"></i>
+                           <span>로그아웃</span>
+                       </a>
 
-							</div></li>
-
-						<!-- Right Bar offcanvas button (Theme Customization Panel) -->
-						<!-- <li>
-                                        <a class="nav-link waves-effect waves-light" data-bs-toggle="offcanvas" href="#theme-settings-offcanvas">
-                                            <i class="fe-settings font-22"></i>
-                                        </a>
-                                    </li> -->
+                   </div>
+              	</li>
+								
+							</c:otherwise>
+						</c:choose>
 
 					</ul>
 					<!-- ==============================-->
@@ -371,38 +329,54 @@
 			<ul class="menu">
 
 				<!-- 선택된 페이지일 경우(class menu-on 부여) -->
-				<li class="menu-item"><a href="#" class="menu-link"> <span
-						class="menu-text menu-on"> Best </span>
-				</a></li>
+				<li class="menu-item">
+					<a href="#" class="menu-link"> 
+						<span class="menu-text menu-on"> Best </span>
+					</a>
+				</li>
 				<!-- ==================-->
 
-				<li class="menu-item"><a href="#" class="menu-link"> <span
-						class="menu-text"> 로맨스 </span>
-				</a></li>
+				<li class="menu-item">
+					<a href="#" class="menu-link"> 
+						<span class="menu-text"> 로맨스 </span>
+					</a>
+				</li>
 
-				<li class="menu-item"><a href="#" class="menu-link"> <span
-						class="menu-text"> 로판 </span>
-				</a></li>
+				<li class="menu-item">
+					<a href="#" class="menu-link"> 
+						<span class="menu-text"> 로판 </span>
+					</a>
+				</li>
 
-				<li class="menu-item"><a href="#" class="menu-link"> <span
-						class="menu-text"> 판타지 </span>
-				</a></li>
+				<li class="menu-item">
+					<a href="#" class="menu-link"> 
+						<span class="menu-text"> 판타지 </span>
+					</a>
+				</li>
 
-				<li class="menu-item"><a href="#" class="menu-link"> <span
-						class="menu-text"> BL </span>
-				</a></li>
+				<li class="menu-item">
+					<a href="#" class="menu-link"> 
+						<span class="menu-text"> BL </span>
+					</a>
+				</li>
 
-				<li class="menu-item"><a href="#" class="menu-link"> <span
-						class="menu-text"> GL </span>
-				</a></li>
+				<li class="menu-item">
+					<a href="#" class="menu-link"> 
+						<span class="menu-text"> GL </span>
+					</a>
+				</li>
 
-				<li class="menu-item"><a href="#" class="menu-link"> <span
-						class="menu-text"> 자유 </span>
-				</a></li>
+				<li class="menu-item">
+					<a href="#" class="menu-link"> 
+						<span class="menu-text"> 자유 </span>
+					</a>
+				</li>
 
-				<li class="menu-item"><a href="#" class="menu-link"> <span
-						class="menu-text"> EVENT </span>
-				</a></li>
+				<li class="menu-item">
+					<a href="#" class="menu-link"> 
+						<span class="menu-text"> EVENT </span>
+					</a>
+				</li>
 			</ul>
 		</div>
 		<!-- =========== 가로 메뉴 끝 =========== -->
