@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="horizontal" data-topbar-color="dark">
+
+
+    <head>
+        <meta charset="utf-8" />
+        <title>이벤트 등록</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+		<!-- Theme Config Js -->
+		<script src="assets/js/head.js"></script>
+
+		<!-- Bootstrap css -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+		<!-- App css -->
+		<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- Icons css -->
+		<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- 개인 custom css -->
+        <link rel="stylesheet" href="assets/css/min-custom.css"> 
+        <link rel="stylesheet" href="assets/css/custom.css"> 
+        <link rel="stylesheet" href="assets/css/yj-custom.css">
+        <link rel="stylesheet" href="assets/css/ssu-custom.css"> 
+    </head>
+
+    <body>
+    <div id="wrapper">
+      <div class="content-page">
+
+        <!-- Topbar -->
+        <div class="navbar-custom">
+          <div class="topbar">
+            <div class="topbar-menu d-flex align-items-center gap-1">
+              <div class="logo-box">
+                <a href="민정_관리자메인화면.html" class="logo-light">
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-lg" />
+                  <img src="assets/images/pageon/logo-gray.jpeg" alt="logo" class="logo-sm" />
+                </a>
+              </div>
+            </div>
+            <div class="topbar-menu d-flex flex-column align-items-center">
+              <div class="topbar-right-bottom">
+                <ul class="topbar-menu d-flex align-items-center">
+                  <li class="dropdown">
+                    <a class="nav-link dropdown-toggle nav-user me-0" data-bs-toggle="dropdown" href="#">
+                      <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle" />
+                      <span class="ms-1 d-none d-md-inline-block">관리자 <i class="mdi mdi-chevron-down"></i></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="menubar">
+            <ul class="menu">
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">Best</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로맨스</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">로판</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">판타지</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">BL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">GL</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">자유</span></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="sidebar">
+            <ul class="menu">
+              <li class="menu-item"><a href="민정_관리자메인화면.html" class="menu-link"><span class="menu-text">MAIN</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">회원관리</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">출판사 관리</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">작가 관리</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">매출</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">작품 관리</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">게시판 관리</span></a></li>
+              <li class="menu-item"><a href="#" class="menu-link"><span class="menu-text">정산 요청 관리</span></a></li>
+              <li class="menu-item"><a href="민정_권한관리.html" class="menu-link menu-on"><span class="menu-text">권한 관리</span></a></li>
+            </ul>
+          </div>
+
+          <div class="container-fluid">
+            <h4 class="page-title">권한 관리</h4>
+
+            <!-- RIGHT-02: 관리자 권한 추가 검색 -->
+            <div class="search-wrap">
+              <span class="search-label">아이디 :</span>
+              <input type="text" class="search-input" id="search-input" placeholder="Value" />
+              <button type="button" class="btn-search" onclick="searchAdmin()">조회하기</button>
+
+              <!-- 검색 결과 -->
+              <div class="search-result-row" id="search-result-row">
+                <span class="search-result-name" id="search-result-name"></span>
+                <span class="search-result-email" id="search-result-email"></span>
+                <span class="search-result-phone" id="search-result-phone"></span>
+                <button type="button" class="btn-add-admin" onclick="addToWaiting()">관리자 추가</button>
+              </div>
+            </div>
+
+            <!-- RIGHT-03: 대기 목록 -->
+            <div class="section-title"><i class="fe-filter"></i> 대기 목록</div>
+            <div class="waiting-list" id="waiting-list"></div>
+
+            <!-- RIGHT-01: 조직도 -->
+            <div class="section-title">관리자 목록</div>
+            <div class="org-grid" id="org-grid"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 직원 상세 모달 -->
+    <div class="member-modal-overlay" id="member-modal">
+      <div class="member-modal">
+        <div class="member-modal-header">
+          <span id="modal-member-name">직원 상세</span>
+          <button type="button" onclick="closeMemberModal()"><i class="mdi mdi-close"></i></button>
+        </div>
+        <div class="member-modal-body">
+          <div class="member-detail-row"><span class="member-detail-label">아이디</span><span class="member-detail-value" id="modal-id"></span></div>
+          <div class="member-detail-row"><span class="member-detail-label">이름</span><span class="member-detail-value" id="modal-name"></span></div>
+          <div class="member-detail-row"><span class="member-detail-label">이메일</span><span class="member-detail-value" id="modal-email"></span></div>
+          <div class="member-detail-row"><span class="member-detail-label">전화번호</span><span class="member-detail-value" id="modal-phone"></span></div>
+          <div class="member-detail-row"><span class="member-detail-label">부서</span><span class="member-detail-value" id="modal-dept"></span></div>
+          <div class="member-detail-row"><span class="member-detail-label">권한</span><span class="member-detail-value" id="modal-role"></span></div>
+        </div>
+        <div class="member-modal-footer">
+          <button type="button" class="btn-modal-cancel" onclick="closeMemberModal()">닫기</button>
+          <button type="button" class="btn-modal-revoke" onclick="revokeAdmin()">권한 박탈</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <script>
+      /* ── 더미 데이터 ── */
+      var dummyUsers = [
+        { id: 'kimyj01', name: '김영주', email: 'dragonzoo12@naver.com', phone: '010-1212-2523' },
+        { id: 'parkms02', name: '박민수', email: 'parkms@gmail.com', phone: '010-3344-5566' },
+        { id: 'leejs03', name: '이지수', email: 'leejs@naver.com', phone: '010-7788-9900' },
+      ];
+
+      var departments = [
+        { name: '회원 관리 권한', members: [
+          { id: 'admin01', name: '성명란', email: 'admin01@pageon.com', phone: '010-1111-1111', dept: '회원 관리 권한', role: '관리자' },
+          { id: 'admin02', name: '성명란', email: 'admin02@pageon.com', phone: '010-1111-1112', dept: '회원 관리 권한', role: '관리자' },
+          { id: 'admin03', name: '성명란', email: 'admin03@pageon.com', phone: '010-1111-1113', dept: '회원 관리 권한', role: '관리자' },
+          { id: 'admin04', name: '성명란', email: 'admin04@pageon.com', phone: '010-1111-1114', dept: '회원 관리 권한', role: '관리자' },
+          { id: 'admin05', name: '성명란', email: 'admin05@pageon.com', phone: '010-1111-1115', dept: '회원 관리 권한', role: '관리자' },
+          { id: 'admin06', name: '성명란', email: 'admin06@pageon.com', phone: '010-1111-1116', dept: '회원 관리 권한', role: '관리자' },
+          { id: 'admin07', name: '성명란', email: 'admin07@pageon.com', phone: '010-1111-1117', dept: '회원 관리 권한', role: '관리자' },
+        ]},
+        { name: '부서명', members: [
+          { id: 'admin11', name: '성명란', email: 'admin11@pageon.com', phone: '010-2222-1111', dept: '부서명', role: '관리자' },
+          { id: 'admin12', name: '성명란', email: 'admin12@pageon.com', phone: '010-2222-1112', dept: '부서명', role: '관리자' },
+          { id: 'admin13', name: '성명란', email: 'admin13@pageon.com', phone: '010-2222-1113', dept: '부서명', role: '관리자' },
+          { id: 'admin14', name: '성명란', email: 'admin14@pageon.com', phone: '010-2222-1114', dept: '부서명', role: '관리자' },
+          { id: 'admin15', name: '성명란', email: 'admin15@pageon.com', phone: '010-2222-1115', dept: '부서명', role: '관리자' },
+          { id: 'admin16', name: '성명란', email: 'admin16@pageon.com', phone: '010-2222-1116', dept: '부서명', role: '관리자' },
+          { id: 'admin17', name: '성명란', email: 'admin17@pageon.com', phone: '010-2222-1117', dept: '부서명', role: '관리자' },
+        ]},
+        { name: '부서명', members: [
+          { id: 'admin21', name: '성명란', email: 'admin21@pageon.com', phone: '010-3333-1111', dept: '부서명', role: '관리자' },
+          { id: 'admin22', name: '성명란', email: 'admin22@pageon.com', phone: '010-3333-1112', dept: '부서명', role: '관리자' },
+          { id: 'admin23', name: '성명란', email: 'admin23@pageon.com', phone: '010-3333-1113', dept: '부서명', role: '관리자' },
+          { id: 'admin24', name: '성명란', email: 'admin24@pageon.com', phone: '010-3333-1114', dept: '부서명', role: '관리자' },
+          { id: 'admin25', name: '성명란', email: 'admin25@pageon.com', phone: '010-3333-1115', dept: '부서명', role: '관리자' },
+          { id: 'admin26', name: '성명란', email: 'admin26@pageon.com', phone: '010-3333-1116', dept: '부서명', role: '관리자' },
+          { id: 'admin27', name: '성명란', email: 'admin27@pageon.com', phone: '010-3333-1117', dept: '부서명', role: '관리자' },
+        ]},
+        { name: '부서명', members: [
+          { id: 'admin31', name: '성명란', email: 'admin31@pageon.com', phone: '010-4444-1111', dept: '부서명', role: '관리자' },
+          { id: 'admin32', name: '성명란', email: 'admin32@pageon.com', phone: '010-4444-1112', dept: '부서명', role: '관리자' },
+          { id: 'admin33', name: '성명란', email: 'admin33@pageon.com', phone: '010-4444-1113', dept: '부서명', role: '관리자' },
+          { id: 'admin34', name: '성명란', email: 'admin34@pageon.com', phone: '010-4444-1114', dept: '부서명', role: '관리자' },
+          { id: 'admin35', name: '성명란', email: 'admin35@pageon.com', phone: '010-4444-1115', dept: '부서명', role: '관리자' },
+          { id: 'admin36', name: '성명란', email: 'admin36@pageon.com', phone: '010-4444-1116', dept: '부서명', role: '관리자' },
+          { id: 'admin37', name: '성명란', email: 'admin37@pageon.com', phone: '010-4444-1117', dept: '부서명', role: '관리자' },
+        ]},
+      ];
+
+      var waitingList = [
+        { id: 'kimyj01', name: '김영주', email: 'dragonzoo12@naver.com', phone: '010-1212-2523' },
+      ];
+
+      var searchResultUser = null;
+      var selectedMember = null;
+      var draggedMember = null;
+      var draggedFromDept = null;
+
+      /* ── RIGHT-02: 아이디 검색 ── */
+      function searchAdmin() {
+        var keyword = document.getElementById('search-input').value.trim();
+        if (!keyword) return;
+
+        var found = dummyUsers.find(function(u) { return u.id === keyword; });
+        var resultRow = document.getElementById('search-result-row');
+
+        if (found) {
+          searchResultUser = found;
+          document.getElementById('search-result-name').textContent = found.name;
+          document.getElementById('search-result-email').textContent = found.email;
+          document.getElementById('search-result-phone').textContent = found.phone;
+          resultRow.classList.add('show');
+        } else {
+          searchResultUser = null;
+          resultRow.classList.remove('show');
+          alert('해당 아이디의 사용자를 찾을 수 없습니다.');
+        }
+      }
+
+      function addToWaiting() {
+        if (!searchResultUser) return;
+        var already = waitingList.find(function(w) { return w.id === searchResultUser.id; });
+        if (already) { alert('이미 대기 목록에 있습니다.'); return; }
+        waitingList.push(searchResultUser);
+        searchResultUser = null;
+        document.getElementById('search-result-row').classList.remove('show');
+        document.getElementById('search-input').value = '';
+        renderWaitingList();
+      }
+
+      /* ── RIGHT-03: 대기 목록 렌더링 ── */
+      function renderWaitingList() {
+        var list = document.getElementById('waiting-list');
+        if (waitingList.length === 0) {
+          list.innerHTML = '<div style="padding:16px 20px; color:#aaa; font-size:13px;">대기 목록이 없습니다.</div>';
+          return;
+        }
+        var html = '';
+        waitingList.forEach(function(w) {
+          html += '<div class="waiting-item">'
+            + '<span class="waiting-name">' + w.name + '</span>'
+            + '<span class="waiting-email">' + w.email + '</span>'
+            + '<span class="waiting-phone">' + w.phone + '</span>'
+            + '<button type="button" class="btn-remove" onclick="removeFromWaiting(\'' + w.id + '\')" title="일반 회원으로">&#8722;</button>'
+            + '</div>';
+        });
+        list.innerHTML = html;
+      }
+
+      function removeFromWaiting(id) {
+        waitingList = waitingList.filter(function(w) { return w.id !== id; });
+        renderWaitingList();
+        // TODO: 서버 API - 관리자 → 일반 회원으로
+      }
+
+      /* ── RIGHT-01: 조직도 렌더링 ── */
+      function renderOrgGrid() {
+        var grid = document.getElementById('org-grid');
+        var html = '';
+        departments.forEach(function(dept, deptIdx) {
+          html += '<div class="org-card" id="dept-' + deptIdx + '"'
+            + ' ondragover="onDragOver(event, ' + deptIdx + ')"'
+            + ' ondrop="onDrop(event, ' + deptIdx + ')"'
+            + ' ondragleave="onDragLeave(' + deptIdx + ')">'
+            + '<div class="org-card-header" id="dept-header-' + deptIdx + '">' + dept.name + '</div>'
+            + '<div class="org-card-body">';
+          dept.members.forEach(function(m) {
+            html += '<div class="org-member-item"'
+              + ' draggable="true"'
+              + ' ondragstart="onDragStart(event, \'' + m.id + '\', ' + deptIdx + ')"'
+              + ' ondragend="onDragEnd(event)"'
+              + ' onclick="openMemberModal(\'' + m.id + '\')">'
+              + '<span class="member-name">' + m.name + '</span>'
+              + '</div>';
+          });
+          html += '</div></div>';
+        });
+        grid.innerHTML = html;
+      }
+
+      /* ── RIGHT-04: 드래그앤드롭 ── */
+      function onDragStart(event, memberId, deptIdx) {
+        draggedMember = memberId;
+        draggedFromDept = deptIdx;
+        event.dataTransfer.effectAllowed = 'move';
+        setTimeout(function() {
+          var el = event.target;
+          if (el) el.classList.add('dragging');
+        }, 0);
+      }
+
+      function onDragEnd(event) {
+        var el = event.target;
+        if (el) el.classList.remove('dragging');
+      }
+
+      function onDragOver(event, deptIdx) {
+        event.preventDefault();
+        event.dataTransfer.dropEffect = 'move';
+        document.getElementById('dept-header-' + deptIdx).style.background = '#3b82f6';
+      }
+
+      function onDragLeave(deptIdx) {
+        document.getElementById('dept-header-' + deptIdx).style.background = '#555';
+      }
+
+      function onDrop(event, targetDeptIdx) {
+        event.preventDefault();
+        document.getElementById('dept-header-' + targetDeptIdx).style.background = '#555';
+
+        if (draggedFromDept === targetDeptIdx || draggedMember === null) return;
+
+        /* 멤버 찾아서 이동 */
+        var fromDept = departments[draggedFromDept];
+        var toDept = departments[targetDeptIdx];
+        var memberIdx = fromDept.members.findIndex(function(m) { return m.id === draggedMember; });
+
+        if (memberIdx !== -1) {
+          var member = fromDept.members.splice(memberIdx, 1)[0];
+          member.dept = toDept.name;
+          toDept.members.push(member);
+          renderOrgGrid();
+          // TODO: 서버 API - 권한 이동
+        }
+
+        draggedMember = null;
+        draggedFromDept = null;
+      }
+
+      /* ── 직원 상세 모달 ── */
+      function openMemberModal(memberId) {
+        var member = null;
+        departments.forEach(function(dept) {
+          dept.members.forEach(function(m) {
+            if (m.id === memberId) member = m;
+          });
+        });
+        if (!member) return;
+
+        selectedMember = member;
+        document.getElementById('modal-member-name').textContent = member.name + ' 상세';
+        document.getElementById('modal-id').textContent = member.id;
+        document.getElementById('modal-name').textContent = member.name;
+        document.getElementById('modal-email').textContent = member.email;
+        document.getElementById('modal-phone').textContent = member.phone;
+        document.getElementById('modal-dept').textContent = member.dept;
+        document.getElementById('modal-role').textContent = member.role;
+        document.getElementById('member-modal').classList.add('show');
+      }
+
+      function closeMemberModal() {
+        document.getElementById('member-modal').classList.remove('show');
+        selectedMember = null;
+      }
+
+      function revokeAdmin() {
+        if (!selectedMember) return;
+        if (!confirm(selectedMember.name + ' 님의 권한을 박탈하시겠습니까?')) return;
+
+        /* 조직도에서 제거 */
+        departments.forEach(function(dept) {
+          dept.members = dept.members.filter(function(m) { return m.id !== selectedMember.id; });
+        });
+
+        closeMemberModal();
+        renderOrgGrid();
+        // TODO: 서버 API - 권한 박탈
+      }
+
+      /* 모달 외부 클릭 닫기 */
+      document.getElementById('member-modal').addEventListener('click', function(e) {
+        if (e.target === this) closeMemberModal();
+      });
+
+      /* 초기화 */
+      renderWaitingList();
+      renderOrgGrid();
+    </script>
+  </body>
+</html>
