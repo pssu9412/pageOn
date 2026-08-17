@@ -136,9 +136,8 @@
         <!-- end page -->
 
 
-        <footer class="footer footer-alt">
-            &copy;by <a href="" class="text-black-50">PageOn</a> 
-        </footer>
+				<!-- footer -->
+				<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
         <!-- Authentication js -->
         <script src="${contextPath}/assets/js/pages/authentication.init.js"></script>
@@ -159,7 +158,7 @@
                 if (id === "admin" && pw === "1234") {
                     feedback.style.display = "none";
 
-                    location.href = "영주_상단바.html";
+                    location.href = "${pageContext.request.contextPath}/";
                 } else {
                     feedback.style.display = "block";
                 }

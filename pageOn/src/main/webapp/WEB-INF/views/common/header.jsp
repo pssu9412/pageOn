@@ -125,7 +125,7 @@
 						<c:choose>
 							<c:when test="${ empty loginUser }">
 								<li class="d-none d-sm-inline-block">
-									<a href="#" class="nav-link waves-effect waves-light">
+									<a href="${pageContext.request.contextPath}/login" class="nav-link waves-effect waves-light">
                     <span class="d-none d-md-inline-block">
                         로그인/회원가입
                     </span>
