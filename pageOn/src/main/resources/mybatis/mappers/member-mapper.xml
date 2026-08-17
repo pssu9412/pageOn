@@ -1,4 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper  namespace="memberMapper">
+
+	<resultMap id="memResult" type="MemberDto">
+		<result column="mem_no" property="memNo"/>
+		<result column="mem_id" property="memId"/>
+		<result column="mem_pw" property="memPw"/>
+		<result column="mem_name" property="memName"/>
+		<result column="mem_email" property="memEmail"/>
+		<result column="mem_nickname" property="memNickname"/>
+		<result column="mem_phone" property="memPhone"/>
+		<result column="mem_level" property="memLevel"/>
+		<result column="mem_bank" property="memBank"/>
+		<result column="bank_num" property="bankNum"/>
+		<result column="mem_point" property="memPoint"/>
+		<result column="mem_profile" property="memProfile"/>
+		<result column="adult_yn" property="adultYN"/>
+		<result column="mem_status" property="memStatus"/>
+		<result column="mem_reg" property="memReg"/>
+		<result column="mem_modify" property="memModify"/>
+		<result column="mem_end" property="memEnd"/>
+		<result column="post_panalty" property="postPanalty"/>
+		<result column="work_panalty" property="workPanalty"/>
+		<result column="favor_yn" property="favorYN"/>
+		<result column="board_yn" property="boardYN"/>
+		<result column="mywork_yn" property="myworkYN"/>
+		<result column="login_type" property="loginType"/>
+		<result column="social_id" property="socialId"/>
+		<result column="birth_year" property="birthYear"/>
+		<result column="gender" property="gender"/>
+	</resultMap>
+
+<!-- 로그인 -->
+	<select id="selectMem" resultMap="memResult">
+		select
+				   mem_no, mem_id, mem_pw
+				 , mem_name, mem_email
+				 , mem_nickname, mem_phone, mem_level
+				 , mem_bank, bank_num
+				 , mem_point, mem_profile, adult_yn
+				 , mem_status, mem_reg, mem_modify, mem_end
+				 , post_panalty, work_panalty
+				 , favor_yn, board_yn, mywork_yn
+				 , login_type, gender, birth_year
+		 from member
+		where mem_status != 'N'
+		  and mem_id = #{memId}
+		  and mem_pw = #{memPw}
+	</select>
+	
+	<select id="selectSocialMem" resultMap="memResult">
+		select
+				   mem_no, mem_name, mem_email
+				 , mem_nickname, mem_phone, mem_level
+				 , mem_bank, bank_num
+				 , mem_point, mem_profile, adult_yn
+				 , mem_status, mem_reg, mem_modify, mem_end
+				 , post_panalty, work_panalty
+				 , favor_yn, board_yn, mywork_yn
+				 , login_type, social_id, gender, birth_year
+		 from member
+		where mem_status != 'N'
+		  and login_type = #{loginType}
+		  and social_id = #{socialId}
+	</select>
+	
+<!-- 회원가입 -->
+	<select id="selectMemIdCount" resultType="_int">
+		select
+					 count(*)
+			from member
+		 where mem_id = #{checkId}
+	</select>
+	
+	<insert id="insertMem">
+		insert
+		  into member
+		  		(
+			  		 mem_no, mem_id, mem_pw, mem_name
+			  	 , mem_email, mem_nickname, mem_phone
+					 , gender, birth_year
+		  		)
+		  values
+		  		(
+			  		 seq_mno.nextval
+			  	 , #{memId}, #{memPw}, #{memName}
+			  	 , #{memEmail}, #{memNickname}, #{memPhone}
+			  	 , #{gender}, #{birthYear}
+		  		)
+	</insert>
+	
+	<insert id="insertSocialMem">
+		insert
+		  into member
+		  		(
+			  		 mem_no, mem_name, mem_email
+					 , mem_nickname, mem_phone
+					 , gender, birth_year
+					 , login_type, social_id
+		  		)
+		  values
+		  		(
+			  		 seq_mno.nextval
+			  	 , #{memName}, #{memEmail}, #{memNickname}
+			  	 , #{memPhone}, #{gender}, #{birthYear}
+			  	 , #{loginType}, #{socialId}
+		  		)
+	</insert>
+	
+<!-- 정보 수정 -->
+
+
+<!-- 탈퇴 -->
+
+
+<!-- 아이디 찾기 -->
+
+
+<!-- 비밀번호 찾기 -->
+
+
+<!-- 비밀번호 재설정 -->
+
+
 </mapper>

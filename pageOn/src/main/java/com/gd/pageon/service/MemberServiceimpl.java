@@ -9,13 +9,26 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
-public class MemberServiceimpl implements MemberService {
+public class MemberServiceImpl implements MemberService {
 	
 	private final MemberDao memberDao;
 
 	@Override
-	public MemberDto selectMember(MemberDto m) {
+	public MemberDto selectMem(MemberDto m) {
 		return null;
+	}
+
+	@Override
+	public MemberDto socialLogin(MemberDto m) {
+		
+		MemberDto loginMember = memberDao.selectSocialMem(m);
+
+	    if(loginMember == null) {
+	        memberDao.insertSocialMem(m);
+	        loginMember = memberDao.selectSocialMem(m);
+	    }
+
+	    return loginMember;
 	}
 
 	@Override
@@ -24,7 +37,7 @@ public class MemberServiceimpl implements MemberService {
 	}
 
 	@Override
-	public int insertMember(MemberDto m) {
+	public int insertMem(MemberDto m) {
 		return 0;
 	}
 
@@ -34,13 +47,15 @@ public class MemberServiceimpl implements MemberService {
 	}
 
 	@Override
-	public int updateMember(MemberDto m) {
+	public int updateMem(MemberDto m) {
 		return 0;
 	}
 
 	@Override
-	public int deleteMember(String memId) {
+	public int deleteMem(int memNo) {
 		return 0;
 	}
+
+	
 
 }

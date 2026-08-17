@@ -3,6 +3,8 @@ package com.gd.pageon.dao;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.gd.pageon.dto.MemberDto;
+
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -10,5 +12,25 @@ import lombok.RequiredArgsConstructor;
 public class MemberDao {
 	
 	private final SqlSessionTemplate sqlSessionTemplate;
+	
+	 // 일반 로그인
+    public MemberDto selectMem(MemberDto m) {
+        return sqlSessionTemplate.selectOne("memberMapper.selectMem", m);
+    }
+
+    // 소셜 로그인
+    public MemberDto selectSocialMem(MemberDto m) {
+        return sqlSessionTemplate.selectOne("memberMapper.selectSocialMem", m);
+    }
+    
+    public int insertSocialMem(MemberDto m) {
+        return sqlSessionTemplate.insert("memberMapper.insertSocialMem", m);
+    }
+    
+    // 회원 가입
+    public int selectMemIdCount(String checkId) {
+    	return sqlSessionTemplate.selectOne("memberMapper.selectMemIdCount", checkId);
+    }
+   
 
 }

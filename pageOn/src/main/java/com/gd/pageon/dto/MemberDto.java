@@ -37,10 +37,12 @@ public class MemberDto {
 	private Date memEnd;
 	private int postPanalty;  
 	private int workPanalty;
-	private String favorYN;  //알람여부
-	private String boardYN;  //알람여부
-	private String myworkYN; //알람여부
-	private String loginType; //소셜로그인타입
+	private String favorYN;   // 알람여부
+	private String boardYN;   // 알람여부
+	private String myworkYN;  // 알람여부
+	private String loginType; // 소셜로그인타입
 	private String socialId;
+	private int birthYear;
+	private String gender;
 
 }
