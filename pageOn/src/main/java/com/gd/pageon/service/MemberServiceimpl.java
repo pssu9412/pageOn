@@ -15,20 +15,23 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public MemberDto selectMem(MemberDto m) {
-		return null;
+		
+		MemberDto loginUser = memberDao.selectMem(m);
+		
+		return loginUser;
 	}
 
 	@Override
 	public MemberDto socialLogin(MemberDto m) {
 		
-		MemberDto loginMember = memberDao.selectSocialMem(m);
+		MemberDto loginUser = memberDao.selectSocialMem(m);
 
-	    if(loginMember == null) {
+	    if(loginUser == null) {
 	        memberDao.insertSocialMem(m);
-	        loginMember = memberDao.selectSocialMem(m);
+	        loginUser = memberDao.selectSocialMem(m);
 	    }
 
-	    return loginMember;
+	    return loginUser;
 	}
 
 	@Override

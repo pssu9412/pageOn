@@ -34,15 +34,8 @@
 <!-- 로그인 -->
 	<select id="selectMem" resultMap="memResult">
 		select
-				   mem_no, mem_id, mem_pw
-				 , mem_name, mem_email
-				 , mem_nickname, mem_phone, mem_level
-				 , mem_bank, bank_num
-				 , mem_point, mem_profile, adult_yn
-				 , mem_status, mem_reg, mem_modify, mem_end
-				 , post_panalty, work_panalty
-				 , favor_yn, board_yn, mywork_yn
-				 , login_type, gender, birth_year
+				   mem_no, mem_nickname, mem_level
+				 , mem_profile
 		 from member
 		where mem_status != 'N'
 		  and mem_id = #{memId}
@@ -51,14 +44,8 @@
 	
 	<select id="selectSocialMem" resultMap="memResult">
 		select
-				   mem_no, mem_name, mem_email
-				 , mem_nickname, mem_phone, mem_level
-				 , mem_bank, bank_num
-				 , mem_point, mem_profile, adult_yn
-				 , mem_status, mem_reg, mem_modify, mem_end
-				 , post_panalty, work_panalty
-				 , favor_yn, board_yn, mywork_yn
-				 , login_type, social_id, gender, birth_year
+				   mem_no, mem_nickname, mem_level
+				 , mem_profile
 		 from member
 		where mem_status != 'N'
 		  and login_type = #{loginType}

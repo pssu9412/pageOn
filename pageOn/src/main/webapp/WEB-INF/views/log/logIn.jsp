@@ -68,17 +68,17 @@
                                 </div>
 
                                 
-                                <form action="#">
+                                <form id="loginForm" action="${contextPath}/login" method="post" >
 
                                     <div class="mb-3">
                                         <label for="id" class="form-label">아이디</label>
-                                        <input class="form-control" type="text" id="id" required="" placeholder="Enter your id">
+                                        <input class="form-control" type="text" id="id" name="memId" required placeholder="Enter your id">
                                     </div>
 
                                     <div class="mb-3">
                                         <label for="password" class="form-label">비밀번호</label>
                                         <div class="input-group input-group-merge">
-                                            <input type="password" id="password" class="form-control" placeholder="Enter your password">
+                                            <input class="form-control" type="password" id="password" name="memPw" required placeholder="Enter your password">
                                             <div class="input-group-text" data-password="false">
                                                 <span class="password-eye"></span>
                                             </div>
@@ -143,26 +143,29 @@
         <script src="${contextPath}/assets/js/pages/authentication.init.js"></script>
 
         <script>
-            const form = document.querySelector("form");
-            const idInput = document.querySelector("#id");
-            const pwInput = document.querySelector("#password");
-            const feedback = document.querySelector("#login-feedback");
+					$("#loginForm").on("submit", function(e) {
 
-            form.addEventListener("submit", function (e) {
-                e.preventDefault();
+					    e.preventDefault(); // 자동 전송 막기
 
-                const id = idInput.value.trim();
-                const pw = pwInput.value.trim();
+					    $.ajax({
+					        url: "${contextPath}/login",
+					        type: "post",
+					        data: {
+					            memId: $("#id").val(),
+					            memPw: $("#password").val()
+					        },
+					        success: function(result) {
 
-                // 테스트용
-                if (id === "admin" && pw === "1234") {
-                    feedback.style.display = "none";
+					            if(result > 0) {
+					                $("#login-feedback").hide();
+					                location.href = "${contextPath}/";
+					            } else {
+					                $("#login-feedback").show();
+					            }
+					        }
+					    });
 
-                    location.href = "${pageContext.request.contextPath}/";
-                } else {
-                    feedback.style.display = "block";
-                }
-            });
+					});
 
             // 카카오 소셜 로그인
             function kakaoLogin() {

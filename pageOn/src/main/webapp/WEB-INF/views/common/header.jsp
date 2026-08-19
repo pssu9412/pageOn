@@ -125,7 +125,7 @@
 						<c:choose>
 							<c:when test="${ empty loginUser }">
 								<li class="d-none d-sm-inline-block">
-									<a href="${pageContext.request.contextPath}/login" class="nav-link waves-effect waves-light">
+									<a href="${contextPath}/login" class="nav-link waves-effect waves-light">
                     <span class="d-none d-md-inline-block">
                         로그인/회원가입
                     </span>
@@ -272,15 +272,15 @@
 								
 								<li class="dropdown">
                    <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                       <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
+                       <img src="${ contextPath }/assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
                        <span class="ms-1 d-none d-md-inline-block">
-                           Geneva <i class="mdi mdi-chevron-down"></i>
+                           ${ loginUser.memNickname } <i class="mdi mdi-chevron-down"></i>
                        </span>
                    </a>
                    <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
 
                        
-                       <a href="javascript:void(0);" class="dropdown-item notify-item">
+                       <a href="${contextPath }/myinfo" class="dropdown-item notify-item">
                            <i class="fe-user"></i>
                            <span>마이 페이지</span>
                        </a>
