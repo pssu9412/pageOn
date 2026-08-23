@@ -9,8 +9,11 @@ public interface MemberService {
 	
 	MemberDto socialLogin(MemberDto m);
 	
+	// 중복 체크
+	int selectCheckId(String checkId);
+	int selectCheckNickname(String checkNickname);
+	
 	// 회원 가입
-	int selectMemIdCount(String checkId); // 아이디 중복체크
 	int insertMem(MemberDto m);
 
 	// 회원 정보 수정

@@ -55,12 +55,13 @@
 	                        </div>
 	
 	                        <div >
-	                            <form id="signup-form" action="#">
+	                            <form id="signup-form">
 	                                <div class="mb-3">
 	                                    <label for="signup-id" class="form-label">아이디</label>
 	                                
 	                                    <div class="input-group">
-	                                        <input class="form-control" type="text" id="signup-id" placeholder="5~20자 영문, 숫자 입력">
+	                                        <input class="form-control" type="text" id="signup-id" 
+	                                        			 name="memId" placeholder="5~20자 영문, 숫자 입력">
 	                                        <button class="btn btn-dark" type="button" id="check-id-btn">
 	                                            중복확인
 	                                        </button>
@@ -76,7 +77,7 @@
 	                                
 	                                    <div class="input-group mb-2">
 	                                        <input class="form-control" type="password" id="signup-pw"
-	                                               placeholder="8자 이상, 영문/숫자/특수문자 중 2가지 이상 입력">
+	                                               name="memPw" placeholder="8자 이상, 영문/숫자/특수문자 중 2가지 이상 입력">
 	                                        <button class="btn btn-outline-secondary toggle-pw" type="button" data-target="signup-pw">
 	                                            <i class="bi bi-eye-slash"></i>
 	                                        </button>
@@ -101,7 +102,8 @@
 	                                <div class="mb-3">
 	                                    <label for="signup-email" class="form-label">이메일</label>
 	                                    <div class="input-group">
-	                                        <input class="form-control" type="email" id="signup-email" placeholder="이메일 입력">
+	                                        <input class="form-control" type="email" id="signup-email"
+	                                        			 name="memEmail" placeholder="이메일 입력">
 	                                        <button class="btn btn-dark" type="button" id="email-btn">인증메일 발송</button>
 	                                    </div>
 	                                    <div class="invalid-feedback d-block email-feedback" style="display:none !important;">
@@ -111,14 +113,14 @@
 	                            
 	                                <div class="mb-3">
 	                                    <label for="signup-name" class="form-label">이름</label>
-	                                    <input class="form-control" type="text" id="signup-name" placeholder="이름 입력">
+	                                    <input class="form-control" type="text" id="signup-name" placeholder="이름 입력" name="memName">
 	                                    <div class="invalid-feedback">이름을 입력해주세요</div>
 	                                </div>
 	                            
 	                                <div class="mb-3">
 	                                    <label for="signup-phone" class="form-label">핸드폰 번호</label>
-	                                    <input class="form-control" type="text" id="signup-phone" placeholder="010-0000-0000">
-	                                    <input type="hidden" name="phone" id="phone-hidden"> 
+	                                    <input class="form-control" type="text" id="signup-phone"
+	                                    			 name="memPhone" placeholder="010-0000-0000">
 	                                    <div class="invalid-feedback">핸드폰 번호 형식이 올바르지 않습니다</div>
 	                                </div>
 	                            
@@ -126,7 +128,8 @@
 	                                    <label for="signup-nick" class="form-label">닉네임</label>
 	                                
 	                                    <div class="input-group">
-	                                        <input class="form-control" type="text" id="signup-nick" placeholder="닉네임 입력">
+	                                        <input class="form-control" type="text" id="signup-nick" 
+	                                               name="memNickname" placeholder="닉네임 입력">
 	                                        <button class="btn btn-dark" type="button" id="check-nick-btn">
 	                                            중복확인
 	                                        </button>
@@ -140,7 +143,7 @@
 	                                <div class="mb-3">
 	                                    <label class="form-label">[선택] 출생 연도 및 성별</label>
 	                                    <div class="d-flex gap-2">
-	                                        <select class="form-select" id="signup-birth">
+	                                        <select class="form-select" id="signup-birth" name="birthYear">
 	                                            <option value="">출생연도</option>
 	                                        </select>
 	                            
@@ -174,9 +177,7 @@
 	    </div>
 	    <!-- end page -->
 	
-	    <footer class="footer footer-alt">
-	            &copy;by <a href="" class="text-black-50">PageOn</a> 
-	    </footer>
+	    <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 	
 	        
 	    <!-- Vendor js -->
@@ -204,6 +205,11 @@
 	        const pwFeedback = document.querySelector(".pw-feedback");
 	        const cpwFeedback = document.querySelector(".cpw-feedback");
 	        const emailFeedback = document.querySelector(".email-feedback");
+	        
+	        let idChecked = false;
+	        
+	        let nickChecked = false;
+	        
 	
 	        // 출생연도
 	        const currentYear = new Date().getFullYear();
@@ -232,38 +238,77 @@
 	            el.style.setProperty("display", "none", "important");
 	        }
 	
-	        function validateId() {
-	            const regex = /^[a-zA-Z0-9]{5,20}$/;
-	            if (regex.test(signupId.value.trim())) {
-	                setValid(signupId);
+	        function validateName() {
+	            if (signupName.value !== "" && !/\s/.test(signupName.value)) {
+	                setValid(signupName);
 	                return true;
 	            }
-	            setInvalid(signupId);
+
+	            setInvalid(signupName);
 	            return false;
 	        }
+	        
+	        $("#check-id-btn").on("click", function() {
+
+	            // 아이디 형식부터 검사
+	            if (!validateId()) {
+	            	alert("잘못된 아이디입니다.");
+	              return;
+	            }
+
+	            $.ajax({
+	            	
+	              url: "${contextPath}/check-id",
+	              type: "get",
+	              data: {
+	                     memId: $("#signup-id").val()
+	                    },
+	              success: function(result) {
+	            	  
+	                    if (result > 0) {
+	                       // 중복 아이디
+	                       alert("이미 사용 중인 아이디입니다.");
+	                       idChecked = false;
+	                       setInvalid(signupId);
+
+	                    } else {
+	                       // 사용 가능
+	                       alert("사용 가능한 아이디입니다.");
+	                       idChecked = true;
+	                       setValid(signupId);
+	                       
+	                       $("#check-id-btn")
+	                       .text("확인완료")
+	                       .prop("disabled", true);
+	                    }
+	                }
+	            });
+	        });
+
 	
 	        function validatePw() {
-	            const value = signupPw.value.trim();
-	
+	            const value = signupPw.value;
+
 	            const hasEng = /[a-zA-Z]/.test(value);
 	            const hasNum = /[0-9]/.test(value);
-	            const hasSpecial = /[^a-zA-Z0-9]/.test(value);
-	
+	            const hasSpecial = /[^a-zA-Z0-9\s]/.test(value);
+	            const hasSpace = /\s/.test(value);
+
 	            const typeCount = [hasEng, hasNum, hasSpecial].filter(Boolean).length;
-	
-	            if (value.length >= 8 && typeCount >= 2) {
+
+	            if (value.length >= 8 && typeCount >= 2 && !hasSpace) {
 	                setValid(signupPw);
 	                hideFeedback(pwFeedback);
 	                return true;
 	            }
-	
+
 	            setInvalid(signupPw);
 	            showFeedback(pwFeedback);
 	            return false;
 	        }
 	
 	        function validateCpw() {
-	            if (signupCpw.value.trim() !== "" && signupPw.value === signupCpw.value) {
+	            if (signupCpw.value !== "" && signupPw.value === signupCpw.value) {
 	                setValid(signupCpw);
 	                hideFeedback(cpwFeedback);
 	                return true;
@@ -277,7 +322,7 @@
 	        function validateEmail() {
 	            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 	
-	            if (regex.test(signupEmail.value.trim())) {
+	            if (regex.test(signupEmail.value)) {
 	                setValid(signupEmail);
 	                hideFeedback(emailFeedback);
 	                return true;
@@ -289,7 +334,7 @@
 	        }
 	
 	        function validateName() {
-	            if (signupName.value.trim() !== "") {
+	            if (signupName.value !== "") {
 	                setValid(signupName);
 	                return true;
 	            }
@@ -300,7 +345,7 @@
 	        function validatePhone() {
 	            const regex = /^010-\d{4}-\d{4}$/;
 	
-	            if (regex.test(signupPhone.value.trim())) {
+	            if (regex.test(signupPhone.value)) {
 	                setValid(signupPhone);
 	                return true;
 	            }
@@ -310,13 +355,48 @@
 	        }
 	
 	        function validateNick() {
-	            if (signupNick.value.trim() !== "") {
+	            if (signupNick.value !== "" && !/\s/.test(signupNick.value)) {
 	                setValid(signupNick);
 	                return true;
 	            }
+
 	            setInvalid(signupNick);
 	            return false;
 	        }
+	        
+	        $("#check-nick-btn").on("click", function() {
+
+	            if (!validateNick()) {
+	                alert("잘못된 닉네임입니다.");
+	                return;
+	            }
+
+	            $.ajax({
+	                url: "${contextPath}/check-nick",
+	                type: "get",
+	                data: {
+	                    memNickname: $("#signup-nick").val()
+	                },
+	                success: function(result) {
+
+	                    if (result > 0) {
+	                        alert("이미 사용 중인 닉네임입니다.");
+	                        nickChecked = false;
+	                        setInvalid(signupNick);
+	                    } else {
+	                        alert("사용 가능한 닉네임입니다.");
+	                        nickChecked = true;
+	                        setValid(signupNick);
+	                        
+	                        $("#check-nick-btn")
+	                        .text("확인완료")
+	                        .prop("disabled", true);
+	                    }
+	                }
+	            });
+
+	        });
+
 	
 	        function validateAgeCheck() {
 	            if (ageCheck.checked) {
@@ -350,15 +430,37 @@
 	        });
 	
 	        // 나머지 input 이벤트
-	        signupId.addEventListener("input", validateId);
+	        signupId.addEventListener("input", function() {
+
+					    idChecked = false;
+					
+					    $("#check-id-btn")
+					        .text("중복확인")
+					        .prop("disabled", false);
+					
+					    validateId();
+					});
+	        
 	        signupPw.addEventListener("input", function () {
 	            validatePw();
 	            validateCpw();
 	        });
+	        
 	        signupCpw.addEventListener("input", validateCpw);
 	        signupEmail.addEventListener("input", validateEmail);
 	        signupName.addEventListener("input", validateName);
-	        signupNick.addEventListener("input", validateNick);
+	        
+	        signupNick.addEventListener("input", function() {
+
+	            nickChecked = false;
+
+	            $("#check-nick-btn")
+	                .text("중복확인")
+	                .prop("disabled", false);
+
+	            validateNick();
+	        });
+	        
 	        ageCheck.addEventListener("change", validateAgeCheck);
 	
 	        // 비밀번호 보기
@@ -390,28 +492,47 @@
 	
 	        // ✅ submit
 	        form.addEventListener("submit", function (e) {
-	            e.preventDefault();
-	
-	            const result =
-	                validateId() &
-	                validatePw() &
-	                validateCpw() &
-	                validateEmail() &
-	                validateName() &
-	                validatePhone() &
-	                validateNick() &
-	                validateAgeCheck();
-	
-	            if (!result) return;
-	
-	            // 👉 하이픈 제거해서 hidden에 넣기
-	            document.querySelector("#phone-hidden").value =
-	                signupPhone.value.replace(/-/g, "");
-	
-	            alert("회원가입 가능합니다.");
-	
-	            form.submit(); // 실제 전송
-	        });
+
+					    e.preventDefault();
+					
+					    if (
+					    	    !validateId() ||
+					    	    !validatePw() ||
+					    	    !validateCpw() ||
+					    	    !validateEmail() ||
+					    	    !validateName() ||
+					    	    !validatePhone() ||
+					    	    !validateNick() ||
+					    	    !validateAgeCheck()
+					    	) return;
+					    
+					    if (!idChecked) {
+					        alert("아이디 중복확인을 해주세요.");
+					        return;
+					    }
+					    
+					    if (!nickChecked) {
+					        alert("닉네임 중복확인을 해주세요.");
+					        return;
+					    }
+					
+					    $.ajax({
+					        url: "${contextPath}/signup",
+					        type: "post",
+					        data: $("#signup-form").serialize(),
+					        // serialize() = name 값 전부 넘겨주는 jQuery 메서드
+
+					        success: function(result) {
+
+					            if(result > 0) {
+					                alert("회원가입이 완료되었습니다.");
+					                location.href = "${contextPath}/login";
+					            } else {
+					                alert("회원가입에 실패했습니다.");
+					            }
+					        }
+					    });
+					});
 	        </script>
 	
 	</body>

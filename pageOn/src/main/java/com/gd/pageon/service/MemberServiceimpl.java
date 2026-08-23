@@ -34,14 +34,21 @@ public class MemberServiceImpl implements MemberService {
 	    return loginUser;
 	}
 
+	// 중복체크
 	@Override
-	public int selectMemIdCount(String checkId) {
-		return 0;
+	public int selectCheckId(String checkId) {
+		return memberDao.selectCheckId(checkId);
 	}
 
 	@Override
+	public int selectCheckNickname(String checkNickname) {
+		return memberDao.selectCheckNickname(checkNickname);
+	}
+
+	// 회원가입
+	@Override
 	public int insertMem(MemberDto m) {
-		return 0;
+		return memberDao.insertMem(m);
 	}
 
 	@Override
@@ -58,6 +65,7 @@ public class MemberServiceImpl implements MemberService {
 	public int deleteMem(int memNo) {
 		return 0;
 	}
+
 
 	
 

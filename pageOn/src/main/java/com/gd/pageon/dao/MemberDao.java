@@ -27,9 +27,19 @@ public class MemberDao {
         return sqlSessionTemplate.insert("memberMapper.insertSocialMem", m);
     }
     
+    // 아이디 중복체크
+    public int selectCheckId(String checkId) {
+    	return sqlSessionTemplate.selectOne("memberMapper.selectCheckId", checkId);
+    }
+    
+    // 닉네임 중복체크
+    public int selectCheckNickname(String checkNickname) {
+    	return sqlSessionTemplate.selectOne("memberMapper.selectCheckNickname", checkNickname);
+    }
+    
     // 회원 가입
-    public int selectMemIdCount(String checkId) {
-    	return sqlSessionTemplate.selectOne("memberMapper.selectMemIdCount", checkId);
+    public int insertMem(MemberDto m) {
+    	return sqlSessionTemplate.insert("memberMapper.insertMem", m);
     }
    
 

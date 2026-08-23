@@ -294,7 +294,7 @@
                        <c:if test=" ${ loginUser.memLevel == 'A' } ">
                        		<div class="dropdown-divider"></div>
                        		
-                       		<a href="javascript:void(0);" class="dropdown-item notify-item">
+                       		<a href="${ contextpath }/logout" class="dropdown-item notify-item">
 	                           <i class="fe-settings"></i>
 	                           <span>관리자홈</span>
 		                      </a>

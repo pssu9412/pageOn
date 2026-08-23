@@ -118,7 +118,7 @@
                                         <div class="col-12 text-center">
                                             <p> <a href="auth-recoverpw.html" class="text-black-50 ms-1">아이디 찾기</a> 
                                                 |<a href="auth-recoverpw.html" class="text-black-50 ms-1">비밀번호 찾기</a> 
-                                                |<a href="auth-register.html" class="text-black-50 ms-1">회원가입</a> </p>
+                                                |<a href="${contextPath}/signup" class="text-black-50 ms-1">회원가입</a> </p>
                                         </div> <!-- end col -->
                                     </div>
                                 </div>
