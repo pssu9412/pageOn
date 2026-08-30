@@ -38,7 +38,7 @@
 			<!-- Icons css -->
 			<link href="${contextPath}/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
-        <link rel="stylesheet" href="${contextPath}/assets/css/ssu-custom.css"> 
+      <link rel="stylesheet" href="${contextPath}/assets/css/ssu-custom.css"> 
     </head>
 
     <body>
@@ -141,38 +141,47 @@
 
         <!-- Authentication js -->
         <script src="${contextPath}/assets/js/pages/authentication.init.js"></script>
-
+				
+				<!-- Vendor js -->
+				<script src="${contextPath}/assets/js/vendor.min.js"></script>
+				
+				<!-- App js -->
+				<script src="${contextPath}/assets/js/app.min.js"></script>
+				
         <script>
-					$("#loginForm").on("submit", function(e) {
+        $(function() {
 
-					    e.preventDefault(); // 자동 전송 막기
+            $("#loginForm").on("submit", function(e) {
 
-					    $.ajax({
-					        url: "${contextPath}/login",
-					        type: "post",
-					        data: {
-					            memId: $("#id").val(),
-					            memPw: $("#password").val()
-					        },
-					        success: function(result) {
+                e.preventDefault();
 
-					            if(result > 0) {
-					                $("#login-feedback").hide();
-					                location.href = "${contextPath}/";
-					            } else {
-					                $("#login-feedback").show();
-					            }
-					        }
-					    });
-
-					});
-
-            // 카카오 소셜 로그인
-            function kakaoLogin() {
-                Kakao.Auth.authorize({
-                    redirectUri: 'http://localhost:8080/pageon/login/kakao'
+                $.ajax({
+                    url: "${contextPath}/login",
+                    type: "post",
+                    data: {
+                        memId: $("#id").val(),
+                        memPw: $("#password").val()
+                    },
+                    success: function(result) {
+                        if (result > 0) {
+                            $("#login-feedback").hide();
+                            location.href = "${contextPath}/";
+                        } else {
+                            $("#login-feedback").show();
+                        }
+                    }
                 });
-            }
+
+            });
+
+        });
+
+        // 카카오 소셜 로그인
+        function kakaoLogin() {
+            Kakao.Auth.authorize({
+                redirectUri: "http://localhost:8080/pageon/login/kakao"
+            });
+        }
         </script>
 
     </body>
