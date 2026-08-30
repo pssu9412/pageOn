@@ -643,6 +643,10 @@ INCREMENT BY 1
 NOCACHE
 NOCYCLE;
 
+-- 작품 테이블의 GENRE_NO 컬럼 데이터 타입 NUMBER로 변경
+ALTER TABLE WORK
+MODIFY GENRE_NO NUMBER;
+
 
 
 -- =========================================
