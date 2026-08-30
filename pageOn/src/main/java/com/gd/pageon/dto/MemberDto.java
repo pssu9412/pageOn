@@ -42,7 +42,7 @@ public class MemberDto {
 	private String myworkYN;  // 알람여부
 	private String loginType; // 소셜로그인타입
 	private String socialId;
-	private int birthYear;
+	private Integer birthYear;
 	private String gender;
 
 }

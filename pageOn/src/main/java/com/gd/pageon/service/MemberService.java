@@ -15,6 +15,9 @@ public interface MemberService {
 	
 	// 회원 가입
 	int insertMem(MemberDto m);
+	
+	// 이메일 인증
+	String sendEmailCode(String email);
 
 	// 회원 정보 수정
 	int updateProfile(MemberDto m);

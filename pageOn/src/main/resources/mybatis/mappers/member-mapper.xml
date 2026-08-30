@@ -3,7 +3,7 @@
 <mapper  namespace="memberMapper">
 
 	<resultMap id="memResult" type="MemberDto">
-		<result column="mem_no" property="memNo"/>
+		<id column="mem_no" property="memNo"/>
 		<result column="mem_id" property="memId"/>
 		<result column="mem_pw" property="memPw"/>
 		<result column="mem_name" property="memName"/>
@@ -88,14 +88,14 @@
 	</insert>
 	
 <!-- 중복 체크 -->
-	<select id="selectCheckId">
+	<select id="selectCheckId" resultType="_int">
 		select
 					 count(*)
 			from member
 		 where mem_id = #{checkId}
 	</select>
 	
-	<select id="selectCheckNickname">
+	<select id="selectCheckNickname" resultType="_int">
 		select
 					 count(*)
 			from member
