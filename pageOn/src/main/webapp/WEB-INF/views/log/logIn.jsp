@@ -12,9 +12,8 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
 	    <meta content="Coderthemes" name="author" />
-	
-	    <script src="https://t1.kakaocdn.net/kakao_js_sdk/${VERSION}/kakao.min.js" integrity="${INTEGRITY_VALUE}" crossorigin="anonymous"></script>
-	
+			
+			<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.3/kakao.min.js" integrity="sha384-oroumrnFVE0xtgqyDZJARgERibXg2C28380uaUZz2kHDS5CR7tu20eGiOU6GkTpy" crossorigin="anonymous"></script>
 	    <script>
 	        // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해야 합니다.
 	        Kakao.init("349071cdf325faed2a604a2e6537f88f")
@@ -179,7 +178,7 @@
         // 카카오 소셜 로그인
         function kakaoLogin() {
             Kakao.Auth.authorize({
-                redirectUri: "http://localhost:8080/pageon/login/kakao"
+                redirectUri: "http://localhost:8888/pageOn/login/kakao"
             });
         }
         </script>
