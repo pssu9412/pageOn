@@ -4,10 +4,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.gd.pageon.dto.MemberDto;
 import com.gd.pageon.service.MemberService;
+import com.gd.pageon.service.SocialLoginService;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +20,7 @@ public class MemberController {
 	
 	private final MemberService memberService;
 	private final BCryptPasswordEncoder bcryptPwdEncoder;
+	private final SocialLoginService socialLoginService;
 	
     // 로그인 페이지 이동
 	@GetMapping("/login")
@@ -149,5 +152,35 @@ public class MemberController {
 	    return result;
 	}
 		
+	
+	// 카카오 소셜 로그인
+	@GetMapping("/login/kakao")
+	public String kakaoLogin(@RequestParam("code") String code, HttpSession session) {
+		
+		// 1. 인가 코드로 access token 받기
+	    String accessToken = socialLoginService.kakaoAccessToken(code);
+
+	    // 2. access token으로 카카오 사용자 정보 받기
+	    MemberDto member = socialLoginService.kakaoUser(accessToken);
+
+	    // 3. DB 조회 / 없으면 회원가입
+	    MemberDto loginUser = memberService.socialLogin(member);
+
+	    // 4. 로그인 세션 저장
+	    session.setAttribute("loginMember", loginUser);
+
+	    // 5. 부모창 메인 이동 + 팝업 닫기
+	    return """
+	        <script>
+	            window.opener.location.href = '/pageOn/';
+	            window.close();
+	        </script>
+	        """;
+//	     	""" Java 15 이후부터 사용 가능한 text block. 아래와 동일함
+//	   		return "<script>"
+//        		+ "window.opener.location.href='/pageOn/';"
+//        		+ "window.close();"
+//        		+ "</script>";
+	}
 
 }
