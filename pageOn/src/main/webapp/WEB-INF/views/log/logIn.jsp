@@ -109,7 +109,7 @@
                                                 <img src="${contextPath}/assets/images/brands/naver.png" style="width:20px;"></a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a href="#" onclick="kakaoLogin(); return false;" class="social-list-item border-secondary text-secondary">
+                                            <a href="#" id="kakao" class="social-list-item border-secondary text-secondary">
                                                 <img src="${contextPath}/assets/images/brands/kakao.png" style="width:20px;"></a>
                                         </li>
                                     </ul>
@@ -172,15 +172,30 @@
                 });
 
             });
+            
+         		// 카카오 소셜 로그인
+            $("#kakao").on("click", function(e) {
+
+                e.preventDefault();
+
+                const redirectUri = "http://localhost:8888/pageOn/login/kakao";
+
+                const kakaoAuthUrl =
+                    "https://kauth.kakao.com/oauth/authorize"
+                    + "?response_type=code"
+                    + "&client_id=5da146c03542728421d27994986f60d5"
+                    + "&redirect_uri=" + encodeURIComponent(redirectUri);
+
+                window.open(
+                    kakaoAuthUrl,
+                    "kakaoLogin",
+                    "width=500,height=650"
+                );
+                
+            });
 
         });
 
-        // 카카오 소셜 로그인
-        function kakaoLogin() {
-            Kakao.Auth.authorize({
-                redirectUri: "http://localhost:8888/pageOn/login/kakao"
-            });
-        }
         </script>
 
     </body>
