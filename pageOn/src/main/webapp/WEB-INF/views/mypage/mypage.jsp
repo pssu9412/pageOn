@@ -1,35 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext/request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en" data-layout="horizontal" data-topbar-color="dark">
+<head>
+  <meta charset="utf-8" />
+  <title>MyPage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+  <meta content="Coderthemes" name="author" />
 
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-    <head>
-        <meta charset="utf-8" />
-        <title>MyPage</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-        <meta content="Coderthemes" name="author" />
+	<!-- Theme Config Js -->
+	<script src="assets/js/head.js"></script>
 
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+	<!-- Bootstrap css -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="app-style" />
 
-		<!-- Theme Config Js -->
-		<script src="assets/js/head.js"></script>
+	<!-- App css -->
+	<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
-		<!-- Bootstrap css -->
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="app-style" />
-
-		<!-- App css -->
-		<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
-
-		<!-- Icons css -->
-		<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        
-        <!-- 개인 custom css -->
-        <link rel="stylesheet" href="assets/css/min-custom.css"> 
-        <link rel="stylesheet" href="assets/css/custom.css"> 
-        <link rel="stylesheet" href="assets/css/yj-custom.css">
-        <link rel="stylesheet" href="assets/css/ssu-custom.css"> 
-    </head>
+	<!-- Icons css -->
+	<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+       
+       <!-- 개인 custom css -->
+       <link rel="stylesheet" href="assets/css/min-custom.css"> 
+       <link rel="stylesheet" href="assets/css/custom.css"> 
+       <link rel="stylesheet" href="assets/css/yj-custom.css">
+       <link rel="stylesheet" href="assets/css/ssu-custom.css"> 
+</head>
 
     <body>
 
