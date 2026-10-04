@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
@@ -19,12 +20,6 @@
         <!-- Begin page -->
         <div id="wrapper">
 
-            <!-- Layout -->
-            <!-- ========== Left Sidebar Start ========== -->
-            
-            <!-- ========== Left Sidebar End ========== -->
-
-            
 
             <!-- ============================================================== -->
             <!-- Start Page Content here -->
@@ -59,181 +54,67 @@
 
                         <div class="row works-slide new-works">
                             <div class="slide-title d-flex justify-content-between align-items-baseline">
-                                <h3>신작</h3>
+                                <h3>
+                                	<c:if test="${not empty mainPage.genreName}">
+						                				${mainPage.genreName}
+						            					</c:if>
+                                	신작
+                                </h3>
                                 <!-- <a href="#" class="more-link"><span>더보기</span></a> -->
                                 
                             </div>
                             <div class="slide-wrapper">
+                            
+                            		<c:choose>
+                            		
+                            			<c:when test="${ empty mainPage.newWorkList }">
+                            				<div>조회된 작품이 없습니다.</div>
+                            			</c:when>
+                            			
+                            			<c:otherwise>
+                            				<c:forEach var="work" items="${ mainPage.newWorkList }">
+                            					<div class="card work-card" onclick="Location.href='${contextPath}'">
+                            					
+                            						<div class="thumbnail-wrap">
+                            							<c:choose>
+	                            							<%-- 성인 작품 + 비로그인 또는 미성년 회원 --%>
+														                <c:when test="${work.adultYN eq 'Y' and
+														                               (empty loginMember or loginMember.adultYN ne 'Y')}">
+														
+														                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
+														
+														                </c:when>
+														                <%-- 성인 인증된 회원 또는 일반 작품 --%>
+														                <c:otherwise>
+														
+														                    <img class="card-img-top" src="${contextPath}${work.workCover}">
+														
+														                </c:otherwise>
+                            							</c:choose>
+                            							
+                            							<%-- 성인 작품이면 항상 19 표시 --%>
+																			    <c:if test="${work.adultYN eq 'Y'}">
+																			        <div class="adult-badge">19</div>
+																			    </c:if>
+													                
+                            						</div>
+                            						
+                            						<div class="card-body">
+                            							<div class="title">${ work.workTitle }</div>
+	                                        <div class="author">${ writer }</div>
+	                                        <div class="like-cnt">
+	                                            <i class="fe-heart-on"></i>
+	                                            <span>(<fmt:formatNumber value="${work.workFavcnt}" pattern="#,###"/>)</span>
+	                                        </div>
+                            						
+                            						</div>
+                            						
+                            					</div>
+                            				</c:forEach>
+                            			
+                            			</c:otherwise>
+                            		</c:choose>
 
-                                <!-- 성인 인증 전에 보이는 꾸금 소설 표지 -->
-                                <div class="card work-card">
-                                    <div class="thumbnail-wrap">
-                                        <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
-                                        <!-- 성인 badge -->
-                                        <div class="adult-badge">
-                                            19
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="card-body">
-                                        <div class="title">이 약혼은 어차피 성공하게 되어 있다</div>
-                                        <div class="author">빨강마후라 차차</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/rofan_ex2.png">
-                                    <div class="card-body">
-                                        <div class="title">그 왕녀가 후작저에 가야했던 이유</div>
-                                        <div class="author">말차차</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/modern_romance_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">해피엔딩(Happy Ending)</div>
-                                        <div class="author">아이올리</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/fantasy_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">별을 삼킨 왕관</div>
-                                        <div class="author">하린킴</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/Wnxia_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">검은 노을</div>
-                                        <div class="author">청산검객</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/bl_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">너의 온도, 내가 머무는 계절</div>
-                                        <div class="author">시월</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/gl_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">너와 피어나는 계절</div>
-                                        <div class="author">윤슬님</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/rofan_ex1.png">
-                                    <div class="card-body">
-                                        <div class="title">새벽을 매듭짓는 사람들</div>
-                                        <div class="author">잿빛별</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/oriental_rofan_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">청풍이 머무는 자리</div>
-                                        <div class="author">다온</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <div class="thumbnail-wrap">
-                                        <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
-                                        <div class="adult-badge">
-                                            19
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="card-body">
-                                        <div class="title">이 약혼은 어차피 성공하게 되어 있다</div>
-                                        <div class="author">빨강마후라 차차</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <div class="thumbnail-wrap">
-                                        <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
-                                        <div class="adult-badge">
-                                            19
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="card-body">
-                                        <div class="title">은행나무 아래에서</div>
-                                        <div class="author">김땡땡</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <div class="thumbnail-wrap">
-                                        <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
-                                        <div class="adult-badge">
-                                            19
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="card-body">
-                                        <div class="title">너의 그림자</div>
-                                        <div class="author">태양</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
 
                             </div>
                             
@@ -241,182 +122,69 @@
 
                         <div class="row works-slide bestseller-works">
                             <div class="slide-title d-flex justify-content-between align-items-baseline">
-                                <h3>구매 베스트</h3>
+                                <h3>
+                                	<c:if test="${not empty mainPage.genreName}">
+						                				${mainPage.genreName}
+						            					</c:if>
+                                	구매 베스트
+                                </h3>
                                 <a href="#" class="more-link"><span>더보기</span></a>
                                 
                             </div>
+                            
                             <div class="slide-wrapper">
+                            
+                            		<c:choose>
+                            		
+                            			<c:when test="${ empty mainPage.newWorkList }">
+                            				<div>조회된 작품이 없습니다.</div>
+                            			</c:when>
+                            			
+                            			<c:otherwise>
+                            				<c:forEach var="work" items="${ mainPage.newWorkList }">
+                            					<div class="card work-card" onclick="Location.href='${contextPath}'">
+                            					
+                            						<div class="thumbnail-wrap">
+                            							<c:choose>
+	                            							<%-- 성인 작품 + 비로그인 또는 미성년 회원 --%>
+														                <c:when test="${work.adultYN eq 'Y' and
+														                               (empty loginMember or loginMember.adultYN ne 'Y')}">
+														
+														                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
+														
+														                </c:when>
+														                <%-- 성인 인증된 회원 또는 일반 작품 --%>
+														                <c:otherwise>
+														
+														                    <img class="card-img-top" src="${contextPath}${work.workCover}">
+														
+														                </c:otherwise>
+                            							</c:choose>
+                            							
+                            							<%-- 성인 작품이면 항상 19 표시 --%>
+																			    <c:if test="${work.adultYN eq 'Y'}">
+																			        <div class="adult-badge">19</div>
+																			    </c:if>
+													                
+                            						</div>
+                            						
+                            						<div class="card-body">
+                            							<div class="title">${ work.workTitle }</div>
+	                                        <div class="author">${ writer }</div>
+	                                        <div class="like-cnt">
+	                                            <i class="fe-heart-on"></i>
+	                                            <span>(<fmt:formatNumber value="${work.workFavcnt}" pattern="#,###"/>)</span>
+	                                        </div>
+                            						
+                            						</div>
+                            						
+                            					</div>
+                            				</c:forEach>
+                            			
+                            			</c:otherwise>
+                            			
+                            		</c:choose>
 
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/oriental_rofan_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">청풍이 머무는 자리</div>
-                                        <div class="author">다온</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/fantasy_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">별을 삼킨 왕관</div>
-                                        <div class="author">하린킴</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/Wnxia_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">검은 노을</div>
-                                        <div class="author">청산검객</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/bl_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">너의 온도, 내가 머무는 계절</div>
-                                        <div class="author">시월</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/gl_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">너와 피어나는 계절</div>
-                                        <div class="author">윤슬님</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                
-                                <div class="card work-card">
-                                    <div class="thumbnail-wrap">
-                                        <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
-                                        <div class="adult-badge">
-                                            19
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="card-body">
-                                        <div class="title">이 약혼은 어차피 성공하게 되어 있다</div>
-                                        <div class="author">빨강마후라 차차</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/rofan_ex2.png">
-                                    <div class="card-body">
-                                        <div class="title">그 왕녀가 후작저에 가야했던 이유</div>
-                                        <div class="author">말차차</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/modern_romance_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">해피엔딩(Happy Ending)</div>
-                                        <div class="author">아이올리</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/rofan_ex1.png">
-                                    <div class="card-body">
-                                        <div class="title">새벽을 매듭짓는 사람들</div>
-                                        <div class="author">잿빛별</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                
-
-                                <div class="card work-card">
-                                    <div class="thumbnail-wrap">
-                                        <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
-                                        <div class="adult-badge">
-                                            19
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="card-body">
-                                        <div class="title">이 약혼은 어차피 성공하게 되어 있다</div>
-                                        <div class="author">빨강마후라 차차</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <div class="thumbnail-wrap">
-                                        <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
-                                        <div class="adult-badge">
-                                            19
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="card-body">
-                                        <div class="title">은행나무 아래에서</div>
-                                        <div class="author">김땡땡</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <div class="thumbnail-wrap">
-                                        <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
-                                        <div class="adult-badge">
-                                            19
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="card-body">
-                                        <div class="title">너의 그림자</div>
-                                        <div class="author">태양</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
 
                             </div>
                             
@@ -424,165 +192,69 @@
 
                         <div class="row works-slide favorite-works">
                             <div class="slide-title d-flex justify-content-between align-items-baseline">
-                                <h3>선호 베스트</h3>
+                                <h3>
+                                	<c:if test="${not empty mainPage.genreName}">
+						                				${mainPage.genreName}
+						            					</c:if>
+                                	선호 베스트
+                               	</h3>
                                 <a href="#" class="more-link"><span>더보기</span></a>
                                 
                             </div>
+                            
                             <div class="slide-wrapper">
-                                
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/rofan_ex2.png">
-                                    <div class="card-body">
-                                        <div class="title">그 왕녀가 후작저에 가야했던 이유</div>
-                                        <div class="author">말차차</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
+                            
+                            		<c:choose>
+                            		
+                            			<c:when test="${ empty mainPage.newWorkList }">
+                            				<div>조회된 작품이 없습니다.</div>
+                            			</c:when>
+                            			
+                            			<c:otherwise>
+                            				<c:forEach var="work" items="${ mainPage.newWorkList }">
+                            					<div class="card work-card" onclick="Location.href='${contextPath}'">
+                            					
+                            						<div class="thumbnail-wrap">
+                            							<c:choose>
+	                            							<%-- 성인 작품 + 비로그인 또는 미성년 회원 --%>
+														                <c:when test="${work.adultYN eq 'Y' and
+														                               (empty loginMember or loginMember.adultYN ne 'Y')}">
+														
+														                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
+														
+														                </c:when>
+														                <%-- 성인 인증된 회원 또는 일반 작품 --%>
+														                <c:otherwise>
+														
+														                    <img class="card-img-top" src="${contextPath}${work.workCover}">
+														
+														                </c:otherwise>
+                            							</c:choose>
+                            							
+                            							<%-- 성인 작품이면 항상 19 표시 --%>
+																			    <c:if test="${work.adultYN eq 'Y'}">
+																			        <div class="adult-badge">19</div>
+																			    </c:if>
+													                
+                            						</div>
+                            						
+                            						<div class="card-body">
+                            							<div class="title">${ work.workTitle }</div>
+	                                        <div class="author">${ writer }</div>
+	                                        <div class="like-cnt">
+	                                            <i class="fe-heart-on"></i>
+	                                            <span>(<fmt:formatNumber value="${work.workFavcnt}" pattern="#,###"/>)</span>
+	                                        </div>
+                            						
+                            						</div>
+                            						
+                            					</div>
+                            				</c:forEach>
+                            			
+                            			</c:otherwise>
+                            			
+                            		</c:choose>
 
-                                <div class="card work-card">
-                                    <div class="thumbnail-wrap">
-                                        <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
-                                        <div class="adult-badge">
-                                            19
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="card-body">
-                                        <div class="title">이 약혼은 어차피 성공하게 되어 있다</div>
-                                        <div class="author">빨강마후라 차차</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/rofan_ex1.png">
-                                    <div class="card-body">
-                                        <div class="title">새벽을 매듭짓는 사람들</div>
-                                        <div class="author">잿빛별</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/fantasy_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">별을 삼킨 왕관</div>
-                                        <div class="author">하린킴</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                
-                                
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/oriental_rofan_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">청풍이 머무는 자리</div>
-                                        <div class="author">다온</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/Wnxia_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">검은 노을</div>
-                                        <div class="author">청산검객</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/bl_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">너의 온도, 내가 머무는 계절</div>
-                                        <div class="author">시월</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/gl_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">너와 피어나는 계절</div>
-                                        <div class="author">윤슬님</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <div class="thumbnail-wrap">
-                                        <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
-                                        <div class="adult-badge">
-                                            19
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="card-body">
-                                        <div class="title">은행나무 아래에서</div>
-                                        <div class="author">김땡땡</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/modern_romance_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">해피엔딩(Happy Ending)</div>
-                                        <div class="author">아이올리</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <div class="thumbnail-wrap">
-                                        <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
-                                        <div class="adult-badge">
-                                            19
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="card-body">
-                                        <div class="title">너의 그림자</div>
-                                        <div class="author">태양</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
 
                             </div>
                             
@@ -590,183 +262,69 @@
 
                         <div class="row works-slide updated-works">
                             <div class="slide-title d-flex justify-content-between align-items-baseline">
-                                <h3>최신 업데이트</h3>
+                                <h3>
+                                	<c:if test="${not empty mainPage.genreName}">
+						                				${mainPage.genreName}
+						            					</c:if>
+                                	최신 업데이트
+                                </h3>
                                 <a href="#" class="more-link"><span>더보기</span></a>
                                 
                             </div>
+                            
                             <div class="slide-wrapper">
+                            
+                            		<c:choose>
+                            		
+                            			<c:when test="${ empty mainPage.newWorkList }">
+                            				<div>조회된 작품이 없습니다.</div>
+                            			</c:when>
+                            			
+                            			<c:otherwise>
+                            				<c:forEach var="work" items="${ mainPage.newWorkList }">
+                            					<div class="card work-card" onclick="Location.href='${contextPath}'">
+                            					
+                            						<div class="thumbnail-wrap">
+                            							<c:choose>
+	                            							<%-- 성인 작품 + 비로그인 또는 미성년 회원 --%>
+														                <c:when test="${work.adultYN eq 'Y' and
+														                               (empty loginMember or loginMember.adultYN ne 'Y')}">
+														
+														                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
+														
+														                </c:when>
+														                <%-- 성인 인증된 회원 또는 일반 작품 --%>
+														                <c:otherwise>
+														
+														                    <img class="card-img-top" src="${contextPath}${work.workCover}">
+														
+														                </c:otherwise>
+                            							</c:choose>
+                            							
+                            							<%-- 성인 작품이면 항상 19 표시 --%>
+																			    <c:if test="${work.adultYN eq 'Y'}">
+																			        <div class="adult-badge">19</div>
+																			    </c:if>
+													                
+                            						</div>
+                            						
+                            						<div class="card-body">
+                            							<div class="title">${ work.workTitle }</div>
+	                                        <div class="author">${ writer }</div>
+	                                        <div class="like-cnt">
+	                                            <i class="fe-heart-on"></i>
+	                                            <span>(<fmt:formatNumber value="${work.workFavcnt}" pattern="#,###"/>)</span>
+	                                        </div>
+                            						
+                            						</div>
+                            						
+                            					</div>
+                            				</c:forEach>
+                            			
+                            			</c:otherwise>
+                            			
+                            		</c:choose>
 
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/modern_romance_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">해피엔딩(Happy Ending)</div>
-                                        <div class="author">아이올리</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/Wnxia_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">검은 노을</div>
-                                        <div class="author">청산검객</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/oriental_rofan_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">청풍이 머무는 자리</div>
-                                        <div class="author">다온</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <div class="thumbnail-wrap">
-                                        <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
-                                        <div class="adult-badge">
-                                            19
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="card-body">
-                                        <div class="title">너의 그림자</div>
-                                        <div class="author">태양</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/fantasy_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">별을 삼킨 왕관</div>
-                                        <div class="author">하린킴</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/bl_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">너의 온도, 내가 머무는 계절</div>
-                                        <div class="author">시월</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/gl_ex.png">
-                                    <div class="card-body">
-                                        <div class="title">너와 피어나는 계절</div>
-                                        <div class="author">윤슬님</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                
-                                <div class="card work-card">
-                                    <div class="thumbnail-wrap">
-                                        <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
-                                        <div class="adult-badge">
-                                            19
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="card-body">
-                                        <div class="title">이 약혼은 어차피 성공하게 되어 있다</div>
-                                        <div class="author">빨강마후라 차차</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/rofan_ex2.png">
-                                    <div class="card-body">
-                                        <div class="title">그 왕녀가 후작저에 가야했던 이유</div>
-                                        <div class="author">말차차</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <img class="card-img-top" src="${contextPath}/assets/images/pageon/rofan_ex1.png">
-                                    <div class="card-body">
-                                        <div class="title">새벽을 매듭짓는 사람들</div>
-                                        <div class="author">잿빛별</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <div class="thumbnail-wrap">
-                                        <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
-                                        <div class="adult-badge">
-                                            19
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="card-body">
-                                        <div class="title">이 약혼은 어차피 성공하게 되어 있다</div>
-                                        <div class="author">빨강마후라 차차</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card work-card">
-                                    <div class="thumbnail-wrap">
-                                        <img class="card-img-top" src="${contextPath}/assets/images/pageon/before_adult.png">
-                                        <div class="adult-badge">
-                                            19
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="card-body">
-                                        <div class="title">은행나무 아래에서</div>
-                                        <div class="author">김땡땡</div>
-                                        <div class="like-cnt">
-                                            <i class="fe-heart-on"></i>
-                                            <span>(1,000)</span>
-                                        </div>
-                                    </div>
-                                </div>
 
                             </div>
                             

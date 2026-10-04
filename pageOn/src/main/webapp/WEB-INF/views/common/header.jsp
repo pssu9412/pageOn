@@ -82,18 +82,18 @@
 				<div class="logo-box">
 					<!-- Brand Logo Light -->
 					<a href="index.html" class="logo-light"> <img
-						src="assets/images/pageon/logo-gray.jpeg" alt="logo"
+						src="${contextPath}/assets/images/pageon/logo-gray.jpeg" alt="logo"
 						class="logo-lg"> <img
-						src="assets/images/pageon/logo-gray.jpeg" alt="logo"
+						src="${contextPath}/assets/images/pageon/logo-gray.jpeg" alt="logo"
 						class="logo-sm"> <!-- <img src="assets/images/logo-light.png" alt="logo" class="logo-lg"> -->
 						<!-- <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm"> -->
 					</a>
 
 					<!-- Brand Logo Dark -->
 					<a href="index.html" class="logo-dark"> <img
-						src="assets/images/pageon/logo-gray.jpeg" alt="dark logo"
+						src="${contextPath}/assets/images/pageon/logo-gray.jpeg" alt="dark logo"
 						class="logo-lg"> <img
-						src="assets/images/pageon/logo-gray.jpeg" alt="logo"
+						src="${contextPath}/assets/images/pageon/logo-gray.jpeg" alt="logo"
 						class="logo-sm"> <!-- <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm"> -->
 					</a>
 				</div>
@@ -331,50 +331,50 @@
 				<!-- 선택된 페이지일 경우(class menu-on 부여) -->
 				<li class="menu-item">
 					<a href="#" class="menu-link"> 
-						<span class="menu-text menu-on"> Best </span>
+						<span class="menu-text ${currentMenu eq 'best' ? 'menu-on' : ''} "> Best </span>
 					</a>
 				</li>
 				<!-- ==================-->
 
 				<li class="menu-item">
-					<a href="#" class="menu-link"> 
-						<span class="menu-text"> 로맨스 </span>
+					<a href="${ contextPath }/romance/main" class="menu-link"> 
+						<span class="menu-text ${currentMenu eq 'romance' ? 'menu-on' : ''}"> 로맨스 </span>
+					</a>
+				</li>
+
+				<li class="menu-item">
+					<a href="${ contextPath }/romance-fantasy/main" class="menu-link"> 
+						<span class="menu-text ${currentMenu eq 'romance-fantasy' ? 'menu-on' : ''}"> 로판 </span>
+					</a>
+				</li>
+
+				<li class="menu-item">
+					<a href="${ contextPath }/fantasy/main" class="menu-link"> 
+						<span class="menu-text ${currentMenu eq 'fantasy' ? 'menu-on' : ''}"> 판타지 </span>
+					</a>
+				</li>
+
+				<li class="menu-item">
+					<a href="${ contextPath }/bl/main" class="menu-link"> 
+						<span class="menu-text ${currentMenu eq 'bl' ? 'menu-on' : '' }"> BL </span>
+					</a>
+				</li>
+
+				<li class="menu-item">
+					<a href="${ contextPath }/gl/main" class="menu-link"> 
+						<span class="menu-text ${currentMenu eq 'gl' ? 'menu-on' : '' }"> GL </span>
 					</a>
 				</li>
 
 				<li class="menu-item">
 					<a href="#" class="menu-link"> 
-						<span class="menu-text"> 로판 </span>
+						<span class="menu-text ${currentMenu eq 'free' ? 'menu-on' : '' }"> 자유 </span>
 					</a>
 				</li>
 
 				<li class="menu-item">
 					<a href="#" class="menu-link"> 
-						<span class="menu-text"> 판타지 </span>
-					</a>
-				</li>
-
-				<li class="menu-item">
-					<a href="#" class="menu-link"> 
-						<span class="menu-text"> BL </span>
-					</a>
-				</li>
-
-				<li class="menu-item">
-					<a href="#" class="menu-link"> 
-						<span class="menu-text"> GL </span>
-					</a>
-				</li>
-
-				<li class="menu-item">
-					<a href="#" class="menu-link"> 
-						<span class="menu-text"> 자유 </span>
-					</a>
-				</li>
-
-				<li class="menu-item">
-					<a href="#" class="menu-link"> 
-						<span class="menu-text"> EVENT </span>
+						<span class="menu-text ${currentMenu eq 'event' ? 'menu-on' : '' }"> EVENT </span>
 					</a>
 				</li>
 			</ul>

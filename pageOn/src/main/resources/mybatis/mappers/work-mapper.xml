@@ -4,4 +4,190 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="workMapper">
 
+	<resultMap type="WorkDto" id="workResult">
+		<id column="work_no" property="workNo" />
+		<result column="work_title" property="workTitle" />
+		<result column="pub_name" property="publisher" />
+		<result column="writer_name" property="writer" />
+		<result column="work_info" property="workInfo" />
+		<result column="work_cover" property="workCover" />
+		<result column="genre_name" property="genreNo" />
+		<result column="adult_yn" property="adultYN" />
+		<result column="paid_yn" property="paidYN" />
+		<result column="work_reg" property="workReg" />
+		<result column="work_latest" property="workLatest" />
+		<result column="work_favcnt" property="favoriteCnt" />
+		<result column="work_mod" property="workMod" />
+		<result column="serial_status" property="serialStatus" />
+		<result column="work_status" property="workStatus" />
+	</resultMap>
+	 
+	<sql id="mainWorkCard">
+  	W.WORK_NO,
+    W.WORK_TITLE,
+    W.WORK_COVER,
+    W.WORK_INFO,
+    W.WORK_REG,
+    W.WORK_LATEST,
+    W.WORK_FAVCNT,
+    W.PAID_YN,
+    W.ADULT_YN,
+    W.SERIAL_STATUS,
+    WR.WRITER_NAME,
+    P.PUB_NAME,
+    G.GENRE_NAME
+	</sql>
+	
+	
+	<select id="selectGenreName" resultType="String">
+    SELECT GENRE_NAME
+    FROM GENRE
+    WHERE GENRE_NO = #{genreNo}
+      AND GENRE_TYPE = 'M'
+	</select>
+	
+	
+	
+	<select id="selectMainNewWorkList" resultMap="workResult">
+		SELECT *
+    FROM (
+        SELECT
+            <include refid="mainWorkCard"/>
+        
+        FROM WORK W
+
+        LEFT JOIN WRITER WR
+            ON W.WRITER_NO = WR.WRITER_NO
+
+        LEFT JOIN PUBLISHER P
+            ON W.PUB_NO = P.PUB_NO
+
+        LEFT JOIN GENRE G
+            ON W.GENRE_NO = G.GENRE_NO
+
+        WHERE W.WORK_STATUS = 'A'
+
+        <if test="genreParentNo != 0">
+            AND G.GENRE_PARENT = #{genreParentNo}
+        </if>
+
+        ORDER BY
+            W.WORK_REG DESC,
+            W.WORK_NO DESC
+    )
+    WHERE ROWNUM &lt;= 12
+		
+	</select>
+	
+	<select id="selectMainPurchaseBestWorkList" resultMap="workResult">
+    SELECT *
+    FROM (
+        SELECT
+            <include refid="mainWorkCard"/>,
+            COUNT(PD.PD_NO) AS PURCHASE_CNT
+
+        FROM WORK W
+
+        LEFT JOIN WRITER WR
+            ON W.WRITER_NO = WR.WRITER_NO
+
+        LEFT JOIN PUBLISHER P
+            ON W.PUB_NO = P.PUB_NO
+
+        LEFT JOIN GENRE G
+            ON W.GENRE_NO = G.GENRE_NO
+
+        LEFT JOIN POINT_DETAIL PD
+            ON W.WORK_NO = PD.WORK_NO
+            AND PD.PD_STATUS = 'P'
+
+        WHERE W.WORK_STATUS = 'A'
+
+        <if test="genreParentNo != 0">
+            AND G.GENRE_PARENT = #{genreParentNo}
+        </if>
+
+        GROUP BY
+            W.WORK_NO,
+				    W.WORK_TITLE,
+				    W.WORK_COVER,
+				    W.WORK_INFO,
+				    W.WORK_REG,
+				    W.WORK_LATEST,
+				    W.WORK_FAVCNT,
+				    W.PAID_YN,
+				    W.ADULT_YN,
+				    W.SERIAL_STATUS,
+				    WR.WRITER_NAME,
+				    P.PUB_NAME,
+				    G.GENRE_NAME
+
+        ORDER BY
+            PURCHASE_CNT DESC,
+            W.WORK_NO DESC
+    )
+    WHERE ROWNUM &lt;= 12
+
+	</select>
+	
+	<select id="selectMainFavoriteBestWorkList" resultMap="workResult">
+		SELECT *
+	    FROM (
+	        SELECT
+	            <include refid="mainWorkCard"/>
+	
+	        FROM WORK W
+	
+	        LEFT JOIN WRITER WR
+	            ON W.WRITER_NO = WR.WRITER_NO
+	
+	        LEFT JOIN PUBLISHER P
+	            ON W.PUB_NO = P.PUB_NO
+	
+	        LEFT JOIN GENRE G
+	            ON W.GENRE_NO = G.GENRE_NO
+	
+	        WHERE W.WORK_STATUS = 'A'
+	
+	        <if test="genreParentNo != 0">
+	            AND G.GENRE_PARENT = #{genreParentNo}
+	        </if>
+	
+	        ORDER BY
+	            W.WORK_FAVCNT DESC,
+	            W.WORK_NO DESC
+	    )
+	    WHERE ROWNUM &lt;= 12
+	</select>
+
+
+	<select id="selectMainLatestWorkList" resultMap="workResult">
+		SELECT *
+    FROM (
+        SELECT
+            <include refid="mainWorkCard"/>
+
+        FROM WORK W
+
+        LEFT JOIN WRITER WR
+            ON W.WRITER_NO = WR.WRITER_NO
+
+        LEFT JOIN PUBLISHER P
+            ON W.PUB_NO = P.PUB_NO
+
+        LEFT JOIN GENRE G
+            ON W.GENRE_NO = G.GENRE_NO
+
+        WHERE W.WORK_STATUS = 'A'
+
+        <if test="genreParentNo != 0">
+            AND G.GENRE_PARENT = #{genreParentNo}
+        </if>
+
+        ORDER BY
+            W.WORK_LATEST DESC,
+            W.WORK_NO DESC
+    )
+    WHERE ROWNUM &lt;= 12
+	</select>
 </mapper>
