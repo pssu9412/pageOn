@@ -152,6 +152,10 @@ span {
   color: black;
 }
 
+.menubar .menu .menu-item:hover {
+  font-weight: bold;
+}
+
 /* ====== 본문 영역 ======= */
 /* .content-page {
   background-color: white;
