@@ -38,7 +38,14 @@ public class MemberServiceImpl implements MemberService {
 		
 		MemberDto loginUser = memberDao.selectSocialMem(m);
 
-	    if(loginUser == null) {
+		if (loginUser == null) {
+
+	        // 신규 회원인데 이름이 없으면 가입하지 않고 반환
+	        if (m.getMemName() == null || m.getMemName().isBlank()) {
+	            return null;
+	        }
+
+	        // 이름까지 받았으면 가입 후 조회
 	        memberDao.insertSocialMem(m);
 	        loginUser = memberDao.selectSocialMem(m);
 	    }

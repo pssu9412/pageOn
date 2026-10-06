@@ -22,6 +22,9 @@ public class SocialLoginServiceImpl implements SocialLoginService {
     @Value("${kakao.redirect-uri}")
     private String kakaoRedirectUri;
 	
+    @Value("${kakao.client-secret}")
+    private String kakaoClientSecret;
+    
 	@Override
 	public String kakaoAccessToken(String code) {
 		
@@ -33,6 +36,7 @@ public class SocialLoginServiceImpl implements SocialLoginService {
 	            .body(
 	                "grant_type=authorization_code"
 	                + "&client_id=" + kakaoRestApiKey
+	                + "&client_secret=" + kakaoClientSecret
 	                + "&redirect_uri=" + kakaoRedirectUri
 	                + "&code=" + code
 	            )
@@ -54,8 +58,33 @@ public class SocialLoginServiceImpl implements SocialLoginService {
 	            .body(Map.class);
 
 	    System.out.println(response);
+	    
+	    String socialId = String.valueOf(response.get("id"));
 
-	    return null;
+	    MemberDto member = new MemberDto();
+	    member.setSocialId(socialId);
+	    member.setLoginType("K"); // DB에서 사용하는 구분값에 맞추기
+	    
+	    // 카카오 계정 정보 꺼내기
+	    Map<String, Object> account =
+	            (Map<String, Object>) response.get("kakao_account");
+
+	    if (account != null) {
+
+	        // 이메일을 DTO에 담기
+	        member.setMemEmail((String) account.get("email"));
+
+	        // 계정 정보 안의 프로필 꺼내기
+	        Map<String, Object> profile =
+	                (Map<String, Object>) account.get("profile");
+
+	        if (profile != null) {
+	            // 닉네임을 DTO에 담기
+	            member.setMemNickname((String) profile.get("nickname"));
+	        }
+	    }
+
+	    return member;
 	}
 
 }

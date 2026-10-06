@@ -154,6 +154,7 @@ public class MemberController {
 		
 	
 	// 카카오 소셜 로그인
+	@ResponseBody
 	@GetMapping("/login/kakao")
 	public String kakaoLogin(@RequestParam("code") String code, HttpSession session) {
 		
@@ -165,11 +166,23 @@ public class MemberController {
 
 	    // 3. DB 조회 / 없으면 회원가입
 	    MemberDto loginUser = memberService.socialLogin(member);
+	    
+	    // 4. 신규 회원이면 추가 정보 입력 화면으로 이동
+	    if (loginUser == null) {
+	        session.setAttribute("socialSignupMember", member);
 
-	    // 4. 로그인 세션 저장
-	    session.setAttribute("loginMember", loginUser);
+	        return """
+	            <script>
+	                window.opener.location.href = '/pageOn/login';
+	                window.close();
+	            </script>
+	            """;
+	    }
 
-	    // 5. 부모창 메인 이동 + 팝업 닫기
+	    // 5. 기존 회원이면 로그인 세션 저장
+	    session.setAttribute("loginUser", loginUser);
+
+	    // 6. 부모창 메인 이동 + 팝업 닫기
 	    return """
 	        <script>
 	            window.opener.location.href = '/pageOn/';
@@ -181,6 +194,35 @@ public class MemberController {
 //        		+ "window.opener.location.href='/pageOn/';"
 //        		+ "window.close();"
 //        		+ "</script>";
+	}
+	
+	@PostMapping("/signup/social")
+	public String socialSignup(@RequestParam("memName") String memName
+								, @RequestParam("memPhone") String memPhone
+								, HttpSession session) {
+
+	    MemberDto member =
+	        (MemberDto) session.getAttribute("socialSignupMember");
+
+	    // 임시 정보가 없으면 카카오 로그인부터 다시 진행
+	    if (member == null) {
+	        return "redirect:/login";
+	    }
+
+	    if (memName.isBlank()
+	            || !memPhone.matches("^010-\\d{4}-\\d{4}$")) {
+	        return "redirect:/login";
+	    }
+
+	    member.setMemName(memName.trim());
+	    member.setMemPhone(memPhone.trim());
+
+	    MemberDto loginUser = memberService.socialLogin(member);
+
+	    session.setAttribute("loginUser", loginUser);
+	    session.removeAttribute("socialSignupMember");
+
+	    return "redirect:/";
 	}
 
 }
