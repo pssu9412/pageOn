@@ -107,6 +107,13 @@
 
 <!-- 탈퇴 -->
 
+	<update id="deleteMem">
+		update member
+			 set mem_status = 'N',
+			 		 mem_den = SYSDATE
+		 where mem_no = #{memNo}
+	</update>
+
 
 <!-- 아이디 찾기 -->
 

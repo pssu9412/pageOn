@@ -201,16 +201,14 @@ public class MemberController {
 								, @RequestParam("memPhone") String memPhone
 								, HttpSession session) {
 
-	    MemberDto member =
-	        (MemberDto) session.getAttribute("socialSignupMember");
+	    MemberDto member = (MemberDto) session.getAttribute("socialSignupMember");
 
 	    // 임시 정보가 없으면 카카오 로그인부터 다시 진행
 	    if (member == null) {
 	        return "redirect:/login";
 	    }
 
-	    if (memName.isBlank()
-	            || !memPhone.matches("^010-\\d{4}-\\d{4}$")) {
+	    if (memName.isBlank() || !memPhone.matches("^010-\\d{4}-\\d{4}$")) {
 	        return "redirect:/login";
 	    }
 
@@ -221,6 +219,25 @@ public class MemberController {
 
 	    session.setAttribute("loginUser", loginUser);
 	    session.removeAttribute("socialSignupMember");
+
+	    return "redirect:/";
+	}
+	
+	// 회원 탈퇴
+	@PostMapping("/deleteMem")
+	public String deleteMem(HttpSession session) {
+		
+	    MemberDto m = (MemberDto) session.getAttribute("loginUser");
+
+	    if (m == null) {
+	        return "redirect:/login";
+	    }
+
+	    int result = memberService.deleteMem(m.getMemNo());
+
+	    if (result == 1) {
+	        session.invalidate(); // 탈퇴 성공 시 로그인 세션 삭제
+	    }
 
 	    return "redirect:/";
 	}

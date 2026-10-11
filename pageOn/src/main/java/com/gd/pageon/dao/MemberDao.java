@@ -41,6 +41,11 @@ public class MemberDao {
     public int insertMem(MemberDto m) {
     	return sqlSessionTemplate.insert("memberMapper.insertMem", m);
     }
+
+    // 회원 탈퇴
+	public int deleteMem(int memNo) {
+		return sqlSessionTemplate.update("memberMapper.deleteMem", memNo);
+	}
    
 
 }

@@ -145,7 +145,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public int deleteMem(int memNo) {
-		return 0;
+		return memberDao.deleteMem(memNo);
 	}
 
 
